@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Liore-Olivier LeO-20</title>
+<META name="KEYWORDS" content="Aéronautique Navale Française 1939-1940,entrainement,français,biplan,campagne de france,drôle de guerre,Caudron luciole">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-LeO-20.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../../Chasse/Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Chasse</font></b></font></a></p>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><font color="#C0C0C0">Bombardement</font></font></b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Observation</b></font></a></p>
+          <div align="left"></div>
+          <p align="left"><font color="#000000"><i><a href="../Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow"><b>Entrainement</b></font></a></i></font></p>
+          <div align="left"><a href="../Hanriot-H185/Hanriot-H185.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFFFF"><b><font color="#FFFF00">- 
+            Hanriot H185</font></b></font></a></div>
+          <div align="left"><a href="LeO-20.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+            Liore-Olivier LeO20</font></i></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS230/Morane-Saulnier-MS230.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Morane-Saulnier MS230</b></font></a></div>
+          <div align="left"><a href="../North-American-NAA64/NAA64.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            NAA 57 et 64</b></font></a></div>
+          <div align="left"><a href="../Potez-567/Potez-567.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez-567</font></b></font></a></div>
+          <div align="left"><a href="../Romano-R82/Romano-R82.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Romano-R82</b></font></a></div>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <p><b><font size="20%" color="#660000">LIORE-OLIVIER LeO 20</font></b></p>
+            
+          <p><img src="Photos/LeO-20.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" height="257" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Bombardie 
+                  rde Nuit Triplace</font></td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Septembre 
+                    1926</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">22,25 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">13,81 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">4,26 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2">105</font> <font size="2" face="Arial Narrow">m2&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids &agrave; Vide</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 2725 Kg&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">5460 Kg&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 175 km/h.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">198 km/h &agrave; 0m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="+0"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2">4000m 
+                    en 25mn 13s</font></font></font></font> </font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>plafond</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">5700m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1000 kms&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"> 3 Personnes</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2 Moteurs 
+                    Gnome et Rh&ocirc;ne 14N 9Ady &agrave; 9 Cyl. en &eacute;toiles 
+                    refroidis par air de 420ch chacun</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                </td>
+                <td colspan="3" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div>
+                      <div><font size="2" face="Arial Narrow">2 Mitrailleuses 
+                        Lewis de 7.7mm mobiles en tourelle avant</font></div>
+                      <div><font face="Arial Narrow" size="2">2 Mitrailleuses 
+                        Lewis de 7.7mm en tourelle arri&egrave;re</font></div>
+                      <div><font face="Arial Narrow" size="2">1 Mitrailleuse Lewis 
+                        en tourelle arri&egrave;re ventrale r&eacute;tractable</font></div>
+                      <div><font face="Arial Narrow" size="2">1000 kgs de bombes</font></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <p><font size="3" color="#990000"><font size="3" color="#990000"><b><font face="Arial Narrow" size="2" color="#000000">324 
+              Exemplaires ont &eacute;t&eacute; </font></b><font size="2" color="#990000"><font color="#000000"><b><font face="Arial Narrow">construits 
+              depuis la date du premier vol en Septembre 1926.</font></b></font></font></font></font></p>
+              
+            <p><font size="2"><b><font color="#990000"><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font face="Arial Narrow" color="#000000" size="2">A 
+              ce jour , sur les 324 appareils fabriqu&eacute;s, 3 sont recens&eacute;s 
+              dans la liste</font></b></font></b></font><font face="Arial Narrow" color="#000000" size="2"> 
+              ci-dessous :</font></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><br>
+              <b><font face="Arial Narrow" size="2">En Juin 1924, le bombardier 
+              Leo 12 fait son premier vol. Cet appareil, biplan bimoteur biplace 
+              &eacute;tudi&eacute; par la soci&eacute;t&eacute; Lior&eacute; &amp; 
+              Olivier, est fabriqu&eacute; &agrave; quatre exemplaires. Motoris&eacute;s 
+              par des moteurs Lorraine-Dietrich de 400 ch, ces 4prototypes seront 
+              utilis&eacute;s exp&eacute;rimentalement comme bombardiers de nuit 
+              dans des escadrilles op&eacute;rationnelles. De cette premi&egrave;re 
+              version, sera extrapol&eacute;e le LeO 121, appareil civil de transport 
+              qui ne sera produit qu'&agrave; un seul exemplaire. En 1926, est 
+              lanc&eacute; un nouveau prototype : le LeO 122, motoris&eacute; 
+              par deux Gnome-Rh&ocirc;ne (Bristol) Jupiter de 420ch. Cette version 
+              ne sera pas non plus lanc&eacute;e en production mais servira de 
+              base &agrave; la version LeO 20 qui coonnaitra un grand succ&egrave;s 
+              comme bombardier de Nuit.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Le LeO 20, plus grand que 
+              le LeO 122 &eacute;tait d'une apparence rustisque et simple : un 
+              fuselage de section rectagulaire port&eacute; par deux ailes rectangulaires 
+              de tailles identiques et reli&eacute;es entre elles par trois paires 
+              de mats. Pour soigner son a&eacute;rodynamisme (!) il &eacute;tait 
+              &eacute;quip&eacute; d'un train fixe car&eacute;n&eacute;. Ce bombardier 
+              4 / 5 places fut construits &agrave; plus de 320 exemplaires et 
+              ne sera retir&eacute; du service actif qu'en 1937. Au cours de sa 
+              longue carri&egrave;re, plusieurs d&eacute;veloppement furent exp&eacute;riment&eacute;s 
+              : ainsi un exemplaire re&ccedil;ut un canon de 37mm en lieu et place 
+              des mitrailleuses jumel&eacute;es dans la tourelle avant. Un autre 
+              servit de banc d'essai &agrave; des motorisations Gn&ocirc;me Rh&ocirc;ne 
+              &agrave; compressuers. Sous l'appellation LeO 201, quelques appareils 
+              seront transform&eacute;s en avion d'entrainement capables d'emmener 
+              des parachutistes. Le LeO fut &eacute;galement utilis&eacute; par 
+              l'A&eacute;ronautique Navale et export&eacute;s en Roumanioe (7 
+              Appareils) et au Br&eacute;sil (2 Exemplaires)</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Sur la base du Leo 20, fut 
+              d&eacute;velopp&eacute; un quadrimoteur en plusieurs versions. Le 
+              LeO 203, motoris&eacute; par des Gnome-Rh&ocirc;ne 7Kb en &eacute;toile 
+              de 300 ch, fit son premier vol en mars 1931. Ses moteurs &eacute;taient 
+              install&eacute;s par paire en tandem sur les ailes basses. Le LeO 
+              205, &eacute;quip&eacute; de quatre moteurs Renault 9 Ca, &eacute;tait 
+              similaire au LeO 203. Le LeO 204 n'&eacute;tait que la d&eacute;clinaison 
+              navale du LeO 203, &eacute;quip&eacute; logiquement de flotteurs. 
+              Finalement, seul le LeO 206 fut mis en production, environ quarante 
+              appareils. Cette version, &eacute;quip&eacute;e de moteurs Gnome-Rh&ocirc;ne 
+              7 Kds de 350 ch compress&eacute;s avait un nez redessin&eacute;, 
+              il poss&eacute;dait une mitrailleuse de queue et une gondole ventrale 
+              qui abritait le mitrailleur d&eacute;fendant le secteur inf&eacute;rieur.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">On peut citer enfin les LeO 
+              207 et LeO 208 qui clotureront le d&eacute;veloppement du LeO20. 
+              Le Leo 207 &eacute;tait motoris&eacute; par des Gnome-Rh&ocirc;ne 
+              Titan Major, et connus une petite production (3 exemplaires). Le 
+              LeO 208, d&eacute;velopp&eacute; en 1936, &eacute;tait un version 
+              plus &eacute;volu&eacute;e que les pr&eacute;c&eacute;dentes : hormis 
+              les moteurs Gnome-Rh&ocirc;ne 14 plus puissants (770ch), la surface 
+              alaire des ailes basses a &eacute;t&eacute; r&eacute;duit par la 
+              r&eacute;duction de la cordes la cabine est d&eacute;sormais ferm&eacute;e 
+              et le train d'atterrissage est r&eacute;tractable. Le LeO 208 est 
+              bien plus performant que le vieillissant LeO 20, il atteignait 325km/h, 
+              mais aucune suite n'est donn&eacute;e &agrave; cette version. . 
+              </font></b> </p>
+            <p>&nbsp;</p>
+          </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <table width="60%" border="1">
+              <tr background="../../../../Images Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Versions</font></b></font></div>
+                </td>
+                <td width="15%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Nombre</font></b></font></div>
+                </td>
+                <td width="65%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Descriptif</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    12</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">4</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Premier 
+                  appareil de la s&eacute;rie : boimoteur motoris&eacute; par 
+                  des Lorraine-Dietrich de 400 ch</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    121</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">appareil 
+                  de transport civil d&eacute;riv&eacute; du LeO 12</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    122</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Motoris&eacute; 
+                  par deux Gnome-Rh&ocirc;ne (Bristol) Jupiter de 420ch, cette 
+                  version donnera naissance au LeO 20</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    20</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">324</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  de S&eacute;rie utilis&eacute;s par l'Arm&eacute;e de l'Air 
+                  et l'A&eacute;ronautique Navale. Export&eacute; en Roumanie 
+                  (7 appareils) et au Br&eacute;sil (2 appareils)</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    201</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2"></font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  d'Entrainement pouvant emporter des parachutistes</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    203</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Quadrimoteur 
+                  d&eacute;riv&eacute; du LeO 20, motoris&eacute; par 4 Gnome-Rh&ocirc;ne 
+                  7Kb en &eacute;toile de 300ch mont&eacute;s en tandem sur l'aile 
+                  inf&eacute;rieure</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    H-204</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  identique au LeO 203, &eacute;quip&eacute;e de flotteurs d&eacute;velopp&eacute;e 
+                  pour l'A&eacute;ronautique Navale</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    205</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  identisque au LeO 203, mais motoris&eacute; par 4 Renault 9 
+                  Ca</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    206</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">37</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Quadrimoteur 
+                  &eacute;quip&eacute; de Gnome-Rh&ocirc;ne 7 Kds de 350 ch compress&eacute;s 
+                  : nez redessin&eacute;, il poss&eacute;dait une mitrailleuse 
+                  de queue et une gondole ventrale qui abritait le mitrailleur 
+                  d&eacute;fendant le secteur inf&eacute;rieur.</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="32" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <p align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    207</font></b></p>
+                </td>
+                <td width="15%" height="32" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">3</font></b></div>
+                </td>
+                <td width="65%" height="32" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  motoris&eacute;e par quatres Gnome-Rh&ocirc;ne Titan Major de 
+                  360ch</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">LeO 
+                    208</font></b></div>
+                </td>
+                <td width="15%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">1</font></b></div>
+                </td>
+                <td width="65%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Motoris&eacute; 
+                  par 2 Gnome &amp; Rh&ocirc;ne 14Kdrs de 770ch, profond&eacute;ment 
+                  remani&eacute;, cette version &eacute;quip&eacute; d'un train 
+                  r&eacute;tractable et d'une capable ferm&eacute;e avait des 
+                  performances nettement am&eacute;lior&eacute;es : il atteignait 
+                  325 km/h. Pas de d&eacute;veloppement ult&eacute;rieur</font></td>
+              </tr>
+            </table>
+            <b><font face="Arial Narrow" size="2">. </font></b> 
+            <p><font face="Arial Narrow"><b></b></font></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              
+            <p><a class="fancybox-effects-c" href="Photos/Poste-Av-LeO20.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="99" height="72" border="0" src="thumbnail/tn_Poste-Av-LeO20.jpg" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Poste-Pilotage-Leo20.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Poste-Pilotage-Leo20.jpg" alt="" width="107" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/LeO-20-1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_LeO-20-1.jpg" alt="" width="125" height="72" border="0" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+              
+            <p><a class="fancybox-effects-c" href="Photos/P3V-LeO20.png" data-fancybox-group="gallery-2" title=""><img alt="" width="107" height="72" border="0" src="thumbnail/tn_P3V-LeO20.png" /></a> 
+            </p>
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

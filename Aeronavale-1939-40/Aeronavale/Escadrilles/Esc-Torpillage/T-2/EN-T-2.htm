@@ -1,0 +1,981 @@
+ 
+
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="dSqnription" content="Site dedicated to the French Naval Aviation in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Torpedo-Squadron_T-2</title>
+<META name="KEYWORDS" content="French Naval Aviation 1939 - 1940, campaign of France, funny war, Torpedo-Squadron_T-2">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox Mayn JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne"><a name="HAUTDEPAGE"></a></p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="T-2.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                
+              <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><font size="4" color="#CCCCCC"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Escadrilles.htm" target="_self">Squadrons</a></font></b></font></div>
+        <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <div align="left">
+			<p align="left"><b class="Aucun"><b><a href="../../Esc-Chasse/EN-Accueil-Chasse.htm"><font face="Arial Narrow" ><font color="#C0C0C0" size="4">Fighter Squadrons</font></font></a></b></b></p> 
+			  
+            <p align="left"><b class="Aucun"><b><a href="../../Esc-Bomb/EN-Accueil-Esc-Bombardement.htm"><font face="Arial Narrow" ><font color="#C0C0C0" size="4">Bombing Squadrons </font></font></a></b></b></p>         
+            </div>
+          </div>        
+          <div align="left" class="style1"> 
+            <div align="left"> 
+              
+            <p align="left"><b class="Aucun"><b><a href="../../Esc-Bomb-Pique/EN-Accueil-Esc-Bomb-Pique.htm" target="_self"><font face="Arial Narrow" ><font color="#C0C0C0" size="4">Dive Bombing squadrons</font></font></a></b></b> </p>
+                            
+            <div align="left"><b class="Aucun"><b><a href="../../Esc-Torpillage/EN-Accueil-Torpillage.htm" target="_self" ><font face="Arial Narrow" ><font color="#FFFFFF" size="4"><i>Torpedo squadrons </i></font></font></a></b></b> </div>
+			 <div align="left"><a href="../T-1/EN-T-1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- Squadron T-1</font></b></font></a></div>
+             <div align="left"><a href="../T-2/EN-T-2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- Squadron T-2</i></font></b></font></a></div>
+             <div align="left"><a href="../T-3/EN-T-3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- Squadron T-3</font></b></font></a></div>
+             <div align="left"><a href="../T-4/EN-T-4.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- Squadron T-4</font></b></font></a></div>
+              
+            <p align="left"><b class="Aucun"><b><a href="../../Esc-Surveillance/EN-Accueil-Surveillance.htm" target="_self"><font face="Arial Narrow" ><font color="#C0C0C0" size="4">Surveillance squadrons </font></font></a></b></b> </p>
+              
+            <p align="left"><b class="Aucun"><b><a href="../../Esc-Exploration/EN-Accueil-Exploration.htm" target="_self"><font face="Arial Narrow" ><font color="#C0C0C0" size="4">Exploration squadrons</font></font></a></b></b> 
+            </p>
+              
+				
+            <p align="left"><a href="../../Esc-Flotille-Cdt-Teste/EN-Accueil-Flotille-Cdt-Teste.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Fleet 
+              &quot;Commandant Teste&quot;</b></font></a></p>
+			<p align="left"><a href="../../Aviation-Embarquee/EN-Accueil-Aviation-Embarquee.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Embarked 
+              Aviation </b></font></a></p>
+            <p>&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <table width="85%">
+            <tr> 
+              <td height="20%"> 
+                <div align="center"></div>
+                <div align="center"> 
+                  <p><b><font size="20%" color="#660000">Torpedo Squadrons T-2</font></b></p>
+                </div>
+              </td>
+            </tr>
+            <tr> 
+              <td height="70%"> 
+                <div align="center"></div>
+                <div align="center"><img src="Photos/gc1-1_2e.gif" width="30%"></div>
+              </td>
+            </tr>
+          </table>
+            <p><a href="#Histoire"><img src="../../../../Images%20Base/EN-B-Historique.png" width="10%" border="0"></a><a href="#Etatmajor"><img src="../../../../Images%20Base/EN-B-Etat%20major.png" width="10%" border="0"></a> 
+              <a href="#Pilotes"><img src="../../../../Images%20Base/EN-B-Pilotes.png" width="10%" border="0"></a><a href="#Terrains"><img src="../../../../Images%20Base/EN-B-Terrains.png" width="10%" border="0"></a> 
+              <a href="#Appareils"><img src="../../../../Images%20Base/EN-B-Appareils.png" width="10%" border="0"></a> 
+              <a href="#Palmares"><img src="../../../../Images%20Base/EN-B-Palmares.png" width="15%" border="0"></a></p>
+          </div>
+          <blockquote> 
+            <div align="center"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Histoire"></a></font></i></b></font> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Historical</font></i></b></font></p>
+              
+            <p><font face="Arial Narrow" size="2"><b>At the declaration of the 
+              world conflict, the T-2 Squadron is based in Cherbourg under the 
+              command of Lieutenant LAMIOT. Training and missions continued until 
+              March 1940, the aircraft operating from the base of Cherbourg or 
+              Boulogne. Some contacts with enemy submarines took place, but without 
+              success. Anecdotally, it should be noted that on September 9, 1939, 
+              two submarines are sighted, but the two Lat&eacute;co&egrave;re 
+              298 who locate them are equipped with torpedoes whose safety pins 
+              have not been removed, following the orders somewhat surprising 
+              in times of war ...</b></font></p>
+            <p><b><font face="Arial Narrow" size="2">Like the T-1 squadron, the 
+              unit is attached early March 1940 to the F5T flotilla. At one time 
+              it was planned to send a group of 3 Lat&eacute;co&egrave;re 298 
+              to Norway to accompany the expeditionary force, but the mission 
+              will eventually be canceled.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">After the German offensive 
+              of May 10th, 1940, the T-2 escasdrille operating from bases from 
+              now on frequently bombed, participates in missions of attacks of 
+              objectives on the ground. But the Lat&eacute;co&egrave;re 298 are 
+              not really suitable for that, because too slow, they are very vulnerable 
+              to the German hunt. Thus, on May 23, 1940, during a bombardment 
+              mission of German armored elements, a group of 4 Lat&eacute;co&egrave;re 
+              298 was attacked by 9 ME109. The balance is heavy: 3 machine gunners 
+              are killed, 3 men are seriously injured and two others are taken 
+              prisoner ...</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">The missions of Reconnaissance, 
+              convoy escort or ground attacks continue until June 18, 1940. Squadron 
+              T-1 then receives the order to withdraw and join Hourtin, then Berre 
+              l'Etang. On June 21, the unit took off to join the base of Bougie 
+              in Algeria where it will be caught by the Armistice.</font></b></p>
+          </div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a> 
+                <a name="Etatmajor"></a> 
+            </div>
+          </div>
+          <div align="left"> </div>
+          <div align="left"></div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Staff</font></i></b></font></p>
+              
+            <table BORDER bordercolor="#000000" width="72%" bgcolor="#FFFFFF" >
+              <tr> 
+                <td colspan="4" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                  <center>
+                    <font face="Arial Narrow"><i><b><font color="#FFFFFF">Commanders 
+                    of the Squadron T-2</font></b></i></font> 
+                  </center>
+                </td>
+              </tr>
+              <tr> 
+                <td width="48%" height="30" bgcolor="#CCCCCC" bordercolor="#000000"><b><font size="2" face="Arial Narrow">LAMIOT 
+                  Jacques - Lieutenant</font></b></td>
+                <td bgcolor="#E9E9E9" height="30">&nbsp;</td>
+                <td bgcolor="#E9E9E9" height="30">&nbsp;</td>
+                <td height="30" width="6%" bgcolor="#E4E4E4"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+            </table>
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Pilotes"></a></p>
+              <hr noshade size="4" width="98%" align="left">
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Pilots</font></i></b></font></p>
+            </div>
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="100%" bgcolor="#FFFFFF" >
+              <tr> 
+                <td colspan="6" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                  <center>
+                    <font face="Arial Narrow"><i><b><font color="#FFFFFF">Pilots 
+                    and Crew members of the Squadron T-2</font></b></i> </font> 
+                  </center>
+                </td>
+              </tr>
+              <tr> 
+                <td height="40" bordercolor="#000000" width="21%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Names 
+                    of pilots</b></font></div>
+                </td>
+                <td height="40" bordercolor="#000000" width="12%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Rank</b></font></div>
+                </td>
+                <td height="40" bordercolor="#000000" width="11%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Function</b></font></div>
+                </td>
+                <td height="40" bordercolor="#000000" width="40%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Informations</b></font></div>
+                </td>
+                <td height="40" bordercolor="#000000" width="4%" bgcolor="#999999"> 
+                  <div align="center"><font size="3"><b><font size="2">Photo</font></b></font></div>
+                </td>
+                <td height="40" bordercolor="#000000" width="4%" bgcolor="#999999"> 
+                  <div align="center"><font size="3"><b><font size="2"> Indiv. 
+                    Card </font></b></font></div>
+                </td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">CARIOU</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">M&eacute;canicien</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Contraint 
+                  &agrave; &eacute;vacuer en parachute son appareil le 23 Mai 
+                  1940 suite &agrave; un combat a&eacute;rien</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">CHAUBY</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Quartier 
+                    Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2"></font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">COUCAL</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Quartier 
+                    Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Tu&eacute; 
+                  en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><font face="Arial Narrow" size="2"><b>DOMERGUE</b></font></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Enseigne 
+                    de Vaisseau de 1er Classe</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30">&nbsp;</td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">GOBERT</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Le 
+                  10 Juin 1940, son appareil, le Lat&eacute;co&egrave;re 298 T2-9 
+                  est abattu par la DCA d'un navire Fran&ccedil;ais..., mais l'&eacute;quipage 
+                  est sauf.</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%" bordercolor="#000000">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">HALGAND</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Second-Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Fait 
+                  prisonnier le 23 Mai 1940 apr&egrave;s un combat a&eacute;rien</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td width="4%" bordercolor="#000000" bgcolor="#E4E4E4" height="30">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">HUET</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Enseigne 
+                    de Vaisseau de 1er Classe</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Bless&eacute; 
+                  en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td width="4%" bordercolor="#000000" bgcolor="#E4E4E4" height="30">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">JOURDAIN</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant 
+                    de Vaisseau</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commandant 
+                    Adjoint de l'Escadrille</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Commandant 
+                  adjoint de l'Escadrille T2</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">LAMIOT 
+                  Jacques</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant 
+                    de Vaisseau</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote 
+                    et Commandant de l'Escadrille</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Commandant 
+                  de l'Escadrille T2</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td width="4%" bordercolor="#000000" bgcolor="#E4E4E4" height="30">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">PAUL 
+                  Gabriel </font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Quartier 
+                    Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Tu&eacute; 
+                  en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">PAYOL</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Quartier 
+                    Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Bless&eacute; 
+                  gravement en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">SEBIRE</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Second-Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Tu&eacute; 
+                  par accident le 19 Juin 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td width="4%" bordercolor="#000000" bgcolor="#E4E4E4" height="30">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><font face="Arial Narrow" size="2"><b>TASSEL 
+                  Georges </b></font></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Quartier-Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Tu&eacute; 
+                  en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td height="30" bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td bgcolor="#CCCCCC" width="15%" height="30"><b><font face="Arial Narrow" size="2">THENAIZIE</font></b></td>
+                <td bgcolor="#E4E4E4" width="11%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Second-Ma&icirc;tre</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="14%" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Radio</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="35%" height="30"><font face="Arial Narrow" size="2">Bless&eacute; 
+                  Gravement en combat a&eacute;rien le 23 Mai 1940</font></td>
+                <td height="30" width="4%" bgcolor="#E4E4E4">&nbsp;</td>
+                <td width="4%" bordercolor="#000000" bgcolor="#E4E4E4" height="30">&nbsp;</td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Terrains"></a></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Airfields</font></i></b></font></p>
+            <table width="48%" border="1" bgcolor="#FFFFFF">
+              <tr> 
+                <td colspan="3" bgcolor="#999999" height="40"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">Various 
+                    used Airfields</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#999999" height="40"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">City</font></b></div>
+                </td>
+                <td width="35%" bgcolor="#999999" height="40"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">Department 
+                    or country</font></b></div>
+                </td>
+                <td bgcolor="#999999" height="40" width="35%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2">Period 
+                    of use</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"> 
+                    <div><b><font face="Arial Narrow" size="2">Cherbourg </font></b></div>
+                    <div><b><font face="Arial Narrow" size="2">(Part of Squadron)</font></b></div>
+                  </div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">50 - 
+                    Manche</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Until 
+                    June 18, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"> 
+                    <div><b><font face="Arial Narrow" size="2">Boulogne sur Mer 
+                      </font></b></div>
+                    <div><b><font face="Arial Narrow" size="2">(Part of squadron)</font></b></div>
+                  </div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font size="2" face="Arial Narrow">62 - 
+                    Pas de Calais</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Until 
+                    June 18, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"><b><font face="Arial Narrow" size="2">Lanv&eacute;oc-Poulmic</font></b></div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">29 - 
+                    finist&egrave;re</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    18, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"><b><font face="Arial Narrow" size="2">Hourtin</font></b></div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">33 - 
+                    Gironde</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    18, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"><b><font face="Arial Narrow" size="2">Berre 
+                    l'Etang</font></b></div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">13 - 
+                    Bouches du Rh&ocirc;ne</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    19, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="30%" bgcolor="#CCCCCC" height="30"> 
+                  <div align="left"><b><font face="Arial Narrow" size="2">Bougie</font></b></div>
+                </td>
+                <td width="36%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Algeria</font></div>
+                </td>
+                <td width="34%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    21, 1940</font></div>
+                </td>
+              </tr>
+            </table>
+            
+          </div>
+            
+          <div align="left"> </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Appareils"></a></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Aircrafts</font></i></b></font></p>
+              
+            <p><font face="Arial, Helvetica, sans-serif" size="3"><b><font size="2" face="Arial Narrow">The 
+              Squadron T-2 was equipped since its creation, following aircrafts:</font></b></font></p>
+            </div>
+            <blockquote> 
+              
+            <p align="left"><a class="fancybox-effects-c" href="../../../Appareils/Bombardement/Amiot-143/photos/amiot-143-bia.jpg" data-fancybox-group="gallery-2" title="Les appareils de l'Escadrille T2 : Latécoère 298"><font face="Arial Narrow" size="3"><b><font color="#0000FF">- 
+              </font></b></font></a><font face="Arial Narrow" size="2"><b><a href="../../../Appareils/Hydravions/Latecoere-298/Photos/Late-298-6.jpg"><font color="#0000FF" size="3">Latecoere 
+              298</font></a></b></font></p>
+            </blockquote>
+            
+          <div align="left"><font face="Arial Narrow" size="2"><b>The used aircrafts 
+            are dSqnribed in the accessible file by the link below. You will find 
+            N ° of series, Registration, date of affectation to the group, and 
+            fate of the plane there.</b></font> 
+            <p><a class="fancybox fancybox.iframe" href="EN-Appareils-T-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="20%"></a></p>
+              
+            <p><font size="2"><b><font color="#000000" face="Arial Narrow">In 
+              this list are identified : </font></b></font></p>
+              
+            <ul>
+              <li><font face="Arial Narrow" size="2"><b><i>15 Lat&eacute;co&egrave;re 
+                298 </i></b></font></li>
+            </ul>
+            </div>
+            <div align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Palmares"></a> 
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"></div>
+          <div align="left"></div>
+          <blockquote>
+<div align="center"><font face="Lucida Handwriting"><i><b></b></i></font></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            
+          <div align="center"> </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Casualties</font></i></b></font></p>
+              
+            <table width="53%" border="1" bgcolor="#FFFFFF">
+              <tr bordercolor="#000000"> 
+                <td width="71%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font face="Arial Narrow"><b>Killed Pilots 
+                    </b></font></div>
+                </td>
+                <td width="29%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font face="Arial Narrow"><b>4</b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">PAUL 
+                  Gabriel Chief Bosun&#146;s Mate<br>
+                  (Combat)</font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">COUCAL 
+                  Chief Bosun&#146;s Mate<br>
+                  (Combat)</font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">TASSEL 
+                  Georges Chief Bosun&#146;s Mate<br>
+                  (Combat) </font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">SEBIRE 
+                  Petty Officer (Accident)</font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    19, 1940</font></div>
+                </td>
+              </tr>
+              <tr bordercolor="#000000"> 
+                <td width="71%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font face="Arial Narrow"><b><font size="3">Wounded 
+                    Pilots </font></b></font></div>
+                </td>
+                <td width="29%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font face="Arial Narrow"><b>3</b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">THENAIZIE 
+                  Petty Officer (Combat) </font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">HUET 
+                  Sub-Lieutenant (Combat)</font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="67%" bgcolor="#CCCCCC" height="30"><b><font face="Arial Narrow" size="2">PAYOL 
+                  Chief Bosun&#146;s Mate<br>
+                  (Combat) </font></b></td>
+                <td width="33%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="74%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Personnel 
+                    Naviguant prisonnier</b></font></div>
+                </td>
+                <td width="26%" bgcolor="#999999" height="40"> 
+                  <div align="center"><font size="4" face="Arial Narrow"><b><font size="3">1</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="65%" bgcolor="#CCCCCC" height="30"><font face="Arial Narrow" size="2"><b>HALGAND 
+                  Petty Officer</b></font></td>
+                <td width="35%" bgcolor="#E4E4E4" height="30"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 23,1940</font></div>
+                </td>
+              </tr>
+            </table>
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a> 
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

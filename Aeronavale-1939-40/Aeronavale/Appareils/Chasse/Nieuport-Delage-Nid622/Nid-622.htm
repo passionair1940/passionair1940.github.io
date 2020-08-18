@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Nid-622</title>
+<meta name="keywords" content="Aéronautique Navale Française 1939-1940,chasse,chasseur,français,campagne de france,drôle de guerre,Nieuport-Delage Nid42,Nieuport-Delage Nid52,Nieuport-Delage Nid72,Nieuport-Delage Nid62,Nieuport-Delage Nid622,Nieuport-Delage Nid629,"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Nid-622.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D371</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D510</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></font></b></font></a></div>
+          <div align="left"><a href="Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- 
+            Nieuport-Delage NiD622</i></font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">NIEUPORT-DELAGE Nid62</font></b></p>
+            <p><img src="Photos/image029.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace</font> 
+                      <font face="Arial Narrow" size="2">&agrave; aile sesquiplan 
+                      et train fixe</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1930</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">12.00 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">7.64 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3,00 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">27.41 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 1378 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1837 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">270 km/h &agrave; 5000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m en 6mn 12s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8200 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">900 kms&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Hispano Suiza 12Mb 12 cyl en V de 500ch</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="40" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="40" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">2 mitrailleuses 
+                        MAC 34 de 7.7mm dans le fuselage </font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">719 
+                Nieuport Delage de la Famille Nid 62 ont &eacute;t&eacute; construits 
+                depuis le 1er vol en 1930 . Ils se r&eacute;partissent en :</font></font></font></b> 
+              </p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b>25 Nieuport-Delage NiD 
+                  42</b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow"><font color="#990000"><font color="#000000">320 
+                  Nieuport-Delage Nid 62 C1</font></font></font> </b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow"><font color="#000000">308 
+                  </font><font color="#990000"><font color="#000000">Nieuport-Delage 
+                  Nid 622</font></font></font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">4 
+                  Nieuport-Delage NiD 72 </font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">12 
+                  Nieuport-Delage NiD 626 </font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow"><font color="#000000">50 
+                  </font><font color="#990000"><font color="#000000">Nieuport-Delage 
+                  Nid 62</font></font></font></b></font></li>
+              </ul>
+              <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 719 appareils fabriqu&eacute;s , 38 sont recens&eacute;s 
+                dans la liste ci-dessous :</font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font face="Arial Narrow" size="3"><b><font size="2">Le NiD 622 
+                descend en droite ligne du Nieuport NiD 42 dont la conception 
+                remonte &agrave; 1927. Celui-ci pr&eacute;sentait de gros d&eacute;fauts 
+                de stabilit&eacute; qui furent corrig&eacute;s en partie par une 
+                augmentation de la surface du Stabilisateur horizontal et de la 
+                d&eacute;rive. La machine est plus stable, mais les performances 
+                restent tr&egrave;s perfectibles.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">L'&eacute;tat commanda 
+                un premier lot de 25 machines en Janvier 1928.sous la d&eacute;signation 
+                de NiD 62 C1, suivi de 100 exemplaires suppl&eacute;mentaires 
+                en Octobre 1928. Bien que d&eacute;pass&eacute; par les appareils 
+                du nouveau programme C1 de 1928, 140 NiD 62 sont encore command&eacute;s 
+                pour l'Aviation Militaire (Future Arm&eacute;e de l'Air), et 50 
+                pour la future A&eacute;ronavale.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le Nid 62, malgr&eacute; 
+                les modifications, restait centr&eacute; trop arri&egrave;re, 
+                et causa plusieurs accidents. Afin de r&eacute;soudre ces probl&egrave;mes, 
+                la surface de l'aile Sup&eacute;rieure est r&eacute;duite, et 
+                un nouveau moteur plus l&eacute;ger, le Hispano suiza 12 Md fut 
+                mont&eacute; sur la cellule qui devient le NiD 622. 350 NiD 622 
+                seront command&eacute;s et livr&eacute;s entre 1931 et 1935.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Ultime version, le 
+                NiD 629 est &eacute;quip&eacute; du moteur Hispano Suiza 12 Mdsh 
+                &agrave; compresseur, ce qui ne l'emp&eacute;chait pas d'&ecirc;tre 
+                d&eacute;pass&eacute; par les appareils en service au sein de 
+                l'Arm&eacute;e de l'Air, tels que le Morane-Saulnier MS225 ou 
+                le Dewoitine D500 plus rapide de pr&egrave;s de 100 Km/h.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">D&eacute;s 1937, 
+                les 233 Nieuport-Delage NiD 62, 622 ou 629 sont peu &agrave; peu 
+                retir&eacute;s du service. 84 d'entre eux sont affect&eacute;s 
+                aux Groupes A&eacute;riens R&eacute;gionaux d'Aviation L&eacute;g&egrave;res 
+                de D&eacute;fense (GARALD), les autres &eacute;tant r&eacute;partis 
+                dans les Ecoles de chasses.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">A la mobilisation 
+                en Aout 1939, 107 Exemplaires sont encore pr&eacute;sents dans 
+                les Escadrilles R&eacute;gionales de Chasses (ERC) qui ont remplac&eacute; 
+                les GARALD. Ils sont remplac&eacute;s toutefois rapidement par 
+                des D501, puis par des monomoteurs &quot;modernes&quot;, Bloch 
+                152 ou MS406, lorsque ces ERC donnent naissance au GC. Par ailleurs, 
+                une quarantaine de machines sont encore pr&eacute;sentes en afrique 
+                du nord.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Les survivants sont 
+                d&eacute;finitivement retir&eacute;s des unit&eacute;s combattantes 
+                et ne seront utilis&eacute;s qu'en Ecoles ou comme appareils de 
+                liaison. A l'Armistice, 17 Nieuport Delage seront recens&eacute;s, 
+                et tous seront ferraill&eacute;s peu apr&egrave;s.</font></b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="73" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="4"><b><font size="3">Nid 42</font></b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-Nid42.jpg" data-fancybox-group="gallery-4" title="Nid42"><img src="thumbnails/tn_Nid42.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="73" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Premiere 
+                    version de la famille, il remporte le concours de chasse C1 
+                    de 1924. Son fuselage est monocoque en bois contreplaqu&eacute;. 
+                    Il poss&egrave;de une voilure parasol. Il est &eacute;quip&eacute; 
+                    d'un moteur Hispano-Suiza 12Hb de 500ch &agrave; refroidissement 
+                    liquide. Son armement se compose de 2 Mitrailleuses Vickers 
+                    de 7.7mm. Aux essais, il fait preuve d'une grande instabilit&eacute;, 
+                    et une petite aile inf&eacute;rieure est rajout&eacute;e pour 
+                    renforcer la voilure et augmenter la maniabilit&eacute; : 
+                    l'avion devient un Sesquiplan</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="59" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="4"><b><font size="3">Nid 52 
+                      </font></b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-Nid52.jpg" data-fancybox-group="gallery-4" title="Nid52"><img src="thumbnails/tn_Nid52.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="59" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    enti&egrave;rement m&eacute;tallique du Nid42. Sa voilure 
+                    est r&eacute;duite de 0.4m&sup2; et le stabilisateur est agrandi 
+                    : l'ensemble augmentant le volume de Stab, augmente la stabilit&eacute;. 
+                    La formule &quot;avion tout acier&quot; &eacute;tant peu appr&eacute;ci&eacute;e 
+                    en France, c'est en Espagne que e Nid52 trouvera le succ&eacute;s 
+                    commercial et &eacute;quipera les forces a&eacute;riennes 
+                    Espagnoles en 1927</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="65" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="4"><b><font size="3">Nid 72</font></b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-nid72.jpg" data-fancybox-group="gallery-4" title="Nid72"><img src="thumbnails/tn_nid72-c1_small.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="65" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    tout m&eacute;tallique tr&egrave;s proche du Nid52 qui fait 
+                    son premier vol en janvier 1928. Son rev&ecirc;tement d'aile 
+                    est en feuilles de Duralumin en remplacement de l'entoilage 
+                    classique du Nid52. L'avion s'av&egrave;re plus l&eacute;ger 
+                    de 200Kg; Son moteur est un Hispano-Suiza 12Lb de 600ch, et 
+                    son armement re&ccedil;oit deux mitrailleuses suppl&eacute;mentaires 
+                    dans les ailes</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="70" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="4"><b><font size="3">Nid 62</font></b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-Nid62.jpg" data-fancybox-group="gallery-4" title="Nid62"><img src="thumbnails/tn_nid62-c1_small.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="70" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <p><b><font face="Arial Narrow" size="2">Cette version effectue 
+                      son premier vol en Janvier 1928. Il est rest&eacute; tr&egrave;s 
+                      proche de la version d'origine Nid42. Sa construction est 
+                      &eacute;galement mixte Bois / Acier, mais ses ailes et son 
+                      empennage adoptent la dimension du Nid52. Ses d&eacute;fauts 
+                      de stabilit&eacute; ont quasiment disparu, mais il part 
+                      en vrille &agrave; plat encore trop facilement en raison 
+                      d'un centrage trop avant, les ailerons manquent d'&eacute;fficacit&eacute;, 
+                      et son train trop &eacute;troit entraine des accidents &agrave; 
+                      l'atterrissage.</font></b></p>
+                  </td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="63" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><b><font color="#000000" size="3">Nid 
+                      622</font></b></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-Nid622.jpg" data-fancybox-group="gallery-4" title="Nid622"><img src="thumbnails/tn_Nid622.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="63" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    cr&eacute;&eacute;e pour &eacute;liminer les d&eacute;fauts 
+                    du Nid62. Le dessin de la voilure est retouch&eacute; et sa 
+                    surface est r&eacute;duite de 1.69m&sup2;. </font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="62" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="4"><b><font size="3">Nid 629</font></b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/P-Nid629.jpg" data-fancybox-group="gallery-4" title="Nid629"><img src="thumbnails/tn_Nid629.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="86%" height="62" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <p><b><font face="Arial Narrow" size="2">Cette version est 
+                      bas&eacute;e sur un Nid622 &eacute;quip&eacute;e d'un compresseur 
+                      Szydlowski Planiol. Il fait ses vol d'essais en 1933 avant 
+                      d'&ecirc;tre affect&eacute; en unit&eacute; en 1935</font></b></p>
+                  </td>
+                </tr>
+              </table>
+              <p><b></b></p>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td height="226" colspan="2"> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                      _ Editions Larivi&egrave;re :</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Le Fanatique de L'Aviation : N&deg;131 - 132 - 133 - 134 
+                      - 135 - 136</b></font></i></font></font></i></font></i></b></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/FANAT%20131.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana%20131.jpg" alt="" width="90" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/FANAT%20132.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana%20132.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/FANAT%20133.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana%20133.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/FANAT%20134.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana%20134.jpg" alt="" width="96" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/FANAT%20135.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_FANA%20135.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/FANAT%20136.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_FANA%20136.jpg" alt="" width="93" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="left"><font size="3"><i><font size="3"><i><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">2) 
+                      _ Editions STRATUS : &quot;French Wings&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Nieuport Delage Nid29 &amp; Nid 62 Family</b></font></i></font></font></i></font></i></font><font color="#990000" size="2"></font></i></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/french-wings-no-2-nieuport-delage-nid-29-and-nid-62-family.jpg" data-fancybox-group="gallery-1" title="Editions STRATUS"><img src="thumbnails/tn_french-wings-no-2-nieuport-delage-nid-29-and-nid-62-family.jpg" alt="" width="90" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">3) 
+                      _ AIR MAGAZINE /</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;10 Les Chasseurs Nieuport Delage</b></font></i></font></font></i></font></i></font><font color="#990000" size="2"></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/arton101.jpg" data-fancybox-group="gallery-1" title="AIR MAGAZINE"><img src="thumbnails/tn_arton101.jpg" alt="" width="89" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/pHOTOnid72-1.jpg" data-fancybox-group="gallery-2" title="Nieuport-Delage Nid72"><img src="thumbnails/tn_pHOTOnid72-1.jpg" alt="" width="130" height="68" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/photonid62-3_small.jpg" data-fancybox-group="gallery-2" title="Nieuport-Delage Nid62"><img src="thumbnails/tn_photonid62-3_small.jpg" alt="" width="130" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Dewoitine%20622%20C1%20de%20l%27escadrille%203C3.jpg" data-fancybox-group="gallery-2" title="Nieuport-Delage Nid622"><img src="thumbnails/tn_Dewoitine%20622%20C1%20de%20l%27escadrille%203C3.jpg" alt="" width="96" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/photonid629-i.jpg" data-fancybox-group="gallery-2" title="Nieuport-Delage Nid629"><img src="thumbnails/tn_photonid629-i.jpg" alt="" width="130" height="73" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/p3vnid62-1.JPG" data-fancybox-group="gallery-5" title=""><img src="thumbnails/tn_p3vnid62-1.JPG" alt="" width="120" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

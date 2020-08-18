@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Localisation-Unites</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../../Armee%20de%20l%27Air/Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3-Big.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"><font size="4" color="#FFFFFF">Localisation Groupe 
+          de Chasse</font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><font color="#CCCCCC" size="5"><b><font size="4" face="Arial Narrow"><i><font color="#FFFFFF">Localisation 
+              des Unit&eacute;s :</font></i></font></b></font></p>
+          </div>
+        </div>
+        <div><b><font size="3" color="#FFFFFF" face="Arial Narrow"><i>Localisation 
+          par unités : </i></font></b></div>
+		  
+        <div align="left"><b><font size="3" color="#FFFF00" face="Arial Narrow"> 
+          <font color="#FFFFFF"><i>- La Chasse</i></font></font></b></div>
+		  
+        <div align="left"></div>
+          <div align="left"><b><font size="3" color="#FFFF00" face="Arial Narrow">- 
+          Le Bombardement</font></b><b><font size="3" color="#FFFF00" face="Arial Narrow"></font></b></div>
+        <div align="left"><b><font size="3" color="#FFFF00" face="Arial Narrow"> 
+          - La Reconnaissance</font></b></div>
+        <div><font color="#FFFF00"><b><font size="3" face="Arial Narrow" color="#C9C9C9">Localisation 
+          par date </font></b></font></div>
+        <div><font color="#FFFF00"><b><font size="3" face="Arial Narrow" color="#C9C9C9">Les 
+          Principaux Terrains </font></b></font></div>
+        <div align="center"> 
+          <div align="left" class="style1"> 
+		  <div>&nbsp;</div>
+            <div><font face="Arial Narrow" size="4" color="#CCCCCC"><b><a href="Victoires.htm"><font color="#C9C9C9">Bilan 
+              des Victoires</font></a> </b> </font></div>
+            <p><font face="Arial Narrow" size="4" color="#CCCCCC"><b><a href="Pertes.htm"><font color="#C9C9C9">Bilan 
+              des Pertes</font></a> </b> </font></p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+        </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"><img src="../../../../Images%20Base/Titre-Localisation-Chasse.png" width="60%"><</div>
+        
+        <div align="center">
+          <blockquote> 
+            <div align="left">
+                
+              <p><b><font face="Arial Narrow" size="3" color="#CCCCCC"> - Cliquez 
+                sur les Groupes de Chasse ci-dessous pour acc&eacute;der aux cartes 
+                des terrains occup&eacute;s pendant la Dr&ocirc;le de Guerre et 
+                la Campagne de France. Vous pourrez visualiser la chronologie 
+                des d&eacute;placements en suivant les num&eacute;ros.</font></b></p>
+              </div>
+              <div align="left">
+                
+				  
+                
+              <div align="left"><a class="fancybox-effects-c" href="GC-I-1.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-I-1.jpg"Btn-GC-I-1.jpg" alt="" border="0" width="12%" /></a>
+			   <a class="fancybox-effects-c" href="GC-II-1.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-II-1.jpg" alt="" border="0" width="12%" /></a>
+			   <a class="fancybox-effects-c" href="GC-III-1.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-III-1.jpg" alt="" border="0" width="12%" /></a>
+               <a class="fancybox-effects-c" href="GC-I-2.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-I-2.jpg" alt="" border="0" width="12%" /></a> 
+			   <a class="fancybox-effects-c" href="GC-II-2.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-II-2.jpg" alt="" border="0" width="12%" /></a>
+			   <a class="fancybox-effects-c" href="GC-III-2.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-III-2.jpg" alt="" border="0" width="12%" /></a>
+			   <a class="fancybox-effects-c" href="GC-I-3.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-I-3.jpg" alt="" border="0" width="12%" /></a>
+			   <a class="fancybox-effects-c" href="GC-II-3.jpg" data-fancybox-group="gallery-1"><img src="Btn-GC-II-3.jpg" alt="" border="0" width="12%" /></a>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+            <div align="left"></div>
+            <table border="1" align="left" width="100%">
+              <tr> 
+                <td width="10%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"> 
+                    <div><font color="#000000"><a class="fancybox-effects-c" href="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-1-1-1e.gif" data-fancybox-group="gallery-2" title="GC I/1 1ere Escadrille - Ex SPA 31"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/Tn-Insignes/tn_GC-1-1-1e.gif" alt=" border="0 border="0" width="60%"" /></a></font></div>
+                   
+                  </div>
+                </td>
+                <td width="8%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-1-1-2e.gif" data-fancybox-group="gallery-2" title="GC I/1 2eme Escadrille - Ex SPA 48"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-1-1-2e.gif" alt=" border="0 border="0" width="80%"" /></a></font></div>
+                 
+                </td>
+                <td width="12%" height="78" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-2-1ereEsc.gif" data-fancybox-group="gallery-2" title="GC I/2 1ere Escadrille - Ex SPA 03"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-2-1ereEsc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-2-2emeEsc.gif" data-fancybox-group="gallery-2" title="GC I/2 2eme Escadrille - Ex SPA 103"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-2-2emeEsc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-3-1ere-Esc.gif" data-fancybox-group="gallery-2" title="GC I/3 1ere Escadrille - Ex SPA 88"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-3-1ere-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-3-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/3 2eme Escadrille - Ex SPA 69"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-3-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-1-1-2e.gif" data-fancybox-group="gallery-2" title="GC I/4 1ere Escadrille - Ex SPA 95"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-4-1ere-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-4-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/4 2eme Escadrille - Ex SPA 153"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-4-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-5-1ere-Esc.gif" data-fancybox-group="gallery-2" title="GC I/5 1ere Escadrille - Ex SPA 67"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-5-1ere-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="78" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-5-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/5 2em Escadrille - Ex SPA 75"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-5-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-1/GC_I-1.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/1</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-2/GC_I-2.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/2</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-3/GC_I-3.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/3</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-4/GC_I-4.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/4</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-5/GC_I-5.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/5</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-6-1ere-Esc.gif" data-fancybox-group="gallery-2" title="GC I/6 1ere Escadrille - Ex SPA 96"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-6-1ere-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="8%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-6-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/6 2eme Escadrille - Ex SPA 12"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-6-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="12%" bgcolor="#CCCCCC" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-7-1ere-Esc.gif" data-fancybox-group="gallery-2" title="GC I/7 1ere Escadrille - Ex SPA 15"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-7-1ere-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-7-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/7 2eme Escadrille - Ex SPA 77"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-7-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-1-8-1e.gif" data-fancybox-group="gallery-2" title="GC I/8 1ere Escadrille - Ex 3C2"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-1-8-1e.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-1-8-2e.gif" data-fancybox-group="gallery-2" title="GC I/8 2eme Escadrille - Ex 3C3"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-1-8-2e.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-9-1ere-Esc.gif" data-fancybox-group="gallery-2" title="GC I/9 1ere Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-9-1ere-Esc.gif" alt=" border="0 border="0" width="50%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC" height="90"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-I-9-2eme-Esc.gif" data-fancybox-group="gallery-2" title="GC I/9 2eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-I-9-2eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999" height="90"> 
+                  <div align="center"><font color="#000000"></font></div>
+                  
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-6/GC_I-6.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/6</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-7/GC_I-7.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/7</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-8/GC_I-8.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/8</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-9/GC_I-9.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/9</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-1-10/GC_I-10.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC I/10</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-2-1_3e.gif" data-fancybox-group="gallery-2" title="GC II/1 3eme Escadrille - Ex SPA 94"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-2-1_3e.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="8%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-2-1_4e.gif" data-fancybox-group="gallery-2" title="GC II/1 4eme Escadrille - Ex SPA 62"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-2-1_4e.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="12%" height="22" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-2-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/2 3eme Escadrille - Ex SPA 65"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-2-3eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-2-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/2 4eme Escadrille - Ex SPA 57"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-2-4eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-3-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/3 3eme Escadrille - Ex SPA 37"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-3-3eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-3-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/3 4eme Escadrille - Ex SPA 81"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-3-4eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-4-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/4 3eme Escadrille - Ex SPA 160"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-4-3eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-4-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/4 4eme Escadrille - Ex SPA 155"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-4-4eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-5-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/5 3eme Escadrille - Ex Escadrille "La Fayette""><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-5-3eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" height="22" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-5-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/5 4eme Escadrille - Ex SPA 167"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-5-4eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-1/GC_II-1.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/1</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-2/GC_II-2.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/2</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-3/GC_II-3.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/3</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-4/GC_II-4.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/4</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-5/GC_II-5.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/5</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#999999"> 
+                  <div><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-2-6_3e.gif" data-fancybox-group="gallery-2" title="GC II/6 3eme Escadrille - Ex SPA 26"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-2-6_3e.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="8%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-2-6_4e.gif" data-fancybox-group="gallery-2" title="GC II/6 4eme Escadrille - Ex SPA 124"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-2-6_4e.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="12%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-7-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/7 3eme Escadrille - Ex SPA 73"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-7-3eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-7-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/7 4eme Escadrille - Ex SPA 78"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-7-4eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-8-3ieme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/8 3eme Escadrille - Ex 3C1"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-8-3ieme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-8-4ieme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/8 4eme Escadrille - Ex SPA 38"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-8-4ieme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-9-3ieme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/9 3eme Escadrille - Ex SPA 85"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-9-3ieme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-9-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/9 4eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-9-4eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-10-3eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/10 (Ex GARC I/561) 3eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-10-3eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-II-10-4eme-Esc.gif" data-fancybox-group="gallery-2" title="GC II/10 (Ex GARC I/561) 4eme Escadrille - Ex SPA 76"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-II-10-4eme-Esc.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-6/GC_II-6.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/6</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-7/GC_II-7.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/7</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-8/GC_II-8.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/8</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-9/GC_II-9.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/9</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-2-10/GC_II-10.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC II/10 ex GARC I/561</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+
+              <tr> 
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-1-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/1 5eme Escadrille - Ex SPA 84"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-1-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="8%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-1-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/1 6eme Escadrille - Ex SPA 93"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-1-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="12%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GCIII-2-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/2 5eme Escadrille - Ex SPA 83"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GCIII-2-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GCIII-2-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/2 6eme Escadrille - Ex SPA 100"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GCIII-2-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-3-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/3 5eme Escadrille - Ex SPA 94"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-3-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-3-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/3 6eme Escadrille - Ex SPA 62"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-3-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-4-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/4 5eme Escadrille - Ex ERC 571"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-4-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-4-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/4 6eme Escadrille - Ex ERC 573"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-4-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-5-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/5 5eme Escadrille - Ex BR 108"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-5-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-5-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/5 6eme Escadrille - Ex SPA 97"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-5-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-1/GC_III-1.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/1</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-2/GC_III-2.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/2</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-3/GC_III-3.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/3</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-4/GC_III-4.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/4</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-5/GC_III-5.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/5</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-6-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/6 5eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-6-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="8%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-6-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/6 6eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-6-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="12%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-7-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/7 5eme Escadrille - Ex SPA 152"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-7-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-7-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/7 6eme Escadrille"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-7-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-9-5eme.gif" data-fancybox-group="gallery-2" title="GC III/9 (Ex GARCI/562) 5eme Escadrille - Ex SPA 96"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-9-5eme.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#999999"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-9-6eme.gif" data-fancybox-group="gallery-2" title="GC III/9 (Ex GARC I/562) 6eme Escadrille - Ex SPA 12"><img src="Escadrilles/Insignes/Chasse/GC-III-9-6eme.gif" alt=" border="0 border="0" width="100%"" /></a></font></div>
+                  
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-10-5eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/10 (Ex GARC II/561) 5eme Escadrille - Ex ERC 3/561"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-10-5eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td width="10%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/GC-III-10-6eme-Esc.gif" data-fancybox-group="gallery-2" title="GC III/10 (Ex GARC II/561) 6eme Escadrille - Ex ERC 4/561"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/GC-III-10-6eme-Esc.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                 
+                </td>
+                <td colspan="2" bgcolor="#999999"> 
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECMJ-I-16.gif" data-fancybox-group="gallery-2" title="GC I/1 2eme Escadrille - Ex SPA48"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECMJ-I-16.gif" alt=" border="0 border="0"  width="50%"" /></a></font></div>
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-6/GC_III-6.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/6</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-7/GC_III-7.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/7</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-9/GC_III-9.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/9 ex GARC I/562</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/GC-3-10/GC_III-10.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">GC III/10 ex GARC II/561</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECMJ-1-16/GC_ECMJ-1-16.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECMJ I/16</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#CCCCCC"><font color="#000000">
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECN-I-13.gif" data-fancybox-group="gallery-2" title="ECN I/13"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECN-I-13.gif" alt=" border="0 border="0"  width="100%"" /></a></font></font></div>
+                  <div align="center"></div>
+                  </font></td>
+                <td colspan="2" height="30" bgcolor="#999999"><font color="#000000">
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECN-II-13.gif" data-fancybox-group="gallery-2" title="ECN II/13"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECN-II-13.gif" alt=" border="0 border="0"  width="50%"" /></a></font></div>
+                  <div align="center"></div>
+                  </font></td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"><font color="#000000">
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECN-III-13.gif" data-fancybox-group="gallery-2" title="ECN III/13"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECN-III-13.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  <div align="center"></div>
+                  </font></td>
+                <td colspan="2" height="30" bgcolor="#999999"><font color="#000000">
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECN-4-13.gif" data-fancybox-group="gallery-2" title="ECN IV/13"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECN-4-13.gif" alt=" border="0 border="0"  width="100%"" /></a></font></div>
+                  <div align="center"></div>
+                  </font></td>
+                <td colspan="2" bgcolor="#CCCCCC"><font color="#000000">
+                  <div align="center"></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#000000"><a class="fancybox-effects-c" href="Escadrilles/Insignes/Chasse/ECN-V-13.gif" data-fancybox-group="gallery-2" title="ECN V/13"><img src="../../../../Armee%20de%20l%27Air/Escadrilles/Insignes/Chasse/ECN-V-13.gif" alt=" border="0 border="0"  width="80%"" /></a></font></div>
+                  <div align="center"></div>
+                  </font></td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECN-1-13/GC_ECN-I-13.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECN I/13</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECN-2-13/GC_ECN-2-13.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECN II/13</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECN-3-13/GC_ECN-3-13.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECN III/13</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" height="30" bgcolor="#999999"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECN-4-13/GC_ECN-4-13.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECN IV/13</font></font></b></font></a></font></div>
+                </td>
+                <td colspan="2" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox fancybox.iframe" href="Escadrilles/Esc-Chasse/ECN-5-13/GC_ECN-5-13.htm?iframe" target="_blank"><font face="Arial Narrow"><b><font color="#0000FF"> 
+                    <font size="3">ECN V/13</font></font></b></font></a></font></div>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <div align="center"> </div>
+            <p>&nbsp;</p>
+          </blockquote>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in French</font></b></div>
+      </td>
+      <td width="48%"><a href="Chasse.htm" target="_self"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+    </tr>
+    <tr> 
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in English</font></b></div>
+      </td>
+      <td width="48%"><a href="EN-Chasse.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

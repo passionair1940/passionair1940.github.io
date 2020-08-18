@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Contenu-Site</title>
+
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,pilotes,appareils,escadrilles,chasse,bombardement,reconnaissance,pertes,contenu site,plan du site victoires,RAF,Luftwaffe,Régia Aéronautica,énigmes,campagne de france,drôle de guerre"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="Armee%20de%20l%27Air/Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="Images%20Base/1.png" width="20%" border="0"></a><a href="Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="Images%20Base/2.png" width="20%" border="0"></a><a href="Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="Images%20Base/3.png" width="20%" border="0"></a><a href="Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="Images%20Base/4.png" width="20%" border="0"></a><a href="index.htm" target="_self"><img src="Images%20Base/5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Contenu.htm"><img src="Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">    
+        <div align="center"><font size="4" color="#FFFFFF"><b>Le Contenu</b></font><font size="5" color="#CCCCCC"> 
+          </font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#FFFFFF"><i><font size="4">Contenu</font></i></font></font></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historique</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Enigmes</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Liens 
+              &agrave; d&eacute;couvrir</font></font></a></b></b></p>
+			   
+            <p align="left"><b class="Aucun"><b><a href="Librairie/Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Biblioth&egrave;que</font></font></a></b></b></p>
+          </div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" bgcolor="#000024" width="82%" height="25">
+<div align="center">
+          <div align="center"></div>
+          <blockquote> </blockquote>
+        </div>
+        <blockquote> 
+          <div align="left"> 
+            <blockquote> 
+              <div align="left"> 
+                <div><font size="3" color="#FFFFFF"><font face="Arial Narrow">Ce 
+                  site est d&eacute;di&eacute; &agrave; l'Arm&eacute;e de l'Air 
+                  Fran&ccedil;aise en 1939-40. Vous y trouverez plusieurs chapitres 
+                  qui permettront de d&eacute;crire cette Aviation Fran&ccedil;aise 
+                  si souvent d&eacute;cri&eacute;e et accus&eacute;e injustement 
+                  d'&ecirc;tre en partie responsable du d&eacute;sastre que connut 
+                  l'Arm&eacute;e Fran&ccedil;aise.</font></font></div>
+                <div></div>
+                <div><font size="3" color="#FFFFFF" face="Arial Narrow">Ce site 
+                  est compos&eacute; de 693 pages en Fran&ccedil;ais, et est int&eacute;gralement 
+                  disponible en version Anglaise. Voici le d&eacute;tail du contenu 
+                  :</font></div>
+                </div>
+            </blockquote>
+            <div align="left"></div>
+            <div align="left"> 
+              <div align="left"> 
+                <div> 
+                  <div align="center"> 
+                    <blockquote> 
+                      <div align="left"> 
+                        <div align="left"> 
+                          <div align="left"> 
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div align="left"> 
+              
+            </div>
+            <div align="left"><font color="#FFFF00" size="3"><a href="Armee%20de%20l%27Air/Page%20Accueuil%20Armee%20Air.htm"><b><i> 
+              <font face="Arial Narrow">- ARMEE DE L'AIR :</font></i></b> </a></font></div>
+            <div align="center"> 
+              <blockquote> 
+                <div align="left"> 
+                  <div><font size="4" text-indent=2% color="#CCCCCC"><b><font size="3"><a href="Armee%20de%20l%27Air/Zones-Aeriennes.htm"><font color="#FFFF00" face="Arial Narrow">- 
+                    <i>Zones A&eacute;riennes :</i></font> </a></font></b></font></div>
+                  <div><font size="3" text-indent="2%" color="#FFFFFF" face="Arial Narrow">Les 
+                    unit&eacute;s de l'Arm&eacute;e de l'Air sont r&eacute;parties 
+                    par zones g&eacute;ographiques : vous trouverez ici le d&eacute;tail 
+                    de ce d&eacute;coupage</font></div>
+                  <div><font size="3" face="Arial Narrow"><b><font color="#CCCCCC"><i><a href="Armee%20de%20l%27Air/Appareils/Accueil-Appareils.htm"><font color="#FFFF00">- 
+                    Appareils :</font></a> </i></font></b></font></div>
+                  <div> 
+                    <div><font size="3" face="Arial Narrow"><font color="#FFFFFF">78 
+                      des principaux avions Fran&ccedil;ais sont d&eacute;crits 
+                      ici : caract&eacute;ristiques, historique, photos, liste 
+                      des appareils,...</font></font></div>
+                    <div><font size="3" face="Arial Narrow"><b><font color="#CCCCCC"><i><a href="Armee%20de%20l%27Air/Escadrilles/Accueil-Escadrilles.htm"><font color="#FFFF00">- 
+                      Escadrilles :</font></a> </i></font></b></font></div>
+                    <div> 
+                      <div><font size="3" face="Arial Narrow"><font color="#FFFFFF">144 
+                        Escadrilles </font><font size="3" face="Arial Narrow" color="#FFFFFF">de 
+                        toutes armes</font> <font color="#FFFFFF">sont recens&eacute;es, 
+                        y compris les Patrouilles de D&eacute;fense. Vous trouverez 
+                        &eacute;galement une Rubrique sur les Insignes d'Escadrilles</font></font></div>
+                      <div><font size="3" face="Arial Narrow"><b><i><font color="#CCCCCC"><a href="Armee%20de%20l%27Air/Pilotes/Accueil-Pilotes.htm"><font color="#FFFF00">- 
+                        Pilotes : </font></a></font></i></b></font></div>
+                      <div> 
+                        <div>
+                          <div><font size="3" face="Arial Narrow"><font color="#FFFFFF">A 
+                            ce jour, 3223 pilotes et membres d'&eacute;quipages 
+                            sont pr&eacute;sents dans mes listes. Ils sont class&eacute;s 
+                            par ordre alphab&eacute;tique et par Arme. La Liste 
+                            est compl&eacute;t&eacute;e r&eacute;guli&egrave;rement 
+                            mais ne sera probablement jamais exhaustive...</font></font></div>
+                          <div><font face="Arial Narrow" size="3" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/Personnel-non-Navigant.htm"><b><font color="#FFFF00"><i>- 
+                            Personnel Non-Navigant :</i></font></b></a></font></div>
+                          <div><font face="Arial Narrow" size="3" color="#FFFFFF">Cette 
+                            rubrique ajout&eacute;e en Juin 2020, recense les 
+                            personnels non-navigants des Escadrilles : M&eacute;caniciens 
+                            bien s&ucirc;r, mais aussi personnel administratif, 
+                            logistique, sant&eacute;,... Combattants de l'ombre 
+                            dont on parle si peu, ils ont pourtant bien leur place 
+                            sur ce site. Ils ont jou&eacute; un r&ocirc;le primordial 
+                            pour permettre aux Pilotes et Equipages d'accomplir 
+                            leurs missions</font></div>
+                        </div>
+                        <div><font size="3" face="Arial Narrow"><b><i><font color="#CCCCCC"><a href="Armee%20de%20l%27Air/Accessoires.htm"><font color="#FFFF00">- 
+                          Equipements Pilotes</font></a></font></i></b></font></div>
+                        <div> 
+                          <div><font size="3" face="Arial Narrow"><font color="#FFFFFF">Dans 
+                            ce chapitre, sont pr&eacute;sent&eacute;s quelques 
+                            uniformes, des &eacute;quipements, casques, parachutes, 
+                            et les grades en vigueur dans l'Arm&eacute;e de l'Air 
+                            en 1939-1940 </font></font></div>
+                          <div><font size="3" face="Arial Narrow"><b><i><font color="#000000"><a href="Armee%20de%20l%27Air/Citations/Accueil-Citations.htm"><font color="#FFFF00">- 
+                            Citations : </font></a></font></i></b></font></div>
+                          <div> 
+                            <div><font size="3" face="Arial Narrow"><font color="#FFFFFF">Vous 
+                              trouverez ici, les 2447 citations parues au Journal 
+                              Officiel pour des faits d'armes entre le 1 Septembre 
+                              1939 et l'Armistice de Juin 1940. Elles sont class&eacute;es 
+                              par Armes et par ordre alphab&eacute;tiques.</font></font></div>
+                            <p><font size="3" color="#FFFFFF"><font face="Arial Narrow">Les 
+                              Rubriques &quot;Marquages&quot; et &quot;Organisation&quot; 
+                              restent &agrave; construire</font></font></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div align="left"><font size="4" color="#CCCCCC"><b><i><font face="Arial Narrow" color="#FFFFFF"><font size="3"><a href="Forces%20en%20presences/Page%20Forces%20Presence.htm">- 
+              FORCES EN PRESENCES :</a></font></font><a href="Forces%20en%20presences/Page%20Forces%20Presence.htm"><font face="Arial Narrow"><font color="#FFFF00" size="3"> 
+              </font></font></a></i></b></font></div>
+            <div align="center"> 
+              <blockquote> 
+                <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><font size="3" color="#FFFFFF">Vous 
+                  trouverez ici un aper&ccedil;u des appareils utilis&eacute;s 
+                  par les diff&eacute;rents b&eacute;llig&eacute;rants qu'ils 
+                  soient de l'Axe (Allemagne et Italie) ou Alli&eacute;s (Grande-Bretagne, 
+                  Belgique, Hollande) : 26 appareils &eacute;trangers sont pr&eacute;sent&eacute;s 
+                  dans ces pages.</font></font></div>
+              </blockquote>
+            </div>
+            <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3"><a href="Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm">- 
+              CAMPAGNE DE FRANCE :</a></font></i></b></font></div>
+            <div align="center"> 
+              <blockquote> 
+                <div align="left"> 
+                  <div> 
+                    <div><font face="Arial Narrow"><b><font size="3" color="#CCCCCC"><i><a href="Campagne%20de%20France/Localisation-des-Unites.htm"><font color="#FFFF00">- 
+                      Localisation des Unit&eacute;s : </font></a></i></font></b></font></div>
+                    <div> 
+                      <div><font face="Arial Narrow" size="3"><font color="#FFFFFF">J'ai 
+                        voulu retracer ici, les diff&eacute;rentes implantations 
+                        des 144 Escadrilles de l'Arm&eacute;e de l'Air. Vous pouvez 
+                        voir, au fil du temps, le d&eacute;placement des unit&eacute;s 
+                        repouss&eacute;es vers le Sud, jusqu'&agrave; l'Armistice.</font></font></div>
+                      <div><font face="Arial Narrow" size="3"><b><font color="#CCCCCC"><a href="Campagne%20de%20France/Victoires.htm"><font color="#FFFF00"><i>- 
+                        Bilan des Victoires : </i></font></a></font></b></font></div>
+                    </div>
+                  </div>
+                  <div> 
+                    <div> 
+                      <div><font face="Arial Narrow" size="3"><font color="#FFFFFF">Vous 
+                        trouverez ici, le bilan des victoires Fran&ccedil;aises. 
+                        Ce bilan est toujours discut&eacute;, puisque, suivant 
+                        les sources, les chiffres oscillent entre 350 et 1000 
+                        victoires... Pour ma part, j'ai recens&eacute; 687.5 Victoires 
+                        s&ucirc;res et 273 probables</font></font></div>
+                      <div><font face="Arial Narrow" size="3"><b><font color="#CCCCCC"><i><a href="Campagne%20de%20France/Pertes.htm"><font color="#FFFF00">- 
+                        Bilan des Pertes : </font></a></i></font></b></font></div>
+                    </div>
+                    <div> 
+                      <div>
+                        <p><font size="3" color="#CCCCCC" face="Arial Narrow"><font color="#FFFFFF">J'ai 
+                          dress&eacute; dans ces pages, un bilan des pertes des 
+                          unit&eacute;s fran&ccedil;aises : Tu&eacute;s, bless&eacute;s 
+                          ou prisonniers afin d'illustrer si besoin le lourd tribut 
+                          pay&eacute; par les &eacute;quipages Fran&ccedil;ais</font></font></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div> 
+                    
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3"><a href="Constructeurs/Page%20Accueil%20Constructeurs.htm">- 
+              AVIONNEURS :</a></font></i> </b></font></div>
+            <div align="center"> 
+              <blockquote> 
+                <div align="left"><font face="Arial Narrow"><font size="3" color="#FFFFFF">Seront 
+                  ici bri&egrave;vement pr&eacute;sent&eacute;s, les constructeurs 
+                  Fran&ccedil;ais d'Avions, qui ne sauront jamais vraiment r&eacute;pondre 
+                  aux besoins de l'Aviation Fran&ccedil;aise en pleine mutation. 
+                  Ceux-ci seront en effet d&eacute;stabilis&eacute;s par la multitude 
+                  de plans de r&eacute;armement et par les nationalisations r&eacute;centes. 
+                  Ils fourniront cependant quelques belles r&eacute;alisations, 
+                  mais les &eacute;v&egrave;nements les emp&egrave;cheront malheureusement 
+                  de d&eacute;montrer leurs qualit&eacute;s.</font></font></div>
+              </blockquote>
+            </div>
+            <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3"><a href="index.htm">- 
+              ACCUEIL :</a></font></i></b></font></div>
+            <div align="center"> 
+              <blockquote> 
+                <div align="left">
+                  <div><font face="Arial Narrow"><b><font size="2" color="#CCCCCC"><a href="FR-Contenu.htm"><font color="#FFFF00"><i><font size="3">- 
+                    Contenu :</font></i></font></a></font></b></font></div>
+                  <div>
+                    <div><font face="Arial Narrow" size="3" color="#FFFFFF">La 
+                      page qui devrait permettre de ne pas trop se perdre dans 
+                      les 695 pages du Site...</font></div>
+                  </div>
+                  <div><font face="Arial Narrow" size="3"><b><font color="#CCCCCC"><a href="FR-Historique.htm"><i><font color="#FFFF00">- 
+                    Historique :</font></i></a></font></b></font></div>
+                  <div>
+                    <div><font face="Arial Narrow" size="3" color="#FFFFFF">Je 
+                      relate ici bri&egrave;vement comment je suis pass&eacute; 
+                      des cahiers d'&eacute;coliers, il y a ... bien longtemps 
+                      au Site Internet d'aujourd'hui.</font></div>
+                  </div>
+                  <div><font face="Arial Narrow" size="3"><b><font color="#CCCCCC"><a href="FR-Enigmes.htm"><i><font color="#FFFF00">- 
+                    Enigmes : </font></i></a></font></b></font></div>
+                  <div>
+                    <div><font face="Arial Narrow" size="3"><font color="#FFFFFF">Vous 
+                      trouverez ici une rubrique qui regroupe quelque unes des 
+                      anomalies relev&eacute;es au cours de la cr&eacute;ation 
+                      du site. On peut par exemple y trouver un appareil abbattu 
+                      un jour et qui apparait dans les registres d'une autre unit&eacute; 
+                      quelques jours plus tard... L&agrave;, votre aide peut &ecirc;tre 
+                      pr&eacute;cieuse et n'h&eacute;sitez donc pas &agrave; me 
+                      contacter pour m'aider &agrave; &eacute;lucider ces myst&egrave;res. 
+                      </font></font></div>
+                  </div>
+                  <div><font face="Arial Narrow" size="3"><b><font color="#CCCCCC"><a href="FR-Liens.htm"><i><font color="#FFFF00">- 
+                    Liens &agrave; d&eacute;couvrir :</font></i></a></font></b></font></div>
+                  <div>
+                    <div><font face="Arial Narrow" size="3" color="#FFFFFF">Quelques 
+                      liens interessants sur la p&eacute;riode 1939 / 1940. A 
+                      consommer sans mod&eacute;ration.</font></div>
+                  </div>
+                  <div>
+                    <div><font size="3"><b><font face="Arial Narrow" color="#CCCCCC"><a href="Librairie/Accueil-Librairie.htm"><i><font color="#FFFF00">- 
+                      Biblioth&egrave;que : </font></i></a></font></b></font></div>
+                    <div>
+                      <p><font face="Arial Narrow" size="3" color="#FFFFFF">Vous 
+                        trouverez ici les prinicpales publications sur l'Aviation 
+                        Fran&ccedil;aise en 1939-40 : Des revues, des livres, 
+                        des Bandes Dessin&eacute;es et des publicit&eacute;s d'&eacute;poques. 
+                        Cette rubrique est amen&eacute;e &agrave; &ecirc;tre compl&eacute;t&eacute;e 
+                        au fil du temps.</font></p>
+                    </div>
+                  </div>
+                  <div><font face="Arial Narrow" size="3" color="#FFFFFF">La rubrique 
+                    &quot;Sources&quot; est &agrave; construire.</font></div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </blockquote>
+        <blockquote> 
+          <div align="left"></div>
+        </blockquote>
+        <div align="center"> 
+          <blockquote> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="Aeronavale-1939-40/index.htm" target="_self"><img src="Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>ARADO-196</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,appareils,luftwaffe,chasse,chasseur,blitzkrieg,1939,1940,,campagne de france,drôle de guerre,messerschmitt ME109,BF109E,BF109D">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../../Aeronavale/Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1.png" width="20%" border="0"></a><a href="../../../Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2-Big.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"> 
+		<table width="100%" border="0">
+          <tr> 
+            <td width="16%"><a href="EN-ARADO-196.htm" target="_self"><img src="../../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+            </td>
+          </tr>
+        </table>
+		<hr width="100%"> 
+          <div align="center"><a href="../../../Page%20Forces%20Presence.htm"><font size="4" color="#FFFFFF">Forces 
+            De L'Axe</font></a></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <div align="left" class="style1"> 
+              <p align="center"><font color="#FFFFFF" size="5"><b><font size="4">ALLEMAGNE</font></b></font></p>
+              <p align="center"><img src="../../../Allemagne.png" width="20%"></p>
+            </div>
+            <div align="left" class="unnamed1"> 
+              <div align="left"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Chasseurs</font></b></div>
+            </div>
+            
+            <div align="left"><font color="#FFFFFF"><font size="3"><a href="../ME109/ME109.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Messerschmitt Me109</font></a></font><b><i> </i></b></font></div>
+            <div align="left"><font size="3"><a href="../ME110/ME110.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Messerschmitt Me110</font></a></font> </div>
+            <p> 
+            <div align="left" class="unnamed1"> 
+              <div align="left"><font color="#FFFFFF"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Bombardiers</font></b></font></div>
+            </div>
+             
+            <div align="left"><font size="3"><a href="../HEINKEL111/He111.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Heinkel He111</font></a></font> </div>
+            <div align="left"><font size="3"><a href="../DO17/Do17.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Dornier Do17</font></a></font> </div>
+            <div align="left"><font size="3"><a href="../DO215/Do215.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Dornier Do215</font></a></font> </div>
+            <div align="left"><font size="3"><a href="../JU87/Ju87.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"> 
+              - Junker Ju87</font></a></font> </div>
+            <div align="left"><font size="3"><a href="../JU88/JU88.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Junker Ju88</font></a></font> </div>
+            <p>
+			<div align="left" class="unnamed1"> 
+              <div align="left"><font color="#FFFFFF"><b><font face="Arial Narrow" size="4"><i>Hydravions</i></font></b></font></div>
+            </div>
+			 
+            <div align="left"><font size="3"><a href="../ARADO196/ARADO-196.htm" target="_self"><font face="Arial Narrow" color="#FFFFFF"><i><b>- 
+              Arado Ar196</b></i></font></a></font> </div>
+            <div align="left"><font size="3"><a href="../DO24/DO24.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Dornier Do24</font></a></font> </div>
+            <div align="left"><font size="3"><a href="../HEINKEL115/HE115.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Heinkel He115</font></a></font> </div>
+            <p>  
+            <div align="left" class="unnamed1"> 
+              <div align="left"><font color="#FFFFFF"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Observation</font></b></font></div>
+            </div>
+            
+            <div align="left"><font size="3"><a href="../HENSCHEL126/He126.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Henschel He126</font></a></font> </div>
+            <p> 
+            <div align="left" class="unnamed1"> 
+              <div align="left"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Transport</font></b></div>
+            </div>
+             
+            <div align="left"><font size="3"><a href="../JU52/JU52.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Junker Ju52</font></a></font> </div>
+            <p align="center">&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <p><b><font size="20%" color="#660000">ARADO Ar196</font></b></p>
+            
+          <p><img src="Photos/Arado-196.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="90%" bgcolor="#FFFFFF" align="center" height="275" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i><b> (A-3)</b></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Hydravion 
+                    de Reconnaissance</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Et&eacute; 
+                    1937 </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="2" face="Arial Narrow">12.47 
+                    m </font></div>
+                </td>
+                <td width="194" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">11.00 
+                    m </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">4.42 
+                    m </font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">28.40 
+                    m&sup2; </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids &agrave; Vide</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2990 
+                    kg </font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">3730 
+                    kg </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></font></div>
+                </td>
+                <td width="194" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">310 km/h 
+                    &agrave; 4000 m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">300 m 
+                    / min</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>plafond</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">7020 
+                    m </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1072 
+                    kms </font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2 Hommes</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="31" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Moteur 
+                    BMW 132-K &agrave; 9 cylindres en &eacute;toile de 960 ch 
+                    au d&eacute;collage</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="47" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                </td>
+                <td colspan="3" height="47" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div><font size="2" face="Arial Narrow">2 Canons MG FF de 20mm 
+                      dans les ailes.</font></div>
+                    <div><font size="2" face="Arial Narrow">1 mitrailleuse MG 
+                      17 de 7.92mm fixe &agrave; l'avant droit du fuselage. </font></div>
+                    <div>
+                      <div><font size="2" face="Arial Narrow">2 mitrailleuses MG 
+                        15 jumel&eacute;es au poste arri&egrave;re.</font></div>
+                      <div><font face="Arial Narrow" size="2">2 Bombes de 50kg sous 
+                        les ailes</font></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><br>
+              <font size="2" face="Arial Narrow"><b>La Marine Allemande lance 
+              en 1936, un concours pour la fourniture d'un hydravion catapultable 
+              destin&eacute; &agrave; remplacer les vieux biplans Heinkel He 60 
+              embarqu&eacute;s &agrave; bord des navires de lignes Allemands La 
+              firme Arado est en concurrence avec Focvke-Wulf. Cette derni&egrave;re 
+              choisi de conserver la formule biplan quelque peu d&eacute;mod&eacute;e, 
+              alors qu'Arado propose un appareil aux lignes modernes. C'est ce 
+              dernier qui est retenu par les services officiels. Le nouvel appareil 
+              est mis en service un mois avant le d&eacute;but du conflit.</b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>L'Arado Ar196 se pr&eacute;sente 
+              comme un hydravion monoplan &agrave; ailes basses. Construit autour 
+              d'une structure m&eacute;tallique rev&ecirc;tue de toile ou d'Aluminium, 
+              il est &eacute;quip&eacute; de deux grands flotteurs qui abritaient 
+              les r&eacute;servoirs de carburant et des &eacute;quipements de 
+              s&eacute;curit&eacute;. L'armement ce compose d'une mitrailleuse 
+              d&eacute;fensive MG 17 de 7,92 mm mont&eacute;e au poste arri&egrave;re 
+              et d'une autre MG17 implant&eacute;e en chasse en partie avant du 
+              fuselage. Il peut emporter 2 bombes de 50 kgs sous les ailes.Les 
+              4 premiers prototypes, &eacute;quip&eacute;s de moteur radial BMW 
+              132Dc de 880 ch., seront test&eacute;s en 1938. La production en 
+              s&eacute;rie est lanc&eacute;e &agrave; Warnem&uuml;nde, pr&egrave;s 
+              de la mer Baltique, et la premi&egrave;re version de s&eacute;rie, 
+              le Arado Ar196 A-1 entre en service en Juillet 1939. Celle-ci est 
+              &eacute;quip&eacute;e d'un moteur plus puissant BMW 132K</b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>Les premiers exemplaires 
+              seront embarqu&eacute;s &agrave; bord des cuirass&eacute;s de poche 
+              Deutschland et Graf von Spee juste avant que ces navires ne fassent 
+              route vers leurs futures bases de Guerre. 18 autres Arado Ar196 
+              &eacute;quiperont notamment les croiseurs Lourds Scharnhorst et 
+              Gneisenau, et le cuirass&eacute; de poche Admiral Scheer. Au total, 
+              ce seront 35 Arado Ar 196 qui seront fabriqu&eacute;s en 1939.</b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>Ces appareils permirent aux 
+              Croiseur Scharnorst, Gneisenau et Deutschland de rep&eacute;rer 
+              et de d&eacute;truire de nombreux navires marchands alli&eacute;s. 
+              Par contre, lors de combat contre d'autres navire de guerre, l'utilisation 
+              de ces hydravions est d&eacute;licate : il est en effet tr&egrave;s 
+              difficile de remonter les appareils &agrave; bord avec une grue 
+              sous le feu de l'ennemi. Le Bismark les utilisa lors de son dernier 
+              combat, pour tenter d'&eacute;loigner les Catalina Alli&eacute;s 
+              charg&eacute;s de rep&eacute;rer le navire.<br>
+              </b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>L'Arado Ar 196 fut &eacute;galement 
+              utilis&eacute;, d&egrave;s 1940, dans les unit&eacute;s c&ocirc;ti&egrave;res 
+              pour la surveillance c&ocirc;ti&egrave;re. L'Arado Ar196 A-3 apparu 
+              au printemps 1941 voit son 'armement s&eacute;rieusement renforc&eacute; 
+              : il re&ccedil;oit maintenant un canon MG FF de 20mm dans chaque 
+              aile, </b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>Ces appareils, notamment 
+              utilis&eacute;s &agrave; partir des base de la c&ocirc;te Atlantique 
+              occup&eacute;e, prot&eacute;geront un temps les bases de sous-marins, 
+              mais assureront aussi des missions de surveillance maritime, de 
+              protection de convoi ou d'attaque de sous-marin &agrave; partir 
+              des bases en M&eacute;dit&eacute;rrann&eacute;e. </b></font></p>
+            <p><font size="2" face="Arial Narrow"><b> L'autre version op&eacute;rationnelle 
+              recens&eacute;e est l'Arado Ar196 A-5 qui ne diff&eacute;rait simplement 
+              du A-3 que par son &eacute;quipement interne. Cette version fut 
+              notamment fabriqu&eacute;e par la firme N&eacute;erlandaise, Fokker, 
+              pendant la p&eacute;riode 1943-1944 (70 appareils). Environ 20 autres 
+              exemplaires seront &eacute;galement construits en &agrave; Saint-Nazaire, 
+              France, dans les ateliers de la SNCAO (Soci&eacute;t&eacute; Nationale 
+              de Constructions A&eacute;ronautiques de l'Ouest) </b></font></p>
+            <p><font size="2" face="Arial Narrow"><b>La soci&eacute;t&eacute; 
+              Arado fabriqua environ 400 appareils, majoritairement dans la version 
+              A-3</b></font></p>
+          </div>
+          <blockquote>
+<blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <p align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></p>
+            <div align="left"> 
+              
+            <p> <a class="fancybox-effects-c" href="Photos/Arado-196-cockpit.jpg" data-fancybox-group="gallery-2" title="Pilote d'un Arado Ar196 vu depuis le poste du miitrailleur"><img alt="" width="166" height="126" border="0" src="thumbnail/tn_Arado-196-cockpit.jpg" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Arado-AR196-ailes-repliees.jpg" data-fancybox-group="gallery-2" title="Arado Ar196 avec les Ailes repliées"><img src="thumbnail/tn_Arado-AR196-ailes-repliees.jpg" alt="" width="202" height="126" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Arado-Ar196-sur-catapulte.jpg" data-fancybox-group="gallery-2" title="Un Arado Ar196 sur sa Catapulte"><img src="thumbnail/tn_Arado-Ar196-sur-catapulte.jpg" alt="" width="189" height="126" border="0" /></a> 
+            </p>
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center">
+          <p><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+          </p>
+          </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

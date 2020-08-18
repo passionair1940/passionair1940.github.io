@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Magazine-Fana-Aviation</title>
+<META name="KEYWORDS" content="French Air force 1939-1940,ICARE, Fanatique de l'Aviation, Air-Magazine, Magazine Avions, Story of Pilots, Story of squadrons,Story of Aircrafts,Aéro-Journal, Aeronautical publicities, Comics 1939-40">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../Armee de l'Air/EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../Images%20Base/EN-1.png" width="20%" border="0"></a><a href="../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../EN-index.htm" target="_self"><img src="../../Images%20Base/EN-5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="Revue-Fana-Aviation.htm"><img src="../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center">
+          <div align="center">
+            <div align="center"><font size="4" color="#FFFFFF"><b>Library</b></font></div>
+            <div align="center"> 
+              <div align="center"></div>
+              <hr width="100%">
+              <div align="left" class="style1"> 
+                <p align="left"><b class="Aucun"><b><a href="../../EN-Contenu.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Content</font></font></a></b></b> 
+                </p>
+                <p align="left"><b class="Aucun"><b><a href="../../EN-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+                </p>
+                <p align="left"><b class="Aucun"><b><a href="../../EN-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historical</font></font></a></b></b></p>
+                <p align="left"><b class="Aucun"><b><a href="../../EN-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Enigmas</font></font></a></b></b> 
+                </p>
+                <p align="left"><b class="Aucun"><b><a href="../../EN-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Links 
+                  to discover</font></font></a></b></b></p>
+                <p align="left"><b class="Aucun"><b><a href="../EN-Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><i>Library : </i></font></font></a></b></b></p>
+				<div align="left"><a href="../Divers-Generalites/EN-Livres-Generalites.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                General books Air Force</b></font></a></div>
+                <div align="left"><a href="../Histoire-Avions/EN-Livres-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Stories of Aircrafts</font></b></font></a></div>
+                <div align="left"><a href="../Histoires-Escadrilles/EN-Livres-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Stories of Squadrons</font></b></font></a></div>
+                <div align="left"><a href="../Recits-Pilotes/EN-Recits-Pilotes.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Stories of Crew</font></b></font></a></div>
+                <div align="left"><a href="../Revue-Aero-Journal-V1/EN-Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Magazine "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+                <div align="center"><font color="#FFFFFF"><a href="../Revue-Aero-Journal-V1/EN-Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">1st 
+                  Serie</font></b></font></a></font></div>
+                <div align="left"><a href="../Revue-Aero-Journal-V2/EN-Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Magazine &quot;A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+                <div align="center"><a href="../Revue-Aero-Journal-V2/EN-Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">2nd 
+                  Serie</font></b></font></a></div>
+                <div align="left"><a href="../Revue-Aero-Journal-V3/EN-Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Magazine "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+                <div align="center"><a href="../Revue-Aero-Journal-V3/EN-Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">3</font><font color="#FFFF00">rd 
+                  Serie</font></b></font></a></div>
+                <div align="left"><a href="../Revue-Air-Magazine/EN-Revue-Air-Magazine.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Magazine "Air-Magazine"</font></b></font></a></div>
+                <div align="left"><a href="../Revue-Avions/EN-Revue-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                  Magazine "Avions"</font></b></font></a> 
+                  <div align="left"><a href="EN-Revue-Fana-Aviation.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i><font color="#FFFFFF">- 
+                    Magazine "Fana Aviation"</font></i> </font></b></font></a> 
+                    <div align="left"><a href="../Revue-Icare/EN-Revue-Icare.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                      Magazine "Icare" </font></b></font></a></div>
+					  
+                    <div align="left"><a href="../Bandes-Dessinees/EN-Bandes-Dessinees.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                      Comics 1939-40</font></b></font></a></div>
+					  <div align="left"><a href="../Publicite-Avions/EN-Publicites.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Aeronautical Publicities</font></b></font></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+          <div align="center"><div align="left" class="style1"></div>
+          </div>
+        </div>
+        <div align="center"><div align="left" class="style1"></div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" bgcolor="#000024" width="82%" height="25"> 
+        <div align="center"><img src="../../Images%20Base/EN-titre-Fana.png" width="60%"> 
+        </div>
+        <div align="center"> 
+          <div align="center"></div>
+        </div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left"> 
+              <div><font color="#FFFFFF"><b>This page is common to the French 
+                Air Force and Naval Aviation. Items specific to the latter are 
+                blue. </b></font></div>
+              <div><b><font color="#FFFFFF">To return to the part of the site 
+                dedicated to the Naval Aviation, click on the cockade at the top 
+                right of the page.</font></b></div>
+            </div>
+            <div align="left"><font color="#FFFFFF"><b>In the list below, numbers 
+              containing articles from 1939 - 1940 :</b></font><font color="#FFFFFF"><b></b></font></div>
+            <div align="left"><font color="#FFFFFF"><b>-</b></font></div>
+            <table width="100%%" border="1">
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td width="8%"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">Number</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font face="Arial Narrow" size="3" color="#000000"><b>Date</b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">Tittle 
+                    of articles</font></b></font></div>
+                </td>
+                <td colspan="6"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">C</font><font face="Arial Narrow">overs 
+                    </font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>Special 
+                    Edition N&deg;7</b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">December 
+                    1987</font></b></font></div>
+                </td>
+                <td width="48%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">The 
+                  Air Force 1939-40 - The Honor of the Vanquished</font></b></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/HS-7.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_HS-7.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>Special 
+                    Edition N&deg;11</b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">November 
+                    1989 </font></b></font></div>
+                </td>
+                <td width="48%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">The 
+                  Guardians of the Sky of the Empire - The Air Force of Petain</font></b></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/HS-11.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_HS-11.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>Special 
+                    Edition N&deg;34</b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">May 
+                    2007</font></b></font></div>
+                </td>
+                <td width="48%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Curtiss 
+                  H75 in Combat</font></b></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/HS-34.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_HS-34.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>Special 
+                    Edition N&deg;39</b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font color="#FFFFFF"><b></b></font></div>
+                </td>
+                <td width="48%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">From 
+                  Sacrifice to Victory - War Memories of an Aviator (1939 - 1945)</font></b></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/HS-39.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_HS-39.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="71" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">3 
+                    - 4</font></b></font></div>
+                </td>
+                <td width="8%" height="71"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    October to November 1969</font></b></font></div>
+                </td>
+                <td width="48%" height="71"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">the 
+                      Morane MS225 : </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N°3 
+                      : The Fighting needed overeating when the MS225 was born</font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N°4 
+                      : By navalisation of the MS225, one obtains the MS226</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                  </div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Pierre LEVAYSTRE</font></div>
+                </td>
+                <td width="6%" height="71"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-3.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-3.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="71"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-4.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-4.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="71" colspan="4">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="66" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">8 
+                    to 11</font></b></font></div>
+                </td>
+                <td width="8%" height="66"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    February to May 1970</font></b></font></div>
+                </td>
+                <td width="48%" height="66"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The</font><font color="#FFFFFF" size="2" face="Arial Narrow"> 
+                    Bloch 150 to 157</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Fighters 
+                    who were not really given their chance</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">1st 
+                    to 4th Part </font></b></div>
+                </td>
+                <td width="6%" height="66"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-8.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-8.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="66"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-9.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-9.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="66"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-10.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-10.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="66" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-11.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-11.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="66" >&nbsp;</td>
+                <td height="66" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">12</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>June 
+                    1970</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div><font color="#000000"><b><font size="2" face="Arial Narrow">The 
+                    Fighter Potez 452 / 453</font></b></font></div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    ROUX Robert</font></div>
+                </td>
+                <td width="6%" height="70"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-12.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-12.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5" height="70">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="63" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">14 
+                    to 16 </font></b></font></div>
+                </td>
+                <td width="8%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    September to November 1970</font></b></font></div>
+                </td>
+                <td width="48%" height="63"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    lineage of Bloch 170/178 - In service from 1940 to 1953 </font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">1st 
+                    to 3rd Part </font></b></div>
+                  <div></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-14.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-14.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-15.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-15.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-16.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-16.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="63" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="62" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">19 
+                    to 22</font></b></font></div>
+                </td>
+                <td width="8%" height="62"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    February to May 1971</font></b></font></div>
+                </td>
+                <td width="48%" height="62"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow"> 
+                    Curtiss H75 of the air force</font></b></div>
+                  <div><b></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">1st 
+                    to 4th Part </font></b></div>
+                </td>
+                <td width="6%" height="62"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-19.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-19.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="62"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-20.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-20.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="62"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-21.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-21.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="62" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-22.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-22.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="2" height="62" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="60" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">27 
+                    - 28</font></b></font></div>
+                </td>
+                <td width="8%" height="60"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    October to November 1971</font></b></font></div>
+                </td>
+                <td width="48%" height="60"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Fighters 
+                      Loire 40/46 - 1st and 2nd Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                      Michel MARRAND</font></div>
+                  </div>
+                  <font face="Arial Narrow" size="2" color="#FFFFFF"></font></td>
+                <td width="6%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-27.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-27.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-28.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-28.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4" height="60">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="69" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">37 
+                    to 42 </font></b></font></div>
+                </td>
+                <td width="8%" height="69"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    October 1972 to March 1973</font></b></font></div>
+                </td>
+                <td width="48%" height="69"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    Amiot 340 - 350 - 370</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Jean CUMEL</font></div>
+                </td>
+                <td width="6%" height="69"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-37.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-37.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="69"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-38.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-38.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="69"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-39.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-39.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="69" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-40.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-40.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="69" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-41.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-41.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="69" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-42.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-42.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="8%" height="60" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">45 
+                    &agrave; 47</font></b></font></div>
+                </td>
+                <td width="8%" height="60" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    June to August 1973</b></font></div>
+                </td>
+                <td width="48%" height="60" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">The 
+                      Lat&eacute;co&egrave;re 298 Fighter Seaplane</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 3rd Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    CUNEL Jean / LEYVASTRE Pierre</font></div>
+                </td>
+                <td width="6%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-45.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-45.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-46.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-46.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-47.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-47.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="60" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">53 
+                    to 57</font></b></font></div>
+                </td>
+                <td width="8%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    March to July 1974</font></b></font></div>
+                </td>
+                <td width="48%" height="61"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    lineage of ANF Mureaux 110</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">1st 
+                    to 5th Part </font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jean CUMEL / Pierre LEYVASTRE</font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-53.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-53.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-54.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-54.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-55.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-55.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-56.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-56.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-57.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-57.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="63" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">98 
+                    to 100</font></b></font></div>
+                </td>
+                <td width="8%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    January to March 1978</font></b></font></div>
+                </td>
+                <td width="48%" height="63"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Caudrons 
+                    RENAULT training - Aircrafts for trainees fighter Pilots</font></b></div>
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                    - 1st to 3rd Part</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Edouard MIHALY</font></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-98.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-98.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-99.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-99.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-100.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-100.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="63" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td rowspan="2" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg" width="8%"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">100 
+                    to 110</font></b></font></div>
+                </td>
+                <td rowspan="2" width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    August 1978 to January 1979</font></b></font></div>
+                </td>
+                <td rowspan="2" width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    Epic of Morane 406 </font></b><font color="#FFFFFF" size="2" face="Arial Narrow"><i>From 
+                    Gaston BOTQUIN</i></font></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°100-101: 
+                    The MS405 was the best fighter of the world in 1937</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°102: 
+                    Industrial target 1000 aircrafts</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°103: 
+                    A good Fighter for the War Funny</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°104: 
+                    May-June 1940 : the failure of the 406</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°105: 
+                    Powerless in metropolis, the 406 defends the colonies</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°106: 
+                    These deserters on MS406 were the first fighters of free France</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°107: 
+                    Bought or captured, the 406 goes through the war in strange 
+                    colors</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°108: 
+                    In the sky of Finland, the 406 has its last hour of glory</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°109: 
+                    too late, the builder tries to give a second wind to his 406</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">N°110: 
+                    Camouflage and mark of MS406</font></b></div>
+                </td>
+                <td width="6%" height="79"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-100.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-100.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="79"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-101.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-101.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="79"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-102.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-102.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="79" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-103.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-103.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="79" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-104.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-104.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="79" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-105.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-105.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="6%" height="80"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-106.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-106.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="80"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-107.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-107.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="80"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-108.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-108.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="80" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-109.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-109.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="80" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-110.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-110.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="80" > </td>
+              </tr>
+              <tr> 
+                <td width="8%" height="73" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">117 
+                    - 118</font></b></font></div>
+                </td>
+                <td width="8%" height="73"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    August toSeptember 1979</font></b></font></div>
+                </td>
+                <td width="48%" height="73"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Aerial 
+                    Observation Group GAO507</font></b></div>
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                    1st and 2nd Part</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Edouard MIHALY</font></div>
+                </td>
+                <td width="6%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-117.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-117.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-118.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-118.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4" height="73">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">131 
+                    to 136</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    October 1980 to March 1981</font></b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The</font><font color="#FFFFFF" size="2" face="Arial Narrow"> 
+                    Nieuport-Delage Ni-D42 to Ni-D 62</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Jean CUNY / Daniel RAYMOND</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-131.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-131.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-132.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-132.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-133.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-133.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-134.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-134.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-135.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-135.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-136.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-136.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">140 
+                    to 144</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    July to November 1981</font></b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Camouflage 
+                    and mark of the Air Force - 1935-1945</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From 
+                    Gaston BOTQUIN</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-140.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-140.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-141.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-141.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-142.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-142.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-143.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-143.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-144.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-144.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">155</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">October 
+                    1982</font></b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Dewoitine 
+                    D370 to D376 :</font></b></div>
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    last French umbrella Fighters</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> From<font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Jean CUNY / Daniel RAYMOND</font></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-155.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-155.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5" height="61">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">158 
+                    - 159</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    January to February 1983</font></b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">The 
+                    Gleen in the air force : </font></b></div>
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                    Origins at the June 1940 Armistice</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF">From<font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Jean CUNY / Daniel RAYMOND</font></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-158.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-158.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-159.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-159.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4" height="61">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">176 
+                    &agrave; 179</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    July to October 1984</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div><font color="#000000"><b><font size="2" face="Arial Narrow">The 
+                    Breguet BIZERTE</font></b></font></div>
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">1st 
+                      to 4th Part</font></b></font></div>
+                    <div><font face="Arial Narrow" size="2" color="#000000">From 
+                      </font><font face="Arial Narrow" size="2" color="#000000"> 
+                      BOUSQUET G&eacute;rard</font></div>
+                  </div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-176.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-176.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-177.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-177.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-178.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-178.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-179.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-179.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" colspan="2">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">184 
+                    to 186</font></b></font></div>
+                </td>
+                <td width="8%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From 
+                    March to May 1985 </font></b></font></div>
+                </td>
+                <td width="48%" height="61"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      Breguets 691, 693, 695 in the Batlle of France : </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      - 1st to 3rd Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font face="Arial Narrow" size="2" color="#FFFFFF">From 
+                          Pierre RIVIERE</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-184.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-184.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-185.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-185.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-186.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-186.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="61" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">187 
+                    to 189</font></b></font></div>
+                </td>
+                <td width="8%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From</font></b></font><font color="#FFFFFF"> 
+                    June to August 1985 </font></b></font></div>
+                </td>
+                <td width="48%" height="61"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">T</font><font size="2" face="Arial Narrow" color="#FFFFFF">hree-engined 
+                      aircrafts WIBAUT : </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      - 1st to 3rd Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From</font></b></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                          Robert ESPEROU</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-187.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-187.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-188.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-188.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-189.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-189.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="61" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="73" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">193 
+                    to 195</font></b></font></div>
+                </td>
+                <td width="8%" height="73"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From</font></b></font><font color="#FFFFFF"> 
+                    December 1985 to February 1986 </font></b></font></div>
+                </td>
+                <td width="48%" height="73"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Breguet 
+                      691, 693 et 695 : </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      Description, marking and description - 1st to 3rd Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                          Jacques ROBINEAU et Pierre RIVIERE</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="6%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-193.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-193.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-194.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-194.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-195.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-195.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3" height="73" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">197 
+                    to 200</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From</font></b></font><font color="#FFFFFF"> 
+                    April to July 1986 </font></b></font></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Fighters</font><font color="#FFFFFF" size="2" face="Arial Narrow"> 
+                    Arsenal VG30 to VG70 -</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Jean CUNY / Daniel RAYMOND</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-197.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-197.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-198.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-198.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-199.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-199.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" > 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-200.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-200.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="2" >&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">205</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">December 
+                    1986</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                    Koolhoven FK58 </font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    HAZEWINKEL Harm </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-205.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-205.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td rowspan="2" height="142" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg" width="8%"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">214 
+                    </font><font face="Arial Narrow" size="2">&agrave; 222 </font></b></font></div>
+                </td>
+                <td rowspan="2" height="142" width="8%" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>De 
+                    Septembre 1987 &agrave; Mai 1988</b></font></div>
+                </td>
+                <td rowspan="2" height="142" width="48%" bgcolor="#0099FF"> 
+                  <div><font color="#000000"><b><font size="2" face="Arial Narrow">CAMS Seaplanes</font></b></font></div>
+                  <div> 
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 9th Part</font></b></font></div>
+                    <div><font face="Arial Narrow" size="2" color="#000000">From 
+                      LIRON Jean</font></div>
+                  </div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-214.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-214.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-215.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-215.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-216.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-216.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-217.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-217.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-218.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-218.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-219.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-219.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="6%" height="28"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-220.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-220.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="28"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-221.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-221.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="28" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-222.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-222.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="28" colspan="3">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="76" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">229 
+                    to 230</font></b></font></div>
+                </td>
+                <td width="8%" height="76"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">December 
+                    1988 to January 1989</font></b></div>
+                </td>
+                <td width="48%" height="76"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Delanne 
+                      : A certain fortune - </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N&deg;229 
+                      - The Delanne 20T - 1st Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                      Jean LIRON</font></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N&deg;230 
+                      - The Delanne 10C2 - 2nd Part</font></b> 
+                      <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                      <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                        Jean CUNY </font></div>
+                    </div>
+                  </div>
+                  <font size="2" face="Arial Narrow"></font></td>
+                <td width="6%" height="76"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-229.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-229.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%" height="76"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-230.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-230.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4" height="76">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">235 
+                    - 236</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">June 
+                    - July 1989</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The</font><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      Dewoitine D338 - 1st and 2nd Part</font></b></div>
+                  </div>
+                  <div> 
+                    <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                      Robert ESPEROU </font></div>
+                  </div>
+                  <font size="2" face="Arial Narrow"></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-235.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-235.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-236.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-236.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">247 
+                    - 248</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">June 
+                    - July 1990</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                      Batlle of France 1940-1990 : </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">- 
+                      6 days with the GC II/2</font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">- 
+                      Dunkerque - Operation Dynamo</font></b></div>
+                  </div>
+                  <div> 
+                    <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                      M. BENICHOU / J. SACRE / L. BERDELLOU / J. CUNY</font></div>
+                  </div>
+                  <font size="2" face="Arial Narrow"></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-247.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-247.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-248.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-248.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">260 
+                    </font><font face="Arial Narrow" size="2">&agrave; 263</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    July to October 1991</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">POTEZ-CAMS 
+                      141 Antares</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 4th Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From</font><font color="#000000" size="2" face="Arial Narrow"> 
+                    BOUSQUET G&eacute;rard </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-260.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-260.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-261.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-261.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-262.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-262.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-263.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-263.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" colspan="2">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">265</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>December 
+                    1991</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">The Navy's POTEZ 25 - Humble, Rankless, Puncture-Proof</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    MORAREAU Lucien </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-265.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-265.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">269 
+                    &agrave; 270</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    April to May 1992</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">Le LOIRE 70 - Unlucky to the end</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      and 2nd Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    BOUSQUET G&eacute;rard </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-269.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-269.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-270.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-270.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" colspan="4">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">277 
+                    &agrave; 280</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    December 1992 to March 1993</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">Le Lioré & Olivier LeO H-47: The War cut off his wings</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 4th Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From</font><font color="#000000" size="2" face="Arial Narrow"> 
+                    BOUSQUET G&eacute;rard </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-277.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-277.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-278.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-278.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-279.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-279.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-280.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-280.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" colspan="2">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">286 
+                    &agrave; 290</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    September 1993 to January 1994</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">Latécoère Laté-298 - The shining plane of a legend</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 5th Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    JOUX Joseph </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-286.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-286.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-287.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-287.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-288.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-288.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-289.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-289.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-290.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-290.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">308 
+                    </font><font face="Arial Narrow" size="2">&agrave; 312</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>From 
+                    July to November 1995</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">Story: Le Latécoère 298 Seaplane - The Shadow of Glory</font></b></font></div>
+                    <div><font color="#000000"><b><font face="Arial Narrow" size="2">1st 
+                      to 5th Part</font></b></font></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    JOUX Joseph </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-308.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-308.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-309.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-309.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-310.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-310.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-311.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-311.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-312.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-312.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="6%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" height="70" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">313</font></b></font></div>
+                </td>
+                <td width="8%" height="70" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>December 
+                    1995</b></font></div>
+                </td>
+                <td width="48%" height="70" bgcolor="#0099FF"> 
+                  <div> 
+                    <div><font color="#000000"><b><font size="2" face="Arial Narrow">Exoticism : a Loire 130 from Indochina</font></b></font></div>
+                    <div></div>
+                  </div>
+                  <div><font color="#000000" size="2" face="Arial Narrow">From 
+                    MORAREAU Lucien</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-313.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-313.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">330 
+                    to 332</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">From</font></b></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    June to July 1997</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N&deg;330 
+                    - Amiot 140 : Progress was faster : 1st part</font></b></div>
+                  <div></div>
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">N&deg;331 
+                    /</font><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                    332 - Amiot 143 : The sacrifices of the first hour : 1st and 
+                    2nd part</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Michel BENICHOU </font></div>
+                  <font size="2" face="Arial Narrow"></font></td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-330.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-330.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-331.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-331.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-332.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-332.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">339</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">February 
+                    1998</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                    Breguet 482 - A Great Bomber Forgotten by the War</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Philippe RICCO </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-339.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-339.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">342 
+                    - 343</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">May 
+                    - June 1998 </font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Marcel 
+                    Bloch's Quadrimotor Planes - 1st and 2nd part</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Philippe RICCO </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-342.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-342.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-343.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-343.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">354</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">May 
+                    1999 </font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                    reports of the French pilots denouncing the deficiencies of 
+                    1940</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Michel BENICHOU</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-354.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-354.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">380</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">July 
+                    2001</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">SNCASE 
+                    SE-100 - A French myth</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Michel BENICHOU / Alain PELLETIER</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-380.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-380.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">433 
+                    - 434</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">December 
+                    2005 - January 2006</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                    DB7 Tragedy </font></b></div>
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">- 
+                    The Douglas DB7 Air Force: 1st and 2nd Part</font></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Michel BENICHOU</font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-433.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-433.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">462 
+                    - 463</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">May 
+                    - June 2008</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Four-engines 
+                    Farman : Aircraft without a user's manual. 1st and 2nd Part 
+                    </font></b></div>
+                  <div><b></b></div>
+                  <div><font size="2" face="Arial Narrow"><font color="#FFFFFF">From</font></font><font face="Arial Narrow" size="2" color="#FFFFFF"></font><font face="Arial Narrow" size="2" color="#FFFFFF"> 
+                    Roland NARBONNE </font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-462.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-462.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-463.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-463.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="4">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">554</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">January 
+                    2016</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Finlande, 
+                    1940-1944 : The MS406 all claws out</font></b></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-554.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-554.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">556</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">March 
+                    2016</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">The 
+                    Mysterious French Spitfire</font></b></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-556.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-556.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="8%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font color="#333333"><b><font face="Arial Narrow" size="2">558</font></b></font></div>
+                </td>
+                <td width="8%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">May 
+                    2016</font></b></div>
+                </td>
+                <td width="48%"> 
+                  <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">May-June 
+                    1940 : The sacrifice of the French Bombers</font></b></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Fana-558.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_Fana-558.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td colspan="5">&nbsp;</td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp; </p>
+          </blockquote>
+        </div>
+        <blockquote> 
+          <div align="left"></div>
+        </blockquote>
+        <blockquote> 
+          <div align="left"></div>
+        </blockquote>
+        <div align="center"> 
+          <blockquote> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

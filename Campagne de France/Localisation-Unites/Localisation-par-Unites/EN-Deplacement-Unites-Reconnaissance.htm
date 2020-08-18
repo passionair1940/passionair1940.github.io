@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Movements of units of Reconnaissance GR</title>
+<META name="KEYWORDS" content="French Army Air force 1939-1940,squadron,Reconnaissance,GR, aviation,French,campaign of france,Funny War,Movements of units">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../Armee%20de%20l%27Air/EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../Images%20Base/EN-1.png" width="20%" border="0"></a><a href="../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../Images%20Base/EN-3-Big.png" width="20%" border="0"></a><a href="../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../EN-index.htm" target="_self"><img src="../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="20%" valign="top" bgcolor="#214767"> 
+        <div align="center"><font size="4" color="#FFFFFF"><a href="../../EN-Localisation-des-Unites.htm">Location 
+          of Units</a></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><font color="#CCCCCC" size="5"><b><font size="4" face="Arial Narrow"><i><font color="#FFFFFF">Movement 
+              </font><font color="#FFFFFF"> of Units :</font></i></font></b></font></p>
+          </div>
+        </div>
+        <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Deplacement-des-Unites.htm" target="_self"><font color="#FFFF00">- 
+            Groups of Fighters</font></a></font> </font></b></div>
+        <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Deplacement-Unites-Bombardement.htm" target="_self"><font color="#FFFF00">- 
+          Groups of Bombardment</font></a></font> </font></b></div>
+        <div> 
+          <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Deplacement-Unites-Bombardement-Assaut.htm" target="_self"><font color="#FFFF00">- 
+            Groups of Bombardment of Assaut</font></a></font> </font></b></div>
+          <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Deplacement-Unites-Observation.htm" target="_self"><font color="#FFFF00">- 
+            Air Groups of Observation</font></a></font> </font></b></div>
+          <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Deplacement-Unites-Reconnaissance.htm" target="_self"><font color="#FFFFFF"><i>- 
+            Groups of Reconnaissance</i></font></a></font> </font></b></div>
+			
+          <div><b><font face="Arial Narrow" size="3" ><font ><a href="EN-Patrouilles.htm" target="_self"><font color="#FFFF00">- 
+            Patrols of Defense</font></a></font> </font></b></div>
+        </div>
+        
+		<br>
+          
+        <div align="left" class="style1"> 
+          <div align="left"><font color="#CCCCCC" size="5"><b><font size="4" face="Arial Narrow"><a href="../Par-Dates/EN-Localisation-par-dates.htm" target="_self"><font color="#999999">Location 
+            of units by date</font></a></font></b></font></div>
+          
+          <div align="left" class="style1"> 
+            <div align="left" class="style1"> 
+              <p align="left"><font color="#CCCCCC" size="5"><font size="4" face="Arial Narrow"><b><a href="../../Localisation-Unites/Terrains/EN-Terrains.htm" target="_self"><font color="#999999">Main 
+                Airfields </font></a></b></font></font></p>
+          </div>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+        </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"><img src="../../../Images%20Base/EN-Deplacement-Reconnaissance.png" width="68%"> 
+          </div>
+          <blockquote> 
+            <p align="left"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Click 
+              the Groups of Reconnaissance below to access the displacement map 
+              for each of these units : </font></b></font></font></b></font></p>
+            <div align="center">
+              <table width="100%%" border="1">
+                <tr> 
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-14.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/14 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-14.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-14.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/14 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-II-14.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-22.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/22 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-22.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-22.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/22 from mobilization to Armisticee"><img src="Groupe-Reconnaissance/Btn_GR-II-22.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-33.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/33 from mobilization to Armisticee"><img src="Groupe-Reconnaissance/Btn_GR-I-33.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-33.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/33 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-II-33.jpg" width="100%"></a></td>
+                </tr>
+                <tr> 
+                  <td colspan="6">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-36.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/36 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-36.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-36.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/36 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-II-36.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-52.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/52 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-52.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-52.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/52 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-II-52.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-55.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/55 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-55.jpg" width="100%"></a></td>
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-II-55.jpg" data-fancybox-group="gallery-1" title="Movements of GR II/55 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-II-55.jpg" width="100%"></a></td>
+                </tr>
+                <tr> 
+                  <td colspan="6">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td width="16%"><a class="fancybox-effects-c" href="Groupe-Reconnaissance/EN-Carte_GR-I-35.jpg" data-fancybox-group="gallery-1" title="Movements of GR I/35 from mobilization to Armistice"><img src="Groupe-Reconnaissance/Btn_GR-I-35.jpg" width="100%"></a></td>
+                  <td colspan="5">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in French</font></b></div>
+      </td>
+      <td width="48%"><a href="Deplacement-Unites-Reconnaissance.htm" target="_self"><img src="../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+    </tr>
+    <tr> 
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in English</font></b></div>
+      </td>
+      <td width="48%"><a href="EN-Deplacement-Unites-Reconnaissance.htm" target="_self"><img src="../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

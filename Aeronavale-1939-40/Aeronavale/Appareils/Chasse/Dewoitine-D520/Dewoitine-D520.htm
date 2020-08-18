@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Dewoitine-520</title>
+<meta name="keywords" content="Aéronautique Navale Française 1939-1940,chasse,chasseur,français,campagne de france,drôle de guerre,Dewoitine D520"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Dewoitine-D520.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D371</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D510</font></font></b></font></a></div>
+          <div align="left"><a href="Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i><font color="#FFFFFF">- 
+            Dewoitine D520</font></i></font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">DEWOITINE D520</font></b></p>
+            <p><img src="Photos/image095.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace</font> 
+                      <font face="Arial Narrow" size="2">&agrave; aile basse et 
+                      train rentrant</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">2 Octobre1938</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10,20m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8.60 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2.57m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">15.97m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 2123Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2677 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">529 km/h &agrave; 4000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m en 5mn 48s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">11000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">998kms&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Hispano Suiza 12Y45 &agrave; 12 cyl en V de 920ch &agrave; 
+                      4200m</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="43" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">4 mitrailleuses 
+                        MAC 34 M39 de 7.5mm dans les ailes avec 675 coups<br>
+                        1canons Hispano Suiza HS-404 de 20mm dans l'axe de l'h&eacute;lice 
+                        avec 60 coups</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">769 
+                Dewoitine D520 ont été construits depuis la date du premier vol 
+                le 2 Octobre 1938 . Ils se r&eacute;partissent en :</font></font></font></b></p>
+              <div><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000"> 
+                - 437 fabriqu&eacute;s avant l'armistice</font></font></b></font></div>
+              <div><font size="2"><b><font face="Arial Narrow" color="#000000">- 
+                332 fabriqu&eacute;s apr&egrave;s l'armistice </font></b></font></div>
+              <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 769 appareils fabriqu&eacute;s , 484 sont recens&eacute;s 
+                dans la liste ci-dessous :</font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font size="3" face="Arial Narrow"><b><font size="2">En Juin 
+                1936, l'Arm&eacute;e de l'Air &eacute;met un programme C1, pour 
+                un chasseur monoplace pouvant voler &agrave; 500km/h et arm&eacute; 
+                d'un canon et 2 mitrailleuses ou 2 canons. Ce programme est rapidement 
+                modifi&eacute; pour imposer une vitesse minimum de 520km/h, ceci 
+                dans le but de ne pas disposer d'appareils d&eacute;pass&eacute;s 
+                d&egrave;s leur mise en service 2 ou 3 ans plus tard. Le D520 
+                pr&eacute;sent&eacute; par la soci&eacute;t&eacute; Dewoitine, 
+                est retenu, tout comme le <font color="#000000">Morane 405</font>, 
+                le <font color="#000000">CAO 200</font>. D'autres seront rattach&eacute;s 
+                ult&eacute;rieurement comme le <font color="#0000FF"> <font color="#000000">Bloch 
+                152</font></font> et l'<font color="#000000">Arsenal VG33</font>. 
+                L'industrie a&eacute;ronautique Fran&ccedil;aise est alors en 
+                pleine nationalisation, et la soci&eacute;t&eacute; Dewoitine 
+                devient la SNCAM. Tous ces changements retardent consid&eacute;rablement 
+                la mise au point. Deux prototypes sont command&eacute;s le 3 Avril 
+                1938, mais le premier ne fera son premier vol que le 2 octobre, 
+                aux mains du c&eacute;l&egrave;bre pilote d'essais, Marcel DORET. 
+                Il est motoris&eacute; par un Hispano-Suiza HS 12Y21 de 890Cv 
+                avec, dans un premier temps, une h&eacute;lice bipale en bois. 
+                Il re&ccedil;ut rapidement une h&eacute;lice tripale m&eacute;tallique, 
+                mais les essais sont retard&eacute;s &agrave; la suite d'un atterrissage 
+                sur le ventre. Ces premiers essais ont abouti &agrave; la suppression 
+                des radiateurs d'ailes au profit d'un radiateur ventral agrandi 
+                afin d'am&eacute;liorer les performances. Le deuxieme prototype 
+                fait son premier vol en Janvier 1939. Il re&ccedil;oit une verri&egrave;re 
+                coulissante, et son empennage est agrandi. Il rejoint le CEMA 
+                de Villacoublay o&ugrave; il fut rejoint par le 3ieme prototype, 
+                equip&eacute; maintenant d'un moteur HS12Y31.Celui-ci fit son 
+                premier vol le 5 Mai 1939.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Une premi&egrave;re 
+                commande de 200 machines est lanc&eacute;e en Mars 1939, pour 
+                une livraison entre septembre et d&eacute;cembre, avec 100 appareils 
+                en service pr&eacute;vus &agrave; cette date. Les avions de s&eacute;rie 
+                sont l&eacute;g&egrave;rement diff&eacute;rents des prototypes 
+                : ils sont &eacute;quip&eacute;s de moteur Hispano-Suiza 12Y45 
+                &agrave; compresseur de 945Cv au d&eacute;collage, la bequille 
+                de queue est remplac&eacute;e par une roulette, et la visibilit&eacute; 
+                du pilote est am&eacute;lior&eacute;e. Mais comme souvent &agrave; 
+                cette &eacute;poque, les pr&eacute;visions de livraisons sont 
+                tr&egrave;s optimistes. Des probl&egrave;mes de mise au point 
+                des armes et des probl&egrave;mes de refroidissement moteur retardent 
+                la production. Les premiers appareils livr&eacute;s en Janvier 
+                1940, vont &eacute;quiper une escadrille d'exp&eacute;rimentation, 
+                cr&eacute;&eacute;e avec du personnel du <font color="#000000">GCI/3</font>, 
+                dans le but de terminer la mise au point. La production se poursuit 
+                tr&egrave;s lentement. Le 1er Avril 1940, 139 D520 ont &eacute;t&eacute; 
+                fabriqu&eacute;s, mais seulement 32 sont livr&eacute;s &agrave; 
+                l'EAA301... Lors de l'offensive allemande du 10 Mai 1940, 228 
+                &eacute;taient construits pour 75 livr&eacute;s. Pourtant, &agrave; 
+                cette date, la production battait enfin son plein, avec 100 machines 
+                assembl&eacute;es par mois, et &agrave; l'Armistice, 330 D520 
+                ont p&ucirc; &ecirc;tre pris en compte. Le 10 Mai 1940, seul le 
+                <font color="#000000">GC I/3</font> est &eacute;quip&eacute; compl&egrave;tement, 
+                le <font color="#000000">GC II/3</font> et le GC <font color="#000000"> 
+                II/7</font> sont en cours de transformation, bient&ocirc;t suivis 
+                par les <font color="#000000">GC III/3</font> et <font color="#000000"> 
+                GC III/6</font>. tous ces Groupes de Chasse sont envoy&eacute;s 
+                en Afrique du Nord &agrave; partir du 10 Juin, dans le but de 
+                mettre &agrave; l'abri, le maximum de Dewoitine D520. A l'armistice, 
+                le 25 Juin 1940,437 Dewoitine avaient &eacute;t&eacute; construits, 
+                106 seront d&eacute;truits en combat, mais surtout par accident 
+                : l'appareil est d&eacute;licat en pilotage.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Apr&egrave;s l'Armisitice, 
+                les Allemands ont autoris&eacute; la reprise de la fabrication 
+                des D520 pour &eacute;quiper l'Arm&eacute;e de l'Air de Vichy 
+                : 332 exemplaires suppl&eacute;mentaires sont ainsi fabriqu&eacute;s, 
+                pour 500 pr&eacute;vus. Certains d'entre eurent &agrave; affronter 
+                les forces alli&eacute;s lors de l'op&eacute;ration &quot;Torch&quot; 
+                en Novembre 1942 (d&eacute;barquement des alli&eacute;s en Afrique 
+                du Nord). </font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Apr&egrave;s la dissolution 
+                de l'Aviation de Vichy, les D520 sont utilis&eacute;s par les 
+                Forces Fran&ccedil;aises Libres en Afrique du Nord, puis plus 
+                tard, sur le territoire Fran&ccedil;ais, lors de la r&eacute;duction 
+                des poches de l'Atlantique. Les Allemands utilis&eacute;rent &eacute;galement 
+                nos D520 : certains pour l'entrainement de leurs pilotes, alors 
+                que d'autres sont evoy&eacute;s &agrave; leurs alli&eacute;s Roumains, 
+                Italiens, ou encore en Bulgarie. Enfin, apr&egrave;s la guerre, 
+                les D520 survivants sont transform&eacute;s en double-commande 
+                et restent en service jusqu'en 1953.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le bilan de la br&ecirc;ve 
+                utilisation de ce chasseur est plut&ocirc;t flatteur : 108 victoires 
+                probables et 10 s&ucirc;res lors de la campagne de France pour 
+                la perte de 26 appareils. Certains pilotes s'illustreront &agrave; 
+                son bord, tel le sous-lieutenant Madon avec ses 10 victoires, 
+                ou </font></b><font face="Arial Narrow"><font color="#000000"><b>l'Adjudant-Chef 
+                Le-Gloa</b>n</font></font><b><font face="Arial Narrow"> qui abattit 
+                5 ennemis en une seule sortie.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Cet avion, moins 
+                docile qu'un <font color="#000000"> Curtiss H75</font> par exemple, 
+                demandait un vrai pilotage. Il &eacute;tait moins rapide que le 
+                <font color="#000000">Messerschmitt ME109E</font>, mais plus maniable 
+                et plus rapide en piqu&eacute;.</font></b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font color="#000000" size="3"><b><font face="Arial Narrow" size="2">Le 
+                Dewoitine D520 n'a &eacute;t&eacute; produit qu'en une seule version. 
+                On peut citer cependant le D520 S qui fut &eacute;labor&eacute; 
+                apr&egrave;s l'armistice avec l'accord des occupants. Ceux-ci 
+                ayant interdit d'utiliser les moteurs Hispano 12Y51 et 12Z jug&eacute;s 
+                trop performants pour &eacute;quiper les D520 assembl&eacute;s 
+                apr&egrave;s l'armistice, la seule voie d'am&eacute;lioration 
+                possible &eacute;tait l'a&eacute;rodynamisme, et des modifications 
+                discr&eacute;tes de la motorisation d'origine</font></b></font></p>
+              <p><font face="Arial Narrow" size="2"><b><font color="#000000">Le 
+                bureau d'&eacute;tudes de la SNCASE s'attacha donc &agrave; supprimer 
+                toute train&eacute;e parasite. Les principales modifications sont 
+                : </font></b></font></p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Obturation 
+                  des logements de roues</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Remplacement 
+                  du radiateur d'huile par un &eacute;changeur</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Nouveau 
+                  car&eacute;nage du radiateur d'eau</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Am&eacute;lioration 
+                  des surfaces ext&eacute;rieures de l'appareil : orifices de 
+                  canons bouch&eacute;s, zones charni&egrave;res recouvertes de 
+                  toiles,..</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Mise 
+                  en place de nouvelles pipes d'&eacute;chappements &agrave; r&eacute;action 
+                  : gain de 30 Cv</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">Le 
+                  montage d'un compresseur &quot;Szydlowski&quot; &agrave; plus 
+                  grande vitesse avec un gain de 20 km/h</font></b></font></li>
+              </ul>
+              <p><font face="Arial Narrow" size="2"><b><font color="#000000">L'ensemble 
+                de ces am&eacute;liorations a permis de gagner 0.65 sur le 100 
+                Cx avec une vitesse maxi esp&eacute;r&eacute;e de 575 km/h. Les 
+                essais du Dewoitine 520 N&deg; 465 ainsi &eacute;quip&eacute; 
+                ont permis d'atteindre une vitesse maxi de 568 km/h &agrave; 6900m.</font></b></font></p>
+              <p><font face="Arial Narrow" size="2"><b><font color="#000000">Bien 
+                que ce prototype fit son dernier vol en aout 1942, certaines am&eacute;liorations 
+                comme le nouveau compresseur furent introduites sur les chaines 
+                d'assemblage</font></b></font></p>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">1)_Editions 
+                      Mushroom Publications</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      <font color="#660000">&quot;Dewoitine D520&quot; de Bartolomiej 
+                      Belcarz</font></b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/D520%20bb.jpg" data-fancybox-group="gallery-1" title="Editions Mushroom Publications"><img src="thumbnail/TN-D520%20bb.jpg" alt="" width="87" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">3) 
+                      _ Docavia Editions Larivi&egrave;re</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      <font color="#660000">-Le Dewoitine D.520 </font></b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/D520%20Docavia0002.jpg" data-fancybox-group="gallery-1" title="Editions DOCAVIA"><img src="thumbnail/tn_D520%20Docavia0002.jpg" alt="" width="89" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="left"><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">2) 
+                      _ Editions LELA PRESSE ; Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      <font color="#660000">- N&deg;8 :Dewoitine D520</font></b></font></i></font></font></i></font><font color="#990000" size="2"></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/LesAilesdeGloire.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnail/TN-LesAilesdeGloire.jpg" alt="" width="90" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3" color="#000000"><b><i><font size="2">4) 
+                      _ DTU &quot;Dewoitine D520&quot;</font></i></b></font><font color="#990000" size="2"></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/D520%20DTU.jpg" data-fancybox-group="gallery-1" title="Editions DTU"><img src="thumbnail/TN-DTU-D520.jpg" alt="" width="92" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/image031.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image031.jpg" alt="" width="123" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image041.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image041.jpg" alt="" width="135" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image051.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image051.jpg" alt="" width="135" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image061.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image061.jpg" alt="" width="132" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/dewoitine-d520-3.png" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_dewoitine-d520-3.png" alt="" width="95" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

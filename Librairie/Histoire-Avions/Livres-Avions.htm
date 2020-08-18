@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Livres-Avions</title>
+<meta name="keywords" content="Livres Armée de l'air 1939-1940,Livres avions français-1940, Récits de pilotes 1940, Aéro-journal, Air-Magazine, Revue Avions, Fanatique de l'Aviation, Icare, Bandes dessinées 1940,Publicités aéronautiques1940,campagne de france,drôle de guerre"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+    <script type="text/javascript" src="../../lib/jquery-1.10.1.min.js"></script>
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!-- Add fancyBox main JS and CSS files -->
+    <script type="text/javascript" src="../../source/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" type="text/css" href="../../source/jquery.fancybox.css?v=2.1.5"
+
+      media="screen">
+    <!-- Add Button helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5">
+    <script type="text/javascript" src="../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <!-- Add Thumbnail helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7">
+    <script type="text/javascript" src="../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <!-- Add Media helper (this is optional) -->
+    <script type="text/javascript" src="../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../Armee de l'Air/Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../Images%20Base/1.png" width="20%" border="0"></a><a href="../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../index.htm" target="_self"><img src="../../Images%20Base/5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Livres-Avions.htm"><img src="../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">    
+        <div align="center"><font size="4" color="#FFFFFF"><b>Biblioth&egrave;que</b></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><a href="../../FR-Contenu.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Contenu</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="../../FR-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="../../FR-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historique</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="../../FR-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Enigmes</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="../../FR-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Liens 
+              &agrave; d&eacute;couvrir</font></font></a></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="../Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><i>Biblioth&egrave;que 
+              : </i></font></font></a></b></b></p>
+			<div align="left"><a href="../Divers-Generalites/Livres-Generalites.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Livres G&eacute;n&eacute;ralit&eacute;s</font></b></font></a></div>
+              
+            <div align="left"><a href="Livres-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i><font color="#FFFFFF">- 
+              Histoires d'Avions</font></i></font></b></font></a></div>
+              <div align="left"><a href="../Histoires-Escadrilles/Livres-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Histoires d'Escadrilles</font></b></font></a></div>
+              
+            <div align="left"><a href="../Recits-Pilotes/Recits-Pilotes.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Histoires d'Equipages</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V1/Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue &quot;A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><font color="#FFFFFF"><a href="../Revue-Aero-Journal-V1/Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">1ere 
+                Série</font></b></font></a></font></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V2/Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Revue "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><a href="../Revue-Aero-Journal-V2/Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">2eme 
+                Série</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V3/Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Revue "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><a href="../Revue-Aero-Journal-V3/Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">3</font><font color="#FFFF00">eme 
+                Série</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Air-Magazine/Revue-Air-Magazine.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Air-Magazine"</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Avions/Revue-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Avions"</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Fana-Aviation/Revue-Fana-Aviation.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Fana-Aviation"</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Icare/Revue-Icare.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Icare"</font></b></font></a></div>
+				
+              
+            <div align="left"><a href="../Bandes-Dessinees/Bandes-Dessinees.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Bandes Dessinées 1939-40</font></b></font></a></div>
+				<div align="left"><a href="../Publicite-Avions/Publicites.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Publicités Aéronautiques</font></b></font></a></div>
+          </div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" bgcolor="#000024" align="right" height="25" width="82%"
+
+              valign="top">
+              <div align="center">
+                
+          <div align="center"><img src="../../Images%20Base/Titre-Histoires-Avions.png"
+
+                    width="40%"> </div>
+              </div>
+              <blockquote>
+                <div align="left">
+                  
+            <table border="0" width="100%">
+              <tbody> 
+              <tr bordercolor="#FFFFFF" bgcolor="#999999" background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="2"><b><font color="#FFFFFF" size="3"> 
+                    <font color="#333333" size="4">Les Ailes de Gloire</font><font color="#333333"> 
+                    - </font></font></b></font><font size="3" color="#333333">Editions 
+                    : Indochine</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_Bloch150.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_Bloch150.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_Breguet-690.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_Breguet-690.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_Curtiss-H75.jpg" data-fancybox-group="gallery-1"><b><img src="Tn-Photos/tn_Ailes-De-Gloire_Curtiss-H75.jpg" alt="" border="0"></b></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_D510.jpg.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_D510.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2" color="#FFFFFF"><b>Bloch 
+                    MB150</b></font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2"><b>Breguet 
+                    690</b></font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2"><b>Curtiss 
+                    H75</b></font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2"><b>Dewoitine 
+                    D500</b></font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="20"> 
+                  <hr width="80%" align="center">
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="105"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_D520.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_D520.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="105"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_MS406.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_MS406.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="105"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_Potez630.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_Potez630.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="105"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Ailes-De-Gloire_Simoun.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Ailes-De-Gloire_Simoun.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2">Dewoitine 
+                    D520</font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2">Morane-Saulnier 
+                    MS406 </font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2">Potez 630</font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font color="#FFFFFF" size="2">Caudron Simoun</font></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. MARCHAND 
+                    / J.TAKAMORI</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#FFFFFF" bgcolor="#999999" background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">Docavia</font><font color="#333333"> 
+                    - </font></b><font color="#333333">Editions : Larivière </font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-Amiot-350.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-Amiot-350.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-Avions-Farman.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-Avions-Farman.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-Caudron.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-Caudron.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-Chasse-Francaise.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-Chasse-Francaise.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Amiot 
+                    350</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. CUNY 
+                    / R.DANEL</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Avions 
+                    Farman </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J.LIRON</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Caudron</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De E. MIHALY 
+                    / H. ROBINSON</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Chasse 
+                    Fran&ccedil;aise </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. CUNY 
+                    / R.DANEL</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="20"> 
+                  <hr width="80%" align="center">
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-Curtiss-H75.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-Curtiss-H75.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Docavia-D520.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Docavia-D520.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%">&nbsp;</td>
+                <td width="25%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Curtiss 
+                    H75 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. CUNY 
+                    / G. BEAUCHAMP</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font size="2" face="Arial Narrow" color="#FFFFFF">Dewotine 
+                    D520 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. CUNY 
+                    / R.DANEL</font></div>
+                </td>
+                <td width="25%">&nbsp;</td>
+                <td width="25%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">Collection 
+                    Histoire de L'Aviation</font><font color="#333333"> - </font></b><font color="#333333">Editions 
+                    : LELA Presse</font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Avions-Morane.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Avions-Morane.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Avions-Potez.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Avions-Potez.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Avions-Caudron-I.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Avions-Caudron-I.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="108"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Avions-Caudron-II.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Avions-Caudron-II.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Avions 
+                    Morane </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De H. Lacaze</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Avions 
+                    Potez </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De JL. Coroller 
+                    / M. Ledet</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">Avions 
+                    Caudron Tome 1</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De A. Hauet</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">Avions 
+                    Caudron Tome 2</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De A. Hauet</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="20"> 
+                  <hr width="80%" align="center">
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Amiot-143.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Amiot-143.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Bloch152.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Bloch152.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Bloch-174.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Bloch-174.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Potez-25.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Potez-25.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" size="2"><font face="Arial Narrow">Amiot 
+                    143 </font></font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Ribeiro 
+                    / M. Ledet</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Bloch 
+                    152</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De S. Joanne</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Bloch 
+                    174 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Moulin</font></div>
+                </td>
+                <td width="25%" height="37"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Potez 
+                    25</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">Ouvrage Collectif</font></div>
+                </td>
+              </tr>
+              <td colspan="4" height="20"> 
+                <hr width="80%" align="center">
+              </td>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Caudron-Goeland.gif" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Caudron-Goeland.gif" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Curtiss-H75.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Curtiss-H75.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="40"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Leo-C30.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_LeoC30.jpeg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="40"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/LELA-Presse_Morane406.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_LELA-Presse_Morane406.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Caudron 
+                    Goeland </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De P. Cortet 
+                    / R. Esperou</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Curtiss 
+                    H75 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De L. Persyn</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">LeO 
+                    C30</font> </b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Moulin</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font face="Arial Narrow" size="2" color="#FFFFFF">Morane 
+                    MS406 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">Ouvrage Collectif</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">French 
+                    Wings </font><font color="#333333">- </font></b><font color="#333333">Editions 
+                    : Stratus</font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/French-wings-Nid29-and-nid-62-family.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_French-wings-Nid29-and-nid-62-family.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/French-Wings-Potez29-Mureaux117-Breguet270.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_French-Wings-Potez29-Mureaux117-Breguet270.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/French-Wings-Leo45.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_French-Wings-Leo45.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Nieuport 
+                    Delage Nid29 &amp; Nid62 Family</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Fernandez</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Breguet 
+                    27, Potez 39, Mureaux 115/117</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Fernandez</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Lior&eacute; 
+                    &amp; Olivier LeO45</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Fernandez 
+                    / P. Laureau</font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr bordercolor="#FFFFFF" bgcolor="#999999" background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">MMP</font><font color="#333333"> 
+                    - </font></b><font color="#333333">Editions : Stratus</font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/MMP-Curtiss-75.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_MMP-Curtiss-75.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/MMP-D520.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_MMP-D520.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/MMP-Potez63.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_MMP-Potez63.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Curtiss 
+                    Hawk H75 in French Service</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De L. Persyn</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Dewoitine 
+                    D520 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De B. Belcarz</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Potez 
+                    63 Family</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De J. Fernandez</font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">Monografie 
+                    LOTNICZE </font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Monographie-28_Morane-406.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Monographie-28_Morane-406.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Monographie-96-Martin 167.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Monographie-96-Martin 167.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">M.S 
+                    406 </font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De G. Botquin</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Martin 
+                    167 Maryland</font></b></div>
+                  <div align="center"></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font size="4" color="#333333">Histoire 
+                    &amp; Collections : Avions et Pilotes</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/avions et pilotes n07.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_avions et pilotes n07.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/avions et pilotes n08.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_avions et pilotes n08.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">L'Aviation 
+                    fran&ccedil;aise de 1939 &agrave; 1942 - Tome 1 : de Amiot 
+                    &agrave; Curtiss</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De D. Breffort 
+                    / A. Jouineau</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">L'Aviation 
+                    fran&ccedil;aise de 1939 &agrave; 1942 - Tome 2 : de Dewoitine 
+                    &agrave; Potez</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De D. Breffort 
+                    / A. Jouineau</font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td colspan="4" height="20"> 
+                  <div align="center"><font size="3"><b><font color="#333333" size="4">Parutions 
+                    diverses </font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+                <td width="25%" height="20">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="97"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/morane-saulnier-ms406-c1-2dil.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_morane-saulnier-ms406-c1-2dil.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="97"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Profile-Curtiss-H75.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Profile-Curtiss-H75.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="97"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AEROJOURNAL D520.gif" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_AEROJOURNAL D520.gif" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="97"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/D520 DTU.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_D520 DTU.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Morane-Saulnier 
+                    MS 406 C1</font></b></div>
+                  <div align="center"><font size="2" color="#FFFFFF">De M. Snajdr</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">The 
+                    Curtiss Hawk 75</font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">PROFILE 
+                    Publications</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Le 
+                    Dewoitine D.520</font></b></div>
+                  <div align="center"></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">A&eacute;ro-Journal 
+                    : Hors s&eacute;rie N&deg;8</font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Dewoitine 
+                    D520 </font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">Editions 
+                    DTU </font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="20"> 
+                  <hr width="80%" align="center">
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AVIA-SE100.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_AVIA-SE100.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Breguet-693.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Breguet-693.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Caudron-Cr714.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Caudron-Cr714.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/Document_air_Potez62.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_Document_air_Potez62.jpg" alt="" border="0"></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">SNCASE 
+                    SE100 - Chasseur lourd polyvalent</font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">De 
+                    P. Ricco</font></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">Avia 
+                    Editions </font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Breguet 
+                    693 - Le lion de l'Aviation d'Assaut</font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">De 
+                    A. Prudhomme</font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Caudron 
+                    Cr714 C1 Cyclone - The ultimate story</font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">De 
+                    BELCARZ / RYS / STENMAN</font></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">Editions 
+                    Status </font></div>
+                </td>
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">Potez 
+                    Type 62 et 65</font></b></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">De 
+                    P. Dumollard</font></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">Document 
+                    Air n&deg;2</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="20"> 
+                  <hr width="80%" align="center">
+                </td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/WM-1-Armee-Air_1939-42.jpg" data-fancybox-group="gallery-1"><img src="Tn-Photos/tn_WM-1-Armee-Air_1939-42.jpg" alt="" border="0"></a></font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="55"> 
+                  <div align="center"><b><font color="#FFFFFF" face="Arial Narrow" size="2">L'Arm&eacute;e 
+                    de l'Air 1939-42 - Chasse et Reconnaissance</font></b></div>
+                  <div align="center"><font face="Arial Narrow" size="2" color="#FFFFFF">Wing-Masters 
+                    Hors-S&eacute;rie n&deg;1</font></div>
+                  <div align="center"><font color="#FFFFFF" face="Arial Narrow" size="2">De 
+                    D. Breffort</font></div>
+                </td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+                <td width="25%" height="55">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+                <td width="25%" height="40">&nbsp;</td>
+              </tr>
+              </tbody> 
+            </table>
+            
+            <p>&nbsp;</p>
+                </div>
+              </blockquote>
+              <blockquote>
+                <div align="left"></div>
+              </blockquote>
+              <div align="center">
+                <blockquote>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                </blockquote>
+                <div align="center"></div>
+                <blockquote>&nbsp;</blockquote>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+              </div>
+              <blockquote>&nbsp;</blockquote>
+            </td>
+          </tr>
+        
+      </table>
+    </div>
+    <div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%">
+      <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p>
+      <p><img src="../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+      <p>&nbsp;</p>
+      <p><img src="../../Images%20Base/Amiot350.gif" width="100%"></p>
+      <p>&nbsp;</p>
+      <p><img src="../../Images%20Base/D520.gif" width="100%"></p>
+      <p>&nbsp;</p>
+      <p><img src="../../Images%20Base/Br693.gif" width="100%"></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+  </body>
+</html>

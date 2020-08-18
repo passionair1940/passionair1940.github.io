@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>CAMS-55</title>
+<META name="KEYWORDS" content="Aéronautique Navale Française 1939-1940,Hydravions,appareils,Français,campagne de france,drôle de guerre,CAMS 55">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-CAMS-55.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../../Chasse/Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Chasse</b></font></a></p>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          <p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><i><font color="#FFFFFF">Hydravions</font></i></b></font></a></p>
+		  <div align="left"><a href="../Breguet-Bizerte/Breguet-Bizerte.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Breguet Bizerte</font></b></font></a></div>
+          <div align="left"></div>
+          <div align="left"><a href="../CAMS-37/CAMS-37.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            CAMS 37</font></b></font></a></div>
+          <div align="left"><a href="CAMS-55.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3"><i><font color="#FFFFFF">- 
+            CAMS 55</font></i></font></b></font></a></div>
+          <div align="left"><a href="../CAMS-141/CAMS-141.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            CAMS 141</font></b></font></a></div>
+          <div align="left"><a href="../Farman-NC470/Farman-NC470.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman NC-470</font></b></font></a></div>
+          
+          <div align="left"><a href="../Latecoere-290/Latecoere-290.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 290</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-298/Latecoere-298.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 298</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-302/Latecoere-302.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 302</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-521_522_523/Latecoere-521_522_523.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 521-522-523</font></b></font></a></div>
+			<div align="left"><a href="../LeO-H43/LeO-H43.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-43</font></b></font></a></div>
+			<div align="left"><a href="../Liore-Olivier_257/Liore-Olivier_257.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-257</font></b></font></a></div>
+			
+          <div align="left"></div>
+			<div align="left"><a href="../LeO-H470/LeO-H470.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-470</font></b></font></a></div>
+			<div align="left"><a href="../Loire-70/Loire-70.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loire 70</font></b></font></a></div>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <p><b><font size="20%" color="#660000">CAMS 55-1</font></b></p>
+            
+          <p><img src="Photos/CAMS55-2.jpg" width="70%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> : CAMS 
+                    55-1 </font> 
+                  </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">Hydravion de Bombardement 
+                    er de reconnaissance c&ocirc;ti&egrave;re</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="2">Et&eacute; 
+                    1928 </font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">20,40 m&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">14,84 m&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">5,38 m&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">113,45 m2&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow"> 4860 Kg&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">6910 Kg&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">210 km/h </font>
+</center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                  </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">3400 m&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">1280 kms</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">5</font> <font size="2" face="Arial Narrow"> 
+                    Personnes</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    
+                  <div align="center"><font size="2" face="Arial Narrow">2 moteurs 
+                    Hispano-Suiza 12 cyl en V HS12 Lbr de 600ch</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  
+                <td width="20%" height="49" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  
+                <td colspan="3" height="49" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                      
+                    <div>
+                      <div><font size="2" face="Arial Narrow">2</font> <font size="2" face="Arial Narrow"> 
+                        mitrailleuses Lewis de 7.7mm mobiles au poste avant</font></div>
+                      <div><font size="2" face="Arial Narrow">2 Mitrailleuses 
+                        Lewis de 7.7mm mobiles au poste arri&egrave;re<br>
+                        150 Kgs de bombes </font></div>
+                    </div>
+                  </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                
+              <p><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">108 
+                CAMS 55 ont &eacute;t&eacute; fabriqu&eacute;s, toutes versions 
+                confondues. Voir le d&eacute;tail dans la rubrique version ci-dessous.</font></b></font></font></p>
+                
+              <p><font size="2" color="#990000"><b><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 108 appareils fabriqu&eacute;s, 29 sont recens&eacute;s 
+                dans la liste</font></b></b></font><font size="2"><b><font face="Arial Narrow"> 
+                ci-dessous :</font></b></font></p>
+              </div>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+              </p>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>En 1927, 
+              l'A&eacute;ronautique Navale &eacute;met un programme afin de se 
+              doter d'un Hydravion de Reconnaissance et de Patrouille c&ocirc;ti&egrave;re. 
+              La Soci&eacute;t&eacute; CAMS ( Chantiers A&eacute;ro-Maritimes 
+              de la Seine) y r&eacute;pond par un Hydravion d&eacute;riv&eacute; 
+              du CAMS 53 Civil, utilis&eacute; par les compagnies a&eacute;riennes 
+              de la mer M&eacute;diterran&eacute;e. Le nouvel appareil, d&eacute;sign&eacute; 
+              CAMS 55 est de conception rustique. Il se pr&eacute;sente sous la 
+              forme d'un hydravion en bois &agrave; coque Biplan motoris&eacute; 
+              par deux moteurs en tandem. Les ailes inf&eacute;rieures sont &eacute;quip&eacute;es 
+              de petits flotteurs aux extr&eacute;mit&eacute;s. Son armement d&eacute;fensif 
+              est constitu&eacute; de deux paires de mitrailleuses Lewis de 7.69mm 
+              mont&eacute;es sur deux affuts mobiles, dans les postes avants et 
+              arri&egrave;res. L'&eacute;quiopage est compos&eacute; de 5 Hommes. 
+              Le Prototype fait son premier vol en 1928</b></font></p>
+            <p><b><font color="#000000" face="Arial Narrow" size="2">L'appareil 
+              entrera en service en 1930, apr&egrave;s avoir termin&eacute; ses 
+              essais. L'implantation particuli&egrave;re des moteurs, en tandem 
+              au dessus du fuselage, sera responsable de quelques accidents mortels 
+              : les h&eacute;lices sont en effet bien trop proches de certains 
+              des hommes d'&eacute;quipages... des protections seront rajout&eacute;es 
+              ult&eacute;rieurement, mais ne corrigeront jamais compl&ecirc;tement 
+              ce d&eacute;faut. En 1930, les Escadrilles S1 bas&eacute;e &agrave; 
+              Berre et 4E1 bas&eacute;e &agrave; Karouba, seront les premi&egrave;res 
+              unit&eacute;s &agrave; percevoir le nouvel l'appareil</font></b></p>
+            <p><b><font color="#000000" face="Arial Narrow" size="2">Tout au long 
+              de sa carri&egrave;re, l'appareil fut d&eacute;clin&eacute; en de 
+              nombreuses versions, avec notamment des changements de motorisations. 
+              Un fuselage et des flotteurs en Alliage l&eacute;ger en remplacement 
+              du bois, seront essay&eacute;s sur la version CAMS 55-6. Le gain 
+              de poids &eacute;tait int&eacute;ressant : 400 kgs, mais l'alliage 
+              l&eacute;ger ne fut finalement pas retenu sur les versions ult&eacute;rieures.</font></b></p>
+            <p><b><font color="#000000" face="Arial Narrow" size="2">A la d&eacute;claration 
+              de la Guerre, en Septembre 1939, bien que d&eacute;mod&eacute;s, 
+              25 exemplaires de CAMS 55 &eacute;taient encore pr&eacute;sents 
+              dans les unit&eacute;s actives. Il en restait encore 25 lors de 
+              l'attaque Allemande du 10 Mai 1940, A l'Armistice, quasiment tous 
+              les CAMS 55 avaient &eacute;t&eacute; d&eacute;truits : seuls deux 
+              exemplaires affect&eacute;s &agrave; l'Escadrille 20-S de la France 
+              Libre (Ex 8S-5) voleront jusqu'en Janvier 1941</font></b></p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <div align="left"> 
+              <table width="60%" border="1">
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="15%"> 
+                    <div align="center"><font face="Arial Narrow"><b>Version</b></font></div>
+                  </td>
+                  <td width="11%"> 
+                    <div align="center"><font face="Arial Narrow"><b>Quantit&eacute;</b></font></div>
+                  </td>
+                  <td width="74%"> 
+                    <div align="center"><font face="Arial Narrow"><b>Descriptif</b></font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-1</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">43</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Prinicipale 
+                    version </font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-2</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">29</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    motoris&eacute;e par un Gn&ocirc;me-Rh&ocirc;ne GR 9Akx de 
+                    480cv, entr&eacute;e en service en 1931</font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-3</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    &agrave; coque aluminium. Le pilote d'essai Pierre BRUNEL 
+                    trouvera la mort lors d'un essai : l'appareil se retourne 
+                    en mer en voulant &eacute;viter une p&eacute;niche et le pilote 
+                    se noie...</font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-6</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    motoris&eacute;e par un Gn&ocirc;me-Rh&ocirc;ne GR 9Akx de 
+                    480cv entrainant une h&eacute;lice tripale &agrave; pas variable. 
+                    Le fuselage et les flotteurs sont en Alliage l&eacute;ger 
+                    : gain de 400kgs. </font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-10</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">28</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    motoris&eacute;e par un Gn&ocirc;me-Rh&ocirc;ne GR 9Kbr de 
+                    500cv. Entr&eacute; en service en 1934.</font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-10 col</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">4</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    coloniale &agrave; structure renforc&eacute; pour s'adapter 
+                    aux conditions climatiques extr&ecirc;mes</font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-11</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    motoris&eacute;e par un Gn&ocirc;me-Rh&ocirc;ne GR 9Kdr de 
+                    500cv</font></td>
+                </tr>
+                <tr> 
+                  <td background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><b>CAMS 
+                      55-14</b></font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                    motoris&eacute;e par un Gn&ocirc;me-Rh&ocirc;ne GR 9Kdrs de 
+                    500cv</font></td>
+                </tr>
+              </table>
+              
+            </div>
+          </div>
+          <div align="left">
+<p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              
+            <table width="96%">
+              <tr> 
+                <td width="48%" height="184"> 
+                  <div> 
+                    <div> 
+                      <div align="left"> 
+                        <div><b><i><font size="2" face="Arial Narrow">1 ) _ Editions 
+                          LELA-PRESSE - Mars 1999</font></i></b></div>
+                        <div> 
+                          <div><font face="Arial Narrow" size="2"><b><i><font color="#990000">AVION 
+                            </font></i></b><font color="#990000"><i><b> N&deg; 
+                            72 : &quot; Des CAMS 37 &agrave; la coque m&eacute;tal&quot;</b></i></font></font></div>
+                          <div><i><font face="Arial Narrow" size="2" color="#000000">De 
+                            </font><font size="2" color="#000000">Pierre CORTET</font></i></div>
+                        </div>
+                      </div>
+                      <div align="left"></div>
+                      <b></b></div>
+                  </div>
+                  <p><a class="fancybox-effects-c" href="Photos/Avions-n72.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions-n72.jpg" alt="" width="64" height="100" border="0" /></a> 
+                  </p>
+                </td>
+                <td width="52%" height="184"> 
+                  <div><b><i><font size="2">2<i><font color="#990000"><b><i><font color="#000000">) 
+                    _ Editions Larivi&egrave;re - F&eacute;vrier 1988</font></i></b><i><font color="#990000"><b><br>
+                    Le Fana de L'Aviation n&deg;219 : &quot;Les Hydravions CAMS 
+                    &quot; 6eme Partie</b></font></i></font></i></font></i></b></div>
+                  <div><i><font size="2" color="#000000">De Jezan LIRON</font></i></div>
+                  <p>&nbsp; <a class="fancybox-effects-c" href="Photos/Fana-Aviation_n219.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana-Aviation_n219.jpg" alt="" width="71" height="100" border="0" /></a> 
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+          </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              
+            <p><a class="fancybox-effects-c" href="Photos/CAMS55-1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_CAMS55-1.jpg" alt="" width="125" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/CAMS55-3.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_CAMS55-3.jpg" alt="" width="126" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/CAMS55-4.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_CAMS55-4.jpg" alt="" width="125" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/CAMS55-A5.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_CAMS55-A5.jpg" alt="" width="118" height="72" border="0" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            
+          <div align="left"><a class="fancybox-effects-c" href="Photos/P3V-CAMS-55.JPG" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_P3V-CAMS-55.JPG" alt="" width="183" height="120" border="0" /></a> 
+          </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

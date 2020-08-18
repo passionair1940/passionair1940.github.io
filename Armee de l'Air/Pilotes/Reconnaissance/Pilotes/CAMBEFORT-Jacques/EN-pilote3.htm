@@ -1,0 +1,464 @@
+<!--This file created 23:58  12/06/01 by Claris Home Page version 2.0This file created 00:00  13/06/01 by Claris Home Page version 2.0-->
+<!--This file created 22:45  13/06/01 by Claris Home Page version 2.0-->
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<TITLE>Sous-Lieutenant-Jacques-CAMBEFORT</TITLE>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,pilotes,équipages,reconnaissance,observation,campagne de france,drôle de guerre">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css"><!--
+-->
+</style>
+
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+</HEAD>
+<BODY TEXT="#0F0000" BGCOLOR="#CCFFFF" LINK="#990000" ALINK="#0F0000" VLINK="#0F0000" background="../../../../../Images%20Base/wb.gif" onLoad="MM_goToURL('parent','');return document.MM_returnValue"  >
+<blockquote> 
+  <blockquote> 
+    <blockquote> 
+      <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="left"> 
+                    <div id="Layer1" style="position:absolute; width:200px; height:115px; z-index:1; left: 29px; top: 15px"> 
+                      <table width="100%%" border="1">
+                        <tr> 
+                          <td colspan="2"> 
+                            <div align="center"><a href="../../EN-Equipage-Reco-C.htm" target="_blank"><img src="../../../../../Images%20Base/EN-1-Retour%20page%20pilotes.png" width="100%" border="0"></a></div>
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td width="80%"> 
+                            <div align="center"><b><font color="#000000" size="3">Site 
+                              en Fran&ccedil;ais</font></b></div>
+                          </td>
+                          <td width="20%"><a href="pilote3.htm" target="_self"><img src="../../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    </div>
+                  
+                      <div align="center">
+                        
+                    <div><img src="Jacques%201940.jpg" width="30%"></div>
+                        
+                    <div align="center"><b><font size="18%" color="#660000">Sub-Lieutenant 
+                      Jacques CAMBEFORT</font></b></div>
+                      </div>
+                    </blockquote>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  <hr size="4" noshade width="98%" align="left">
+<blockquote> 
+  <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Biography</font></i></b></font></p>
+  <p><font face="Arial Narrow"><b><font size="2">Jacques CAMBEFORT was born on 
+    September 4, 1911 in Salvagnac in the Tarn. He is the son of Elie CAMBEFORT 
+    and Philogone MASSOUTIE</font></b></font></p>
+  <p><font size="2"><b><font face="Arial Narrow">After his studies at Arts et 
+    M&eacute;tiers (Aix 1929), Jacques was admitted in 1935 to the &quot;Ecole 
+    Normale Sup&eacute;rieure de l'Enseignement Technique&quot; in Paris. He graduated 
+    in 1937 with a teacher's degree.</font></b></font></p>
+  <p><font size="2"><b><font face="Arial Narrow">At the declaration of the War, 
+    Jacques is mobilized and joins the aviation of Reconnaissance. With the rank 
+    of Sub-Lieutenant, he will serve as an observer, within the GAO 517 (see photo 
+    on guard) and GR II / 36, where he will perform missions for which he will 
+    be cited to the order of the Army of Air (see document below). He will receive 
+    the War Cross 1939-45 with Palme.</font></b></font></p>
+  <p><font size="2"><b><font face="Arial Narrow">Demobilized, he joined the civilian 
+    life and married on September 26, 1940, Miss Laure CASSAN. From this union, 
+    will be born two children Jean Louis and Yves.</font></b></font></p>
+  <p><font size="2"><b><font face="Arial Narrow">After the War, his degree as 
+    a teacher allowed him to be named to the brand new National School of Aeronautics, 
+    created in Toulouse in 1946, and in which he spent most of his career. It 
+    can be said without exaggeration that this educational institution was one 
+    of the conditions for the development of a state-of-the-art aerospace industry 
+    in Toulouse, which has become known nationally and internationally for exemplary 
+    successes, such as the Caravelle and the Airbus, to name only the most famous.</font></b></font></p>
+  <p><font size="2"><b><font face="Arial Narrow">For the anecdote: Jacques was 
+    offered, in the late 1950s, the Legion of Honor, as a military. He refused 
+    it, and it was never offered to him again. Much later, he was offered the 
+    Merit, this time on a civilian basis; but he refused it too.</font></b></font></p>
+  <p><font face="Arial Narrow" size="2"><b>Jacques CAMBEFORT died on April 6, 
+    1983</b></font><br>
+  </p>
+  <div> 
+    <p><font face="Arial Narrow" size="2"><i>Source (Photos and biography) : Mr 
+      Yves CAMBEFORT, son of Jacques</i></font><i>. --&gt; </i><a href="https://gw.geneanet.org/ycambefort_w?n=cambefort&oc=2&p=jacques%2Bjean%2Blouis&i=0" target="_blank">https://gw.geneanet.org/ycambefort_w?n=cambefort&amp;oc=2&amp;p=jacques+jean+louis&amp;i=0</a></p>
+    <p>&nbsp;</p>
+    </div>
+</blockquote>
+<td>
+<blockquote>
+<hr size="4" noshade width="98%" align="left">
+    <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Some feats 
+      of arm</font></i></b></font><br>
+    </p>
+    <p><font face="Arial Narrow"><b><font size="2">Text of the Citation to the 
+      Order of the Air Force, published in the Official Journal of October 28, 
+      1940 : </font></b></font></p>
+    <p><font face="Arial Narrow"><i><font size="2">&quot;CAMBEFORT (Jacques), 
+      second lieutenant: young officer observer of the highest order, extremely 
+      conscientious and hardworking, remarkable for the care with which he prepares 
+      the execution of the missions entrusted to him and in which he collects 
+      information every time valuable for the command.It was particularly noteworthy: 
+      April 1, 1940, carrying out a photographic mission perfectly successful 
+      in all respects around the salient of Orenthal, May 26, 1940, fulfilling, 
+      despite a strong and continuous reaction of the adversary, a long reconnaissance 
+      in territory occupied by the enemy. &quot;</font></i></font></p>
+    </blockquote>
+  <ul>
+    <hr size="4" noshade width="98%" align="left">
+    <p><font color="#660000"><b><i><font size="6" face="Arial Narrow">Various 
+      documents</font></i></b></font></p>
+    <table width="40%" border=" ">
+      <tr> 
+        <td width="47%"> 
+          <div align="center"><b><font face="Arial Narrow">Citation from Jacques 
+            CAMBEFORT, published in the Official Journal of October 28, 1940</font></b></div>
+        </td>
+        <td width="53%"> 
+          <div align="center"><b><font face="Arial Narrow">Certificate of Identity 
+            of Sub-Lieutenant Jacques CAMBEFORT</font></b></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="47%"> 
+          <div align="center"><a class="fancybox-effects-c" href="Citation.jpg" data-fancybox-group="gallery-1" title="Citation Journal Officiel 28 Octobre 1940" target="_blank" ><img alt="" border="0" width="226" height="300" src="tn_Citation.jpg" /></a></div>
+        </td>
+        <td width="53%"> 
+          <div align="center"><a class="fancybox-effects-c" href="Jacques%201939.jpg" data-fancybox-group="gallery-1" title="Citation Journal Officiel 28 Octobre 1940" target="_blank" ><img alt="" border="0" width="211" height="300" src="tn_Jacques%201939.jpg" /></a></div>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td colspan="2"><font face="Arial Narrow"><b>Jacques CAMBEFORT in front 
+          of a Potez 25 (biplane) and one Gourdou-Lesseure LGL 32 (Monoplan Parasol)</b></font></td>
+      </tr>
+      <tr> 
+        <td colspan="2" height="106"> 
+          <div align="center"><a class="fancybox-effects-c" href="Jacques%20aviation%2002.jpg" data-fancybox-group="gallery-1" title="Citation Journal Officiel 28 Octobre 1940" target="_blank" ><img alt="" border="0" width="653" height="100" src="tn_Jacques%20aviation%2002.jpg" /></a></div>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="2"> 
+          <div align="center"><a class="fancybox-effects-c" href="Jacques%20aviation%2001.jpg" data-fancybox-group="gallery-1" title="Citation Journal Officiel 28 Octobre 1940" target="_blank" ><img alt="" border="0" width="413" height="100" src="tn_Jacques%20aviation%2001.jpg" /></a></div>
+        </td>
+      </tr>
+    </table>
+    <div align="Left"> 
+      <p><font size="2"></font></p>
+      <p>&nbsp;</p>
+    </div>
+    <hr size="4" noshade width="98%" align="left">
+    <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Units of 
+      affectation</font></i></b></font></p>
+    <P><font face="Arial Narrow" size="2"><b>When it is not specified, dates do 
+      not correspond inevitably at the beginning of real affectation, but rather 
+      to the date with which the presence of the pilot within the group was identified 
+      thanks to the various documents.</b></font></P>
+    <P> 
+    <table width="45%" border="1">
+      <tr> 
+        <td width="20%"> 
+          <div align="center"><font size="4"><i><b>Units</b></i></font></div>
+        </td>
+        <td width="35%"> 
+          <div align="center"><font size="4"><i><b>Dates</b></i></font></div>
+        </td>
+        <td width="45%"> 
+          <div align="center"><font size="4"><i><b>Function</b></i></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="20%"> 
+          <div align="center"><font face="Arial Narrow" size="3"><b>GAO 517</b></font></div>
+        </td>
+        <td width="35%">&nbsp;</td>
+        <td width="45%"> 
+          <div align="center"><font face="Arial Narrow" size="2">Observer</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="20%"> 
+          <div align="center"><b><font size="3" face="Arial Narrow">GR II/36</font></b></div>
+        </td>
+        <td width="35%"><font face="Arial Narrow" size="2">Indeterminate dates, 
+          but present at the Group from April 1st to May 26th 1940</font></td>
+        <td width="45%"> 
+          <div align="center"><font face="Arial Narrow" size="2">Observer</font></div>
+        </td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <hr size="4" noshade width="98%" align="left">
+    <P><font color="#660000"><b><i><font face="Arial Narrow" size="6">Used Aircrafts</font></i></b></font></P>
+    <table width="46%" border="1" height="88">
+      <tr> 
+        <td width="162"> 
+          <div align="center"><font size="4"><i><b>Aircraft</b></i></font></div>
+        </td>
+        <td width="101"> 
+          <div align="center"><font size="4"><i><b>N&deg;</b></i></font></div>
+        </td>
+        <td width="115"> 
+          <div align="center"><font size="4"><b><i>Immat.</i></b></font></div>
+        </td>
+        <td width="242"> 
+          <div align="center"><font size="4"><i><b>Unit</b></i></font></div>
+        </td>
+        <td width="198"> 
+          <div align="center"><font size="4"><i><b>Date</b></i></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="162">&nbsp;</td>
+        <td width="101">&nbsp;</td>
+        <td width="115"> 
+          <div align="center"><font face="Arial Narrow"><font face="Arial Narrow"><font size="3"></font></font></font></div>
+        </td>
+        <td width="242">&nbsp;</td>
+        <td width="198">&nbsp;</td>
+      </tr>
+    </table>
+    <div align="center"> <br>
+    </div>
+    <P>&nbsp;</P>
+    <P>&nbsp;</P>
+    <P>&nbsp;</P>
+    <P>&nbsp;</P>
+    <P>&nbsp;</P>
+    <div align="center"> 
+      <p>&nbsp;</p>
+    </div>
+  </ul>
+  <p>&nbsp;</p>
+  
+</BODY>
+</HTML>

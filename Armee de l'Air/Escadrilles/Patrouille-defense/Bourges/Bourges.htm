@@ -1,0 +1,812 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Patrouille-Bourges</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,patrouille de défense,défense aérienne du territoire,DAT,chasse,aviation,français,campagne de france,drôle de guerre,Bourges">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne"><a name="HAUTDEPAGE"></a></p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Bourges.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><a href="../../Accueil-Escadrilles.htm"><font size="4" color="#FFFFFF"><b>Unit&eacute;s</b></font></a> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <div align="left" class="style1"> 
+              <p><b class="Aucun"><b><a href="../../Esc-Chasse/Accueuil-Chasse.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Chasse</font></font></a></b></b></p>
+              <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><i><font color="#FFFFFF" size="4"><a href="../Accueil-Patrouilles.htm">Patrouilles 
+                de D&eacute;fense</a></font></i></font></b></b></p>
+            </div>
+            <div align="left"><a href="../Angers/Angers.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Angers</b></font></a></div>
+            <div align="left"><a href="../Avord/Avord.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">-</font></i><font color="#FFFFFF"><font color="#FFFF00"> 
+              Avord</font></font></b></font></a></div>
+            <div align="left"><a href="../Bordeaux/Bordeaux.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Bordeaux</b></font></a></div>
+            <div align="left"><a href="Bourges.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+              Bourges</font></i></b></font></a></div>
+            <div align="left"><a href="../Chartres/Chartres.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Chartres</b></font></a></div>
+            <div align="left"><a href="../Chateaudun/Chateaudun.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Chateaudun</b></font></a></div>
+            <div align="left"><a href="../Chateauroux-deols/Chateauroux-Deols.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Ch&acirc;teauroux-D&eacute;ols</b></font></a></div>
+            <div align="left"><a href="../Chateauroux-la-martinerie/Chateauroux-La-Martinerie.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Ch&acirc;teauroux-La-Martinerie</b></font></a></div>
+            <div align="left"><a href="../Clermont-Aulnat/Clermont-Aulnat.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Clermont-Aulnat</b></font></a></div>
+            <div align="left"><a href="../Cognac/Cognac.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Cognac</b></font></a></div>
+            <div align="left"><a href="../Etampes/Etampes.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Etampes</b></font></a></div>
+            <div align="left"><a href="../Istres/Istres.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Istres</b></font></a></div>
+            <div align="left"><a href="../La-Rochelle/La-Rochelle.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              La Rochelle</b></font></a></div>
+            <div align="left"><a href="../Montpellier/Montpellier.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Montpellier</b></font></a></div>
+            <div align="left"><a href="../Nantes/Nantes.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Nantes</b></font></a></div>
+            <div align="left"><a href="../Orleans-Bricy/Orleans-Bricy.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Orl&eacute;ans-Bricy</b></font></a></div>
+            <div align="left"><a href="../Rennes/Rennes.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Rennes</b></font></a></div>
+            <div align="left"><a href="../Romorantin/Romorantin.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Romorantin</b></font></a></div>
+            <div align="left"><a href="../Salon/Salon.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Salon</b></font></a></div>
+            <div align="left"><a href="../Toulouse/Toulouse.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Toulouse</b></font></a></div>
+            <div align="left"><a href="../Tours/Tours.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Tours</b></font></a></div>
+            <div align="left"><a href="../GC-I-145/GC-1_145.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              GC I/145 &quot;Varsovie&quot;</b></font></a></div>
+            <div align="left"><a href="../GC-I-55/GC-1_55.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              GC I/55</b></font></a></div>
+            <div align="left"><a href="../GCMP-Lyon-Bron/GCMP_Lyon-Bron.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              GCMP Lyon-Bron</b></font></a></div>
+            <div align="left" class="style1"> 
+              <p align="left"><b class="Aucun"><b><a href="../../Esc-Bomb/-Accueil-Esc-Bombardement.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Bombardement</font></font></a></b></b></p>
+              <p align="left"><b class="Aucun"><b><a href="../../Esc-Bomb-Assaut/-Accueil-Esc-Bomb-Assaut.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Aviation 
+                d'Assaut</font></font></a></b></b></p>
+              <p align="left"><b class="Aucun"><b><a href="../../Esc-Reco/GAO/Accueil-GAO2.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Observation</font></font></a></b></b></p>
+				<p align="left"><b class="Aucun"><b><a href="../../Esc-Reco/Groupe-Reco/Accueil-Groupe-Reco2.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Reconnaissance</font></font></a></b></b></p>
+			  <p align="left"><b class="Aucun"><b><a href="../../../Insignes-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Insignes d'Escadrilles </font></font></a></b></b></p>
+            </div>
+            <p align="left">&nbsp; 
+          </div>
+          <div align="left" class="style1"></div>
+          <p align="left">&nbsp;</p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <table width="85%">
+              <tr> 
+                <td colspan="2" height="20%"> 
+                  <div align="center"></div>
+                  <div align="center"> 
+                    <div><b><font size="20%" color="#660000">Patrouille de BOURGES</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="92" colspan="2"> 
+                  <div align="center"></div>
+                  <div align="center"><font face="Arial Narrow" size="4"><b>Pas 
+                    d'insigne connu</b></font></div>
+                </td>
+              </tr>
+            </table>
+            <div><a href="#Histoire"><img src="../../../../Images%20Base/B-Historique.png" width="10%" border="0"></a><a href="#Etatmajor"><img src="../../../../Images%20Base/B-Etat%20major.png" width="10%" border="0"></a> 
+              <a href="#Pilotes"><img src="../../../../Images%20Base/B-Pilotes.png" width="10%" border="0"></a> 
+              <a href="#Terrains"><img src="../../../../Images%20Base/B-Terrains.png" width="10%" border="0"></a> 
+              <a href="#Appareils"><img src="../../../../Images%20Base/B-Appareils.png" width="10%" border="0"></a> 
+              <a href="#Palmares"><img src="../../../../Images%20Base/B-Palmares.png" width="15%" border="0"></a> 
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Histoire"></a></font></i></b></font> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Historique</font></i></b></font></p>
+              <div> 
+                <p><b><font face="Arial Narrow" size="2">La Patrouille d'Usine 
+                  de Bourges a &eacute;t&eacute; cr&eacute;&eacute;e le 11 Mai 
+                  1940 pour d&eacute;fendre l'usine SNCAC qui assemble et r&eacute;pare 
+                  les Curtiss H75. Celle-ci est tout dabord prot&eacute;g&eacute;e 
+                  par une &quot;Patrouille Fran&ccedil;aise&quot; forte de trois 
+                  Curtiss H75 et command&eacute;e par le lieutenant-colonel Marcel 
+                  HAEGELEN, As de la premi&egrave;re guerre Mondiale aux 22 Victoires.</font></b></p>
+                <p><font face="Arial Narrow" size="2"><b>Suite &agrave; un bombardement 
+                  Allemand de l'usine le 11 Mai 1940, heureusement sans gravit&eacute;, 
+                  six pilotes Polonais sont d&eacute;tach&eacute;s pour cr&eacute;er 
+                  la &quot;Patrouille d'Usine de Bourges&quot;.</b></font></p>
+                <p><font face="Arial Narrow" size="2"><b>Le palmar&egrave;s de 
+                  la Patrouille est de 2 Heinkel 111 homologu&eacute;s, dans un 
+                  contexte difficile : les pilotes Polonais volaient semble-t'il 
+                  sans Radio, et les chances d'intercepter les rapides bombardiers 
+                  Allemands &eacute;taient bien minces.</b></font></p>
+                <p><font face="Arial Narrow" size="2"><b>Le 21 Juin 1940, six 
+                  pilotes Polonais de la Patrouille se replient en AFN, &agrave; 
+                  Alger Maison-Blanche avec leurs Curtiss H75. Les pilotes Polonais 
+                  rejoindrons tous l'Angleterre pour poursuivre le combat.</b></font></p>
+              </div>
+            </div>
+          </blockquote>
+          <p align="left">&nbsp;</p>
+          <div align="center"> 
+            <div align="left"> 
+              <p align="center"> <a name="Etatmajor"></a> 
+            </div>
+          </div>
+          <div align="left"> </div>
+          <div align="left"></div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Etat-Major</font></i></b></font></p>
+              <table BORDER bordercolor="#000000" width="72%" bgcolor="#FFFFFF" >
+                <tr> 
+                  <td colspan="3" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                    <center>
+                      <font face="Arial Narrow"><i><b><font color="#FFFFFF">Commandants 
+                      de la Patrouille de Bourges</font></b></i></font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="386" height="29" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">Lieutenant-Colonel 
+                    HAEGELEN Marcel</font></b></td>
+                  <td width="157" height="29" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+                  <td width="145" height="18" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                </tr>
+              </table>
+              <p align="left">&nbsp;</p>
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Pilotes"></a></p>
+              <hr noshade size="4" width="98%" align="left">
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Pilotes</font></i></b></font></p>
+            </div>
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="100%" bgcolor="#FFFFFF" >
+                <tr> 
+                  <td colspan="5" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                    <center>
+                      <i><b><font face="Arial, Helvetica, sans-serif" color="#FFFFFF">Pilotes 
+                      et Membres d'Equipages de la Patrouille</font></b></i> 
+                    </center>
+                  </td>
+                </tr>
+                <tr bgcolor="#999999"> 
+                  <td height="60" bordercolor="#000000" width="25%" rowspan="2"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Noms 
+                      de pilotes</b></font></div>
+                  </td>
+                  <td height="60" bordercolor="#000000" width="15%" rowspan="2"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Grade</b></font></div>
+                  </td>
+                  <td height="29" bordercolor="#000000" colspan="2"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Victoires</b></font></div>
+                  </td>
+                  <td height="60" bordercolor="#000000" width="40%" rowspan="2"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Divers</b></font></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#999999"> 
+                  <td height="29" bordercolor="#000000" width="4%"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>S&ucirc;res</b></font></div>
+                  </td>
+                  <td height="29" bordercolor="#000000" width="4%"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Prob.</b></font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">GIERMER 
+                    Waclaw </font></b></td>
+                  <td width="147" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Sergent</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">HAEGELEN 
+                    Marcel</font></b></td>
+                  <td width="147" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Lieutenant-Colonel</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">As 
+                    de la Grande guerre aux 22 victoires, qui rajoutera encore 
+                    une victoire dans la Patrouille.</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">KOSINSKI 
+                    Bronislaw </font></b></td>
+                  <td width="147" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Capitaine</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord. C'est ce pilote, ancien champion de Voltige, 
+                    qui entrainera les autres pilotes.</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">KREMSKI 
+                    Jan</font></b></td>
+                  <td width="147" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Sergent</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial Narrow" size="2">2</font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">MAJCHRZYK 
+                    Wladislaw</font></b></td>
+                  <td width="147" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Sergent</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">MOSZYNSKI 
+                    Zbigniew</font></b></td>
+                  <td width="147" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">PIETRASIAK 
+                    Adolf</font></b></td>
+                  <td width="147" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Sergent</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+                <tr> 
+                  <td width="213" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">WESOLOWSKI 
+                    Marian</font></b></td>
+                  <td width="147" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="40"> 
+                    <div align="center"><font face="Arial Narrow" size="2">2</font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="38"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                  </td>
+                  <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="416"><font face="Arial Narrow" size="2">Pilote 
+                    Polonais affect&eacute; le 16 Mai 1940 en provenance de l'&eacute;cole 
+                    de pilotage d'Avord</font></td>
+                </tr>
+              </table>
+              <p align="center"><font color="#660000"><b></b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="left"> </div>
+            <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Terrains"></a></p>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Terrains</font></i></b></font></p>
+            </div>
+            <div align="left"> 
+              <table width="53%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr bgcolor="#999999"> 
+                  <td width="55%"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>Terrains 
+                      d'accueil</b></font></div>
+                  </td>
+                  <td width="45%"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>P&eacute;riode 
+                      d'utilisation des terrains</b></font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="51%" height="36" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Terrain 
+                    de l'Usine de Bourges</font></b></td>
+                  <td width="49%" height="36" bgcolor="#E4E4E4"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Du 
+                      11 Mai au 17 Juin 1940</font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="51%" height="36" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Limoges</font></b></td>
+                  <td width="49%" height="36" bgcolor="#E4E4E4"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Du 
+                      18 au 21 Juin 1940</font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="51%" height="36" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Alger 
+                    Maison-Blanche</font></b></td>
+                  <td width="49%" height="36" bgcolor="#E4E4E4"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Le 
+                      22 Juin 1940</font></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"> 
+                    <div><a name="Appareils"></a></div>
+                  </div>
+                </blockquote>
+              </blockquote>
+              <div align="center"> 
+                <div align="center"></div>
+                <blockquote> 
+                  <blockquote> </blockquote>
+                </blockquote>
+              </div>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Appareils</font></i></b></font></p>
+              <div align="left"> 
+                <p><font face="Arial, Helvetica, sans-serif" size="3"><b><font size="2" face="Arial Narrow">La 
+                  Patrouille de Bourges a &eacute;t&eacute; &eacute;quip&eacute;e 
+                  depuis sa cr&eacute;ation le 11 Mai 1940, des appareils suivants 
+                  :</font></b></font></p>
+              </div>
+              <blockquote> 
+                <div align="left"><a class="fancybox-effects-c" href="../../../Appareils/Chasse/Curtiss-H75/Photos/HPH75vichy.jpg" data-fancybox-group="gallery-2" title="Les appareils de la Patrouille de Bourges : Curtiss H75"><font face="Arial Narrow" size="3"><b><font color="#0000FF">- 
+                  Curtiss H75</font></b></font></a> </div>
+              </blockquote>
+              <div align="left"><font face="Arial Narrow" size="2"><b>Les appareils 
+                utilis&eacute;s sont d&eacute;crits dans le fichier accessible 
+                par le lien ci-dessous. Vous y trouverez les N&deg; de s&eacute;rie, 
+                d'Immatriculation, la date d'affectation au groupe, et le sort 
+                de l'appareil.</b></font> 
+                <p><a class="fancybox fancybox.iframe" href="Appareils-Bourges.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="20%"></a></p>
+                <p><font size="2"><b><font color="#000000" face="Arial Narrow">Dans 
+                  cette liste sont identifi&eacute;s : </font></b></font></p>
+                <ul>
+                  <li><font size="2" face="Arial Narrow"><b><i> 1 Curtiss H75 
+                    A1 </i></b></font></li>
+                  <li><font size="2" face="Arial Narrow"><b><i> 6 Curtiss H75 
+                    A2</i></b></font></li>
+                </ul>
+                <p>&nbsp;</p>
+              </div>
+              <p><font face="Arial, Helvetica, sans-serif" size="3"><b> </b></font></p>
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+            </blockquote>
+            <div align="center"><a name="Palmares"></a> </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Palmares</font></i></b></font></p>
+            </div>
+            <div align="left"> 
+              <table width="27%" border="1" bgcolor="#FFFFFF">
+                <tr bordercolor="#000000"> 
+                  <td bgcolor="#999999" width="77%" height="27"> 
+                    <div align="center"><font face="Arial Narrow"><b>Victoires 
+                      S&ucirc;res</b></font></div>
+                  </td>
+                  <td width="23%" bgcolor="#999999" height="27"> 
+                    <div align="center"><font face="Arial Narrow"><b>3</b></font></div>
+                  </td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td bgcolor="#CCCCCC" width="77%" height="22"> 
+                    <div align="left"><b><font face="Arial Narrow" size="2">Heinkel 
+                      He111 </font></b></div>
+                  </td>
+                  <td width="23%" bgcolor="#E4E4E4" height="22"> 
+                    <div align="center"><font face="Arial Narrow" size="2">3</font></div>
+                  </td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td bgcolor="#999999" width="77%" height="27"> 
+                    <div align="center"><font face="Arial Narrow"><b>Victoires 
+                      Probables</b></font></div>
+                  </td>
+                  <td width="23%" bgcolor="#999999" height="27"> 
+                    <div align="center"><font face="Arial Narrow"><b>1</b></font></div>
+                  </td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td bgcolor="#CCCCCC" width="77%" height="22"> 
+                    <div align="left"><b><font face="Arial Narrow" size="2">Heinkel 
+                      He111 </font></b></div>
+                  </td>
+                  <td width="23%" bgcolor="#E4E4E4" height="22"> 
+                    <div align="center"><font face="Arial Narrow" size="2">1</font></div>
+                  </td>
+                </tr>
+              </table>
+              <p><font face="Arial, Helvetica, sans-serif"><b></b></font></p>
+            </div>
+            <blockquote> 
+              <div align="center"><font face="Lucida Handwriting"><i><b></b></i></font></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Pertes</font></i></b></font></p>
+              <b><font face="Arial Narrow" size="2">La Patrouille de Bourges n'eut 
+              pas de pertes &agrave; d&eacute;plorer pendant la Campagne de France.</font></b> 
+              <p align="left"><font face="Arial, Helvetica, sans-serif"><b></b></font></p>
+              <p align="left">&nbsp;</p>
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a> 
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

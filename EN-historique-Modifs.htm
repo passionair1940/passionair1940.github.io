@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+
+<title>Historique-Modification-Site</title>
+<meta name="google-site-verification" content="1-YuJ6kadKa9ZGfqszqln9vpx1In8G49V7SrK7DvT0w" />
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,pilotes,appareils,escadrilles,chasse,bombardement,reconnaissance,pertes, victoires,RAF,Luftwaffe,Régia Aéronautica,énigmes,campagne de france,drôle de guerre"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="liens.css" type="text/css">
+</head>
+<BODY TEXT="#0F0000" BGCOLOR="#CCFFFF" LINK="#990000" ALINK="#0F0000" VLINK="#0F0000" background="Images%20Base/wb.gif" onLoad="MM_goToURL('parent','');return document.MM_returnValue"  >
+<div align="left"> 
+  <div align="center"> 
+    <div></div>
+  </div>
+  <blockquote> 
+    <p align="center"><font color="#660000"><b><i></i></b></font></p>
+  </blockquote>
+  <div align="center"></div>
+  <p>&nbsp;</p>
+  <div id="Layer2" style="position:absolute; width:80%; height:115px; z-index:2; left: 45px; top: 29px"> 
+    <table width="85%" border="1">
+      <tr> 
+        <td bgcolor="#333333" width="7%"><a href="historique-Modifs.htm" target="_self"><img src="Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+        <td bgcolor="#333333" width="11%"> 
+          <div align="center"><font color="#FFFFFF"><b><font size="3">Site in 
+            French</font></b></font></div>
+        </td>
+        <td bgcolor="#333333" width="82%"> 
+          <div align="center"><font color="#FFFFFF"><b><i><font size="7">History 
+            of Site Changes</font></i></b></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td bgcolor="#333333" rowspan="5"> 
+          <div align="center"><font color="#FFFFFF" size="5"><b>2020</b></font></div>
+        </td>
+        <td width="11%" bgcolor="#999999" height="229">
+          <div align="center"><font face="Arial Narrow" size="4"><b>July</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="229">
+          <div>
+            <div><font size="3"><b><i><font face="Arial Narrow" color="#000000">1) 
+              </font><font color="#000000"><b><font face="Arial Narrow"><font size="3"><b><i><b><font face="Arial Narrow">Updating 
+              the pages of the</font></b></i></b></font></font></b></font><b><font face="Arial Narrow" color="#FFFFFF"> 
+              <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-4/EN-GC_II-4.htm"><font color="#0000FF">GC 
+              II/4 : </font></a></font></b></i></b></font></div>
+            <div><font size="3"><i><font face="Arial Narrow" color="#000000">- 
+              <i><font size="3">Addition non-navigating personnel </font></i></font></i></font></div>
+            <div></div>
+          </div>
+          <div> 
+            <div align="center"><font size="3"><b><i><b><font face="Arial Narrow" color="#FFFFFF"> 
+              </font></b></i></b></font></div>
+          </div>
+          <hr width="60%">
+          <div><font size="3"><b><i><b><font face="Arial Narrow" color="#000000">2) 
+            Addition to the new section : </font></b></i></b></font></div>
+          <div> 
+            <div align="left"><font size="3"><b><i><b><font face="Arial Narrow" color="#FFFF00"></font><font face="Arial Narrow" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/EN-Personnel-non-Navigant.htm"><font color="#0000FF">" 
+              Non-navigating personnel" </font></a><font color="#FFFF00"></font>. 
+              </font></b></i></b></font></div>
+          </div>
+          <div> 
+            <div> 
+              <div><font size="3"><i><font face="Arial Narrow" color="#000000">This 
+                list is now divided into 4 parts:</font></i></font></div>
+              <div><i><font face="Arial Narrow" size="3" > <b> <font color="#FFFF00"> 
+                <a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/EN-Mecaniciens.htm"></a><a href="EN-Mecaniciens.htm"><font face="Arial Narrow" size="3" color="#0000FF"><b>- 
+                Mechanics</b></font></a></font></b></font></i></div>
+              <div><i><font face="Arial Narrow" size="3" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/EN-Personnel-Etranger.htm"><font color="#FFFF00"><b> 
+                </b></font></a><a href="EN-Personnel-Etranger.htm"><font face="Arial Narrow" size="3" color="#0000FF"><b>-Foreign 
+                Mechanics</b></font></a></font></i></div>
+              <div><i><font face="Arial Narrow" size="3" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/Administratif.htm"><font color="#FFFF00"></font></a><a href="EN-Administratif.htm"><font face="Arial Narrow" size="3" color="#0000FF"><b>- 
+                Health, Administrative,...</b></font></a></font></i></div>
+              <div><i><font face="Arial Narrow" size="3" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/EN-Troupes-Air.htm"><font color="#FFFF00"><b> 
+                </b></font></a><a href="EN-Troupes-Air.htm"><font face="Arial Narrow" size="3" color="#0000FF"><b>- Air 
+                Troop</b></font></a></font></i></div>
+              <div><i><font face="Arial Narrow" size="3" color="#000000">To date, 
+                337 men have been registered.</font></i></div>
+              <p><i><font face="Arial Narrow" size="3" color="#000000">Thanks 
+                to Mr Bernard BARTET for the list of Polish mechanics.</font></i></p>
+            </div>
+          </div>
+                  </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="229"> 
+          <div align="center"><font face="Arial Narrow" size="4"><b>June</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="229"> 
+          <div> 
+            <div><font size="3"><b><i><font face="Arial Narrow" color="#000000">1) 
+              </font> <font color="#000000"><b><font face="Arial Narrow">Updating 
+              the pages of the</font></b></font><b><font face="Arial Narrow" color="#FFFFFF"> 
+              <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/EN-GBA_1-54.htm"><font color="#0000FF">GBA 
+              I/54</font></a> <font color="#000000">et </font><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/EN-GBA_2-54.htm"><font color="#0000FF">GBA 
+              II/54</font></a><font color="#0000FF"> :</font> </font></b></i></b></font></div>
+            <div><font size="3"><i><font face="Arial Narrow" color="#000000">- 
+              Personal (New Names, Photos, History) </font></i></font></div>
+            <div><font size="3" color="#000000"><i><font face="Arial Narrow">- 
+              Aircrafts </font></i></font></div>
+            <div><font color="#000000"><i><font face="Arial Narrow" size="3">- 
+              Addition non-navigating personnel (see below)</font></i></font></div>
+          </div>
+          <div> 
+            <div align="center"><font size="3"><b><i><b><font face="Arial Narrow" color="#FFFFFF"> 
+              </font></b></i></b></font></div>
+          </div>
+          <hr width="60%">
+          <div><font size="3"><b><i><b><font face="Arial Narrow" color="#000000">2) 
+            Addition of a new rubric : </font></b></i></b></font></div>
+          <div align="center"> 
+            <div> 
+              <div align="left"><b><a href="Armee%20de%20l%27Air/Pilotes/Non-Navigant/EN-Personnel-non-Navigant.htm"><font color="#0000FF">&quot;Non-Navigating 
+                Personnel&quot;</font></a></b></div>
+            </div>
+          </div>
+          <div> 
+            <div><font size="3"><i><font face="Arial Narrow" color="#000000">In 
+              this list you will find the non-Navigating personnel of the Squadrons: 
+              Mechanics, Doctors, Administrative Officers,... The list is modest 
+              for the moment (107 people), but will grow over time. </font></i></font></div>
+            <div><font size="3" color="#000000"><i><font face="Arial Narrow">In 
+              the pages dedicated to Squadrons, these names of ground personnel 
+              will also be added,</font></i></font><font size="3"><font face="Arial Narrow" color="#FFFFFF"> 
+              <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/EN-GBA_1-54.htm"><font color="#0000FF">GBA 
+              I/54</font></a></b> <font face="Arial Narrow"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/EN-GBA_2-54.htm"><font color="#0000FF">GBA 
+              II/54</font></a></b></font>, <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-1-35/EN-GR_I-35.htm"><font color="#0000FF">GR 
+              I/35</font></a></b></font> <font color="#000000">et</font> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-5/EN-GC_I-5.htm"><font color="#0000FF">GC 
+              I/5</font></a></b> <font color="#000000"><i><font face="Arial Narrow">are 
+              the first to benefit from them.</font></i></font></font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="223"> 
+          <div align="center"><font face="Arial Narrow" size="4"><b>May</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="223"> 
+          <div><b><i><font face="Arial Narrow" size="3" color="#000000">1) </font><font size="3" color="#000000"><b><i><font size="3"><b><font face="Arial Narrow" size="2">The 
+            pages of GB I/31 could be completed thanks to the documents kindly 
+            shared by Mr Gilles AUDOUX, son of Corporal-Major AUDOUX Abel, made 
+            prisoner on September 9, 1939.</font></b></font></i><font face="Arial Narrow"></font></b></font></i></b></div>
+          <div> 
+            <div> 
+              <div></div>
+              <div> 
+                <div><font face="Arial Narrow" size="3"><b>- <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-31/EN-GB_I-31.htm"><font color="#0000FF">Crew 
+                  Members of GB I/31 :</font></a></b><br>
+                  <font size="2">- Addition Sergeant PECHERANT Machine-gunner<br>
+                  - </font><font face="Arial Narrow" size="3"><font size="2">Addition 
+                  Sergeant ROBERT </font></font><font size="2"> : </font><font face="Arial Narrow" size="3"><font size="2">Machine-gunner</font></font><font size="2"><br>
+                  - Addition photo, citation and first name Master-Corporal AUDOUX 
+                  Abel <br>
+                  - </font><font face="Arial Narrow" size="3"><font size="2">Addition 
+                  photo, citation and first name Sergeant SENOT-DE-LA-LONDE Maurice</font></font><font size="2"><br>
+                  - Addition photo Chief-Warrant-Officer CHARPENTIER<br>
+                  -Addition of crew photos of the Bloch MB200 n&deg;132 after 
+                  its capture on September 9, 1932</font><br>
+                  <b> - <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-31/Appareils-GB-I-31.htm"><font color="#0000FF">Supplementary 
+                  list of GB I/31 :</font></a></b><br>
+                  <font size="2">- BLOCH MB200 : N&deg;122</font></font></div>
+                <div> 
+                  <div><font face="Arial Narrow" size="2"><b>2) <i>On page of</i> 
+                    <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-34/EN-GB_I-34.htm"><font color="#0000FF" size="3">GB 
+                    I/34</font></a>, <i>addition of photos, Citations and some 
+                    information on Staff Sergeant LECLERC thanks to the information 
+                    provided by his Daughter, Mrs Anne NEWLAND.</i></b></font></div>
+                  <div><b><i><font face="Arial Narrow" size="3" color="#000000">3) 
+                    </font><font face="Arial Narrow" size="3" >- <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-35/EN-GBA_2-35.htm"><font color="#0000FF">Page 
+                    of GBA II/35 : </font></a><font color="#0000FF"> </font></font></i></b></div>
+                  <div> 
+                    <div><i><font face="Arial Narrow" size="3" color="#FFFFFF"><font color="#000000" size="2">- 
+                      Addition photo and citation on Sergeant Marcel Charbonnier.</font></font></i></div>
+                    <div><font color="#000000" size="2"><i><font face="Arial Narrow">- 
+                      Addition of details on accident of the Amiot 143 n&deg;110 
+                      and its crew</font></i></font></div>
+                    <div><font color="#000000" size="2"><i><font face="Arial Narrow">Source 
+                      Mrs Josyane ROUSSEL : the Sergeant Marcel CHARBONNIER was 
+                      his father</font></i></font></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="62"> 
+          <div align="center"><b><font size="4">April</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="62"> 
+          <div> 
+            <div><font color="#000000"><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow">1) 
+              - </font><font color="#000000"><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow" color="#FFFFFF"><font size="2" color="#000000">Launch 
+              of the </font></font></i></font></font></b></font><font face="Arial Narrow"><a href="Aeronavale-1939-40/EN-index.htm">&quot;Naval 
+              Aviation&quot;</a> <font size="2">extension.</font></font><font face="Arial Narrow" size="2"> 
+              </font></i></font></font></b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font color="#000000"><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow" color="#FFFFFF"><font size="2" color="#000000">This 
+              part is accessible via the logo at the top right of this page, and 
+              eventually, on all the pages of the site. </font></font></i></font></font></font></i></font></font></font> 
+              <div> 
+                <p><font face="Arial Narrow" size="2" color="#000000">This new 
+                  part of the site includes 320 pages which brings the totality 
+                  of the site to more than 1000 pages in French and as many in 
+                  English.</font></p>
+              </div>
+            </div>
+            <div></div>
+            <div><font size="2"><b><font face="Arial Narrow">The information on 
+              GR II/22 and GR II/14 below comes from Lieutenant ANCET Victor's 
+              flight log, document kindly shared by his son, Mr Robert ANCET.</font></b></font></div>
+          </div>
+          <div> 
+            <div><font face="Arial Narrow" size="3"><b>2) - <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-14/GR_2-14.htm"><font color="#0000FF">Addition 
+              Crew members of GR II/14 :</font></a></b><br>
+              <font size="2">- ANCET Victor Lieutenant : Observer (Assigned to 
+              GR II/22 then GR II/14)<br>
+              - </font><font face="Arial Narrow" size="3"><font size="2">BOYER 
+              Staff-Sergeant</font></font><font size="2"> : </font><font face="Arial Narrow" size="3"><font face="Arial Narrow" size="3"><font size="2">Machine-Gunner</font></font></font><font size="2"><br>
+              - FAURE Sergeant : Pilot<br>
+              - LAUGEROTTE Sergeant : Pilot<br>
+              - MINARD Sergeant</font><font face="Arial Narrow" size="3"><font size="2"> 
+              : </font></font><font face="Arial Narrow" size="3"><font face="Arial Narrow" size="3"><font size="2">Machine-Gunner</font></font></font><font size="2"><br>
+              - PARAGOT Sergeant</font><font face="Arial Narrow" size="3"><font size="2"> 
+              : </font></font><font face="Arial Narrow" size="3"><font face="Arial Narrow" size="3"><font size="2">Machine-Gunner</font></font></font><font size="2"><br>
+              - RACLET Staff-Sergeant</font><font face="Arial Narrow" size="3"><font size="2"> 
+              : Machine-Gunner</font></font><br>
+              <b>3) - <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-22/Appareils-GR-II-22.htm"><font color="#0000FF">Supplementary 
+              list of GR II/22 Aircraft:</font></a></b><br>
+              <font size="2">- BLOCH MB131 : N&deg;45 / 51 / 53 / 54 / 88 / 98 
+              / 122 / 126<br>
+              - Potez 63-11 : N&deg; 14 / 38 / 216 / 220 / 258 / 282</font></font></div>
+            <div><font face="Arial Narrow" size="3"><b>4) - <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-22/Appareils-GR-II-22.htm"><font color="#0000FF">Supplementary 
+              list of GR II/14 Aircraft :</font></a></b><br>
+              <font size="2">- Potez 63-11 : N&deg; 196 / 220 / 242 / 252 / 287 
+              / 424 / 431 / 441 / 496 / 817</font></font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="271"> 
+          <div align="center"><b><font size="4">February</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="271"> 
+          <div> 
+            <div><font color="#000000"><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow">1) 
+              - <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-25/EN-GB_I-25.htm"><font color="#0000FF">Addition 
+              crew members of the</font></a></font><font color="#0000FF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-25/EN-GB_I-25.htm"><font face="Arial Narrow"> 
+              GB I/25 : </font></a></font></i></font></font></b></font></div>
+            <div><font face="Arial Narrow"><b><i><font size="2" color="#000000">- 
+              </font></i></b><font color="#000000" size="2"><i>BOUVALLET Sub-Lieutenant</i></font></font></div>
+            <div><font color="#000000" face="Arial Narrow" size="2"><i>- BOYRON 
+              Sergeant</i></font></div>
+            <div><font color="#000000" face="Arial Narrow" size="2"><i>- CHARBONNEL 
+              Sergeant</i></font></div>
+            <div><font color="#000000" face="Arial Narrow" size="2"><i>- DAPAGNERC 
+              Sergeant</i></font></div>
+            <div><font color="#000000" face="Arial Narrow" size="2"><i>- DUPUY 
+              Chief-Warrant Officer</i></font></div>
+          </div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- HERROU 
+            <i>Chief-Warrant Officer</i></i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- MATMOBEL 
+            Sergeant</i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- OULES Staff-Sergeant</i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- STEFF Eugene 
+            Captain</i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- THUNLAN 
+            <i>Chief-Warrant Officer</i></i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>- TIBLE Sergeant 
+            </i></font></div>
+          <div><font face="Arial Narrow" size="2" color="#000000">(Source from 
+            Mr X.SAUREL, Grandson of the Captain STEFF)</font></div>
+          <div> 
+            <div><font face="Arial Narrow" size="3" color="#000000"><b><i>2) - 
+              <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-34/EN-GB_I-34.htm"><font color="#0000FF">Addition 
+              on the page of the</font></a></i></b></font><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-34/EN-GB_I-34.htm"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>e</i></font> 
+              <font color="#0000FF"><i>GB I/34 :</i></font></b> </font></a></div>
+            <div><font face="Arial Narrow" size="2" color="#000000">- LECLERC 
+              Robert Staff-Sergeant - Pilot</font></div>
+            <div><font face="Arial Narrow" size="2" color="#000000">(Source Mrs 
+              A. NEWLAND, daughter of Robert LECLERC)</font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td bgcolor="#333333" rowspan="10"> 
+          <div align="center"><font color="#FFFFFF" size="5"><b>2019</b></font></div>
+        </td>
+        <td width="11%" bgcolor="#999999" height="54"> 
+          <div align="center"><b><font size="4">Novembre</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="54"> 
+          <div> 
+            <div> 
+              <div> 
+                <div></div>
+                <div> 
+                  <div> 
+                    <div> 
+                      <div><font color="#000000"><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow"> 
+                        - <font size="2">The extension of the site <font size="3">&quot;French 
+                        Naval Aviation&quot;</font> has unfortunately been delayed 
+                        ... Placed on line in July 2020: to date, 244 pages are 
+                        carried out on the 344 planned</font></font></i></font></font></b></font></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="122"> 
+          <div align="center"><b><font size="4">Octobre</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="122"> 
+          <div> 
+            <div> 
+              <div><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font color="#000000" face="Arial Narrow">October 
+                2019 :</font></i></font></font> </b></div>
+              <div> 
+                <div><font color="#000000"><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font face="Arial Narrow"><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-C.htm#CARTERON"><font color="#0000FF"> 
+                  - Addition photo of Sub-Lieutenant LEVY Cl&eacute;ment GR I/33 
+                  - <b><i>Killed on June 14, 1940 aboard Potez 63-11 n&deg;454</i></b></font></a> 
+                  </font></i></font></font></b></font></div>
+                <div><font face="Arial Narrow" size="2" color="#000000">(Source 
+                  Mr ABBO Ronnie - Cl&eacute;ment LEVY was his Great-Uncle)</font></div>
+              </div>
+            </div>
+            <div><font face="Arial Narrow" color="#0000FF" size="2"></font></div>
+            <div> 
+              <div> 
+                <div> 
+                  <div><font face="Arial Narrow" ><b> <font size="3" color="#FFFFFF"><i><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco.htm"><font color="#0000FF">- 
+                    Personnel Reconnaissance Page</font></a></i></font></b></font></div>
+                </div>
+              </div>
+            </div>
+            <div><font face="Arial Narrow" ><b> <font size="3" color="#FFFFFF"><i><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-1-33/GR_I-33.htm"><font color="#0000FF">- 
+              Page Squadron GR I/33</font></a></i></font></b></font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="156"> 
+          <div align="center"><b><font size="4">September</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="156"> 
+          <div> 
+            <div> 
+              <div><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font color="#FFFFFF" face="Arial Narrow"><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/EN-Equipage-Reco-C.htm#EN-CARTERON"><font color="#0000FF">- 
+                Add page dedicated to Georges CARTERON, 1st class soldier at GAO 
+                586</font></a></font></i></font></font> </b></div>
+              <div><b><font color="#FFFFFF"><font face="Arial Narrow" size="3"> 
+                <font color="#FFFFFF"><font face="Arial Narrow" size="2" color="#333333">Add 
+                to Reconnaissance personnal list, 4 men from GAO586</font></font></font></font></b></div>
+              <div><font color="#333333" size="2"><b><font face="Arial Narrow">(Source 
+                Mr CARTERON JC, nephew from Georges CARTERON) : </font></b></font></div>
+              <div></div>
+              <div> 
+                <div> 
+                  <div></div>
+                  <div><font face="Arial Narrow" size="2" color="#333333">- Captain 
+                    DODELIER </font></div>
+                </div>
+                <div><font color="#333333" size="2"><font face="Arial Narrow">- 
+                  Private 1st Class CARTERON Georges</font></font></div>
+                <div><font face="Arial Narrow" size="2" color="#333333">- Staff-Sergeant 
+                  BERNARD Robert</font></div>
+                <div><font face="Arial Narrow" size="2" color="#333333">- Chief-Warrant 
+                  Officer GUEDET Fran&ccedil;ois</font></div>
+                <div><font face="Arial Narrow" size="2" color="#333333">The last 
+                  three died on may 8, 1940by accident aboard the Potez 630 n&deg;43</font></div>
+              </div>
+              <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="3"></font> 
+                <font size="3"><i><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/EN-Equipage-Reco.htm"><font color="#0000FF">- 
+                Page members of Reconnaissance</font></a></i></font></b></font></div>
+              <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="3"><i><a href="Armee%20de%20l%27Air/Citations/Reconnaissance/EN-Citations-Reco.htm"><font color="#0000FF">- 
+                Citation Crews of Reconnaissance</font></a></i></font></b></font></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="73"> 
+          <div align="center"><b><font size="4">August</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="73"> 
+          <div> 
+            <div><font face="Arial Narrow" size="2">Add Staff-Sergeant Jean Louis 
+              REYNAUD from GB I/62</font></div>
+            <div><font color="#0000FF"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-62/EN-GB_I-62.htm"><font color="#0000FF" face="Arial Narrow" size="3">- 
+              Page Squadron GB I/62</font></a></b></font></div>
+            <font color="#0000FF" face="Arial Narrow" size="3"><b><a href="Armee%20de%20l%27Air/Citations/Bombardement/EN-Citations-Bombardement-Q-R.htm">- 
+            Page Citation Crews of bombardement</a></b></font> </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="61"> 
+          <div align="center"><b><font size="4">July</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="61"> 
+          <div><font face="Arial Narrow" color="#0000FF" size="2"></font></div>
+          <div><a href="Armee%20de%20l%27Air/Appareils/Bombardement/Loire-Olivier-Leo-451/EN-LeO-451.htm"><b><font color="#0000FF" face="Arial Narrow" size="3"> 
+            Page Lior&eacute; &amp; Olivier L&eacute;o 451 - &quot;Aircraft list</font>&quot; 
+            : </b></a></div>
+          <div> 
+            <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="2" color="#000000">-</font> 
+              <font size="2" color="#000000"><i>Addition unpublished watercolors 
+              L&eacute;O 451 n&deg;29 and 48</i></font></b></font></div>
+            <div><font face="Arial Narrow" color="#000000" size="2"><i>Realized 
+              by Mr Jean-Charles FONTAN</i></font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="335"> 
+          <div align="center"><b><font size="4">May</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="335"> 
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-33/EN-GR_2-33.htm#EN-Guerin"><font color="#0000FF" face="Arial Narrow" size="3">Page 
+            of the Squadron GR II/33 : </font></a></font></b></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="3" color="#000000">-<i>Addition 
+            page dedicated to Warrant Officer André GUERIN of GR II / 33</i></font></b></font></div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i>- Source 
+            : </i>Mss Véronique GUERIN and Geneviève MOUSQUERE (Born GUERIN) daughters 
+            of André GUERIN</font></font></div>
+          <div><font face="Arial Narrow" color="#000000" size="2">Mrs Yves and 
+            Dominqiue GUERIN, grandsons of Andr&eacute; GUERIN</font></div>
+          <div><font face="Arial Narrow" color="#000000"><b> <font size="3">-<i>Ajout 
+            photo du Sous-Lieutenant Maurice BEDIEZ observateur au GR II/33</i></font></b></font></div>
+          <div> <font face="Arial Narrow" color="#000000"><font size="2"><i> - 
+            Source : </i>Mr Patrick BEDIEZ, grand-son of Maurice BEDIEZ</font></font> 
+          </div>
+          <p> 
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/GAO/GAO-1-506/EN-GAO1506.htm"><font color="#FFFF00" face="Arial Narrow" size="3"> 
+            <font color="#0000FF">Page of the Squadron GAO I/506 and </font></font></a></font></b><font color="#0000FF"><b><a href="Armee%20de%20l%27Air/Citations/Reconnaissance/EN-Citations-Reco.htm"><font face="Arial Narrow" color="#0000FF" size="3">Page 
+            of Reconnaissance citations </font></a></b></font></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="3" color="#000000">-</font> 
+            <font size="3" color="#000000"><i>Addition citation from lieutenant 
+            Pierre BERNHEIM, Observer at GAO I/506</i></font></b></font></div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i>- Source 
+            : </i>Mr Marc BERNHEIM, son of Pierre BERNHEIM</font></font></div>
+          <p> 
+          <div><font color="#0000FF"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-1-31/EN-GB_I-31.htm"><font face="Arial Narrow" color="#0000FF"size="3"> 
+            Page of the Squadron GB I/31 - Addition : </font></a></b></font></div>
+          <div> 
+            <div><font face="Arial Narrow" color="#FFFFFF"><font size="2" color="#000000">-</font> 
+              <font size="2" color="#000000"><i>Staff-Sergeant CASTELA</i></font></font></div>
+            <div><font color="#000000" size="2"><i><font face="Arial Narrow">- 
+              Sergeant CERCUEIL Jean</font></i></font></div>
+            <div><font color="#000000" size="2"><i><font face="Arial Narrow">- 
+              Sub-Lieutenant COLOMBET</font></i></font></div>
+            <div><font color="#000000" size="2"><i><font face="Arial Narrow">- 
+              Sergeant MARION</font></i></font></div>
+            <div><font color="#000000" size="2"><i><font face="Arial Narrow">- 
+              Adjutant POILANE </font></i></font></div>
+          </div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i>- Source 
+            </i>Mr Etienne CERCUEIL, son of Sergeant Jean CERCUEIL</font></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="73"> 
+          <div align="center"><b><font size="4">April</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="73"> 
+          <div> 
+            <div> </div>
+            <div> 
+              <div><font color="#0000FF"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-51/GBA_I-51.htm"><font color="#0000FF" face="Arial Narrow" size="3">Golden 
+                Book of the 51st Wing :</font></a> </b></font></div>
+            </div>
+            <div> 
+              <div> 
+                <div><font face="Arial Narrow" color="#FFFFFF"><font size="2"><i><font color="#000000">- 
+                  Addition of 10 additional pages: human and material balance 
+                  of the campaign (GBA I / 51 and GBA II / 51)</font></i></font></font></div>
+                <div><font face="Arial Narrow" color="#000000"><font size="2"><i> 
+                  - Source : </i>Mr FERRERO Didier</font></font></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="275"> 
+          <div align="center"><b><font size="4">March</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="275"> 
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-51/GBA_I-51.htm"><font color="#0000FF" face="Arial Narrow" size="3">Page 
+            Squadron GBA I/51 :</font></a> </font></b></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="2" color="#000000">-</font></b> 
+            <font size="2" color="#000000"><i>Add Lieutenant <b><font size="3">Jean 
+            LATAILLADE</font></b>, pilot (with photos). </i></font></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><b>-</b><i> 
+            Add Soldat <b><font size="3">Andr&eacute; ERLY</font></b>, Machine-Gunner</i></font></div>
+          <div><font face="Arial Narrow" size="2" color="#000000"><i>Source Mme 
+            M. DULAS, daughter of Jean LATAILLADE</i></font></div>
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/GAO/GAO-509/GAO509.htm"><font color="#0000FF" face="Arial Narrow" size="3">Page 
+            Squadron GAO 509 :</font></a> </font></b></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="2" color="#000000">-</font></b> 
+            <font size="2" color="#000000"><i>Add 3 photos of Sub-Lieutenant <b><font size="3">Andr&eacute; 
+            GIRON</font></b> pilot.</i></font></font></div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i> - 
+            Source : Mr G&eacute;rard MENUT</i></font></font></div>
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-2-63/GB_II-63.htm"><font color="#0000FF" face="Arial Narrow" size="3">Page 
+            Squadron GB II/63 :</font></a> </font></b></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="2" color="#000000">-</font></b> 
+            <font size="2" color="#000000"><i>Add photo, biography and quotes 
+            of the Chief Warrant Officer<b><font size="3"> Henri DUPORT</font></b></i></font></font></div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i> - 
+            Source : </i>Mme MATHALY and Mr Dominique DUPORT,respectively daughter 
+            and nephew of Chief Warrant Officer Henri DUPORT.</font></font></div>
+          <div><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-51/GBA_I-51.htm"><font color="#0000FF" face="Arial Narrow" size="3">Golden 
+            Book of the 51st Wing :</font></a> </font></b></div>
+          <div><font face="Arial Narrow" color="#FFFFFF"><b> <font size="2" color="#000000">-</font></b> 
+            <font size="2" color="#000000"><i>Adding more than 40 pages from the 
+            51st Wing Guestbook (GBA I/51 et GBA II/51)</i></font></font></div>
+          <div><font face="Arial Narrow" color="#000000"><font size="2"><i> - 
+            Source : </i>Mr FERRERO Didier</font></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="353"> 
+          <div align="center"><b><font size="4">February</font></b></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="353"> 
+          <div> 
+            <p><b><font size="2">1) </font></b><font size="2">Addition of 17 Fighting 
+              pilot photos and Bombardment crew members. The photos are visible 
+              either by <a href="Armee%20de%20l%27Air/Pilotes/Accueil-Pilotes.htm"><font face="Arial Narrow"><b><font color="#0000FF">Pilot's</font></b></font></a> 
+              name or by <a href="Armee%20de%20l%27Air/Escadrilles/Accueil-Escadrilles.htm"><b><font color="#0000FF" face="Arial Narrow">Squadron</font></b></a></font></p>
+          </div>
+          <div> 
+            <table width="80%" border="1">
+              <tr> 
+                <td colspan="4" bgcolor="#CCCCCC"> 
+                  <div align="center"><b><font size="3" face="Arial Narrow">11 
+                    Fighting pilots</font></b></div>
+                </td>
+                <td rowspan="12" width="2%"><font size="2" face="Arial Narrow"></font></td>
+                <td colspan="4"> 
+                  <div align="center"><b><font size="3" face="Arial Narrow">6 
+                    Bombardment crew members</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-B.htm"><font face="Arial Narrow" size="2" color="#0000FF">BARDIN</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Paul</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Sub-Lieutnenant 
+                  </font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+                <td width="21%"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-G.htm"><font face="Arial Narrow" size="2" color="#0000FF">GADY</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Ren&eacute;</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Lieutenant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/EN-GBA_1-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  I/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-B.htm"><font face="Arial Narrow" size="2" color="#0000FF">BOITELET</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Hubert</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Lieutenant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-5/EN-GC_I-5.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  I/5</font></a></b></td>
+                <td width="21%"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-L.htm"><font face="Arial Narrow" size="2" color="#0000FF">LAMI</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Ren&eacute;</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Sergeant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/EN-GBA_2-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  II/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-D.htm"><font face="Arial Narrow" size="2" color="#0000FF">DE-BERTREM</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Vladimir</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Captain</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+                <td width="21%"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-M.htm"><font face="Arial Narrow" size="2" color="#0000FF">MITON</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Andr&eacute;</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Adjutant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/EN-GBA_2-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  II/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-C.htm"><font face="Arial Narrow" size="2" color="#0000FF">CORNIGLION-MOLINIER</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Edouard</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Captain</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+                <td width="21%"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-N-O-P.htm"><font face="Arial Narrow" size="2" color="#0000FF">PETITGUILLAUME</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Henri</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Captain</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/EN-GBA_1-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  I/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC" height="44"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-D.htm"><font face="Arial Narrow" size="2" color="#0000FF">DUCLOS</font></a></b></td>
+                <td width="11%" height="44"><font size="2" face="Arial Narrow"></font></td>
+                <td width="11%" height="44"><font size="2" face="Arial Narrow">Sergeant</font></td>
+                <td width="6%" height="44"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+                <td width="21%" height="44"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-N-O-P.htm"><font face="Arial Narrow" size="2" color="#0000FF">PETITPAIN</font></a></b></td>
+                <td width="11%" height="44"><font size="2" face="Arial Narrow">Pierre</font></td>
+                <td width="11%" height="44"><font size="2" face="Arial Narrow">Staff-Sergeant</font></td>
+                <td width="6%" height="44"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/EN-GBA_1-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  I/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-K-L.htm"><font face="Arial Narrow" size="2" color="#0000FF">KERENGUEVEN</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Georges</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Captain</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+                <td width="21%"><b><a href="Armee%20de%20l%27Air/Pilotes/Bombardement/Equipage-Bombardement-S-T.htm"><font face="Arial Narrow" size="2" color="#0000FF">SANNIER</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Marcel</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Sergeant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/EN-GBA_2-54.htm"><font face="Arial Narrow" size="2" color="#0000FF">GBA 
+                  II/54</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-K-L.htm"><font face="Arial Narrow" size="2" color="#0000FF">LAMBLIN</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Jacques</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Sergeant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-7/EN-GC_II-7.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  II/7</font></a></b></td>
+                <td colspan="4" rowspan="5"><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font><font size="2" face="Arial Narrow"></font></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-N-O-P.htm"><font face="Arial Narrow" size="2" color="#0000FF">PANHARD</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Ren&eacute;</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Sergeant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-7/EN-GC_II-7.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  II/7</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-N-O-P.htm"><font face="Arial Narrow" size="2" color="#0000FF">PIZON</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Ren&eacute;</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Staff-Sergeant</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC" height="23"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-Q-R.htm"><font face="Arial Narrow" size="2" color="#0000FF">REY</font></a></b></td>
+                <td width="11%" height="23"> 
+                  <p><font face="Arial Narrow" size="2">Jean-Marie</font></p>
+                </td>
+                <td width="11%" height="23"><font size="2" face="Arial Narrow">Lieutenant</font></td>
+                <td width="6%" height="23"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-5/EN-GC_I-5.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  I/5</font></a></b></td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#CCCCCC"><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/Pilotes-Chasse-France-Q-R.htm"><font face="Arial Narrow" size="2" color="#0000FF">ROUGEVIN-BAVILLE</font></a></b></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Jacques</font></td>
+                <td width="11%"><font size="2" face="Arial Narrow">Captain</font></td>
+                <td width="6%"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm"><font face="Arial Narrow" size="2" color="#0000FF">GC 
+                  III/2</font></a></b></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="205"> 
+          <div align="center"><font size="4"><b>January</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="205"> 
+          <div><b><font size="3" ><font face="Geneva, Arial, Helvetica, san-serif" ><i><font color="#000000">January 
+            2019 :</font></i></font></font> </b></div>
+          <font color="#000000"><b><font size="2">1)</font></b><font size="2"><i><b> 
+          -</b> Added Unpublished watercolors of shots 3 views of Mr JC FONTAN</i></font></font> 
+          <div> 
+            <div><font color="#FFFFFF" face="Arial Narrow" size="3"><a href="Armee%20de%20l%27Air/Appareils/Chasse/Dewoitine-D520/Dewoitine-D520.htm"><font color="#FFFF00"><b><font color="#0000FF">Dewoitine 
+              D520</font></b></font></a></font><font color="#0000FF"><i> :</i></font></div>
+            <div><font color="#000000"><i><font color="#FFFFFF"> <font color="#000000">Aircrafts 
+              List :</font></font></i></font><font color="#000000" face="Arial Narrow"> 
+              </font><font face="Arial Narrow" size="3" color="#000000"><b>Dewoitine 
+              520 n&deg;49</b></font></div>
+          </div>
+          <div> 
+            <div><font face="Arial Narrow" size="3" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Appareils/Chasse/Caudron-CR714/Caudron-Cr714.htm"><font color="#FFFF00"><b><font color="#0000FF">Caudron 
+              714</font></b></font></a> </font><font color="#0000FF"><i>:</i></font></div>
+            <div><font color="#000000"><i><font color="#FFFFFF"> <font color="#000000">Aircrafts 
+              List :</font></font></i></font><font face="Arial Narrow" color="#000000"> 
+              </font><font face="Arial Narrow" size="3" color="#000000"><b>Caudron 
+              Cr714 n°15</b></font></div>
+          </div>
+          <div> 
+            <div align="center"><font face="Arial Narrow" size="3" color="#0000FF"></font></div>
+            <div> 
+              <div><font face="Arial Narrow" size="3" color="#0000FF"><a href="Armee%20de%20l%27Air/Appareils/Chasse/Bloch-MB152/Bloch-MB152.htm"><b>Bloch 
+                MB152</b></a> </font><font color="#0000FF"><i><font face="Arial Narrow"> 
+                :</font></i></font></div>
+              <div><i><font face="Arial Narrow" color="#000000"><font color="#FFFFFF"> 
+                <font color="#000000">Aircrafts List<font size="3"> </font></font></font></font></i><font face="Arial Narrow" color="#000000"><font size="3">: 
+                <b>Bloch MB152 n°421</b></font></font></div>
+              <div><font color="#000000" size="2">These watercolors are also visible 
+                respectively in the pages of the squadron</font><b><font face="Arial Narrow" size="3" color="#0000FF"> 
+                <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-3/GC_I-3.htm"><font color="#0000FF">GC 
+                I/3</font></a> </font><font face="Arial Narrow" size="3" color="#000000">,</font><font face="Arial Narrow" size="3" color="#FFFFFF"> 
+                <a href="Armee%20de%20l%27Air/Escadrilles/Patrouille-defense/GC-I-145/GC-1_145.htm"><font color="#0000FF">GC 
+                I/145</font></a> </font></b><font face="Arial Narrow" size="3" color="#000000">and</font><b><font face="Arial Narrow" size="3" color="#FFFFFF"> 
+                <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-1/EN-GC_I-1.htm"><font color="#0000FF">GC 
+                I/1</font></a></font></b></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td bgcolor="#333333" rowspan="11"> 
+          <div align="center"><font color="#FFFFFF" size="5"><b>2018</b></font></div>
+        </td>
+        <td width="11%" bgcolor="#999999" height="349"> 
+          <div align="center"><font size="4" color="#333333"><b>December</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="349"> 
+          <div> 
+            <p><b><font size="2">1) </font></b><font size="2"><i>Added 26 hunting 
+              pilot photos. The photos are visible either by name of </i><b><a href="Armee%20de%20l%27Air/Pilotes/Chasse/Pilotes-Francais/EN-Pilotes-Chasse-France.htm">Pilot</a></b><i> 
+              or by </i><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/EN-Accueuil-Chasse.htm">Squadron</a></b></font><b> 
+              </b></p>
+          </div>
+          <div> 
+            <table width="77%" border="1">
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">BOURSELOT</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/10</font></td>
+                <td rowspan="13" width="6%">&nbsp;</td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">LEENHARDT 
+                  Tony</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/10 - 
+                  GC III/1</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">CANEL 
+                  Jean</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Commander</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/7 - GC 
+                  II/9</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">LEPREUX 
+                  Jacques</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sergeant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">COLOMES 
+                  Lucien</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sub-lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/9</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">LE-RESTIF 
+                  Yves</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sub-Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">CORMOULS 
+                  Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">ECMJ I/16</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">MAZIER Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Commander</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">DELPARTE 
+                  André</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sergeant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">NICOLE Maurice</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Adjutant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/8</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">DURANTHON 
+                  André</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/2</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">PAPIN Marie</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Captain</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">DURIEUX</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Commander</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">PERTON André</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">2nd Class</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GR II/33</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">DUTEY-HARISPE</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/10 - 
+                  GC II/8</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">PLANCHARD 
+                  Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sergeant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">GENTY 
+                  Pierre</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Chief-Warrant-Officer</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">RUBY Jean</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sub-lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/8</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">GILLE 
+                  Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Chief-Warrant-Officer</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/10</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">SOUCHE Germain</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Chief-Warrant-Officer</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/10 - 
+                  GC I/8</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">GRIMAUD 
+                  Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">TANGUY Victor</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sub-lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/8</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">HUGO 
+                  Henri</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Captain</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">VALENTIN 
+                  Georges</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Chief-Warrant-Officer</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC II/7</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">LANSOY 
+                  André</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2">Sub-lieutenant</font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC III/2</font></td>
+                <td width="17%"><b><font face="Arial Narrow" size="2">WARNIER 
+                  François</font></b></td>
+                <td width="15%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="15%"><font face="Arial Narrow" size="2">GC I/5</font></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="172"> 
+          <div align="center"><font size="4" color="#333333"><b>November</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="172"> 
+          <div><font color="#FFFFFF"><font color="#000000"><b><font face="Arial Narrow" size="2">1)</font></b></font></font><font face="Arial Narrow" size="2"><i><font color="#000000"> 
+            Added section</font></i><font color="#FFFFFF"> <a href="Armee%20de%20l%27Air/Citations/EN-Accueil-Citations.htm"><font color="#FFFF00"><b><font color="#0000FF">&quot;Citations&quot;</font></b></font></a></font></font><font color="#FFFFFF" face="Arial Narrow" size="2"><i> 
+            <font color="#000000">in chapter Air Force.</font></i></font></div>
+          <div> 
+            <div><font size="2" face="Arial Narrow"><font color="#FFFFFF"><i><font color="#000000">Listed 
+              here are 2447 Citations attributed to pilots and crewmen for feats 
+              of arms between September 1, 1939 and the Armistice in June 1940.</font></i></font></font></div>
+            <div><font face="Arial Narrow" size="2" color="#FFFFFF"><b><font color="#000000">2)</font></b> 
+              <font color="#000000"><i>Section</i></font><a href="Armee%20de%20l%27Air/Pilotes/EN-Accueil-Pilotes.htm"><font color="#FFFF00"><b> 
+              <font color="#0000FF">&quot;Pilots&quot;</font></b></font></a> : 
+              </font><font color="#000000" face="Arial Narrow" size="2"><i>added 
+              256 names and 464 first names: 3142 Pilots and crew members are 
+              now listed.</i></font></div>
+            <div><font face="Arial Narrow" size="2" color="#FFFFFF"><b><font color="#000000">3)</font></b> 
+              <font color="#000000"><i>Resolution</i></font> <a href="EN-Enigme-Appareils.htm"><font color="#FFFF00"><b><font color="#0000FF">"Enigmas 
+              Aircrafts"</font></b></font></a> </font><font color="#000000" face="Arial Narrow" size="2"><i>n 
+              ° A08 and A12 thanks to the help of Mr JC FONTAN</i></font></div>
+          </div>
+          <div> 
+            <div> 
+              <div><font color="#000000" face="Arial Narrow" size="2"><b>4)</b></font><font face="Arial Narrow" size="2"><i><font color="#000000"><b> 
+                -</b> Added Unpublished watercolors of shots 3 views of Mr JC 
+                FONTAN</font></i></font></div>
+              <div><font color="#FFFFFF" face="Arial Narrow" size="2"><a href="Armee%20de%20l%27Air/Appareils/Reconnaissance/Mureaux-115-117/EN-Mureaux-115.htm"><font color="#FFFF00"><b><font color="#0000FF">Mureaux 
+                117</font></b></font></a> <font color="#000000"><i>/ Aircraft 
+                list :<b> </b></i><b>Mureaux 115 n&deg;41</b></font></font></div>
+              <div> 
+                <div><font face="Arial Narrow" size="2" color="#FFFFFF"><a href="Armee%20de%20l%27Air/Appareils/Reconnaissance/Potez-637/EN-Potez-637.htm"><font color="#FFFF00"><b><font color="#0000FF">Potez 
+                  637</font></b></font></a> <font color="#000000"><i>/ Aircraft 
+                  list :</i></font><b><font color="#000000"> Potez 637 n&deg;14 
+                  et 41</font></b></font></div>
+                <div> 
+                  <div align="center"></div>
+                  <div><font face="Arial Narrow" size="2" color="#0000FF"><a href="Armee%20de%20l%27Air/Appareils/Chasse/Morane-Saulnier-MS406/EN-Morane-406.htm"><b>Morane-Saulnier 
+                    MS406</b></a><i> </i></font><font color="#FFFFFF" face="Arial Narrow" size="2"><i><font color="#000000">/ 
+                    Aircraft List : </font></i>:<b><font color="#000000">Morane-Saulnier 
+                    MS406 n°445</font></b></font></div>
+                  <div> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>September</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div><font size="2" face="Geneva, Arial, Helvetica, san-serif" color="#FFFFFF"><font color="#000000"><b>1)</b></font></font><b><font size="2" face="Geneva, Arial, Helvetica, san-serif" color="#000000"> 
+            Aircrafts Enigmas :</font></b></div>
+          <div> 
+            <div><font color="#FFFF00"><font color="#FFFFFF"><i><a href="EN-Enigme-Appareils.htm"><font color="#0000FF" size="2">Resolution 
+              Enigma A03 on Potez 637 n&deg;41</font><font color="#FFFF00" size="2"> 
+              </font></a><font color="#000000" size="2">(by Mr JC. FONTAN)</font></i></font></font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>August</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"> 
+            <div><font size="2"  face="Geneva, Arial, Helvetica, san-serif"><font color="#FFFFFF"> 
+              </font></font></div>
+            <div><font size="2" face="Geneva, Arial, Helvetica, san-serif" color="#000000"><b>1) 
+              Aircrafts (Main sheet or Aircrafts list)</b></font></div>
+            <div><font color="#FFFF00"><font color="#FFFFFF"><i><font color="#000000">Potez 
+              390 : Added</font></i></font><b><font color="#FFFFFF"> <a href="Armee%20de%20l%27Air/Appareils/Reconnaissance/Potez-390-391/EN-Potez-390.htm" target="_blank"><font color="#0000FF">photos 
+              n&deg;53</font></a></font></b></font> </div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="148"> 
+          <div align="center"><font size="4" color="#333333"><b>July</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="148"> 
+          <div align="left"><font size="2" face="Geneva, Arial, Helvetica, san-serif" color="#FFFFFF"><i><font color="#000000" face="Arial Narrow">1)</font></i></font><font size="2" face="Arial Narrow"> 
+            <a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-2-34/EN-GB_II-34.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Escadrille 
+            GB II/34</font></b></font></a></font> <font color="#000000" face="Arial Narrow" size="2"><i>: 
+            added photos of Mrs : Blanchet / Astruc / Debrabant / Dupr&eacute; 
+            / Feral / Fiquet / Gelly / Hugon / Lavolley / Lortscher / Quemener 
+            </i></font></div>
+          <font color="#000000" face="Arial Narrow" size="2"><i>2) Crews of Bombardment 
+          : Add</i></font><font color="#FFFF00" face="Arial Narrow" size="2"><b><font color="#FFFFFF"> 
+          <a href="Armee%20de%20l%27Air/Pilotes/Bombardement/EN-Equipage-Bombardement.htm"><font color="#0000FF">Sheet 
+          Sergeant ASTRUC Roger</font></a></font></b></font> 
+          <div><font size="2" face="Arial Narrow" color="#FFFFFF"><i><font color="#000000">3)</font></i></font><font color="#000000" face="Arial Narrow" size="2"><i> 
+            Aircrafts (Main sheet or Aircrafts list)</i></font></div>
+          <div><font color="#000000" face="Arial Narrow" size="2"><i>Amiot 143 
+            : Added</i></font><font color="#FFFF00" face="Arial Narrow" size="2"><b><font color="#FFFFFF"> 
+            <a href="Armee%20de%20l%27Air/Appareils/Bombardement/Amiot-143/EN-Amiot-143.htm" target="_blank"><font color="#0000FF">photos 
+            n&deg;56 / 62 / 96 + divers</font></a></font></b></font> </div>
+          <div><font color="#FFFF00" face="Arial Narrow" size="2"><font color="#FFFFFF"><i><font color="#000000">Amiot 
+            350 : Added</font></i></font><b><font color="#FFFFFF"><a href="Armee%20de%20l%27Air/Appareils/Bombardement/Amiot-350/EN-Amiot-350.htm" target="_blank"> 
+            <font color="#0000FF">photos n&deg;56 + divers</font></a></font></b></font> 
+          </div>
+          <div><font color="#FFFF00" face="Arial Narrow" size="2"><font color="#FFFFFF"><i><font color="#000000">Curtiss 
+            H75 : Added</font></i></font><b><font color="#FFFFFF"> <a href="Armee%20de%20l%27Air/Appareils/Chasse/Curtiss-H75/EN-Curtiss-H75.htm"><font color="#0000FF">photos 
+            n&deg;219 / 305</font></a></font></b></font> </div>
+          <div><font color="#FFFF00" face="Arial Narrow" size="2"><font color="#FFFFFF"><i><font color="#000000">Douglas 
+            DB7 : Added</font></i></font><b><font color="#FFFFFF"> <a href="Armee%20de%20l%27Air/Appareils/Bombardement/Douglas-DB7/EN-Douglas-DB7.htm"><font color="#0000FF">photos 
+            n&deg;40</font></a></font></b></font> </div>
+          <div><font color="#FFFF00" face="Arial Narrow" size="2"><font color="#FFFFFF"><i><font color="#000000">Gleen-Martin 
+            167F : Added</font></i></font><b><font color="#FFFFFF"> <a href="Armee%20de%20l%27Air/Appareils/Bombardement/Gleen-Martin-167F/EN-Gleen-Martin-167F.htm" target="_blank"><font color="#0000FF">photos 
+            n&deg;22</font></a></font></b></font> </div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>June</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font size="2" face="Arial Narrow" color="#FFFFFF"><font color="#000000"><i>1)</i></font></font><font size="2" face="Arial Narrow"> 
+            <a href="Librairie/Accueil-Librairie.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Biblioth&egrave;que</font></b></font></a></font> 
+            <font color="#000000" face="Arial Narrow" size="2">: </font><font color="#FFFF00" face="Arial Narrow" size="2"><font color="#FFFFFF"><i><font color="#000000">Correction 
+            problems display : all the book covers and the titles of chapters 
+            are from now on visible</font></i></font></font> </div>
+          <font size="2" face="Arial Narrow" color="#FFFFFF"><font color="#000000"><i>2)</i></font></font><font size="2" face="Arial Narrow"> 
+          <a href="Campagne%20de%20France/Localisation-des-Unites.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Localisation 
+          des Unités</font></b></font></a></font> <font color="#000000" face="Arial Narrow" size="2">: 
+          </font><font face="Arial Narrow" size="2"><i>Online launch of the &quot;Location 
+          of Units&quot; section</i></font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>May</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i><font color="#000000">1) 
+            Squadron GC I/1- </font><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-1/EN-GC_I-1.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Adding 
+            Photo Adjutant VEROTS</font></b></font></a> </i></font></font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i><font color="#000000">Source 
+            Mr Xavier LE CERF GALLE - Grandson of the Adjutant VEROTS </font></i></font></font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i><font color="#000000">2) 
+            Squadron GR II/36 -</font><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-36/EN-GR_2-36.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Adding 
+            Photo and Indvidual Card of Sub-lieutenant Jacques CAMBEFORT - Observer</font></b></font></a> 
+            : <font color="#000000">source Mr Yves CAMBEFORT, Son of Jacques CAMBEFORT</font></i></font></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>April</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i><font color="#000000">1) 
+            Aircraft Enigmas -</font> <a href="EN-Enigme-Appareils.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">Enigmas 
+            solving A10 and A13</font></b></font></a> </i></font></font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i><font color="#000000">2) 
+            Group GB II/34 -</font><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Bomb/GB-2-34/GB_II-34.htm" target="_self"><font color="#FFFF00"><b> 
+            <font color="#0000FF">Adding Sergeant ASTRUC Roger, machine Gunner 
+            at the 4th Squadron </font><font color="#000000">: </font></b></font><font color="#000000"><i>source 
+            Jean-Charles ASTRUC, son of Robert ASTRUC</i><b> </b></font></a> </i></font></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>March</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font face="Arial Narrow" size="2"><b><font color="#000000">- 
+            Forces Involved chapter :</font></b></font></div>
+          <div align="left"><font size="2" face="Arial Narrow"><i>Adding :</i><b> 
+            <a href="Forces%20en%20presences/Les%20Allies/Angleterre/Boulton_Paul-Defiant/EN-Boulton_Paul-Defiant.htm"><font color="#0000FF">&quot;BOULTON 
+            DEFIANT&quot; (England)</font></a></b></font></div>
+          <div align="left"><font face="Arial Narrow" size="2"><b><font color="#000000">- 
+            Pilots chapter :</font></b></font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/EN-Equipage-Reco-M.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">"Crews 
+            of Reconnaissance-M" <font color="#000000">:</font></font></b><font color="#0000FF"><font color="#000000"><i> 
+            Updating Photo Staff-Sergeant Antoine MOXICA - GR I/33 : Source Mrs. 
+            Monique VICEDO, niece of Antoine MOXICA</i></font></font></font></a> 
+            ; </font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i>- 
+            <font color="#000000">Added S. DUBOIS pilot</font> </i><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Reco/GAO/GAO-545/GAO545.htm" target="_self" ><font color="#0000FF">GAO 
+            545</font></a></b><i> </i></font></font></div>
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#FFFF00"><i>- 
+            <font color="#000000">Added Henri BOUBE pilot</font> </i><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-4/EN-GC_III-4.htm" target="_self" ><font color="#0000FF">GC 
+            III/4</font></a></b><i> </i></font></font></div>
+          <div align="left"><font face="Arial Narrow" size="2"><b><font color="#000000">- 
+            Squadrons chapter :</font></b></font></div>
+          <div align="left"><font face="Arial Narrow" size="2"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-1/EN-GC_I-1.htm" target="_self"><font color="#0000FF">GC 
+            I/1 : </font></a></b><i>Addition map localization of Airfields and 
+            addition photo of Captain ROQUES Jacques</i></font></div>
+          <div align="left"> <font face="Arial Narrow" size="2"><b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-1/EN-GC_II-1.htm" target="_self"><font color="#0000FF">GC 
+            II/1 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-1/EN-GC_III-1.htm" target="_self"><font color="#0000FF">GC 
+            III/1 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-2/EN-GC_I-2.htm" target="_self"><font color="#0000FF">GC 
+            I/2 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-2/EN-GC_II-2.htm" target="_self"><font color="#0000FF">GC 
+            II/2 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-3-2/EN-GC_III-2.htm" target="_self"><font color="#0000FF">GC 
+            III/2 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-3/EN-GC_I-3.htm" target="_self"><font color="#0000FF">GC 
+            I/3 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-3/EN-GC_II-3.htm" target="_self"><font color="#0000FF">GC 
+            II/3 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-3/EN-GC_III-3.htm" target="_self"><font color="#0000FF">GC 
+            III/3 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-4/EN-GC_I-4.htm" target="_self"><font color="#0000FF">GC 
+            I/4 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-4/EN-GC_II-4.htm" target="_self"><font color="#0000FF">GC 
+            II/4 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-4/EN-GC_III-4.htm" target="_self"><font color="#0000FF">GC 
+            III/4 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-5/EN-GC_I-5.htm" target="_self"><font color="#0000FF">GC 
+            I/5 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-5/EN-GC_II-5.htm" target="_self"><font color="#0000FF">GC 
+            II/5 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-5/EN-GC_III-5.htm" target="_self"><font color="#0000FF">GC 
+            III/5 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-1-6/EN-GC_I-6.htm" target="_self"><font color="#0000FF">GC 
+            I/6 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-6/EN-GC_II-6.htm" target="_self"><font color="#0000FF">GC 
+            II/6 - </font></a></b> <b><a href="Armee%20de%20l%27Air/Escadrilles/Esc-Chasse/GC-2-6/EN-GC_III-6.htm" target="_self"><font color="#0000FF">GC 
+            III/6 : </font></a></b> <i><i>Addition maps localization of Airfields</i></i> 
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>February</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font face="Arial Narrow" size="2"><b><font color="#000000">- 
+            Forces Involved chapter :</font></b></font></div>
+          <div align="left"><font size="2" face="Arial Narrow"><i>Adding:</i><b> 
+            <a href="Forces%20en%20presences/Forces%20Axes/Italie/Macchi-MC200/EN-Macchi-MC200.htm"><font color="#0000FF">&quot;MACCHI 
+            MC200&quot; (Italie)</font></a></b></font></div>
+          <div align="left"><font color="#000000" face="Arial Narrow" size="2"><b>- 
+            Add pages</b></font><font size="2" color="#FFFFFF" face="Arial Narrow"><a href="Librairie/EN-Accueil-Librairie.htm" target="_self"><font color="#FFFF00"><b><font color="#0000FF">&quot;Library&quot;</font></b></font></a></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>January</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#000000" face="Arial Narrow">The 
+          623 pages of the site are now available in English,</font></td>
+      </tr>
+      <tr> 
+        <td rowspan="15" bgcolor="#333333" width="7%"> 
+          <div align="center"><font color="#FFFFFF" size="5"><b>2017</b></font></div>
+        </td>
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>December</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" face="Arial Narrow"><a href="Armee%20de%20l%27Air/EN-Insignes-Escadrilles.htm" target="_blank"><font color="#FFFF00"><b><font color="#0000FF">Add 
+          pages "Emblems of Squadrons"</font></b></font></a></font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>November</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#FFFFFF" face="Arial Narrow"><a href="EN-Enigme-Personnel.htm" target="_blank"><b><font color="#0000FF">Solving 
+          Personnal Enigmas P01 et P03</font></b></a></font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>October</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#FFFFFF" face="Arial Narrow"><font color="#000000">Some 
+          problems of direct links NOK on the site currently (Squadrons Fighters 
+          in particular): I work to remedy it as soon as possible! On the other 
+          hand starting from this page to go to the pages, no problems ...</font></font></td>
+      </tr>
+      <tr> 
+        <td rowspan="2" width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>September</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#FFFFFF" face="Arial Narrow"><b><a href="EN-Enigme-Personnel.htm" target="_blank"><font color="#0000FF">Crew 
+          Enigmas :</font></a></b></font><font size="2" color="#0000FF" face="Arial Narrow"> 
+          <font color="#000000">Add Enigma P06</font></font></td>
+      </tr>
+      <tr> 
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" face="Arial Narrow"><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/EN-Equipage-Reco-D.htm" target="_blank"><font color="#0000FF">Air 
+          Force / Pilots / Reconnaissance</font></a> </b> <font color="#000000">Added 
+          photo and sheet </font>Lt Eugène DUTARTRE</font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>August</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#FFFFFF" face="Arial Narrow"><b><font color="#000000">Divers 
+          : </font></b></font><font size="2" color="#000000" face="Arial Narrow"> 
+          Beginning of the translation of the site in English: first English pages 
+          soon visible !</font></td>
+      </tr>
+      <tr> 
+        <td rowspan="3" width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>July</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font size="2" color="#FFFFFF" face="Arial Narrow"><b><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-D.htm" target="_blank"><font color="#000000">Air 
+            Force</font></a></b><font color="#000000"> / Aerial areas</font></b></font></div>
+          <div align="left"><font face="Arial Narrow" color="#FFFFFF" size="2"><a href="Armee%20de%20l%27Air/EN-Zones-Aeriennes.htm" target="_blank"><font color="#0000FF">- 
+            <font color="#0000FF">Complete update of this section</font></font></a></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="82%" height="58" bgcolor="#CCCCCC"> 
+          <div><font size="2" color="#FFFFFF" face="Arial Narrow"><b><b><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-D.htm" target="_blank"><font color="#000000">Air 
+            Force</font></a></b></b><font color="#000000"> / Pilots / </font></b></font></div>
+          <div align="left"><font face="Arial Narrow" color="#000000" size="2"> 
+            - Added 13 photos of crew members of the bombing</font></div>
+          <div align="left"><font face="Arial Narrow" color="#000000" size="2">- 
+            Added 32 photos of crew members of the Reconnaissance</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font face="Arial Narrow" color="#FFFFFF" size="2"><b><b><b><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-D.htm" target="_blank"><font color="#000000">Air 
+            Force</font></a></b></b></b><font color="#000000"> / Squadrons / </font></b></font></div>
+          <div align="left"> 
+            <div><font face="Arial Narrow" color="#000000" size="2">- Ajout photos 
+              de pilotes dans les pages Escadrilles Reconnaissance et Bombardement</font></div>
+          </div>
+        </td>
+      </tr>
+      <tr> 
+        <td rowspan="4" width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>June</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div><font size="2" color="#FFFFFF" face="Arial Narrow"><b><b><b><b><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-D.htm" target="_blank"><font color="#000000">Air 
+            Force</font></a></b></b></b></b><font color="#000000"> / Pilots / 
+            </font></b></font></div>
+          <div><font size="2" color="#000000" face="Arial Narrow">- Fighter Pilots, 
+            Add 47 Photos of Pilots</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div><font face="Arial Narrow" color="#FFFFFF" size="2"><b><b><b><b><a href="Armee%20de%20l%27Air/Pilotes/Reconnaissance/Equipage-Reco-D.htm" target="_blank"><font color="#000000">Air 
+            Force</font></a></b></b></b></b></font><font size="2" color="#000000" face="Arial Narrow"><b> 
+            / Squadrons / </b></font></div>
+          <div><font size="2" color="#000000" face="Arial Narrow">- Add photos 
+            of pilots in Squadrons pages</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="82%" height="22" bgcolor="#CCCCCC"> 
+          <div><font size="2" color="#FFFFFF" face="Arial Narrow"><b><font color="#000000">Enigmas 
+            / Aircrafts / </font></b></font></div>
+          <div><font size="2" color="#000000" face="Arial Narrow"><a href="EN-Enigme-Appareils.htm" target="_blank"><font color="#0000FF">- 
+            Add Aircraft Enigma &quot;A15 et A16&quot;</font></a></font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="82%" bgcolor="#CCCCCC"> 
+          <div align="left"><font size="2" color="#000000" face="Arial Narrow"><b>Divers 
+            : </b></font></div>
+          <div align="left"><font size="2" color="#000000" face="Arial Narrow">- 
+            Add counter visits on all pages of the site</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999" height="29"> 
+          <div align="center"><font size="4" color="#333333"><b>May</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC" height="29"><font size="2" color="#000000" face="Arial Narrow">- 
+          Update Format Individual cards Pilots</font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>March</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#000000" face="Arial Narrow">- 
+          Add counter visits on home page</font></td>
+      </tr>
+      <tr> 
+        <td rowspan="2" width="7%" bgcolor="#333333"> 
+          <div align="center"><font color="#FFFFFF" size="5"><b>2016</b></font></div>
+        </td>
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b>From August to 
+            December</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font size="2" color="#000000" face="Arial Narrow">- 
+          Update posting pages of the site following online</font></td>
+      </tr>
+      <tr> 
+        <td width="11%" bgcolor="#999999"> 
+          <div align="center"><font size="4" color="#333333"><b> July 6</b></font></div>
+        </td>
+        <td width="82%" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2">Website 
+          upload</font></td>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+</div>
+<blockquote> 
+  <blockquote> 
+    <div align="left">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+  </blockquote>
+</blockquote>
+<td>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <div align="left">
+          <blockquote>&nbsp;</blockquote>
+        </div>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</BODY>
+</HTML>

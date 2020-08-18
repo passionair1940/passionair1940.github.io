@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Navale Aviation in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Breguet-Bizerte</title>
+<META name="KEYWORDS" content="French Navale Aviation 1939-1940,Seaplanes,campaign of France, funny war, Breguet-Bizerte">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="Breguet-Bizerte.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Aircraft</font></a></font></b> 
+            </font></div> 
+          <div align="center"> 
+              <div align="center"></div>
+          <hr width="100%">
+		  <p align="left"><b class="Aucun"><b><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Prototypes 
+                    Bombers</font></font></a></b></b> </p>
+          <p align="left"><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Fighter 
+            Aircraft<font color="#CCCCCC"> </font></b></font></a></p>
+          <p align="left"><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bomber Aircrafts</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; links</b></font></a></p>
+          <p align="left"><a href="../../Hydravions/EN-Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><i><font color="#FFFFFF">Seaplanes</font></i></b></font></a></p>
+		  <div align="left"><a href="EN-Breguet-Bizerte.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3"><i><font color="#FFFFFF">- 
+            Breguet Bizerte</font></i></font></b></font></a></div>
+          <div align="left"></div>
+          <div align="left"><a href="../CAMS-37/EN-CAMS-37.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            CAMS 37</font></b></font></a></div>
+          <div align="left"><a href="../CAMS-55/EN-CAMS-55.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            CAMS 55</font></b></font></a></div>
+          <div align="left"><a href="../CAMS-141/EN-CAMS-141.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            CAMS 141</font></b></font></a></div>
+          <div align="left"><a href="../Farman-NC470/EN-Farman-NC470.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman NC-470</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-290/EN-Latecoere-290.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 290</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-298/EN-Latecoere-298.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 298</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-302/EN-Latecoere-302.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 302</font></b></font></a></div>
+          <div align="left"><a href="../Latecoere-521_522_523/EN-Latecoere-521_522_523.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Latecoere 521-522-523</font></b></font></a></div>
+			<div align="left"><a href="../LeO-H43/EN-LeO-H43.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-43</font></b></font></a></div>
+			<div align="left"><a href="../Liore-Olivier_257/EN-Liore-Olivier_257.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-257</font></b></font></a></div>
+			
+          <div align="left"></div>
+			<div align="left"><a href="../LeO-H470/EN-LeO-H470.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Lioré & Olivier LeO H-470</font></b></font></a></div>
+			
+			<div align="left"><a href="../Loire-70/EN-Loire-70.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loire 70</font></b></font></a></div>
+			<p align="left"><a href="../../Hydravions-Embarques/EN-Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Embarked Seaplanes</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <p><b><font size="20%" color="#660000">BREGUET &quot;Bizerte&quot;</font></b></p>
+            <p><img src="photos/Breguet-Bizerte.jpg" width="70%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+              Specifications</font></i></b></font></div>
+          </div>
+            </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="63" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="63" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2">Sea reconnaissance and 
+                    sea research seaplane</font> 
+                  </center>
+                </td>
+                <td width="20%" height="63" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                  </center>
+                </td>
+                <td width="211" height="63" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">September 
+                    11,1933</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">35.13 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                  </center>
+                </td>
+                <td width="211" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">20.33 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">7.65 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                  </center>
+                </td>
+                <td width="211" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">170 m2&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 9150 Kg&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="211" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">16000 Kg&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 200 km/h.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="211" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">243 km/h &agrave; 1000m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">2000m in 14mn&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                  </center>
+                </td>
+                <td width="211" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">6000m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">2100kms&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                  </center>
+                </td>
+                <td width="211" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">8</font> <font size="2" face="Arial Narrow"> 
+                    Men</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="2" face="Arial Narrow">3 Gn&ocirc;me 
+                    &amp; Rh&ocirc;ne engine 14 cyl in star 14 Kirs of 900Cv each</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="38" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                </td>
+                <td colspan="3" height="44" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> <font size="2" face="Arial Narrow">5</font> 
+                    <font size="2" face="Arial Narrow"> mobile 7.5mm Darne machines 
+                    guns<br>
+                    300 Kgs of bombs</font></div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <div><font size="3" color="#990000"><font face="Arial Narrow" size="3" color="#990000"><font color="#000000" size="2"><b>36 
+              Breguet Bizerte, all versions combined, were built as follows:</b></font></font></font></div>
+            <div><b><font face="Arial Narrow" size="2" color="#000000">- 33 Breguet 
+              Bizerte Br521, prototype included</font></b></div>
+            <div><b><font face="Arial Narrow" size="2" color="#000000">- 1 Breguet 
+              Bizerte Br522</font></b></div>
+            <div><b><font face="Arial Narrow" size="2" color="#000000">- 2 Breguet 
+              Bizerte Br530 &quot;Saigon&quot;</font></b></div>
+              
+            <p><font size="2"><b><font size="2" color="#990000" face="Arial Narrow"><font color="#000000">To 
+              date, out of the</font></font><font color="#990000"><font color="#990000"><font face="Arial Narrow" color="#000000"> 
+              36</font></font></font><font size="2" color="#990000" face="Arial Narrow"><font color="#000000"> 
+              aircrafts manufactured, 0 </font></font><font size="2" face="Arial Narrow"><font color="#990000"><font color="#000000">are 
+              listed in the list below :</font></font></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+              </font></b></i></font></p>
+            <p><font face="Arial Narrow" size="2"><b>In 1932, the A&eacute;ronautique 
+              Navale issued a program to acquire a long-range seaplane to carry 
+              out reconnaissance to replace the aging CAMS-55. Soci&eacute;t&eacute; 
+              Breguet responded to this program with the Breguet 531 Bizerte, 
+              derived from the Breguet 530 Saigon civil aircraft. The latter was 
+              none other than the Short Calcutta, for which Breguet had obtained 
+              a manufacturing license in 1931. The Breguet Bizerte, of all-metal 
+              construction, took the form of a seaplane with a sesquiplan hull 
+              powered by 3 Gnome-Rh&ocirc;ne 14 Kdrs star-shaped engines of 845 
+              hp. These were held between the two planes by masts. The defensive 
+              armament consisted of 5 machine guns of 7.5mm and the aircraft could 
+              carry an offensive charge of 300kgs, composed of bombs, mines or 
+              anti-submarine charges. Its crew was composed of 8 men. The Breguet 
+              Bre521 Bizerte was in competition with the Loire 70, the Lior&eacute; 
+              &amp; Olivier L&eacute;O H42 and the Lat&eacute;co&egrave;re Lat&eacute;-582. 
+              The Breguet Bre. 521 will be retained by the Navy. The Loire 70 
+              will however be mass-produced as well, but for another use: colonial 
+              support and surveillance.</b></font></p>
+            <p><font face="Arial Narrow" size="2"><b><br>
+              The Breguet Bre.521-01 prototype makes its first flight on September 
+              11, 1933. The engines, initially devoid of bonnets, were fitted 
+              with Naca bonnets after the first tests. The Navy, very interested 
+              in the new aircraft, ordered 3 pre-series models before all the 
+              tests were completed. The flight of the first aircraft of this pre-series 
+              took place in 1935. The aircraft was very pleasant to fly and held 
+              the sea very well. Many modifications were integrated on the second 
+              aircraft at the request of the Navy. Thus, the cockpit canopy was 
+              moved forward, two side gunnery stations were added behind the cockpit 
+              and the gunnery station located in the bow was removed. These modifications 
+              will be integrated on the standard models.</b></font></p>
+            <p><font face="Arial Narrow" size="2"><b><br>
+              The 31 Breguet Bre521 Bizerte, including the prototype, were manufactured 
+              and delivered until March 1938. The engine chosen for the series 
+              consisted of three 900 hp Gnome-Rh&ocirc;ne 14Kir engines. <br>
+              The Navy will complete this first series with an order for three 
+              additional units. The first two of this series will receive numerous 
+              modifications: Thus, the cockpit canopy is moved forward, two side 
+              firing stations are added behind the cockpit and the firing station 
+              located in the bow is removed. The third unit will be powered by 
+              Hispano-Suiza 14AA double-star, 1,000 hp engines. It will take the 
+              designation of Breguet Bre. 522. However, it will be returned to 
+              the Bre standard. 521 at the beginning of 1940. The 34 aircraft 
+              will be chronologically assigned to the E2, E3, E1, E5 and E9 squadrons. 
+              They will carry out surveillance missions along the French coast. 
+              After the Armistice, many squadrons were disbanded and only the 
+              E1 and E9, which became 1E and 9E, were kept with 5 and 4 Bre respectively. 
+              521 Bizerte. </b></font></p>
+            <p><font face="Arial Narrow" size="2"><b><br>
+              After the German invasion of the free zone on 11 November 1942, 
+              the Germans seized 9 Breguet Bre521 Bizerte still in service and 
+              8 others in storage to transfer them to the Luftwaffe. These were 
+              used in rescue missions along the Atlantic coast. The Germans used 
+              these aircraft under German colours until the armistice. The reborn 
+              Air Force used two of these aircraft from March to November 1945. 
+              The last Breguet Bre. 521 Bizerte will be scrapped in 1946. <br>
+              </b></font></p>
+            </div>
+          <div align="left"><p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font face="Arial Narrow" size="2"><b>The Breguet Bizerte has been 
+              available in three versions:</b></font></p>
+            <table width="54%" border="1">
+              <tr bgcolor="#999999"> 
+                <td width="20%"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Version</font></b></font></div>
+                </td>
+                <td width="80%"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Quick 
+                    description</font></b></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="20%"><b><font face="Arial Narrow" size="3">Breguet 
+                  Br 521</font></b></td>
+                <td width="80%"><font face="Arial Narrow" size="2">1 prototype 
+                  and 32 production copies produced.</font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="20%"><b><font face="Arial Narrow" size="3">Breguet 
+                  Br 522</font></b></td>
+                <td width="80%"> 
+                  <div><font face="Arial Narrow" size="2">1 single copy made. 
+                    Aerodynamic version more worked and equipped with more powerful 
+                    Hispano-suiza 14Aa engines of 1000hp.</font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="20%"><b><font face="Arial Narrow" size="3">Breguet 
+                  Br 530 &quot;Saigon&quot;</font></b></td>
+                <td width="80%"> 
+                  <div><font face="Arial Narrow" size="2">2 copies produced. Commercial 
+                    version powered by 3 Hispano-Suiza 12Ybr of 785Cv. The aircraft 
+                    can carry 17 passengers including 6 in 1st Class. These aircraft, 
+                    delivered to Air-France in early 1935, will be used on the 
+                    Marseille-Ajaccio-Tunis line.</font></div>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            <div align="left"><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></div>
+          </div>
+            <div align="left"><table width="90%">
+                <tr> 
+                  <td> 
+                    
+                  <div><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                    _ Editions Larivi&egrave;re : </font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                    -Le Fanatique de l'Aviation n&deg;176 - 177 - 178 - 179 - 
+                    183 - 189 - 190 : Le Breguet Bizerte</b></font></i></font></i></font></i></font></div>
+                  <div><i><font size="2" color="#000000">From G&eacute;rard BOUSQUET</font></i></div>
+                    
+                  <p><a class="fancybox-effects-c" href="photos/Fana-176.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-176.jpg" alt="" width="71" height="100" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="photos/Fana-177.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-177.jpg" alt="" width="71" height="100" border="0" /></a> 
+					<a class="fancybox-effects-c" href="photos/Fana-178.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-178.jpg" alt="" width="71" height="100" border="0" /></a>
+					<a class="fancybox-effects-c" href="photos/Fana-179.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-179.jpg" alt="" width="71" height="100" border="0" /></a>
+					<a class="fancybox-effects-c" href="photos/Fana-183.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-183.jpg" alt="" width="71" height="100" border="0" /></a>
+					<a class="fancybox-effects-c" href="photos/Fana-189.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-189.jpg" alt="" width="71" height="100" border="0" /></a>
+					<a class="fancybox-effects-c" href="photos/Fana-190.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnails/tn_Fana-190.jpg" alt="" width="71" height="100" border="0" /></a>
+                  </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+              </table>
+              
+          </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+            Album</font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              
+            <p><a class="fancybox-effects-c" href="photos/Breguet521.jpg" data-fancybox-group="gallery-2" title="Source Collection Pierre BREGERIE"><img src="thumbnails/tn_Breguet521.jpg" alt="" width="128" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="photos/Breguet521-Cokpit.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Breguet521-Cokpit.jpg" alt="" width="115" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="photos/Breguet521-Inter-Arr.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Breguet521-Inter-Arr.jpg" alt="" width="125" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="photos/Breguet521-Defense-Arr.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Breguet521-Defense-Arr.jpg" alt="" width="109" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="photos/Breguet521-2.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Breguet521-2.jpg" alt="" width="128" height="72" border="0" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+              3 views</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <p><a class="fancybox-effects-c" href="photos/P3V-Breguet521.JPG" data-fancybox-group="gallery-5" title=""><img src="thumbnails/tn_P3V-Breguet521.JPG" alt="" width="84" height="100" border="0" /></a> 
+            </p>
+              <p>&nbsp; </p>
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="89"> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

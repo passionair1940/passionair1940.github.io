@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Localisation-Unites</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../Aeronavale/Page-Accueil-Aeronavale.htm" target="_self"><img src="../Images%20Base/1.png" width="20%" border="0"></a><a href="../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../Images%20Base/2.png" width="20%" border="0"></a><a href="Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../Images%20Base/3-Big.png" width="20%" border="0"></a><a href="../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../Images%20Base/4.png" width="20%" border="0"></a><a href="../index.htm" target="_self"><img src="../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Localisation-des-Unites.htm"><img src="../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		   <hr width="100%"> 
+        <div align="center"><font size="4" color="#FFFFFF">Localisation des Unités</font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><font color="#CCCCCC" size="5"><b><font size="4" face="Arial Narrow"><i><font color="#FFFFFF">Localisation 
+              des Unit&eacute;s :</font></i></font></b></font></p>
+          </div>
+        </div>
+        <div><b><a href="Localisation-Unites/Localisation-par-Unites/Deplacement-des-Unites.htm" target="_self"><font color="#FFFF00">D&eacute;placements 
+          des unit&eacute;s</font></a> </b> </div>
+        <div><b><a href="Localisation-Unites/Par-Dates/Localisation-par-dates.htm" target="_self"><font color="#FFFF00">Localisation 
+          des unit&eacute;s par date </font></a> </b> </div>
+        <div><b><a href="Localisation-Unites/Terrains/Terrains.htm" target="_self"><font color="#FFFF00">Les Principaux 
+          Terrains </font></a> </b> </div>
+        <div align="center"> 
+          <div align="left" class="style1"> 
+		  <div>&nbsp;</div>
+            <div><font face="Arial Narrow" size="4" color="#CCCCCC"><b><a href="Victoires.htm"><font color="#C9C9C9">Bilan 
+              des Victoires</font></a> </b> </font></div>
+            <p><font face="Arial Narrow" size="4" color="#CCCCCC"><b><a href="Pertes.htm"><font color="#C9C9C9">Bilan 
+              des Pertes</font></a> </b> </font></p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+        </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"><img src="../Images%20Base/Localisation-Unites.png" width="40%"> 
+          </div>
+          <blockquote> 
+            <p align="left"><font face="Arial Narrow" size="2" color="#CCCCCC"><b>Si 
+              les unit&eacute;s de l'A&eacute;ronautique Navale Fran&ccedil;aise 
+              ont peu boug&eacute; de la mobilisation au 10 Mai 1940, elles ont, 
+              par contre, &eacute;t&eacute; bouscul&eacute;es par les &eacute;venements 
+              apr&egrave;s l'attaque Allemande du 10 Mai. Repouss&eacute;es sans 
+              cesse vers l'Ouest et le Sud, parfois jusqu'en Afrique du nord, 
+              elles ont continu&eacute; &agrave; combattre malgr&eacute; ces changements 
+              de terrains si fr&eacute;quents.</b></font></p>
+            <p align="left"><b><font face="Arial Narrow" size="2" color="#CCCCCC">Pourtant, 
+              l'&eacute;chelon roulant avait parfois bien du mal &agrave; suivre 
+              le rythme des d&eacute;placements. Il devait rejoindre le nouveau 
+              terrain en empruntant les routes encombr&eacute;es de r&eacute;fugi&eacute;s, 
+              et il n'&eacute;tait pas rare que les pilotes arrivent sur un nouveau 
+              terrain, non pr&eacute;par&eacute; par le personnel au sol, une 
+              partie de celui-ci ayant &eacute;t&eacute; m&ecirc;me parfois fait 
+              prisonnier sur les routes, par les avant-gardes Allemandes. Les 
+              pilotes devaient alors aider &agrave; faire les pleins et entretenir 
+              les avions : on est loin de l'image du pilote d&eacute;sinviolte, 
+              qui sirotait une coupe de champagne au bar de l'Escadrille entre 
+              deux missions ...</font></b></p>
+            <p align="left"><b><font face="Arial Narrow" size="2" color="#CCCCCC">Dans 
+              cette rubrique, j'ai voulu retracer les d&eacute;placements de chacune 
+              de ces unit&eacute;s afin de permettre de visualiser les difficult&eacute;s 
+              rencontr&eacute;es par les pilotes. Ceux-ci, &eacute;reint&eacute;s 
+              par les combats quotidien &agrave; haute altitude et le danger permanent 
+              , ne disposaient souvent, &agrave; leur retour, que d'installations 
+              pr&eacute;caires sur des terrains non pr&eacute;vus pour recevoir 
+              une escadrille de combat. Ces terrains &eacute;tant par ailleurs 
+              souvent pris pour cible par les bombardiers Allemands.</font></b></p>
+            <div align="left"><font face="Arial Narrow" size="2" color="#CCCCCC"><b>Cette 
+              rubrique est donc d&eacute;coup&eacute;e en trois partie :</b></font></div>
+			  <br>
+            <div align="left"><font face="Arial Narrow" size="2" color="#CCCCCC"> 
+              <font size="3"><b>- D&eacute;placement des unit&eacute;s :</b></font></font></div>
+            <div align="left"><font face="Arial Narrow" size="2" color="#CCCCCC"> 
+              Cette page est en construction : Je retracerai sur une carte, le 
+              trajet accompli de la Mobilisation &agrave; l'Armistice, pour chacune 
+              des unit&eacute;s de l'A&eacute;ronautique Navale recens&eacute;es 
+              sur ce site.</font></div>
+			  <br>
+            <div align="left"><font face="Arial Narrow" size="3" color="#CCCCCC"><b>- 
+              Localisation des unit&eacute;s par date :</b></font></div>
+            <div align="left">
+              <div><font face="Arial Narrow" size="2" color="#CCCCCC"> Cette page 
+                est en construction : Les unit&eacute;s ont peu boug&eacute;, 
+                comme vu plus haut, de la mobilisation au 10 Mai 1940, mais les 
+                choses se sont tr&egrave;s vite enchain&eacute;es par la suite. 
+                Je tracerai sur des cartes, la position des unit&eacute;s, par 
+                armes (Observation, Bombardement, Exploration,...) de la Mobilisation, 
+                &agrave; l'Armistice . Le tout donnant un apre&ccedil;u &quot;anim&eacute;&quot; 
+                de la retraite des unti&eacute;s</font></div>
+				<br>
+				<div align="left">
+              <font face="Arial Narrow" size="2" color="#CCCCCC"> <font size="3"><b>- 
+                Les principaux Terrains :</b></font></font></div>
+              <div>
+                <div><font face="Arial Narrow" size="2" color="#CCCCCC">Cette 
+                  page est en construction. </font><font face="Arial Narrow" size="2" color="#CCCCCC">Vous 
+                  trouverez ici les unit&eacute;s ayant transit&eacute;, parfois 
+                  bri&egrave;vement sur chacun des terrains identif&eacute;s sur 
+                  ce site. Ceux-ci seront class&eacute;s par R&eacute;gions et 
+                  D&eacute;partements, avec le d&eacute;coupage administratif 
+                  actuel, qui diff&egrave;rent de celui en place en 1940.</font></div>
+                <div></div>
+                <div><font face="Arial Narrow" size="2" color="#CCCCCC">Pour cette 
+                  derni&egrave;re partie, je m'appuierai, pour certaines recherches, 
+                  sur le site &quot;<a href="http://www.anciens-aerodromes.com/?page_id=32520" target="_blank"><b><font color="#FFFF00">Anciens-A&eacute;rodromes</font></b></a>&quot; 
+                  tr&egrave;s int&eacute;ressant et d&eacute;taill&eacute;.</font></div>
+              </div>
+            </div>
+            <p align="left">&nbsp;</p>
+            <div align="center"> </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../index.htm" target="_self"><img src="../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

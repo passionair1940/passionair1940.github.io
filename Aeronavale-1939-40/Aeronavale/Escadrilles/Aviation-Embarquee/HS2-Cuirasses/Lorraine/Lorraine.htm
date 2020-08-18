@@ -1,0 +1,944 @@
+ 
+
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Aviation Embarquée Cuirassé Lorraine</title>
+<meta name="keywords" content="Armée de l'Aéronautique Navale 1939-1940, campagne de france,drôle de guerre, Aviation Embarquée : Cuirassé Lorraine"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne"><a name="HAUTDEPAGE"></a></p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../../index.htm" target="_self"><img src="../../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="18%" valign="top" bgcolor="#214767"> 
+        <table width="100%" border="0">
+          <tr> 
+            <td width="14%"><a href="EN-Lorraine.htm"><img src="../../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+            </td>
+          </tr>
+        </table>
+        <hr width="100%">
+        <div align="center"><font size="4" color="#CCCCCC"><b><font color="#FFFFFF"><a href="../../../Accueil-Escadrilles.htm" target="_self">Escadrilles</a></font></b></font></div>
+        <div align="center"></div>
+        <hr width="100%">
+        <div align="left" class="style1"> 
+          <div align="left"> 
+            <p align="left"><b class="Aucun"><b><a href="../../../Esc-Chasse/Accueil-Chasse.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4"> 
+              Chasse</font><font color="#FFFFFF"><i> </i></font></font></a></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="../../../Esc-Bomb/Accueil-Esc-Bombardement.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Bombardement</font><font color="#C0C0C0"> 
+              </font></font></a></b></b> </p>
+          </div>
+        </div>
+        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Bomb-Pique/Accueil-Esc-Bomb-Pique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><font color="#C0C0C0">Bombardement 
+          en piqué</font></font></font></a></b></b> </p>
+        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Torpillage/Accueil-Torpillage.htm" target="_self" ><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Torpillage</font></font></a></b></b> 
+        </p>
+        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Surveillance/Accueil-Surveillance.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Surveillance</font></font></a></b></b> 
+        </p>
+        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Exploration/Accueil-Exploration.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Exploration</font></font></a></b></b> 
+        </p>
+        <p align="left"><a href="../../../Esc-Flotille-Cdt-Teste/Accueil-Flotille-Cdt-Teste.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Flotille 
+          &quot;Commandant Teste&quot;</b></font></a></p>
+        <div align="left"><a href="../../../Aviation-Embarquee/Accueil-Aviation-Embarquee.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><i><font color="#FFFFFF">Aviation 
+          Embarquée :</font></i></b></font></a></div>
+        <div align="left"><a href="../HS2-Cuirasses/Accueil-HS2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i> 
+          1) HS2 &amp; HC2 - <font size="2">Cuirassés</font> : </i></font></b></font></a></div>
+        <div align="left"><a href="../Dunkerque/Dunkerque.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- Dunkerque</font></b></font></a></div>
+        <div align="left"><a href="../Lorraine/Lorraine.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- Lorraine</i></font></b></font></a></div>
+        
+        <div align="left"><a href="../Strasbourg/Strasbourg.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+          Strasbourg</font></b></font></a></div>
+        <div align="left"><a href="../../HS3-Croiseurs-IIeme-classe-Mediterranee/Accueil-HS3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0"> 
+          2) HS3 - <font size="2">Croiseurs 2&deg; Classe - Méditérranée</font></font></b></font></a></div>
+        <div align="left"><a href="../../HS4-Croiseurs-IIeme-classe-Atlantique/Accueil-HS4.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0">3) 
+          HS4 - <font size="2">Croiseurs 2&deg; Classe - Atlantique</font></font></b></font></a></div>
+        <div align="left"><a href="../../HS5-Croiseurs-1ere-Classe/Accueil-HS5.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0"> 
+          4) HS5 - </font></b><font color="#C0C0C0" size="2"><b>Croiseurs 1ere 
+          Classe</b></font></font></a></div>
+        <div align="left"><a href="../../HS6-Batiment-FNEO/Accueil-HS6.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0"> 
+          5) HS6 - <font size="2">Batiments FNEO</font></font></b></font></a></div>
+        <div align="left"><a href="../../HS7-Avisos-Sous_Marin/Accueil-HS7.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0">6) 
+          HS7 - <font size="2">Avisos et Sous-Marin</font></font></b></font></a></div>
+        <p align="left"><font face="Arial Narrow" size="3"><b><font color="#C0C0C0">- 
+          Nota : FNEO =: Forces Navales d'Extrême Orient</font></b></font></p>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <table width="100%">
+              <tr> 
+                <td colspan="2" height="20%"> 
+                  <div align="center"></div>
+                <div align="center"> 
+                  <div><b><font size="20%" color="#660000">Cuirass&eacute; LORRAINE</font></b></div>
+                </div>
+              </td>
+            </tr>
+            <tr> 
+              <td height="335" colspan="2"> 
+                <div align="center"><img src="Photos/Lorraine-cuirasse.JPG" width="80%" ></div>
+              </td>
+            </tr>
+          </table>
+          <div><a href="#Histoire"><img src="../../../../../Images%20Base/Histo-Navire.png" width="10%" border="0"></a> 
+            <a href="#TechniqueNavire"><img src="../../../../../Images%20Base/Technique-Navire.png" width="10%" border="0"></a> 
+            <a href="#Pilotes"><img src="../../../../../Images%20Base/Appareils-Embarques.png" width="10%" border="0"></a> 
+            <a href="#Personnel"><img src="../../../../../Images%20Base/Personnel-Embarque.png" width="10%" border="0"></a> 
+            <a href="#Pertes"><img src="../../../../../Images%20Base/Pertes-Aviation.png" width="10%" border="0"></a> 
+          </div>
+        </div>
+        <blockquote> 
+          <div align="center"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Histoire"></a></font></i></b></font> 
+            <hr size="4" noshade width="98%" align="left">
+          </div>
+          <div align="left"> 
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Historique 
+              Navire </font></i></b></font></p>
+            <p><font face="Arial Narrow" size="2"><b>Le 30 Mars 1912, la Marine 
+              Nationale lance un programme de construction de cuirass&eacute;s 
+              lourdement arm&eacute;s et modernes par rapports aux navires en 
+              service de la classe Courbet. L'armement principal retenu est compos&eacute; 
+              de canons de 340mm. afin de s'aligner sur les derniers cuirass&eacute;s 
+              Anglais ou Allemands. La longueur de ces nouveaux batiments, 166m, 
+              est dict&eacute;e par la longueur des quais des chantiers de constructions 
+              navales. La commande pour le cuirass&eacute; Lorraine est pass&eacute;e 
+              le 15 Juillet 1912 : le navire, fabriqu&eacute; par les Chantiers 
+              de Saint-Nazaire, est lanc&eacute; le 30 septembre 1913 et rentrera 
+              en service en mars 1916.</b></font></p>
+            <p><b><font face="Arial Narrow" size="2">Pendant le premier conflit, 
+              le cuirass&eacute; Lorraine est affect&eacute; &agrave; la surveillance 
+              des cotes sud de la m&eacute;diterran&eacute;e, mais le manque de 
+              charbon bloquera souvent les navires au port et les missions ne 
+              furent pas tr&egrave;s nombreuses. A l'Armistice, le Lorraine rejoint 
+              le port de Toulon.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Pendant l'entre-deux guerres, 
+              le navire subit plusieurs refontes, en 1921, 1924, 1929 et enfin 
+              1934. C'est lors de cette derni&egrave;re modernisation, que la 
+              tourelle double de 340mm en position centrale du navire, est remplac&eacute;e 
+              par une catapulte et un hangar &agrave; aviation pouvant abriter 
+              3 hydravions. Apr&egrave;s ces travaux, le Lorraine est affect&eacute; 
+              &agrave; l'Escadre de l'Atlantique.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Au d&eacute;clenchement des 
+              hostilit&eacute;s, en 1939, le cuirass&eacute; rejoint la m&eacute;diterran&eacute;e 
+              afin de traquer les navires Allemands. Il effectuera cependant une 
+              mission sp&eacute;ciale en escortant les lingots d'or de la Banque 
+              de France vers les Bermudes pour les mettre en s&eacute;curit&eacute;. 
+              </font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Apr&egrave;s la d&eacute;claration 
+              de guerre des Italiens, le 10 Juin 1940, le Lorraine participera 
+              &agrave; des bombardements des c&ocirc;tes Italiennes.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">L'Armisitice ayant &eacute;t&eacute; 
+              sign&eacute;e par les Fran&ccedil;ais, les Britanniques, soucieux 
+              de ne pas voir tomber la Flotte fran&ccedil;aise aux mains des Allemands, 
+              mettent la main sur les Navires Fran&ccedil;ais lorsque c'est possible, 
+              ou les d&eacute;truit, comme lors de l'&eacute;v&ecirc;nement tragique 
+              de Mers-el-Kebir en juillet 1940. Le Lorraine, quant &agrave; lui, 
+              sera saisi le 4 Juillet et d&eacute;sarm&eacute; dans le port d'Alexandrie. 
+              Les Fran&ccedil;ais acceptent de vider les cuves de mazout et de 
+              neutraliser l'Armement, moyennant quoi, les anglais laissent les 
+              Navires sous le commandement Fran&ccedil;ais et font rapatrier les 
+              membres d'&eacute;quipages qui le souhaitent. En d&eacute;cembre 
+              1942, le Lorraine rejoint les forces Fran&ccedil;aises Libres, et 
+              apr&egrave;s remise en &eacute;tat, reprendra la lutte &agrave; 
+              partir de Juillet 1943</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Un temps utilis&eacute; comme 
+              navire &eacute;cole &agrave; Dakar, il est ensuite modifi&eacute; 
+              &agrave; Oran en vue des futures op&eacute;rations de d&eacute;barquement 
+              dans le sud de la France. Ainsi, la catapulte est d&eacute;pos&eacute;e, 
+              et l'armement Anti-a&eacute;rien est consid&eacute;rablement renforc&eacute;. 
+              Le 15 Aout 1944, d&eacute;butent les op&eacute;rations de d&eacute;barquement, 
+              et le Lorraine bombarde les fortifications allemandes pr&egrave;s 
+              de Toulon, sur la presque-&icirc;le de Saint-Mandrier. Le Cuirass&eacute; 
+              sera envoy&eacute; &agrave; la fin de l'ann&eacute;e, &agrave; Portsmouth, 
+              puis &agrave; Cherbourg pour y &ecirc;tre r&eacute;vis&eacute;. 
+              Il rejoindra ensuite Royan pour y soutenir les troupes alli&eacute;s, 
+              en bombardant la forteresse Allemande de Giron, lors de l'attaque 
+              de la poche de Royan. Le Lorraine, apr&egrave;s un passage &agrave; 
+              Brest, finira la Guerre dans le port de Toulon.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Apr&egrave;s l'Armistice, 
+              le Cuirass&eacute; Lorraine sert de Navire &eacute;cole pour l'artillerie. 
+              Il sera d&eacute;sarm&eacute; en F&eacute;vrier 1953 et vendu en 
+              D&eacute;cembre de la m&ecirc;me ann&eacute;e. Il sera d&eacute;moli 
+              &agrave; partir de 1954</font></b></p>
+            <div align="left"> <a class="fancybox-effects-c" href="Photos/Cuirasse-Lorraine.jpg" data-fancybox-group="gallery-1" title="Cuirassé Lorraine"><img src="Small%20Tn/tn_Cuirasse-Lorraine.jpg" alt="" border="0" width="45" height="72" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Cuirasse-Lorraine-1.jpg" data-fancybox-group="gallery-1" title="Cuirassé Lorraine"><img src="Small%20Tn/tn_Cuirasse-Lorraine-1.jpg" alt="" border="0" width="116" height="72" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Lorraine.jpg" data-fancybox-group="gallery-1" title="Cuirassé Lorraine"><img src="Small%20Tn/tn_Lorraine.jpg" alt="" border="0" width="113" height="72" /></a> 
+            </div>
+            </div>
+		  <font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="TechniqueNavire"></a></font></i></b></font>
+<hr size="4" noshade width="98%" align="left">
+          <div align="left">
+            <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique 
+              Navire </font></i></b></font></p>
+            <table BORDER bordercolor="#000000" width="85%" bgcolor="#FFFFFF" align="left" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="32" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="30%" height="32" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">Navire de ligne ou Cuirass&eacute;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="32" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lancement</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="30%" height="32" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">30 Septembre 
+                    1913</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="30" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="30%" height="30" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">166 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="30" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Largeur</b></i> </font> 
+                  </center>
+                </td>
+                <td width="30%" height="30" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">26.90 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Tirant d'eau</b></i></font> 
+                  </center>
+                </td>
+                <td width="30%" height="18" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">9.80 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Rayon d'Action</b></i></font> 
+                  </center>
+                </td>
+                <td width="30%" height="18" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <div><font size="2" face="Arial Narrow">4700 milles&agrave; 
+                      10 noeuds</font></div>
+                    </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="30" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>D&eacute;placement 
+                    Standard </b></i> </font> 
+                  </center>
+                </td>
+                <td width="30%" height="30" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 22189 Tonnes&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="30" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>D&eacute;placement 
+                    Pleine Charge</b></i></font> 
+                  </center>
+                </td>
+                <td width="30%" height="30" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">23500 Tonnes&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="24" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i></font> 
+                  </center>
+                </td>
+                <td width="30%" height="24" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 22 noeuds.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="24" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Equipage</b></i></font> 
+                  </center>
+                </td>
+                <td width="30%" height="24" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <div><font size="2" face="Arial Narrow">57 Officiers</font></div>
+                    <div>
+                      <div><font size="2" face="Arial Narrow">1133 Hommes d'&eacute;quipages&nbsp;</font></div>
+                      </div>
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td height="40" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg" width="20%"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Propulsion</b></i></font> 
+                  </center>
+                </td>
+                <td colspan="3" height="40" bordercolor="#000000" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <p align="center"><font face="Arial Narrow" size="2">4 Turbines 
+                    &agrave; vapeur Parsons aliment&eacute;s par 24 Chaudi&egrave;res 
+                    entrainant 4 h&eacute;lices : puissance totale de 43000 CV 
+                    </font></p>
+                  </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Blindage</b></i></font> 
+                  </center>
+                </td>
+                <td colspan="3" height="18" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <div><font size="2" face="Arial Narrow">Ceinture : 180 &agrave; 
+                      260mm</font></div>
+                    <div><font face="Arial Narrow" size="2">Pont : 30 &agrave; 
+                      40mm </font></div>
+                    <div>
+                      <div><font face="Arial Narrow" size="2">Tourelles principales 
+                        : 300 &agrave; 400mm </font></div>
+                      <div><font face="Arial Narrow" size="2">Casemates : 170 mm</font></div>
+                    </div>
+                    <div><font face="Arial Narrow" size="2">Tour d'Observation 
+                      : 314 mm </font></div>
+                  </center>
+                  </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="73" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                </td>
+                <td colspan="3" height="73" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">
+                    <div><font face="Arial Narrow" size="2">4 tourelles doubles 
+                      &eacute;quip&eacute;es de canons de 340mm </font></div>
+                    <div><font face="Arial Narrow" size="2">14 canons de 138 mm 
+                      r&eacute;partis en casemates de chaque c&ocirc;t&eacute; 
+                      du navire</font></div>
+                    <div><font face="Arial Narrow" size="2">8 canons anti-A&eacute;riens 
+                      de 37mm </font></div>
+                    <div><font face="Arial Narrow" size="2">12 mitrailleuses Hotchkiss 
+                      de 13.2mm </font></div>
+                  </div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="37" bordercolor="#000000" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Aviation</b></i></font></div>
+                </td>
+                <td colspan="3" height="37" background="../../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div>
+                      <div><font face="Arial Narrow" size="2">4 hydravions<br>
+                        1 catapulte &agrave; air comprim&eacute; orientable en 
+                        partie centrale du navire (En remplacement de la 5eme 
+                        tourelle double de 340mm d'origine)</font></div>
+                      <div><font face="Arial Narrow" size="2">1 &eacute;l&eacute;vateur 
+                        pour mise en place des hydravions sur la catapulte</font></div>
+                      <div><font face="Arial Narrow" size="2">1 grue pour r&eacute;cup&eacute;ration 
+                        des hydravions<br>
+                        Hangar pouvant abriter deux hydravions, </font></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a></p>
+          </div>
+		  <font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Pilotes"></a></font></i></b></font>
+<hr size="4" noshade width="98%" align="left">
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Aviation 
+            Embarqu&eacute;e</font></i></b></font></p>
+          <p align="left"><img src="Photos/essai-2.gif" width="20%" align="middle" ></p>
+          <p align="left"><font face="Arial Narrow" size="3"><b><font size="2">Embl&egrave;me 
+            de l'Aviation Embarqu&eacute;e du cuirass&eacute; Lorraine</font></b></font></p>
+          <div align="left"><b><font face="Arial Narrow" size="3"><i><font color="#660000">L'escadrille 
+            HS2 : </font></i></font></b></div>
+          <div align="left"><b><font face="Arial Narrow" size="2">Cette unit&eacute; 
+            est n&eacute;e, le 1er Octobre 1938, de la s&eacute;paration de la 
+            7S4 en deux escadrilles : La HS2 et la HS4</font></b></div>
+          <p align="left"><font size="2"><b><font face="Arial Narrow">La HS2 regroupe 
+            les appareils, des Gourdou-Lesseure GL812, puis des des Loire 130, 
+            embarqu&eacute;s sur les navires de ligne de l'Escadre de l'Atlantique, 
+            les cuirass&eacute;s : &quot;Dunkerque&quot;, &quot;Lorraine&quot; 
+            et &quot;Strasbourg&quot;</font></b></font></p>
+              
+          <div align="left"><b><font face="Arial Narrow" size="4" color="#660000"><i><font size="3">L'escadrille 
+            HC2 :</font> </i></font></b></div>
+              <div align="left">
+                
+            <div><b><font face="Arial Narrow" size="2">Cette unit&eacute; aura 
+              une bien courte existence... Cr&eacute;e, en Aout 1940, l'escadrille 
+              re&ccedil;oit des Loire 210, hydravions de chasse embarqu&eacute;s. 
+              Ils doivent assurer la protection a&eacute;rienne des navires de 
+              ligne de l'Escasdre de l'Atlantique. Mais ce concept est d&eacute;pass&eacute; 
+              d&egrave;s sa cr&eacute;ation : le Loire 210 est un appareil aux 
+              performances quelconques, peu fiable et pr&eacute;sentant des d&eacute;fauts 
+              structurels importants</font></b></div>
+            <div>
+              <p><font size="2"><b><font face="Arial Narrow">D&egrave;s Novembre 
+                1939, les Loire 210 sont d&eacute;barqu&eacute;s de tout les navires 
+                de ligne et l'Escadrille HC2 est dissoute. Le personnel est transf&eacute;r&eacute; 
+                vers l'Escadrille AB3, aors en formation</font></b></font></p>
+            </div>
+              </div>
+          <div align="left"></div>
+          <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="left" >
+            <tr> 
+              <td colspan="4" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                <center>
+                  <i><b><font face="Arial, Helvetica, sans-serif" color="#FFFFFF">Appareils 
+                  affect&eacute;s au Navire</font></b></i> 
+                </center>
+              </td>
+            </tr>
+            <tr bgcolor="#999999"> 
+              <td height="40" bordercolor="#000000" width="20%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Type 
+                  d'appareils </b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="10%"> 
+                <div align="center"><font face="Arial Narrow" size="2"><b>N&deg; 
+                  de S&eacute;rie</b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="15%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Immatriculation</b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="55%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Divers</b></font></div>
+              </td>
+            </tr>
+            <tr bgcolor="#999999" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+              <td colspan="4" height="27"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Loire 
+                  130</b></font></div>
+              </td>
+            </tr>
+            <tr> 
+              <td width="20%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">Loire 
+                  130</font></b></font></div>
+              </td>
+              <td width="10%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">01</font></b></font></div>
+              </td>
+              <td width="15%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><b></b></div>
+              </td>
+              <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="55%"><font face="Arial Narrow" size="2">Affect&eacute; 
+                au Cuirass&eacute; Lorraine. Cet appareil est le prototype de 
+                la s&eacute;rie.</font></td>
+            </tr>
+            <tr> 
+              <td width="20%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">Loire 
+                  130</font></b></font></div>
+              </td>
+              <td width="10%" height="27" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">32</font></b></font></div>
+              </td>
+              <td width="15%" height="27" bgcolor="#E4E4E4"> 
+                <div align="center"><b><font face="Arial Narrow" size="3">HS2-7</font></b></div>
+              </td>
+              <td width="55%" height="27" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Affect&eacute; 
+                au Cuirass&eacute; Lorraine.</font></td>
+            </tr>
+            <tr> 
+              <td width="20%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">Loire 
+                  130</font></b></font></div>
+              </td>
+              <td width="10%" height="27" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">55</font></b></font></div>
+              </td>
+              <td width="15%" height="27" bgcolor="#E4E4E4"> 
+                <div align="center"><b><font face="Arial Narrow" size="3">HS2-8</font></b></div>
+              </td>
+              <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="55%"><font face="Arial Narrow" size="2">Affect&eacute; 
+                au Cuirass&eacute; Lorraine.</font></td>
+            </tr>
+            <tr bgcolor="#999999" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+              <td colspan="4" height="27"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Loire 
+                  210</b></font></div>
+            </tr>
+            <tr> 
+              <td width="20%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font size="3"><b><font face="Arial Narrow">Loire 
+                  210 </font></b></font></div>
+              </td>
+              <td width="10%" height="27" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+              <td width="15%" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><b><font face="Arial Narrow" size="3">HC2-8</font></b></div>
+              </td>
+              <td height="27" bgcolor="#E4E4E4" bordercolor="#000000" width="55%"><font face="Arial Narrow" size="2">Affect&eacute; 
+                au Cuirass&eacute; Lorraine.</font></td>
+            </tr>
+          </table>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <div align="left"><a class="fancybox-effects-c" href="Photos/Loire-130-Catapulte-Lorraine.JPG" data-fancybox-group="gallery-2" title="Un Loire 130 sur la Catapulte du Cuirassé Lorraine, installée en position centrale du navire"><img src="Small%20Tn/tn_Loire-130-Catapulte-Lorraine.JPG" alt="" border="0" width="96" height="72" /></a> 
+          </div>
+		  <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a></p>
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Personnel"></a></font></i></b></font> 
+          </p>
+          <hr size="4" noshade width="98%" align="left">
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Personnel 
+            Aviation </font></i></b></font></p>
+          <table BORDER bordercolor="#000000" bgcolor="#FFFFFF" align="left" width="90%" >
+            <tr> 
+              <td colspan="7" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                <center>
+                  <i><b><font face="Arial, Helvetica, sans-serif" color="#FFFFFF">Pilotes 
+                  et Personnel Aviation du Navire</font></b></i> 
+                </center>
+              </td>
+            </tr>
+            <tr bgcolor="#999999"> 
+              <td height="40" bordercolor="#000000" width="21%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Nom 
+                  </b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="15%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Grade</b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="12%"> 
+                <div align="center"><b><font size="3" face="Arial Narrow">Fonction</font></b></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="40%"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Divers</b></font></div>
+              </td>
+              <td width="4%" height="40"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Photos</b></font></div>
+              </td>
+              <td width="4%" height="40"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Fiches 
+                  Indiv.</b></font></div>
+              </td>
+              <td height="40" bordercolor="#000000" width="4%"> 
+                <div align="center"><font face="Arial Narrow" size="2"><b><font size="3">Citations</font></b></font></div>
+              </td>
+            </tr>
+            <tr bgcolor="#999999" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+              <td colspan="7" height="27"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Chef 
+                  de Service Aviation de Bord</b></font></div>
+            </tr>
+            <tr> 
+              <td width="21%" height="30" bgcolor="#CCCCCC" bordercolor="#000000"><font face="Arial Narrow" size="2"><b>ALLAIN 
+                L&eacute;on </b></font></td>
+              <td width="15%" height="30" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"><font face="Arial Narrow" size="2">Lieutenant 
+                  de Vaisseau</font></div>
+              </td>
+              <td width="12%" height="30" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                <div align="center"></div>
+              </td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="40%"><font face="Arial Narrow" size="2">Le 
+                Lieutenant de Vaisseau Allain a &eacute;t&eacute; chef de service 
+                Aviation du Lorraine de 1939 jusqu'en Juillet 1940</font></td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%"> 
+                <div align="center"><a class="fancybox-effects-c" href="Photos/ALLAIN-Leon.JPG" data-fancybox-group="gallery-3" title="Lieutenant de Vaisseau Léon ALLAIN"><img src="Small%20Tn/tn_ALLAIN-Leon.JPG" alt="" border="0" width="36" height="36" /></a> 
+                </div>
+              </td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%">&nbsp;</td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%">&nbsp;</td>
+            </tr>
+            <tr bgcolor="#999999" background="../../../../../Images Base/metal-texture-151340.jpg"> 
+              <td colspan="7" height="27"> 
+                <div align="center"><font face="Arial Narrow" size="3"><b>Equipages</b></font></div>
+            </tr>
+            <tr> 
+              <td width="21%" height="30" bgcolor="#CCCCCC" bordercolor="#000000">&nbsp;</td>
+              <td width="15%" height="30" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+              <td width="12%" height="30" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="40%">&nbsp;</td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%">&nbsp;</td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%">&nbsp;</td>
+              <td height="30" bgcolor="#E4E4E4" bordercolor="#000000" width="4%">&nbsp;</td>
+            </tr>
+          </table>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Pertes"></a></font></i></b></font> 
+          </p>
+          <p>&nbsp;</p>
+          <hr size="4" noshade width="98%" align="left">
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Pertes 
+            Aviation</font></i></b></font></p>
+          
+          <p align="left"><font face="Arial Narrow" size="2"><b>Le Cuirass&eacute; 
+            Lorraine n'eut pas de pertes &agrave; d&eacute;plorer pour son service 
+            Aviation pendant la Campagne de France.</b></font></p>
+        </blockquote>
+        <div align="left"> </div>
+        <div align="left"></div>
+        <div align="center">
+          <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6"> 
+            </font></i></b></font></p>
+        </div>
+        <div align="left">
+<p align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/B-Retour%20haut%20page.png" width="20%" border="0"></a></p>
+          <p align="left"><font color="#660000"><b><i> </i></b></font></p>
+        </div>
+        <div align="left"> 
+          <p align="center"><font color="#660000"><b></b></font></p>
+        </div>
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+        <div align="left"> </div>
+        <p align="center">&nbsp;</p>
+        <div align="center"></div>
+        <div align="left"></div>
+        <div align="left"> </div>
+        <div align="left"> 
+          <p>&nbsp;</p>
+        </div>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../../index.htm" target="_self"><img src="../../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

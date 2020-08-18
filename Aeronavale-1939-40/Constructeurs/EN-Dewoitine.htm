@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Emile-Dewoitine</title>
+<meta name="keywords" content="French Air Force 1939 - 1940, campaign of France, funny war, Caudron, Morane-Saulnier, dewoitine, Amiot, Breguet, Farman, Lioré and olivier, Potez"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../Aeronavale/EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../Images%20Base/EN-1.png" width="20%" border="0"></a><a href="../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../Images%20Base/EN-4-Big.png" width="20%" border="0"></a><a href="../EN-index.htm" target="_self"><img src="../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="15%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="Dewoitine.htm"><img src="../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+        <div align="center"><font size="4" color="#FFFFFF"><a href="EN-Page%20Accueil%20Constructeurs.htm" target="_self">Manufacturers</a></font><a href="Page%20Accueil%20Constructeurs.htm"><font size="5" color="#CCCCCC"> 
+          </font></a><font size="5" color="#CCCCCC"> </font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Amiot</b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Bloch</b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow">- <b><font size="3" color="#FFFF00">Breguet</font></b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Caudron</b></font></a></div>
+          <div align="left"><a href="Dewoitine.htm"  ><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+            Dewoitine</font></i></b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Farman</b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Lioré & Olivier</b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Morane-Saulnier</font></b></font></a></div>
+          <div align="left"><a  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Potez</b></font></a></div>
+          <div align="left" class="style1"> 
+            <p>&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" bgcolor="#000033" width="83%" height="25" bordercolor="#000000"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <blockquote> 
+            <div align="center"><img src="constructeur%20Dewoitine.png" width="40%"></div>
+            <p><img src="Dewoitine/Emile%20Dewoitine.JPG" width="40%"></p>
+            <p align="left"><font color="#FFFFFF"><b><font size="6">Biography 
+              :</font></b></font></p>
+            <table width="100%" border="0" align="center">
+              <tr> 
+                <td colspan="3" height="236"> 
+                  <p><font color="#FFFFFF">Emile Dewoitine was born on September 
+                    26th, 1892 inCr&eacute;py-en-Laonnois (02)</font></p>
+                  <div align="left"><font color="#000000"><font color="#FFFFFF">He 
+                    went to secondary school in Reims and then joined Ecole Br&eacute;guet 
+                    in Paris with a specialty &quot;Electricity&quot;. This school, 
+                    created in 1904, trains engineers. He did his military service 
+                    in 1911, first in a unit of the &quot;Genie&quot; before joining 
+                    the recent Military Aeronautics, born in 1909. He obtained 
+                    the patent n &deg; 5 of aircraft mechanic at the School of 
+                    Mechanics Bl&eacute;riot Etampes. Sent to Algeria with a unit 
+                    equipped with Farman Biplans, he took part in the Biskra-Tunis 
+                    raid in February 1913.</font></font></div>
+                  </td>
+                <td width="10" height="236"></td>
+                <td valign="top" width="357" height="236"> 
+                  <div align="center">
+                    <p><img src="Dewoitine/Maison%20natale.jpg" width="80%" align="middle"></p>
+                    <p><i><font color="#FFFFFF">Emile Dewoitine's native house</font></i> 
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="48" colspan="5"><font color="#FFFFFF">Demobilized in February, 1914, he joins the Halcyon company. This one, installed in Courbevoie, realized Motorcycles and cars, considered as their finish and their robustness. In the release of the 1st world conflict, he is re- mobilized, in August, 1914.</font></td>
+              </tr>
+              <tr> 
+                <td width="340" height="227"> 
+                  <p align="center"><img src="Dewoitine/Salmson-2a2.jpg" width="80%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Salmson 2A2</font></i></p>
+                </td>
+                <td width="12" height="227"></td>
+                <td valign="center" colspan="3" height="227"> 
+                  <p><font color="#FFFFFF">Volunteer for the Army of East, sergeant 
+                    Emile Dewoitine leaves for Russia in 1915, when we confide 
+                    him the direction of the assembly of bombers &quot;Voisins&quot; 
+                    biplanes, built under license in the factory " Anatra " in 
+                    Odessa.</font></p>
+                  <p><font color="#FFFFFF">Thanks to funds of private bankers, 
+                    he will install afterward a factory of aircraft manufacturings 
+                    meadows of Sevastopol.</font></p>
+                  <p><font color="#FFFFFF"> The Russian Revolution ends prematurely 
+                    its trip in the Eastern Europe and he returns to France in 
+                    1917, at the disposal of the SFA (Service of Manufacturing 
+                    of the Aviation). As such, it is necessary chargè, within 
+                    the factory " Latécoère " of Toulouse, to set up the production 
+                    of Two-seater 1000 of Observation Salmson 2A2. </font></p>
+                  <div><font color="#FFFFFF"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="3" height="237"> 
+                  <p align="left"><font color="#FFFFFF">Demobilized in 1919, Emile 
+                    Dewoitine tries to obtain director's post of the engineering 
+                    consulting firm with Georges Latécoère. But this one prefers 
+                    to keep him in a role of person in charge of Manufacturing, 
+                    posts for which he excelled during the realization of 1000 
+                    Farman. It is one of reasons why Emile Dewoitine, avid to 
+                    conceive modern planes, leave the Latécoère company in 1920.</font></p>
+                  <p align="left"><font color="#FFFFFF">Remaining in Toulouse, 
+                    He creates in October, 1920, the SAD (Socété Anonyme of planes 
+                    Dewoitine). </font></p>
+                  <p align="left"><font color="#FFFFFF">His first realization 
+                    was Dewoitine D1 in answer to a program launched by the direction 
+                    of the Aeronautics. The aircraft, modern fighter metallic 
+                    monoplane with wing parasol makes its first flight in November, 
+                    1922. Dewoitine D1 knew a big succés with orders of the Naval 
+                    aviation, the Military Aeronautics and in the export of Yugoslavia 
+                    and Italy.</font></p>
+                </td>
+                <td colspan="2" height="237"> 
+                  <p align="center"><img src="Dewoitine/D1.jpg" width="90%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Dewoitine D1</font></i></p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="5" height="42"><font color="#FFFFFF">To answer the 
+                  request, Emile Dewoitine settles down in bigger premises and 
+                  confides a part of the manufacturing of Dewoitine D1 to a company 
+                  installed in Courbevoie. D1 knew several by-products, D8, D9 
+                  and D12. The famous Marcel Doret will also realize several speed 
+                  records in his edge.</font></td>
+              </tr>
+              <tr> 
+                <td height="147"> 
+                  <p align="center"><img src="Dewoitine/Planeur%20P3.jpg" width="80%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Glider Dewoitine 
+                    P3</font></i></p>
+                </td>
+                <td colspan="4" height="147"> 
+                  <p align="left"><font color="#FFFFFF">Emile Dewoitine also explores 
+                    the gliding and creates the Glider P1 in May, 1922 ., This 
+                    one uses a wing to cantilever. Its peculiarity is to lack 
+                    shrouds, the structure being insured by an internal central 
+                    girder the wing and connected with the fuselage. Emile Dewoitine 
+                    makes patent this conception which we shall find on the future 
+                    modern fighters. Follow then gliders P2 and P3. These demonstrated 
+                    their qualities of sharpness on the occasion of flights of 
+                    very long-lasting. </font></p>
+                  <p align="left"><font color="#FFFFFF">Hardly of his successes, Emile Dewoitine creates the "CAD" (Aircraft manufacturings Dewoitine).</font></p>
+                  </td>
+              </tr>
+              <tr> 
+                <td valign="top" height="35" colspan="5"> 
+                  <div align="center"><i></i></div>
+                  <font color="#FFFFFF">The following project, the D14, is a aircraft 
+                  of wooden Transport, with high wing, capable of transporting 
+                  6 passengers. Will follow Dewoitine D18, plane of Big Raid </font></td>
+              </tr>
+              <tr> 
+                <td colspan="3" height="201"> 
+                  <p align="left"><font color="#FFFFFF">However, the company knows 
+                    financial difficulties and Emile Dewoitine has to stop his 
+                    activity in 1927. His salute will come from the Swiss Government: 
+                    this one offers him the technical and financial means to study 
+                    and make a fighter monoplane with high wing, D27. Aircrafts 
+                    will be built by the Federal Factory of Thun. The aircraft 
+                    knew difficult debuts bound to its motorization, engine V12 
+                    Hispano-Suiza of 500ch "a little delicate". It will find a 
+                    reliability when it will receive, under the name D26, an engine 
+                    Hispano-Suiza 9QA of 250ch, copies under license, from the 
+                    engine of Charles Lindberg's " Spirit Of Saint-Louis ".</font></p>
+                  <p align="left"><font color="#FFFFFF"></font></p>
+                </td>
+                <td height="201" colspan="2"> 
+                  <p align="center"><img src="Dewoitine/D27.jpg" width="90%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Dewoitine D27</font></i></p>
+                </td>
+              </tr>
+              <tr> 
+                <td height="45" colspan="5"><font color="#FFFFFF">In France, Albert 
+                  Caquot, in charge of the policy of the prototypes to the quite 
+                  new Ministry of the Air, reminds Emile Dewoitine, who returns 
+                  to the country to base the SAFD there (French Aeronautical society 
+                  of Planes Dewoitine). The factory of Toulouse opens again its 
+                  door in June, 1926 </font></td>
+              </tr>
+              <tr> 
+                <td height="223"> 
+                  <p align="center"><img src="Dewoitine/D33.jpg" width="80%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Dewoitine D33 &quot;Trait 
+                    d'Union&quot;</font></i></p>
+                </td>
+                <td colspan="4" height="223"> 
+                  <p align="left"><font color="#FFFFFF">The policy of the prototypes 
+                    allows the birth in 1931, of a plane of Big Raid, D33 "Trait 
+                    d'Union&quot; . On board, the Doret, Mesmin, Brix crew will 
+                    try the record of distance of 10000kms, but both copies of 
+                    D33 will crash further to mechanical problems. Two of three 
+                    men of crew will be killed : the only one Marcel Doret will 
+                    survive.</font></p>
+                  <p align="left"><font color="#FFFFFF"></font></p>
+                </td>
+              </tr>
+              <tr> 
+                <td height="21" colspan="5"> 
+                  <div align="center"><b><i></i></b></div>
+                  <font color="#FFFFFF">The D33 will be the father of a line of 
+                  three-engined : D332, D333, D338, D342 which will be used by 
+                  the Air France Company. </font></td>
+              </tr>
+              <tr> 
+                <td colspan="3" height="237"> 
+                  <p align="left"><font color="#FFFFFF">In 1930, the Ministry 
+                    of Air issued a Specification for a single-seat fighter "C1".</font></p>
+                  <p align="left"><font color="#FFFFFF">To answer it, Dewoitine 
+                    studied the D500, an elegant single-engine with a low cantilever 
+                    wing and a fixed landing-gear. He made his first flight in 
+                    1932 at the controls of Marcel Doret. The aircraft has good 
+                    performance and will have a very powerful weapon for the time, 
+                    with its 20mm barrel housed between the two rows of cylinders 
+                    (from the D501). The D500 and derivatives D501 and D510 enjoyed 
+                    great success : about 336 aircraft of all versions were ordered 
+                    by the Air Force and thirty copies will be exported. <b><br>
+                    </b></font></p>
+                  <p align="left"><b></b></p>
+                </td>
+                <td height="237" colspan="2"> 
+                  <p align="center"><img src="Dewoitine/image029.jpg" width="90%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Dewoitine D500</font></i></p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="5" height="47"><font color="#FFFFFF"> In 1936, the 
+                  Dewoitine Society did not escape nationalization and became 
+                  SNCAM (National Society of Aeronautical Constructions of the 
+                  South). Emile Dewoitine remains the managing director.</font></td>
+              </tr>
+              <tr> 
+                <td height="191"> 
+                  <p align="center"><img src="Dewoitine/D520.jpg" width="90%"></p>
+                  <p align="center"><i><font color="#FFFFFF">Dewoitine D520</font></i></p>
+                </td>
+                <td colspan="4" height="191"> 
+                  <p align="left"><font color="#FFFFFF">In June 1936, the Air 
+                    Force issued a program C1, for a single-seater fighter able 
+                    to fly at 500km / h and armed with a gun and 2 machine guns 
+                    or 2 cannons. This program is quickly modified to impose a 
+                    minimum speed of 520km / h. </font></p>
+                  <p align="left"><font color="#FFFFFF">The D520 presented by 
+                    the company Dewoitine, is retained, as the Morane 405, the 
+                    CAO 200. Others will be attached later as the Bloch 152 and 
+                    Arsenal VG33. Three prototypes are ordered on April 3, 1938, 
+                    but the first will make its first flight on October 2, at 
+                    the hands of Marcel DORET. It is powered by a Hispano-Suiza 
+                    HS 12Y21 of 890Cv. </font></p>
+                  <p align="left"><b></b></p>
+                </td>
+              </tr>
+              <tr> 
+                <td height="64" valign="top" colspan="5"> 
+                  <div align="center"><i></i></div>
+                  <div align="center"></div>
+                  <p><font color="#FFFFFF"> A first order of 200 machines equipped 
+                    with Hispano-Suiza 12Y45 engine with 945Cv compressor at take-off 
+                    is launched in March 1939. Deliveries planned between September 
+                    and December, will be delayed due to weapons development problems 
+                    and problems with cooling. The first aircraft will be delivered 
+                    in January 1940 and will equip an experimental squadron. </font></p>
+                  <p><font color="#FFFFFF">Production continues very slowly. On 
+                    April 1, 1940, 139 D520 were manufactured, but only 32 are 
+                    delivered to the EAA301 ... During the German offensive of 
+                    May 10, 1940, 228 were built for 75 delivered. However, at 
+                    that time, production was finally in full swing, with 100 
+                    machines assembled per month, and at the Armistice, 330 D520 
+                    could be taken into account.</font></p>
+                </td>
+              </tr>
+              <tr> 
+                <td height="21" colspan="5"> 
+                  <div align="left"><font color="#FFFFFF">After the armistice, 
+                    Emile Dewoitine went to the United States with the project 
+                    to be able to build fighter jets in collaboration with Henry 
+                    Ford. He nevertheless agrees to return to France at the request 
+                    of the Vichy government. It is likely that his decision was 
+                    motivated by the good relations of the time between the United 
+                    States and Vichy.</font></div>
+                  <div align="left"><font color="#FFFFFF">He will be interned 
+                    by the government of Petain upon his arrival on the national 
+                    soil for "Betrayal for the benefit of the Enemy" ... He will 
+                    be tried and finally acquitted. Wishing to move away from 
+                    Vichy, he joined the occupied zone and agreed to head the 
+                    design office "ARADO at the head of 200 employees, he then 
+                    returned to" Free Zone "and worked for SIPA (Industrial Society 
+                    for Aeronautics)..</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="3" height="178"> 
+                  <p align="left"><font color="#FFFFFF">In 1944, at the liberation, 
+                    fearing rightly to be arrested for collaboration, he went 
+                    to Spain and Argentina, hoping to resume his activities. In 
+                    1947, he will head the design office that created I.Ae. 27 
+                    Pulqui I, a plane of modest performance that did not go beyond 
+                    the prototype stage, but which will remain in history as the 
+                    first Argentine jet. </font></p>
+                  <p align="left"><b></b></p>
+                </td>
+                <td height="178" colspan="2"> 
+                  <p align="center"><img src="Dewoitine/I-Ae%2027%20pulqui.jpg" width="81%" height="158"></p>
+                  <p align="center"><i><font color="#FFFFFF">I.Ae. 27 Pulqui I</font></i></p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="5" height="116"> 
+                  <p align="left"><font color="#FFFFFF">In February 1948, Emile 
+                    Dewoitine, although a refugee abroad, will be sentenced in 
+                    absentia, to 20 years of forced labor, to national indignity 
+                    and the confiscation of his property.</font></p>
+                  <p align="left"><font color="#FFFFFF"> In 1953, however, he 
+                    negotiates his return to France, but can not resume his activities 
+                    in Aeronautics.</font></p>
+                  <p align="left"><font color="#FFFFFF">He will stay for a while 
+                    in Patagonia where he will operate a breeding of 8000 sheep, 
+                    before settling in Switzerland, then in Toulouse. It will 
+                    be extinguished on July 5, 1979.</font></p>
+                </td>
+              </tr>
+            </table>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <div align="left"> </div>
+            <div align="left">
+<p>&nbsp;</p>
+            </div>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <table width="100%" border="0" align="left">
+              <tr> 
+                <td width="44%">&nbsp;</td>
+                <td rowspan="2"> 
+                  <p align="left">&nbsp;</p>
+                  </td>
+              </tr>
+              <tr> 
+                <td width="44%"> 
+                  <div align="center"><b><i></i></b></div>
+                </td>
+              </tr>
+            </table>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+            <p align="left">&nbsp;</p>
+          </blockquote>
+        </div>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../EN-index.htm" target="_self"><img src="../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

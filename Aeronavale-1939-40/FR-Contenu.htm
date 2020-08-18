@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Contenu-Site</title>
+
+<meta name="keywords" content="Aéronautique Navale Française 1939-1940,pilotes,appareils,escadrilles,chasse,bombardement,reconnaissance,pertes,contenu site,plan du site victoires,RAF,Luftwaffe,Régia Aéronautica,énigmes,campagne de france,drôle de guerre"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="Aeronavale/Page-Accueil-Aeronavale.htm" target="_self"><img src="Images%20Base/1.png" width="20%" border="0"></a><a href="Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="Images%20Base/2.png" width="20%" border="0"></a><a href="Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="Images%20Base/3.png" width="20%" border="0"></a><a href="Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="Images%20Base/4.png" width="20%" border="0"></a><a href="index.htm" target="_self"><img src="Images%20Base/5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Contenu.htm"><img src="../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+        <div align="center"><font size="4" color="#FFFFFF"><b>Le Contenu</b></font><font size="5" color="#CCCCCC"> 
+          </font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#FFFFFF"><i><font size="4">Contenu</font></i></font></font></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="FR-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historique</font></font></a></b></b> 
+            </p>
+            
+            <p align="left"><b class="Aucun"><b><a href="FR-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Liens 
+              &agrave; d&eacute;couvrir</font></font></a></b></b></p>
+			   
+            <p align="left"><b class="Aucun"><b><a href="Librairie/Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Biblioth&egrave;que</font></font></a></b></b></p>
+          </div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" bgcolor="#000024" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <blockquote> 
+            <p>&nbsp; </p>
+          </blockquote>
+        </div>
+        <blockquote> 
+          <div align="left"> 
+            <div><b><font size="2" color="#CCCCCC" face="Arial Narrow">Cete partie 
+              du site est d&eacute;di&eacute;e &agrave; l'A&eacute;ronautique 
+              Navale Fran&ccedil;aise en 1939-40. Elle vient compl&eacute;ter 
+              le site principal <a href="../index.htm"><font color="#FFFF00">&quot;Arm&eacute;e 
+              de l'Air Fran&ccedil;aise&quot;</font></a>, qui est accessible &agrave; 
+              tout moment via la cocarde en haut &agrave; droite de chacune des 
+              pages. Cette Arme , dont l'action est moins connue, n'en a pas moins 
+              m&eacute;rit&eacute; un hommage. Ses hommes ont combattu avec m&eacute;rite, 
+              souvent employ&eacute;s dans des missions pour lesquelles ils n'&eacute;taient 
+              pas pr&eacute;par&eacute;s. ,</font></b></div>
+            <p><font size="2" color="#CCCCCC" face="Arial Narrow"><b>Cette partie 
+              du site est compos&eacute;e de 330 pages en Fran&ccedil;ais, et 
+              est int&eacute;gralement disponible en version Anglaise. quelques 
+              rubriques restent &agrave; construire, et seront compl&eacute;t&eacute;es 
+              au fil du temps et des recherches.</b></font></p>
+            <p><font size="2" color="#CCCCCC" face="Arial Narrow"><b>Voici le 
+              d&eacute;tail du contenu :</b></font></p>
+          </div>
+        </blockquote>
+        <div align="left"></div>
+        <div align="left"> 
+          <div align="left"> 
+            <div> 
+              <div align="center"> 
+                <blockquote> 
+                  <div align="left"> 
+                    <div align="left"> 
+                      <div align="left"> 
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div align="left"> 
+          <div align="center"> 
+            <blockquote> </blockquote>
+          </div>
+        </div>
+        <div align="left"><font color="#FFFFFF" size="3"><b><i> <font face="Arial Narrow">- 
+          AVIATION NAVALE:</font></i></b> </font></div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left">
+              <div><font size="4" text-indent=2% color="#CCCCCC"><b><font size="3"><a href="Aeronavale/Flotilles.htm"><font color="#FFFF00" size="2" face="Arial Narrow">- 
+                <i>Flotilles :</i></font> </a></font></b></font></div>
+              <div><font size="2" text-indent="2%" color="#CCCCCC" face="Arial Narrow"><b>Les 
+                unit&eacute;s de l'A&eacute;ronautique Navale sont r&eacute;parties 
+                administrativement par Flotilles : vous trouverez ici le d&eacute;tail 
+                de ce d&eacute;coupage</b></font></div>
+              <div><font size="2" face="Arial Narrow"><b><font color="#CCCCCC"><i><a href="Aeronavale/Appareils/Accueil-Appareils.htm"><font color="#FFFF00">- 
+                Appareils :</font></a> </i></font></b></font></div>
+              <div> 
+                <div><font size="2" face="Arial Narrow"><b><font color="#CCCCCC">44</font><font color="#CCCCCC"> 
+                  des principaux avions Fran&ccedil;ais, terrestres ou hydravions, 
+                  sont d&eacute;crits ici : caract&eacute;ristiques, historique, 
+                  photos, liste, des appareils,...</font></b></font></div>
+                <div><font size="2" face="Arial Narrow"><b><font color="#CCCCCC"><i><a href="Aeronavale/Escadrilles/Accueil-Escadrilles.htm"><font color="#FFFF00">- 
+                  Escadrilles :</font></a> </i></font></b></font></div>
+                <div> 
+                  <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC">60</font><font color="#CCCCCC"> 
+                    Escadrilles sont ici recens&eacute;es, toutes sp&eacute;cialit&eacute;s 
+                    confondues.</font></i></b></font></div>
+                  <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC"><a href="Aeronavale/Pilotes/Accueil-Pilotes.htm"><font color="#FFFF00">- 
+                    Pilotes : </font></a></font></i></b></font></div>
+                  <div> 
+                    <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC">A 
+                      ce jour, 293 pilotes et membres d'&eacute;quipages sont 
+                      pr&eacute;sents dans mes listes. Ils sont class&eacute;s 
+                      par ordre alphab&eacute;tique et par Arme. Cette liste, 
+                      encore bien mince aujourd'hui, sera compl&eacute;t&eacute;e 
+                      r&eacute;guli&egrave;rement et ne sera, comme pour l'Arm&eacute;e 
+                      de l'Air, jamais exhaustive...</font></i></b></font></div>
+                    <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC"><a href="Aeronavale/Equipement-pilotes.htm"><font color="#FFFF00">- 
+                      Equipements Pilotes</font></a></font></i></b></font></div>
+                    <div> 
+                      <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC">Cette 
+                        rubrique n'est pas encore renseign&eacute;e</font></i></b></font></div>
+                      <div><font size="2" face="Arial Narrow"><b><i><font color="#000000"><font color="#FFFF00">- 
+                        Citations : </font></font></i></b></font></div>
+                      <div><font size="2" face="Arial Narrow"><b><i><font color="#CCCCCC">Les 
+                        citations pour les membres de l'A&eacute;ronautique Navale 
+                        seront bient&ocirc;t disponibles</font></i></b></font></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </blockquote>
+        </div>
+        <div align="left"><font size="4" color="#CCCCCC"><b><i><font face="Arial Narrow" color="#FFFFFF"><font size="3">- 
+          FORCES EN PRESENCES :</font></font><font face="Arial Narrow"><font color="#FFFF00" size="3"> 
+          </font></font></i></b></font></div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><font size="2">Vous 
+              trouverez ici un aper&ccedil;u des appareils utilis&eacute;s par 
+              les diff&eacute;rents b&eacute;llig&eacute;rants qu'ils soient de 
+              l'Axe (Allemagne et Italie) ou Alli&eacute;s (Grande-Bretagne, Belgique, 
+              Hollande) : <b>40 appareils &eacute;trangers sont pr&eacute;sent&eacute;s 
+              dans ces pages.</b></font></b></font></div>
+          </blockquote>
+        </div>
+        <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3">- 
+          CAMPAGNE DE FRANCE :</font></i></b></font></div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left"> 
+              <div> 
+                <div><font face="Arial Narrow"><b><font size="3" color="#CCCCCC"><i><a href="Campagne%20de%20France/Localisation-des-Unites.htm"><font color="#FFFF00" size="2">Localisation 
+                  des Unit&eacute;s : </font></a></i></font></b></font></div>
+                <div> 
+                  <div><font face="Arial Narrow" size="2"><b><font color="#CCCCCC">Cette 
+                    rubrique n'est pas encore document&eacute;e. </font></b></font></div>
+                  <div><font face="Arial Narrow" size="2"><b><font color="#CCCCCC"><a href="Campagne%20de%20France/Victoires.htm"><font color="#FFFF00"><i>Bilan 
+                    des Victoires : </i></font></a></font></b></font></div>
+                </div>
+              </div>
+              <div> 
+                <div> 
+                  <div><font face="Arial Narrow" size="2"><b><font color="#CCCCCC">Vous 
+                    trouverez ici, le bilan des victoires de l'A&eacute;ronautique 
+                    Navale Fran&ccedil;aise. Ce bilan peut paraitre faible eu 
+                    &eacute;gard &agrave; celui de l'Arm&eacute;e de L'Air, mais 
+                    il fut obtenu sur du mat&eacute;riel d&eacute;pass&eacute; 
+                    et dans des conditions d'engagement difficile, et en inf&eacute;riorit&eacute; 
+                    num&eacute;rique. </font></b></font></div>
+                  <div><font face="Arial Narrow" size="2"><b><font color="#CCCCCC"><i><a href="Campagne%20de%20France/EN-Pertes.htm"><font color="#FFFF00">Bilan 
+                    des Pertes : </font></a></i></font></b></font></div>
+                </div>
+                <div><font size="2" color="#CCCCCC" face="Arial Narrow"><b>J'ai 
+                  dress&eacute; dans ces pages, un bilan des pertes des unit&eacute;s 
+                  fran&ccedil;aises de l'A&eacute;ronautique Navale afin d'illustrer 
+                  si besoin le lourd tribut pay&eacute; par les &eacute;quipages 
+                  Fran&ccedil;ais</b></font></div>
+              </div>
+              <div>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+        <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3">- 
+          AVIONNEURS :</font></i> </b></font></div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left"><font face="Arial Narrow"><b><font size="2" color="#CCCCCC">Seront 
+              ici bri&egrave;vement pr&eacute;sent&eacute;s, les constructeurs 
+              Fran&ccedil;ais d'Avions, qui ne sauront jamais vraiment r&eacute;pondre 
+              aux besoins de l'Aviation Fran&ccedil;aise en pleine mutation. Ceux-ci 
+              seront en effet d&eacute;stabilis&eacute;s par la multitude de plans 
+              de r&eacute;armement et par les nationalisations r&eacute;centes. 
+              Ils fourniront cependant quelques belles r&eacute;alisations, mais 
+              les &eacute;v&egrave;nements les emp&egrave;cheront malheureusement 
+              de d&eacute;montrer leurs qualit&eacute;s.</font></b></font></div>
+          </blockquote>
+        </div>
+        <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><i><font size="3">- 
+          ACCUEIL :</font></i></b></font></div>
+        <div align="center"> 
+          <blockquote> 
+            <div align="left">
+              <p><font face="Arial Narrow"><b><font size="2" color="#CCCCCC">Hormis 
+                les classiques &quot;Contenu du site&quot;, &quot;Historique&quot; 
+                ou &quot;Sources&quot;, v</font></b></font><font face="Arial Narrow" size="2" color="#CCCCCC"><b>ous 
+                trouverez, sur cette page, un lien pour me contacter : n'h&eacute;sitez 
+                pas &agrave; l'utiliser, je vous r&eacute;pondrez avec plaisir.</b></font></p>
+              </div>
+          </blockquote>
+        </div>
+        <div align="left"></div>
+        <div align="center"> 
+          <blockquote> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../index.htm" target="_self"><img src="Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

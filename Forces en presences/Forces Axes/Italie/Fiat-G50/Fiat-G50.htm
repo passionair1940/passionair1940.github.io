@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Fiat-G50</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,appareils,italie,Régia aéronautica,chasse,chasseur,1939,1940,campagne de france,drôle de guerre,Fiat G-50">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../../Armee%20de%20l%27Air/Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1.png" width="20%" border="0"></a><a href="../../../Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2-Big.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Fiat-G50.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"> 
+          <div align="center"><a href="../../../Page%20Forces%20Presence.htm"><font size="4" color="#FFFFFF">Forces 
+            De L'Axe</font></a></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <div align="left" class="style1"> 
+              <div align="left" class="style1"> 
+                <p align="center"><font color="#FFFFFF" size="5"><b><font size="4">ITALIE</font></b></font></p>
+                <p align="center"><img src="../../../Regia-Aeronautica.jpg" width="20%"></p>
+              </div>
+              <div align="left" class="unnamed1"> 
+                <div align="left" class="unnamed1"> 
+                  <div align="left"><b><font face="Arial Narrow" size="4" color="#FFFFFF"><i>Chasseurs</i></font></b></div>
+                </div>
+                <p> 
+                <div align="left"><font size="3"><a href="../Fiat-CR42/Fiat-CR42.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><font color="#FFFFFF"><font color="#FFFF00">- 
+                  Fiat CR-42</font></font></font></a></font></div>
+                <div align="left">
+                  <div><font size="3"><a href="Fiat-G50.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font color="#FFFFFF"><i>- 
+                    Fiat G-50</i></font></b></font></a></font></div>
+					<div align="left"><font size="3"><a href="../Macchi-MC200/Macchi-MC200.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                  Macchi MC 200 "Saetta"</font></a> </font></div>
+                </div>
+                <p> 
+                <div align="left" class="unnamed1"> 
+                  <div align="left"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Bombardiers</font></b></div>
+                </div>
+                <p> 
+                <div align="left"><font size="3"><a href="../BR20/Fiat-BR20.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                  Fiat BR-20</font></a></font></div>
+                <div align="left"><font size="3"><a href="../SM79/SM79.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                  Savioa-Marchetti SM-79</font></a></font></div>
+                <p> 
+                <div align="left" class="unnamed1"> 
+                  <div align="left"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Observation</font></b></div>
+                </div>
+                <p> 
+                <div align="left"><font size="3"><a href="../R37/Romano-R37.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                  Romano R-37</font></a></font></div>
+              </div>
+              <p align="center">&nbsp;</p>
+            </div>
+            <p align="center">&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">Fiat G-50</font></b></p>
+            <p><img src="Photos/Gg50.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="90%" bgcolor="#FFFFFF" align="center" height="285" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Chasseur 
+                    monoplan &agrave; ailes basses</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">26 F&eacute;vrier 
+                    1937</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">10.97 
+                    m</font></div>
+                </td>
+                <td width="194" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">7.79 
+                    m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2.95 
+                    m</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">18.15 
+                    m&sup2;</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids &agrave; Vide</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1900 
+                    kgs</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2706 
+                    kgs</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">425 km/h</font></div>
+                </td>
+                <td width="194" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">473 km/h 
+                    &agrave; 6000m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">6000m 
+                    en 7mn 30s</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>plafond</b></i> </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">10700 
+                    m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">675 kms</font></div>
+                </td>
+                <td width="194" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 pilote 
+                    </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="25" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                </td>
+                <td colspan="3" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div><font face="Arial Narrow" size="2">1 Moteur Fiat A-74 
+                      RC.38 &agrave; 14 cyl. en &eacute;toile de 840 ch</font></div>
+                  </div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="195" height="40" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                </td>
+                <td colspan="3" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <p align="center"><font size="2" face="Arial Narrow">2 Mitrailleuses 
+                    Breda-SAFAT de 12.7mm dans le nez avec 300 coups chacune</font></p>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font size="3" color="#990000"><b><font color="#000000" face="Arial Narrow" size="2">Con&ccedil;u 
+                par Giuseppe Gabrielli, le Fiat G.50 est le premier chasseur italien 
+                moderne. C'est un appareil monoplan de construction enti&egrave;rement 
+                m&eacute;tallique &eacute;quip&eacute; d'un train d'atterrissage 
+                escamotable. Il vola pour la premi&egrave;re fois le 26 f&eacute;vrier 
+                1937. Son moteur, peu puissant p&eacute;nalise lourdement sa vitesse 
+                de mont&eacute;e et son armement est jug&eacute; trop faible.</font></b></font></p>
+              <div align="left"><font color="#000000" face="Arial Narrow" size="2"><b>Bien 
+                que ce soit le Macchi 200 qui remporta la comp&eacute;tition, 
+                le Fiat G50 fut command&eacute; et les premiers exemplaires sont 
+                livr&eacute;s en unit&eacute;s fin 1938. Les appareils de s&eacute;rie 
+                ont subit quelques modifications : ainsi la verri&egrave;re, ferm&eacute;e 
+                sur le prototype, est dor&eacute;navant ouverte ce qui p&eacute;nalise 
+                encore les performances...</b></font> <font color="#000000" face="Arial Narrow" size="2"><b> 
+                En janvier 1939, 12 Fiat G50 furent envoy&eacute;es en Espagne 
+                o&ugrave; ils ne r&eacute;alis&egrave;rent que des missions d'escorte. 
+                Ces premiers engagements confirm&egrave;rent les d&eacute;fauts 
+                de l'appareil : il est lent, et peu arm&eacute;. Sa maniabilit&eacute; 
+                est par contre appr&eacute;ci&eacute;.</b></font> </div>
+              <p><font color="#000000" face="Arial Narrow" size="2"><b>A l'entr&eacute;e 
+                en guerre de l'Italie le 10 juin 1940, 118 Fiat G50 sont op&eacute;rationnels 
+                et participent &agrave; des missions d'escorte de bombardiers 
+                sans toutefois rencontrer la chasse Fran&ccedil;aise.</b></font></p>
+              <p><font color="#000000" face="Arial Narrow" size="2"><b> A partir 
+                d'octobre 1940, ils seront utilis&eacute;s depuis la Belgique 
+                pour escorter des bombardiers au dessus de l'Angleterre, mais 
+                l&agrave; encore sans rencontrer la chasse adverse et les seules 
+                pertes sont li&eacute;es &agrave; des accidents.</b></font></p>
+              <p><font color="#000000" face="Arial Narrow" size="2"><b>Ce n'est 
+                que lors des combats en Gr&egrave;ce que les Fiat G50 affront&egrave;rent 
+                la chasse ennemie. Ceux-ci, des biplans Gloster Gladiator, &eacute;taient 
+                cependant surclass&eacute;s par le Fiat G50, except&eacute; en 
+                combat tournoyant.</b></font> </p>
+              <p><font color="#000000" face="Arial Narrow" size="2"><b>En 1940, 
+                une nouvelle version, le Fiat G50-bis est d&eacute;velopp&eacute;e. 
+                La motorisation &eacute;tant inchang&eacute;e, les performances 
+                restent insuffisantes...Les modifications apport&eacute;es permettent 
+                surtout d'am&eacute;liorer la maintenance. L'appareillage Radio 
+                est un autre point faible de l'appareil, mais il faudra attendre 
+                1941 pour qu'il soit dot&eacute; d'un mat&eacute;riel plus efficace.</b></font> 
+                <font color="#000000" face="Arial Narrow" size="2"><b> Les G.50 
+                et G.50 bis particip&egrave;rent &eacute;galement &agrave; la 
+                campagne d'Afrique du Nord &agrave; partir du mois de d&eacute;cembre 
+                1940, mais les premiers appareils, livr&eacute;s sans filtres 
+                &agrave; sable, connurent de nombreux soucis m&eacute;caniques. 
+                Les G50 sont n&eacute;ammoins d&eacute;pass&eacute;s par les appareils 
+                adverses plus modernes, et ils sont utilis&eacute;s finalement 
+                pour des missions d'attaque au sol. Pour cela, ils re&ccedil;oivent 
+                des rateliers sous les ailes afin de pouvoir emporter deux bombes 
+                de 100kg.</b></font> </p>
+              <div><font color="#000000" face="Arial Narrow" size="2"><b>A partir 
+                de 1943, le Fiat G50 disparut progressivement du th&eacute;atre 
+                d'op&eacute;ration.</b></font></div>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <p align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></p>
+            <div align="left"> 
+              <p> <a class="fancybox-effects-c" href="Photos/P3V.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="97" height="128" border="0" src="thumbnail/tn_P3V.jpg" /></a> 
+                <a class="fancybox-effects-c" href="Photos/g50_352sq.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_g50_352sq.jpg" alt="" width="218" height="128" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/g50_Aout%201941.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_g50_Aout%201941.jpg" alt="" width="200" height="128" border="0" /></a> 
+              </p>
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

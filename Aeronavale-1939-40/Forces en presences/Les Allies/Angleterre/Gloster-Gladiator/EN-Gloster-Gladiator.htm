@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Gloster-Gladiator</title>
+<META name="KEYWORDS" content="French Air Force 1939-1940,allied,British,England,royal air force,Aircraft,belge,Fighter Aircraft,bombing,bombardment,1939,1940,reconnaissance,transport,campaign of france, funny war,gloster gladiator">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../../Aeronavale/EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1.png" width="20%" border="0"></a><a href="../../../EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2-Big.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"> 
+		<table width="100%" border="0">
+          <tr> 
+            <td width="16%"><a href="Gloster-Gladiator.htm" target="_self"><img src="../../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+            <td width="86%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+            </td>
+          </tr>
+        </table>
+        <hr width="100%">
+          <div align="center">
+            <div align="center"><font size="4" color="#FFFFFF"><a href="../../../EN-Page%20Forces%20Presence.htm">Forces 
+              Involved </a></font></div>
+            <div align="center"> 
+              <div align="center"></div>
+              <hr width="100%">
+              <div align="left" class="style1"> 
+                <p align="center"><font color="#FFFFFF" size="5"><b><font size="4">ENGLAND</font></b></font></p>
+                <p align="center"><img src="../../../RAF3.gif" width="24%"></p>
+              </div>
+              <div align="left" class="unnamed1"> 
+                <div align="left"><b><font face="Arial Narrow" size="4" color="#FFFFFF"><i>Fighter 
+                  Aircrafts </i></font></b></div>
+              </div>
+             
+              <div align="left"><font size="3"><a href="../Hurricane/EN-Hurricane.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                Hawker Hurricane</font></a></font></div>
+              <div align="left"><font size="3"><a href="../Spitfire/EN-Spitfire.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                Supermarine Spitfire</font></a></font></div>
+				<div align="left"><font size="3"><a href="../Boulton_Paul-Defiant/EN-Boulton_Paul-Defiant.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+            Boulton Paul-Defiant</font></a></font></div>
+              <div align="left"><font size="3"><a href="../Gloster-Gladiator/EN-Gloster-Gladiator.htm" target="_self"><font face="Arial Narrow" color="#FFFFFF"><i><b>- 
+                Gloster gladiator</b></i></font></a></font></div>
+              <p> 
+              <div align="left" class="unnamed1"> 
+                <div align="left"><i><font color="#FFFFFF"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Bomber 
+                  Aircrafts</font></b></font></i><b><font face="Arial Narrow" size="4" color="#C0C0C0"> 
+                  </font></b></div>
+              </div>
+             
+              <div align="left"><font size="3"><a href="../Blenheim/EN-Bristol-Blenheim.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                Bristol Blenheim</font></a></font></div>
+              <div align="left"><font size="3"><a href="../Fairey-Battle/EN-Fairey-Battle.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                Fairey Battle</font></a></font> </div>
+              <div align="left"><font size="3"><a href="../Wellington/EN-Wellington.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+                Vickers Wellington</font></a></font></div>
+				<p>
+			<div align="left" class="unnamed1"> 
+              <div align="left"><font color="#FFFFFF"><b><font face="Arial Narrow" size="4" color="#C0C0C0">Seaplanes</font></b></font></div>
+            </div>
+			 
+            <div align="left"><font size="3"><a href="../Short-S25-Sunderland/EN-Sunderland.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+              Short S25 Sunderland</font></a></font> </div>
+            
+          <div align="left"><font size="3"><a href="../Supermarine-Sea-Otter/EN-Sea-Otter.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+            Supermarine Sea-Otter</font></a></font></div>
+            <div align="left"><font size="3"><a href="../Supermarine-Stranraer/EN-Stranraer.htm" target="_self"><font face="Arial Narrow" color="#FFFF00">- 
+            Supermarine Stranraer</font></a></font></div>
+            <p>     
+            </div>
+        </div>
+          <div align="left" class="style1"><div align="left" class="style1"><div align="left" class="style1"><p align="center">&nbsp;</p>
+              </div>
+              <div align="left" class="unnamed1"></div>
+              <p align="center">&nbsp;</p>
+            </div>
+            <p align="center">&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">GLOSTER GLADIATOR</font></b></p>
+            <p><img src="Photos/Ggladiator-2.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+            Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" height="271" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Biplane 
+                    Fighter</font></div>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">September 
+                    12, 1934</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">9.83 
+                    m</font></div>
+                </td>
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                  </center>
+                </td>
+                <td width="155" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">8.36 
+                    m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                  </center>
+                </td>
+                <td width="158" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">3.53 
+                    m</font></div>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">30 m&sup2;</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="158" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1506 
+                    kg</font></div>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2206 
+                    kg</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="158" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></div>
+                </td>
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">414 km/h 
+                    at 4400m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="158" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">3000m 
+                    in 4mn 30s</font></div>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">11570 
+                    m</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                  </center>
+                </td>
+                <td width="158" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">744 kms</font></div>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                  </center>
+                </td>
+                <td width="155" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 pilot</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 Radial 
+                    Engine Bristol Mercury VIIIA 9 cyl air cooled of 840 Hp</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="63" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                </td>
+                <td colspan="3" height="63" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <p align="center"><font size="2" face="Arial Narrow">2 machine-guns 
+                    Vickers of 7.7mm on the side of the fuselage with 600 rounds.<br>
+                    1 machine-gun Lewis of 7.7mm under every lower wing with 400 
+                    rounds</font></p>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font face="Arial Narrow" size="2"><b>The Air Ministry specification 
+              F.7 / 30 was issued end of 1931. Its purpose is to build a day and 
+              night fighter capable of a maximum speed of over 402 km / h and 
+              including an armament of four machine guns. Recommended engine and 
+              Rolls-Royce V12 air-cooled. The expected aircraft must present a 
+              real break with the biplane fighters then in service. It must fly 
+              about 40 km / h faster than the last fighters in unit, and this 
+              with a double armament.</b></font></p>
+            <p><b><font face="Arial Narrow" size="2">Seven prototypes are proposed 
+              and the first flights range from February to September 1934. But 
+              cooling problems related to the Roll-Royce engine push the final 
+              choice to April 1935<br>
+              Meanwhile, the company Gloster Aircraft Company, occupied by other 
+              contrasts, could not respond to this new consultation. However, 
+              in September 1933, the Gloster Gauntlet was chosen to equip the 
+              RAF, and the Gloster design office offers an improved version of 
+              the latter to meet the Specification F 7/30. This new interceptor 
+              is equipped with a Mercury engine, a closed canopy, a Cantilever 
+              landing gear and flaps on the Sup and Inf wings. Calculations have 
+              shown that this derivative of the Gauntlet would have performance 
+              close to the specification F.7 / 30. The company therefore builds 
+              a prototype on private ground, designated SS37: the inaugural flight 
+              took place on September 12, 1934.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">The Air Ministry, aware of 
+              the poor performance of the various competitors of the F.7 / 30, 
+              is strongly interested in the prototype of Gloster, and in June 
+              1935, the company gloster won the competition. A first contract 
+              of 23 aircraft is signed followed in September 1935 by a second 
+              order of 180 aircraft</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">The first Gloster Gladiator 
+              Mk I flew in January 1937, and the 72nd Squadron of Tangmere received 
+              its first aircraft on February 23, 1937. The last Mk I for the RAF 
+              was delivered at the end of 1937. Production continued in order 
+              to honoring contracts signed for export, with a first contract with 
+              Latvia on May 27, 1937.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Following the feedback of 
+              Escadrille, a MKII version appeared at the beginning of 1938. The 
+              Mercury IX Watts engine and the two-bladed propeller were replaced 
+              by a Mercury VIII associated with a three-bladed metal Fairey Reed 
+              propeller. In March 1938, the Gladiator Gloster began to be progressively 
+              replaced in units by the Hurricanes or Spitfires</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">At the end of 1937, the Royal 
+              Navy became interested in Gloster Gladiator II instead of Hawker 
+              Nimrod. Thus 38 Gladiators will be transferred from the RAF under 
+              the Sea Gladiator designation. They are equipped with hooks.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">When War broke out in September 
+              1939, only four fighter squadrons (Nos.603, 605, 607 and 615) were 
+              still equipped with Gladiators. Squadrons 607 and 615 are part of 
+              the BEF, sent to France in November 1939. These two units are just 
+              starting to transform on Hurricanes when the Germans attacked on 
+              May 10, 1940. The Gladiators suffer heavy casualties against modern 
+              german fighter planes and the units will be withdrawn to the south 
+              of England to complete the conversion.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">In April 1940, No. 263 Squadron 
+              was sent to Norway to help British forces against a German invasion. 
+              He will take part in the fight until June 7, claiming 26 victories 
+              before being evacuated.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">When Italy goes to war in 
+              June 1940, Gloster Gladiators equip No.33 and 80 squadrons in Egypt, 
+              and No.94 Aden. The Gladiator is on a par with the Fiat CR.42 and 
+              has helped repel the Italian invasion of Egypt and defeat the Italian 
+              forces in East Africa.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">In Malta, the Royal Navy 
+              had stored Sea Gladiators in crates to replenish squadrons. In May 
+              1940, four Sea Gladiators were assembled by the RAF and for 10 days 
+              (from 11 to 21 June), the Sea Gladiators were the only air defense 
+              of the island, before the arrival of the Hurricanes. The Italians 
+              organized only Three air raids on the island during this period 
+              and due to a shortage of ammunition, the Sea Gladiators were used 
+              to break up the bomber formations.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">The No. 80 and No. 112 Squadron 
+              Gladiators competed in the Greek campaign and achieved good results 
+              against Regia Aeronautica, but were outclassed when the Luftwaffe 
+              joined the battle. In 1941, No.94 Squadron Gladiators participated 
+              in the &quot;Battle of Habbaniyah&quot; against Iraqi rebels who 
+              besiege the RAF formation base.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">The Gladiators continued 
+              to serve in the Western Desert, but eventually disappeared from 
+              the front-line services in January 1942. However, they will still 
+              be used Squadron No.521 (meteorological) ensuring many flights until 
+              January 1945.</font></b></p>
+            <p><font face="Arial Narrow" size="2"><b>The first export planes to 
+              see the fight are those of the Chinese government, which had acquired 
+              36 MK Gladiators to fight the Japanese invasion. Despite many accidents 
+              due to lack of experience pilots, gladiator had some success in 
+              the defense of Siuchow in 1938.</b></font></p>
+            <p><b><font face="Arial Narrow" size="2">The Swedes also used the 
+              Gladiator under the designation J 8 and J 8A Gladiator II. Some 
+              have served with the Flygflottilj 19, a volunteer unit that fought 
+              alongside the Finnish Air Force in the 1939-40 Winter War. The Swedish 
+              unit fought for 62 days, destroying six Russian bombers and six 
+              fighters for the loss of 3 Gladiators, including one on accident. 
+              The Gladiators sold in Finland will mainly equip the HLeLv 26 unit: 
+              its driving qualities will be leased, but the lack of protection 
+              and self-closing fuel tanks will not make it popular.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Many of the RAF gladiators 
+              have been delivered to Allied air forces, including Greece, South 
+              Africa and Egypt where they will fly until the end of the war. Portugal 
+              retained its Gladiators for the training of these pilots until 1953. 
+              The only surviving Gladiator is preserved by the Shuttleworth Trust 
+              in Old Warden, Bedfordshire.</font></b></p>
+            <p><b><font face="Arial Narrow" size="2">Production ended in the spring 
+              of 1940, with 768 units leaving the assembly line. of which 60 Sea 
+              Gladiator.</font></b></p>
+          </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <p align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+            </font><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+            </font></i></b></font><font color="#660000" face="Arial Narrow"> </font></i></b></font></p>
+            <div align="left"> 
+              <p> <a class="fancybox-effects-c" href="Photos/Image1.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="216" height="128" border="0" src="thumbnail/tn_Image1.jpg" /></a> 
+                <a class="fancybox-effects-c" href="Photos/gladiator.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_gladiator.jpg" alt="" width="196" height="128" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/085%20Gloster%20Gladiator%20cockpit.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_085%20Gloster%20Gladiator%20cockpit.jpg" alt="" width="171" height="128" border="0" /></a> 
+              </p>
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">
+            <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+            <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+            </font></b></div>
+          </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

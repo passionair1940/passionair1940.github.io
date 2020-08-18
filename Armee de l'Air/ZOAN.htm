@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Page-ZOAN</title>
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,pilotes,appareils,escadrilles,chasse,bombardement,zone aérienne,ZOAN,FAR,FAC,forces aériennes réservées,Forces aériennes de coopération,Français,1940,reconnaissance,campagne de france,drôle de guerre">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+					autoScale         : false,
+						scrolling : 'no',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../Images%20Base/2.png" width="20%" border="0"></a><a href="../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../Images%20Base/3.png" width="20%" border="0"></a><a href="../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../Images%20Base/4.png" width="20%" border="0"></a><a href="../index.htm" target="_self"><img src="../Images%20Base/5.png" width="20%"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-ZOAN.htm"><img src="../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><font size="4" color="#FFFFFF"><b>Organisation</b></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#CCCCCC" size="4"><a href="Organisation-Armee-Air.htm" target="_self"><font color="#C4C4C4">Organisation</font></a></font></font></b></b> 
+            <div align="left"> </div>
+            <div align="left"> 
+              <div><font size="4"><a href="Zones-Aeriennes.htm" target="_self"><b><font face="Arial Narrow" color="#FFFF00"><font color="#FFFFFF"><i>Zones 
+                A&eacute;riennes</i></font><i><font color="#FFFFFF"> :</font></i></font></b></a></font></div>
+              <div><b><font face="Arial Narrow" size="3" color="#FFFF00"> <a href="ZOAN.htm" target="_self"><font color="#FFFFFF"><i>- 
+                ZOAN (Nord)</i></font></a></font></b></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAE.htm" target="_self"><font color="#FFFF0F">- 
+                ZOAE (Est)</font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAS.htm" target="_self"><font color="#FDFD00">- 
+                ZOAS (Sud</font></a>)</font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAA.htm" target="_self"><font color="#FFFF09">- 
+                ZOAA (Alpes)</font></a></font></b></font></div>
+				
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Orient-Mediterraneen.htm" target="_self"><font color="#FFFF00">- 
+                ZOA du Levant</font></a></font></b></font></div>
+			  <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Afrique-du-Nord.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Afrique Du Nord</font></a></font></b></font></div>
+			  <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Afrique.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Afrique </font></a></font></b></font></div>
+				<div><font size="3"><b><font face="Arial Narrow" "><a href="ZOA-Indochine.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Indochine</font></a></font></b></font></div>
+				<div><font size="3"><b><font face="Arial Narrow" "><a href="Forces-Aeriennes.htm" target="_self"><font color="#FFFF00">- 
+              FA (Forces Aériennes Organiques)</font></a></font></b></font></div>
+            </div>
+            <p align="left"><b class="Aucun"><b><a href="Appareils/Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Appareils</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Escadrilles/Accueil-Escadrilles.htm"  target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Escadrilles</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Pilotes/Accueil-Pilotes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Pilotes</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Marquage.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Marquage</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Equipement-pilotes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Equipement 
+              Pilotes </font></font></a></b></b> </p>
+			  <p align="left"><b class="Aucun"><b><a href="Citations/Accueil-Citations.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Citations </font></font></a></b></b> </p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../Images Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"></div>
+          <blockquote> 
+            <p><img src="../Images%20Base/Titre%20ZOAN.png" width="40%"></p>
+            <p align="left"><b><font size="3" color="#FFFFFF">Rappel : </font></b></p>
+            <p align="left"><b><font size="5" color="#FFFFFF"><i>&quot;FAR&quot; 
+              </i>ou<i> &quot;Forces A&eacute;riennes R&eacute;serv&eacute;es&quot; 
+              :</i></font><font size="3" color="#FFFFFF"> Unit&eacute;s sous la 
+              responsabilit&eacute; exclusive de l'arm&eacute;e de l'Air et d&eacute;di&eacute;es 
+              &agrave; la d&eacute;fense du territoire. Certaines unit&eacute;es 
+              &quot;R&eacute;serv&eacute;es&quot; &eacute;taient cependant susceptibles 
+              de fournir un appui rapide, mais ponctuel, en cas d'attaque : ces 
+              unit&eacute;s sont rep&eacute;r&eacute;es en jaune dans le tableau 
+              ci-dessous</font></b></p>
+            <p align="left"><b><font size="5" color="#FFFFFF"><i>&quot;FAC&quot; 
+              </i>ou<i> &quot;Forces A&eacute;riennes de Coop&eacute;ration&quot; 
+              :</i></font><font size="3" color="#FFFFFF"> Unit&eacute;s mises 
+              &agrave; disposition de l'Arm&eacute;e de Terre pour le soutien 
+              des troupes au sol. Elles sont rattach&eacute;es &agrave; des &quot;FA&quot; 
+              (Force A&eacute;rienne Organique de l'Arm&eacute;e) et donc &agrave; 
+              des unit&eacute;s de l'Arm&eacute;e de Terre. Les &quot;FA&quot; 
+              sont d&eacute;crites plus en d&eacute;tail dans la page &quot;FA&quot; 
+              du menu de gauche.</font></b></p>
+            <p align="center"><b><font size="2" color="#FFFFFF"><i><font size="3">Cliquez 
+              sur le nom des unit&eacute;s pour acc&eacute;der &agrave; la fiche 
+              descriptive et sur le nom des appareils pour les visualiser</font></i></font></b></p>
+            <table width="100%" border="1" bgcolor="#999999">
+              <tr> 
+                <td colspan="8" bgcolor="#000000" height="58"> 
+                  <div align="center"><font color="#FFFFFF" size="5"><b>ZOAN Zone 
+                    A&eacute;rienne Nord au 10 Mai 1940</b></font></div>
+                  <div> 
+                    <div align="left"><font size="3" color="#FFFFFF">G&eacute;n&eacute;ral 
+                      ASTIER De-La-VIGERIE<b><font size="2" color="#FFFFFF"><i> 
+                      </i></font></b></font></div>
+                  </div>
+                </td>
+                <td width="9%" bgcolor="#000000" height="58"> 
+                 <div align="center"><font size="2"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/Cartes%20Zones%20copier.jpg" data-fancybox-group="gallery-1" title="Zones Aériennes"><img src="../Images%20Base/Organisation/tn_Cartes%20Zones%20copier.jpg" alt="" border="0" width="60" height="60" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="51" bgcolor="#333333"> 
+                  <div align="center"> 
+                    <div> <b><font color="#FFFFFF" size="4">FORCES AERIENNES RESERVEES 
+                      : FAR</font></b> </div>
+                    <div align="left"><b><font size="2" color="#FFFFFF"></font></b></div>
+                  </div>
+                </td>
+                <td bgcolor="#000066" rowspan="37" width="4%"> 
+                  <div align="center"><b></b></div>
+                  <div align="center"><font size="4"></font></div>
+                </td>
+                <td colspan="4" height="51" bgcolor="#333333"> 
+                  <div align="center"> 
+                    <div><b><font color="#FFFFFF" size="4">FORCES AERIENNES DE 
+                      COOPERATION : FAC</font></b></div>
+                    <div align="left"><font color="#FFFFFF" size="3">G&eacute;n&eacute;ral 
+                      BILLOTTE</font></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/fond-metal-big.jpg" height="19"> 
+                  <div align="center"><b><font face="Arial Narrow" color="#FFFFFF" size="4">CHASSE</font></b></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" colspan="4" height="19"> 
+                  <div align="center"><b><font face="Arial Narrow" size="4"></font></b></div>
+                  <div align="center"><font size="4"><b><font face="Arial Narrow" color="#FFFFFF">RECONNAISSANCE 
+                    / OBSERVATION</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Unit&eacute;</b></font></div>
+                </td>
+                <td width="13%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Appareils</b></font></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="15%" height="23"> 
+                  <div align="center"><b><font color="#FFFFFF">Commandant</font></b></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="11%" height="23"> 
+                  <div align="center"><b><font color="#FFFFFF">Rattachement</font></b></div>
+                </td>
+                <td width="10%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Unit&eacute;</b></font></div>
+                </td>
+                <td width="13%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Appareils</b></font></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="15%" height="23"> 
+                  <div align="center"><b><font color="#FFFFFF">Commandant</font></b></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="9%" height="23"> 
+                  <div align="center"><b><font color="#FFFFFF">Rattachement</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" height="36" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div> 
+                    <div> 
+                      <div align="center"><b><font size="4">Groupement n&deg;21: 
+                        </font></b></div>
+                    </div>
+                    <div><b><font size="2">G&eacute;n&eacute;ral PINSARD</font></b></div>
+                  </div>
+                </td>
+                <td height="36" colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"> 
+                    <div><font size="4"><b>Iere Arm&eacute;e</b></font></div>
+                    <div align="left"><b><font size="2">G&eacute;n&eacute;ral 
+                      BLANCHARD</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-1-1/GC_I-1.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC I/1</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Bloch-MB152/Photos/MB-152.jpg" title="Bloch MB152" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Bloch 
+                    MB152</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center"><font size="3" face="Arial Narrow">Cdt Soviche</font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-1-14/GR_I-14.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GR I/14</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3">Cdt Fayet</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 101</div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="31"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-2-1/GC_II-1.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC II/1</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="31"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Bloch-MB152/Photos/MB-152.jpg" title="Bloch MB152" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Bloch 
+                    MB152</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="31"> 
+                  <div align="center"><font size="3" face="Arial Narrow">Cdt Robillon</font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="31">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="31"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-502/GAO502.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 502</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%" height="31"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="31"> 
+                  <div align="center"><font size="3">Cdt Rochard</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="31"> 
+                  <div align="center">FA 2 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-3-3/GC_III-3.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC III/3</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="22"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Morane-Saulnier-MS406/Photos/MS406-43f.jpg" title="Morane-Saulnier MS406" ><b><font color="#0000FF" size="3">MS406</font></b> 
+                    </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Dewoitine-D520/Photos/image041.jpg" title="Dewoitine D520" ><b><font color="#0000FF" size="3">D520</font></b> 
+                    </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="22"> 
+                  <div align="center"><font size="3" face="Arial Narrow">Cne Le-Bidaud</font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-503/GAO503.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 503</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3">Cdt Thabault</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 3 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-2-10/GC_II-10.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC II/10</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Bloch-MB152/Photos/MB-152.jpg" title="Bloch MB152" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Bloch 
+                    MB151-152</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center"><font size="3" face="Arial Narrow">Cdt Ronzet</font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-504/GAO504.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 504</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%" height="22"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Leo-C30/Photos/LeOC30.jpg" title="Lioré & Olivier LéO C30" ><font color="#0000FF" size="3"><b>LeO 
+                    C30</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-390-391/Photos/po390.jpg" title="Potez 39" ><font color="#0000FF" size="3"><b>Potez 
+                    39</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="22"> 
+                  <div align="center"><font size="3">Cdt Ginestet</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="22"> 
+                  <div align="center">FA 4 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-3-10/GC_III-10.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC III/10</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Bloch-B152/Photos/MB-152.jpg" title="Bloch MB152" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Bloch 
+                    MB151-152</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center"><font size="3" face="Arial Narrow">Cdt Risacher</font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-505/GAO505.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 505</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-390-391/Photos/po390.jpg" title="Potez 39" ><font color="#0000FF" size="3"><b>Potez 
+                    39</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3">Cdt Petitjean De Marcilly</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 5 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg" height="48"> 
+                  <div align="center"><b><font size="4">Groupement n&deg;23: </font></b></div>
+                  <b><font size="2">G&eacute;n&eacute;ral ROMATET</font></b></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-544/GAO544.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 544</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="48" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 115" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="48"> 
+                  <div align="center"><font size="3">Cne Loisy</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="48"> 
+                  <div align="center">FA 34</div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-1-4/GC_I-4.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC I/4</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="32"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Curtiss-H75/Photos/HPH75vichy.jpg" title="Curtiss H75" ><font color="#0000FF" size="3"><b>Curtiss 
+                    H75</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="32" width="15%"> 
+                  <div align="center"><font face="Arial Narrow" size="3">Cdt Heurtaut 
+                    </font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="32" width="11%"><font face="Arial Narrow" size="3"></font></td>
+                <td colspan="4" height="32" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"> 
+                    <div><font size="4"><b>IIeme Arm&eacute;e</b></font></div>
+                    <div align="left"><b><font size="2">G&eacute;n&eacute;ral 
+                      HUNTZIGER</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#FFFF00"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-1-5/GC_I-5.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC I/5</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Curtiss-H75/Photos/HPH75vichy.jpg" title="Curtiss H75" ><font color="#0000FF" size="3"><b>Curtiss 
+                    H75</b></font> </a> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="3">Cdt Murtin</font></div>
+                </td>
+                <td width="11%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="3">FA 102 
+                    </font></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-22/GR_2-22.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GR II/22</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3">Cdt Barruet</font></div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 102</div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#FFFF00"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-2-2/GC_II-2.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC II/2</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Morane-Saulnier-MS406/Photos/MS406-43f.jpg" title="Morane-Saulnier MS406" ><b><font color="#0000FF" size="3">MS406</font></b> 
+                    </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center"><font face="Arial Narrow" size="3">Cdt Bertrou 
+                    </font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center"><font face="Arial Narrow" size="3">FA 109 
+                    </font></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-507/GAO507.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 507</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 115" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Schwander</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 35 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#FFFF00" height="43"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-3-2/GC_III-2.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC III/2</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="43"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Morane-Saulnier-MS406/Photos/MS406-43f.jpg" title="Morane-Saulnier MS406" ><b><font color="#0000FF" size="3">MS406</font></b> 
+                    </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="43"> 
+                  <div align="center"><font face="Arial Narrow" size="3">Cdt Geille 
+                    </font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="43"> 
+                  <div align="center"><font face="Arial Narrow" size="3">FA 101</font></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="43"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-510/GAO510.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 510</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%" height="43"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-390-391/Photos/po390.jpg" title="Potez 39" ><font color="#0000FF" size="3"><b>Potez 
+                    39</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="43"> 
+                  <div align="center">Cdt Meyer-Jardin</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="43"> 
+                  <div align="center">FA 10 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/ECMJ-1-16/GC_ECMJ 1-16.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    ECMJ I/16</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Potez-630-631/Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" title="Potez 631" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    631</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28" width="15%"> 
+                  <div align="center"><font face="Arial Narrow" size="3">Cdt Escudier 
+                    </font></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28" width="11%"><font face="Arial Narrow" size="3"></font></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-518/GAO518.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 518</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Breguet-270/Photos/breguet-270-2.jpg" title="Breguet 27" ><font color="#0000FF" size="3"><b>Breguet 
+                    27</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28"> 
+                  <div align="center">Cdt Montaudie</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="28"> 
+                  <div align="center">FA 18 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font size="4">Groupement n&deg;25: </font></b></div>
+                  <b><font size="2">Lieutenant-Colonel DE-MOUSSAC</font></b></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-2-520/GAO2520.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 2/520</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 115" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Delg&eacute;e</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 26 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-2-8/GC_II-8.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC II/8</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Bloch-MB152/Photos/MB-152.jpg" title="Bloch MB152" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Bloch 
+                    MB151-152</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center">Cdt Ponton d'Amecourt</div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center">F.M. Nord </div>
+                </td>
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg" height="34"> 
+                  <div align="center"> 
+                    <div><font size="4"><b>VIIeme Arm&eacute;e</b></font></div>
+                    <div align="left"><b><font size="2">G&eacute;n&eacute;ral 
+                      GIRAUD</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" bgcolor="#FFFF00"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/GC-3-1/GC_III-1.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GC III/1</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Morane-Saulnier-MS406/Photos/MS406-43f.jpg" title="Morane-Saulnier MS406" ><b><font color="#0000FF" size="3">MS406</font></b> 
+                    </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center">Cdt Paoli </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center"><font face="Arial Narrow" size="3">FA 101</font></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-1-35/GR_I-35.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GR I/35</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Deprez</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 107 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font size="4">Groupement de Chasse de 
+                    Nuit </font></b></div>
+                  <b><font size="2">Lieutenant-Colonel DORDILLY</font></b></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-501/GAO501.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 501</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/Mureaux%20-%20115.jpg" title="Mureaux 115" ><font color="#0000FF" size="3"><b>Mureaux 
+                    115</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Monguez</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 1 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/ECN-1-13/GC_ECN I-13.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    ECN I/13</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="35"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Potez-630-631/Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" title="Potez 631" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    631</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="35"> 
+                  <div align="center">Cne Treillard </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="35"> 
+                  <div align="center"></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-516/GAO516.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 516</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Breguet-270/Photos/breguet-270-2.jpg" title="Breguet 27" ><font color="#0000FF" size="3"><b>Breguet 
+                    27</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Durand</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 16 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/ECN-2-13/GC_ECN 2-13.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    ECN II/13</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Potez-630-631/Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" title="Potez 631" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    631</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center">Cne Petit-De- Mirbeck</div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center"></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-552/GAO552.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 552</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="29" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/image028.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    117</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="29"> 
+                  <div align="center">Cdt Chauvet</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="29"> 
+                  <div align="center">FA 28 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/ECN-3-13/GC_ECN 3-13.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    ECN III/13</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Potez-630-631/Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" title="Potez 631" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    631</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25" width="15%"> 
+                  <div align="center">Cne Comte </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25" width="11%"> 
+                  <div align="center"></div>
+                </td>
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg" height="35"> 
+                  <div align="center"> 
+                    <div><font size="4"><b>VIIeme Arm&eacute;e</b></font></div>
+                    <div align="left"><b><font size="2">G&eacute;n&eacute;ral 
+                      CORAP </font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Chasse/ECN-4-13/GC_ECN 4-13.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    ECN IV/13</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Chasse/Potez-630-631/Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" title="Potez 631" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    631</font></b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%"> 
+                  <div align="center">Cne Pouyade</div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center"></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-52/GR_2-52.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GR II/52</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-637/Photos/potez637-1.jpg" title="Potez 637" ><font color="#0000FF" size="3"><b>Potez 
+                    637</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Gourillon</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 109 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/fond-metal-big.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="5" color="#FFFFFF">RECONNAISSANCE</font></b></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-511/GAO511.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 511</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-390-391/Photos/po390.jpg" title="Potez 39" ><font color="#0000FF" size="3"><b>Potez 
+                    39</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25"> 
+                  <div align="center">Cdt Mainguy</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="25"> 
+                  <div align="center">FA 11 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Unit&eacute;</b></font></div>
+                </td>
+                <td width="13%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Appareils</b></font></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="15%" height="23"><b><font color="#FFFFFF">Commandant</font></b></td>
+                <td background="../Images Base/fond-metal-big.jpg" width="11%" height="23"><b><font color="#FFFFFF">Rattachement</font></b></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-545/GAO545.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 545</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Breguet-270/Photos/breguet-270-2.jpg" title="Breguet 27" ><font color="#0000FF" size="3"><b>Breguet 
+                    27</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cne Discors</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 33 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/Groupe-Reco/GR-2-33/GR_2-33.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GR II/33</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-637/Photos/potez637-1.jpg" title="Potez 637" ><font color="#FFFF00" size="3"><b><font color="#0000FF">Potez 
+                    637</font></b></font> </a> </div>
+                  <div align="center"> 
+                    <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                      63-11</b></font> </a><b></b> </div>
+                    <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Bloch-MB174/Photos/Blochmb174_7.jpg" title="Bloch MB174" ><font color="#0000FF" size="3"><b>Bloch 
+                      MB174</b></font> </a> </div>
+                  </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cdt Alias </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23"> 
+                  <div align="center"></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-547/GAO547.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 547</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Breguet-270/Photos/breguet-270-2.jpg" title="Breguet 27" ><font color="#0000FF" size="3"><b>Breguet 
+                    27</b></font> </a><b></b> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Lamey</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 32 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/fond-metal-big.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="5" color="#FFFFFF">BOMBARDEMENT</font></b></div>
+                </td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-2-551/GAO2551.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 2/551</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/image028.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    117</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cne De Golbery</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 25 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Unit&eacute;</b></font></div>
+                </td>
+                <td width="13%" background="../Images Base/fond-metal-big.jpg" height="23"> 
+                  <div align="center"><font color="#FFFFFF"><b>Appareils</b></font></div>
+                </td>
+                <td background="../Images Base/fond-metal-big.jpg" width="15%" height="23"><b><font color="#FFFFFF">Commandant</font></b></td>
+                <td background="../Images Base/fond-metal-big.jpg" width="11%" height="23"><b><font color="#FFFFFF">Rattachement</font></b></td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-4-551/GAO4551.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 4/551</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/image028.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    117</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cne Ranon De-La-Vergne</div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 29/30 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"> 
+                    <div align="center"><b><font size="4">Groupement de Bombardement 
+                      n&deg;6 </font></b></div>
+                    <div align="left"><b><font size="2">Colonel LEFORT</font></b><b></b></div>
+                  </div>
+                </td>
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font size="4">R&eacute;serve</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb/GB-1-12/GB_I-12.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GB I/12</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Loire-Olivier-Leo-451/Photos/image029.jpg" title="Lioré & olivier LéO451" ><font color="#0000FF" size="3"><b>Léo 
+                    451</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cdt Malardel </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Reco/GAO/GAO-515/GAO515.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GAO 515</font></b></font></a></div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="13%"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Mureaux-115-117/Photos/image028.jpg" title="Mureaux 117" ><font color="#0000FF" size="3"><b>Mureaux 
+                    117</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Reconnaissance/Potez-63-11/Photos/Potez 63-11.jpg" title="Potez 63-11" ><font color="#0000FF" size="3"><b>Potez 
+                    63-11</b></font> </a><b></b> </div>
+                </td>
+                <td width="15%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">Cdt Fesneau </div>
+                </td>
+                <td width="9%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center">FA 42 </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb/GB-2-12/GB_II-12.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GB II/12</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Loire-Olivier-Leo-451/Photos/image029.jpg" title="Lioré & olivier LéO451" ><font color="#0000FF" size="3"><b>Léo 
+                    451</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cdt De-La-Herverie</div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+                <td colspan="4" background="../Images Base/shiny-metal-picture-wallpaper.jpg" rowspan="7">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"> 
+                    <div align="center"><b><font size="4">Groupement de Bombardement 
+                      n&deg;9</font></b></div>
+                    <div align="left"><b><font size="2">Colonel FRANCOIS</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb/GB-1-34/GB_I-34.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GB I/34</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Amiot-143/photos/amiot-143-bia.jpg" title="Amiot 143" ><font color="#0000FF" size="3"><b>Amiot 
+                    143</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Amiot-350/Photos/af46.jpg" title="Amiot 354" ><font color="#0000FF" size="3"><b>Amiot 
+                    354</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cne Audin </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb/GB-2-34/GB_II-34.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GB II/34</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Amiot-143/photos/amiot-143-bia.jpg" title="Amiot 143" ><font color="#0000FF" size="3"><b>Amiot 
+                    143</b></font> </a> </div>
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Amiot-350/Photos/af46.jpg" title="Amiot 354" ><font color="#0000FF" size="3"><b>Amiot 
+                    354</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Lt-Col Donzeau </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td colspan="4" background="../Images Base/metal-texture-151340.jpg" height="40"> 
+                  <div align="center"><b><font size="4">Groupement de Bombardement 
+                    n&deg;18</font></b></div>
+                  <b><font size="2">Colonel GIRIER</font></b></td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb-Assaut/GBA-1-54/GBA_1-54.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GBA I/54</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Breguet-693/Photos/breguet%201ere%20version.png" title="Breguet 693" ><font color="#0000FF" size="3"><b>Breguet 
+                    693</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cdt Plou </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="10%" background="../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><a class="fancybox fancybox.iframe" href="../Armee de l'Air/Escadrilles/Esc-Bomb-Assaut/GBA-2-54/GBA254.htm?iframe" target="_blank"><font face="Arial Narrow" size="3"><b><font color="#0000FF"> 
+                    GBA II/54</font></b></font></a></div>
+                </td>
+                <td width="13%" background="../Images Base/shiny-metal-picture-wallpaper.jpg" height="23"> 
+                  <div align="center"><a class="fancybox-effects-c" href="Appareils/Bombardement/Breguet-693/Photos/breguet%201ere%20version.png" title="Breguet 693" ><font color="#0000FF" size="3"><b>Breguet 
+                    693</b></font> </a> </div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="15%" height="23"> 
+                  <div align="center">Cdt Grenet</div>
+                </td>
+                <td background="../Images Base/shiny-metal-picture-wallpaper.jpg" width="11%" height="23">&nbsp;</td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

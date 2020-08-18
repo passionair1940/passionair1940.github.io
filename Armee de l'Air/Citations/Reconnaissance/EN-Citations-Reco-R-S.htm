@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Citations-Reconnaissance-R-S</title>
+<META name="KEYWORDS" content="French Army Air Force 1939-1940,Citations,pilots,Reconnaissance,French,campaign of france,Funny war">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../EN-index.htm" target="_self"><img src="../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"><font size="4"><a href="../EN-Accueil-Citations.htm"><font color="#FFFFFF"><b>Citations</b> 
+          </font></a></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><a href="EN-Citations-Chasse-France.htm"><font color="#C0C0C0">Citations 
+              "Fighters Pilots"</font></a></font></font></b></b></p>
+          </div>
+          
+          <div align="left" class="style1"> 
+            <p><b class="Aucun"><b><a href="../../Citations/Bombardement/EN-Citations-Bombardement-A-B.htm" target="_self" class="unnamed3"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Citations 
+              "Bombardment"</font></font></a></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="../../Citations/Reconnaissance/EN-Citations-Reco.htm" target="_self" class="unnamed3"><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><i>Citations 
+              "Reconnaissance"</i></font></font></a></b></b></p></div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <blockquote> 
+            <p><img src="../../../Images%20Base/EN-Citations-Reconnaissance.png" width="65%"> 
+            </p>
+            <div align="left">
+              <p><font size="3"><b><font color="#CCCCCC" size="4">464 Reconnaissance 
+                Crew Members received one or several citation (639 citations) 
+                in the order of the Air Force with publication to the Official 
+                Journal. They are listed in the list below, in alphabetical order. 
+                </font></b></font></p>
+				<p><font color="#CCCCCC" size="4"><b>Note : Citations are not translated 
+                into English to guarantee historical content</b></font></p>
+            </div>
+            <p><b><a href="EN-Citations-Reco.htm" target="_self"><font color="#FFFF0D" size="5">A-B</font></a> 
+              <a href="EN-Citations-Reco-C.htm" target="_self"><font color="#FFFF00" size="5">C</font></a> 
+              <a href="EN-Citations-Reco-D.htm" target="_self"><font color="#FFFF00" size="5">D</font></a> 
+              <a href="EN-Citations-Reco-E-F-G.htm" target="_self"><font color="#FFFF00" size="5">E-F-G</font></a> 
+              <a href="EN-Citations-Reco-H-I-J-K.htm" target="_self"><font color="#FFFF00" size="5">H-I-J-K</font></a> 
+              <a href="EN-Citations-Reco-L.htm" target="_self"><font color="#FFFF00" size="5">L</font></a> 
+              <a href="EN-Citations-Reco-M.htm" target="_self"><font color="#FFFF00" size="5">M</font></a> 
+              <a href="EN-Citations-Reco-N-O-P-Q.htm" target="_self"><font color="#FFFF00" size="5">N-O-P-Q</font></a> 
+              <font color="#FFFFFF" size="6">R-S</font> <a href="EN-Citations-Reco-T-a-Z.htm" target="_self"><font color="#FFFF00" size="5">T-U-V-W-X-Y-Z</font></a></b></p>
+            <table width="100%%" border="1" bgcolor="#999999">
+              <tr> 
+                <td width="10%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Name</b></font></div>
+                </td>
+                <td width="9%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Surname</b></font></div>
+                </td>
+                <td width="8%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Rank</b></font></div>
+                </td>
+                <td width="7%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Function</b></font></div>
+                </td>
+                <td width="6%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Unit</b></font></div>
+                </td>
+                <td width="17%" bgcolor="#666666"> 
+                  <div align="center"><font size="3"><b>Type of Citation</b></font></div>
+                </td>
+                <td width="8%" bgcolor="#666666"> 
+                  <div align="center"><font size="2"><b>Publication in the Official 
+                    Journal</b></font></div>
+                </td>
+                <td width="35%" bgcolor="#666666"> 
+                  <div align="center"><font size="2"><b><font size="3">Text of 
+                    Citation </font> </b></font> </div>
+                </td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RABUEL</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Joseph</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 501</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 19, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  mitrailleur d'une grande bravoure et méprisant le danger. A 
+                  toujours été un ardent équipier pour la défense de son équipage 
+                  au cours des missions de reconnaissance effectuées à l'intérieur 
+                  des lignes ennemies et souvent menacées par la chasse ennemie. 
+                  A trouvé une mort glorieuse au retour d'une mission photographique, 
+                  abattu avec son équipage par la chasse ennemie, et vaincu par 
+                  le nombre. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RABY</font></b></td>
+                <td bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Max</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    25, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  d'un cran et d'un sang-Iroid qui font l'admiration de tous. 
+                  A été blessé au cours d'une reconnaissance en vol rasant le 
+                  19 mai 1940 dans une zone fortement défendue par la défense 
+                  antiaériénne ennemie. Malgré des blessures, a continué ses observations 
+                  sous les tirs de l'adversaire. N'a consenti à se faire soigner 
+                  qu'après avoir rapporté, en personne, au commandement, les renseignements 
+                  recueillis au cours de sa mission. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="3"><b><font size="2" face="Arial Narrow">RAMBAUD</font></b></td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Albert</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">April 
+                    7, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">A brillamment 
+                  exécuté comme observateur des reconnaissances profondes à l'intérieur, 
+                  des lignes ennemies. Le 4 octobre 1939, en utilisant adroitement 
+                  les nuages, puis en effectuant un vol rasant de 150 kilomètres, 
+                  a réussi à échapper à l'attaque de 10 Messerschmitt et à rapporter 
+                  des renseignements précis sur l'occupation de deux terrains 
+                  ennemis. Le 21 décembre 1939, effectuant comme pilote sa première 
+                  mission, a rencontré 12 Messerschmitt dont deux l'ont attaqué 
+                  et poursuivi 15 kilomètres à l'intérieur de nos lignes. Grâce 
+                  à sa virtuosité et à son sang-froid, a déjoué leur attaque et 
+                  a pu rapporter des- renseignements photographiques très importants. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 19, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Jeune et magnifique 
+                  officier. Commandant d'avion de grande classe. Brillant pilote 
+                  mort au champ d'oonneur en donnant le plus bel exemple d'abnégation. 
+                  Au retour d'une mission de reconnaissance aérienne en vol rasant 
+                  particulièrement dangereuse qu'il avait tenu à exécuter lui-même, 
+                  s'est sacrifié pour essayer de sauver la vie à son équipage 
+                  en gardant les commandes de son avion désemparé par le tir ennemi, 
+                  pendant une manœuvre délicate qui a permis à son mitrailleur 
+                  de sauter en parachute. A ainsi rendu possible l'exploitation 
+                  des renseignements importants recueillis au cours de la mission. 
+                  Déjà cité </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    22, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Jeune et magnifique 
+                  officier. Commandant d'avion de grande classe. Brillant pilote 
+                  mort au champ d'honneur en donnant le plus bel exemple d'abnégation. 
+                  Au retour d'une mission de reconnaissance aérienne en vol rasant 
+                  particulièrement dangereuse qu'il avait tenu à exécuter lui-même, 
+                  s'est sacrifié pour essayer de sauver la vie à son équipage 
+                  en gardant les commandes de son avion désemparé par le tir ennemi, 
+                  pendant une manœuvre délicate qui a permis a son mitrailleur 
+                  de sauter en parachute. A ainsi rendu possible l'exploitation 
+                  des renseignements importants recueillis au cours de la mission. 
+                  Déjà cité; </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RANON-DE-LA-VERGNE</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jacques 
+                    - Marie - Emile</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commander 
+                    of Reconnaissance Group</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO IV/551</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Legion of Honor This promotion 
+                    does not include the attribution of the cross of war</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    24, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Excellent commandant 
+                  Je groupe d'observation qui a remarquablement commandé son unité 
+                  et en a obtenu le meilleur rendement. A été cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">REGIS</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pierre</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">March 
+                    8, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  calme, courageux et sûr. A fait preuve des plus belles qualités 
+                  d'activité réfléchie et de cœur, notamment au cours du bombardement 
+                  aérien du terrain de Mantes, le 3 juin 1940. Tombé glorieusement 
+                  au champ d'Honneur, le 7 juin, au cours d'une reconnaissance 
+                  aérienne à l'intérieur des lignes ennemies. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    22, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  calme, courageux et sûr. A fait preuve des plus belles qualités 
+                  d'activité réfléchie et de cœur, notamment au cours du bombardement 
+                  aérien du terrain de Mantes, le 3 juin 1940. Tombé glorieusement 
+                  au champ d'honneur, le 7 juin 1940, au cours d'une reconnaissance 
+                  aérienne à l'intérieur des lignes ennemies.</font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">RESCOUSSIE</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sylvain 
+                    - Emile - Daniel</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">January 
+                    8, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Brillant et 
+                  ardent Pilote d'un équipage d'élite. A exécuté depuis le début 
+                  de la guerre plusieurs missions bien réussies, au cours desquelles 
+                  il a toujours fait preuve de cran, de calme et de sang-froid. 
+                  A trouvé une mort glorieuse, le 19 mai 1940, au cours d'une 
+                  reconnaissance en vol rasant particulièrement importante comportant 
+                  le survol sur une grande profondeur du territoire occupé par 
+                  l'ennemi. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    20, 1943</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Brillant et 
+                  ardent pilote d'un équipage d'élite. A exécuté depuis le début 
+                  de la guerre plusieurs missions bien réussies aucours desquelles 
+                  il a toujours fait preuve de cran, dee calme et de sang-froid. 
+                  A trouvé une mort glorieuse, le 19 mai 1940, au cours d'une 
+                  reconnaissance en vol rasant particulièrement importante comportant 
+                  le survol sur une grande profondeur du territoire occupé par 
+                  l'ennemi. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RETOURNA</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Paul 
+                    - Marie</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/33</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    28, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier réunissant 
+                  des qualités techniques et professionnelles exceptionnelles. 
+                  A exécuté une serie de missions stratégiques profondes chez 
+                  i'ennemL Grâce à son sang-froid raisonné et à son cran, a pu 
+                  mener à bien toute expédition entreprise, rapportant chaque 
+                  fois des renseignements d'une importance primordiale le commandement. 
+                  Le 25 mai 1940, notamment, a rapporté une documentation photographique 
+                  sur des terrains d'aviation ennemis inconnus jusqu'alors. Au 
+                  cours de différents vols a été pris à partie par une D. C. A. 
+                  très active, a continué avec un calme imperturbable sa route 
+                  sans se soucier des tirs encadrants de plus en plus précis. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RIESSER</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/551</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">December 
+                    18, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier pilote 
+                  de classe, plein d'allant et d'une grande conscience professionnelle. 
+                  Le 11 mai 1940, au cours d'une mission de reconnaissance en 
+                  vol rasant, a réussi à déjouer l'attaque de la chasse ennemie 
+                  et a rapporté des renseignements précieux pour le commandement. 
+                  A trouvé une mort glorieuse, le 15 mai, au cours d'une nouvelle 
+                  mission de reconnaissance à basse altitude, son avion ayant 
+                  été abattu par le lir de la D. C. A. adverse. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RIGAL</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Marcel-Louis</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant 
+                    </font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 518</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Military Medal<br>
+                    This promotion includes the attribution of the War Cross with 
+                    Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    21, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Mitrailleur 
+                  plein d'allant. Au cours d'une mission d'observation, attaqué 
+                  par la D. C. A. et neuf Messerschmitt, s'est défendu jusqu'au 
+                  sol,. Bien que l'attaque ait eu lieu par l'arrière et dirigée 
+                  contre lui. Blessé grièvement et un avion en feu, a réussi à 
+                  se dégager et a montré un courage et un stoïcisme dignes tous 
+                  éloges, </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RIMLINGER</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Georges 
+                    - andré</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 510</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Military Medal<br>
+                    This promotion includes the attribution of the War Cross with 
+                    Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    14, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  très brave. Attaqué par plusieurs Messerschmidt au cours d'une 
+                  reconnaissance, le 13 mai 1940, au-dessus de Sedan, a été très 
+                  grièvement blessé. Amputé de la jambe gauche. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROBERT</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">André</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjutant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">December 
+                    14, 1939</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sont cités 
+                  à l'ordre de l'armée aérienne,: ISRAËL (Pierre), lieutenant;' 
+                  BERNARD (Michel), adjudant; ROBERT (André), adjudant;<br>
+                  équipage remarquable de cohésion et de sang, froid. Chargé d'une 
+                  reconnaissance que rendaient difficile les circonstances atmosphériques 
+                  n'a pas hésité à accomplir.sa mission à basse altitude et malgré 
+                  une défense antiaérienne très active de l'ennemie a recueilli 
+                  les renseignements photographiques les plus précieux. Attaqué 
+                  par la chasse, a obligé l'adversaire à rompre le combat, et 
+                  a réussi à rentrer dans nos lignes malgré la mise hors d'usage 
+                  d'un moteur par le feu de l'ennemi, faisant preuve au cours 
+                  de ces circonstances d'un magnifique mépris du danger.<br>
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Military Medal<br>
+                    This promotion includes the attribution of the War Cross with 
+                    Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 16, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  d'élite, dont la bravoure n'a d'égale que la modestie. Mitrailleur 
+                  adroit et expérimenté. Le 5 novembre 1939, a été très grièvement 
+                  blessé par balle et brûlé au visage dans l'accomplissement d'une 
+                  mission de reconnaissance en territoire ennemi, au cours de 
+                  laquelle les autres membres de l'équipage ont trouvé la mort. 
+                  Prisonnier, a été rapatrié comme grand blessé. Déjà cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROBERT</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot 
+                    </font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">November 
+                    8, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Commandant 
+                  d'escadrille, animé des plus belles vertus françaises. A toujours 
+                  donné à ses équipages un magnifique exemple de courage tranquille 
+                  et d'abnégation. Le 4 juin 1940, au cours d'une mission de reconnaissance 
+                  dans les lignes ennemies, a été attaqué par plusieurs chasseurs 
+                  ennemis. Blessé grièvement dès le début du combat, a continué 
+                  à piloter jusqu'à la limite de ses forces pour ramener son avion 
+                  dans les lignes amies. A trouvé au cours de ce suprême effort 
+                  une mort glorieuse. Totalisait 1.100 heures de vol dont 200 
+                  heures de nuit. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td>&nbsp;</td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    25, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Commandant 
+                  d'escadrille, animé des plus belles vertus françaises. A toujours 
+                  donné à ses équipages un magnifique exemple de courage tranquille 
+                  et d'abnégation. Le 4 juin 1940, au cours d'une mission de reconnaissance 
+                  dans les lignes ennemies, a été attaqué par plusieurs chasseurs 
+                  ennemis. Blessé grièvement dès le début du combat, a continué 
+                  à piloter jusqu'à la limite de ses forces, pour ramener son 
+                  avion dans les lignes amies. A trouvé au cours de ce suprème 
+                  effort une mort glorieuse. Totalisait 1.100 heures de vol, dont 
+                  200 de nuit. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="3"><b><font size="2" face="Arial Narrow">ROBERT</font></b></td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Henri</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="3"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">December 
+                    1, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Pilote complet 
+                  au sang-froid remarquable et au cran admirable. Vient encore 
+                  de se distinguer dans l'accomplissement de deux missions particulièrement 
+                  dangereuses et délicates. Le 20 mai, au cours d'un vol de 70 
+                  kilomètres dans une région particulièrement défendue, a permis 
+                  à son observateur de rapporter des renseignements par ticulièrement 
+                  importants sur un mouvement: de chars ennemis. Est rentre avec 
+                  un obus et des balles dans son avion. Le 26 mai au cours d'une 
+                  mission du même genre a eu les glaces de son avion enlevées 
+                  par un obus de petit calibre et a dû faire preuve d'une grande 
+                  virtuosité pour ramener son avion au terrain de base. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 19, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Brillant pilote 
+                  d'un équipage d'élite, spécialiste des missions difficiles et 
+                  dangereuses. A fait preuve à différentes reprises d'une grande 
+                  virtuosité et d'un sang-froid remarquables. A plusieurs fois 
+                  ramené au terrain son avion atteint par les projectiles de petit 
+                  calibre alors qu'il attaquait à la mitrailleuse les colonnes 
+                  ennemies et qu'il permettait à son observateur de dénombrer. 
+                  A trouvé une mort glorieuse à la suite de graves brùlures reçues, 
+                  le 20 juin 1940, audessus des lignes ennemies, en cherchant 
+                  à conserver son avion en ligne de vol pour essayer de permettre 
+                  à son équipage de sauter en parachute. Déjà cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    25, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Brillant pilote 
+                  d'un équipage d'élite, spécialiste des missions difficiles et 
+                  dangereuses. A fait preuve, à différentes reprises, d'une grande 
+                  virtuosité et d'un sang-froid remarquables. A plusieurs fois 
+                  ramené au terrain son avion atteint par les projectiles de petit 
+                  calibre, alors qu'il attaquait à la mitrailleuse des colonnes 
+                  ennemies qu'il permettait à son observateur de dénombrer. A 
+                  trouvé une mort glorieuse à la suite de graves brûlures reçues, 
+                  le 20 juin 1940, au-dessus des lignes ennemies, en cherchant 
+                  à conserver son avion en ligne de vol pour essayer de permettre 
+                  à son équipage de sauter en parachute. Déjà cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROBERT</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Marius</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 518</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">March 
+                    8, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">A effectué 
+                  de nombreuses missions de guerre du 10 mai au 15 juin. Effectuant, 
+                  le 15 juin, une mission dans la région de Troyes, au profit 
+                  des troupes terrestres chargées de ralentir l'avance ennemie, 
+                  A été attaqué par la D. C. A. Après avoir échappé à plusieurs 
+                  reprises à des tirs particulièrement denses, a été descendu 
+                  par l'artillerie ennemie. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    18, 1943</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Faisait en 
+                  qualité d'observateur partie de l'équipage cité à l'ordre de 
+                  l'armée aérrenne (ordre « C » n° 72 du 14 février 1941 du secrétaire 
+                  d'Etat à l'aviation), avec le motif suivant: « Equipage d'élite. 
+                  A effectué de nombreuses missions de guerre du 10 mai au 15 
+                  juin 1940. Effectuant, le 15 juin 1940, une mission dans la 
+                  région de Troyes au profit des troupes terrestres chargées de 
+                  ralentir l'avance ennemie, a été attaqué par la D. C. A. Après 
+                  avoir échappé à plusieurs reprises à des tirs particulièrement 
+                  denses, est tombé glorieusement au cours de cette mission ». 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROBIC</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pierre</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 511</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    9, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Excellent sous-officier 
+                  pilote, a effectué, le 13 mai 1940, avec intelligence et précision, 
+                  une importante mission, au cours de laquelle il eut à subir, 
+                  outre le feu précis de la défense anti-acrienne, un combat avec 
+                  un appareil de bombardement ennemi et une attaque d'avions de 
+                  chasse adverse. A effectué complètement et brillamment sa mission, 
+                  faisant preuve de qualités de sang-froid et de courage. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROCHARD</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Robert 
+                    - Lionel</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commander</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commander 
+                    of Group and Observer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 502</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    11, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Commandant 
+                  de groupe modèle. Est un exemple pour tous. Alliant à un magnifique 
+                  allant, d'exceptionnelles qualités professionnelles, n'a cessé 
+                  de payer de sa personne, effectuant plusieurs missions à très 
+                  basse altitude, dont une. particulièrement délicate qu'il a 
+                  tenu à exécuter lui-même, le 15 mai 1940, comme observateur. 
+                  A dû faire face à de nombreuses attaques de la chasse ennemie 
+                  et subir les violentes réactions de la défense au sol. Avec 
+                  un appareil fortement endommagé, a néanmoins poursuivi sa mission 
+                  avec une rare maîtrise et jusqu'à complète exécution, rapportant 
+                  des renseignements très importants pour le commandement. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROUGETET</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lucien</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjutant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO II/520</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    28, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage :<br>
+                  ROUGETET (Lucien), adjudant; <br>
+                  PARISOT (Jean), lieutenant; <br>
+                  CARDON (Roger), adjudant,<br>
+                  Equipage d'élite, magnifique exemple d'héroïsme et d'abnégation. 
+                  Le 20 mai 1940, chargé d'exécuter une mission de reconnaissance 
+                  profonde dans les lignes ennemies, a été de suite en butte aux 
+                  feux nourris de la défense antiaérienne. A néanmoins poursuivi 
+                  sa mission, l'avion criblé de balles. Pris à nouveau à partie 
+                  par la D. C. A., le pilote grièvement blessé de deux balles 
+                  à la tête et de nombreuses balles dans les jambes, l'avion en 
+                  Hommes, réussit néanmoins, avec un courage inouï, à ramener 
+                  l'appareil dans nos lignes et meurt quelques instants après. 
+                  Le mitrailleur a une jambe cassée à l'atterrissage, l'observateur 
+                  un poignet brisé et la figure brûlée ne songe qu'à dégager ses 
+                  camarades et à communiquer sans retard au commandement les précieux 
+                  renseignements qu'il a ramenés de sa mission. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Military 
+                    Medal : Citation to the Air Force Order posthumously, including 
+                    the attribution of the Croix de Guerre with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    1, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Héroïque pilote, 
+                  audacieux, plein d'allant et d'abnégation : le 20 mai 1940, 
+                  grièvement blessé, au cours d'une reconnaissance, de deux balles 
+                  dans la tête et de nombreuses balles dans les jambes, un moteur 
+                  de son avion atteint et en flammes, a réussi, grâce à son habileté 
+                  et malgré la gravité de ses blessures, à tenir les commandes 
+                  pendant quinze minutes environ et à ramener son avion dans les 
+                  lignes amies. Est mort à son poste après avoir sauvé la vie 
+                  de son équipages. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROUGH</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Roger 
+                    - Lucien</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/14</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force not including the war cross 
+                    with palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    30, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Excellent sous-officier 
+                  pilote, ayant toujours fait preuve des plus belles qualités 
+                  de courage et de sang-froid. Le 14 mai 1940, son observateur 
+                  ayant été tué au cours d'une mission à l'intérieur des lignes 
+                  ennemies, a réussi à ramener son avion criblé de balles sur 
+                  un terrain ami. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROUIG</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean 
+                    - Roger</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sub-Lieutenant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer 
+                    </font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/551</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">December 
+                    1, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-lieutenant 
+                  observateur d'élite, totalisant sept missions et 10 heures 05 
+                  de vol de guerre au cours desquelles son avion fut souvent atteint 
+                  par le feu de l'ennemi. A montré les plus belles qualités de 
+                  dévouement et d'abnégation lors d'une mission sur les lignes, 
+                  alors que son avion était en flammes à la suite d'une attaque 
+                  de chasse adverse. S'est refusé à quitter le bord en parachute 
+                  pour ne. pas rester dans les lignes ennemies. S'est posé en 
+                  territoire ami, grièvement brûle. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Legion of Honor This promotion 
+                    includes the attribution of the War Cross with Palme</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 16, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-lieutenant 
+                  observateur d'élite. A participé à de nombreuses missions de 
+                  reconnaissance au cours desquelles son avion fut souvent atteint 
+                  par le feu de l'ennemi. A montré les plus belles qualités de 
+                  dévouement et d'abnégation, le 8 juin 1940, lors d'une mission 
+                  sur ies lignes. Son avion étant en flammes à la suite d'une 
+                  attaque de chasse adverse, s'est refusé à quitter le bord en 
+                  parachute pour ne pas rester dans les lignes ennemies. S'est 
+                  posé en territoire ami, grièvement brûlé. Déjà cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROUILLON</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lucien 
+                    - René</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/52</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    25, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Offlcier observateur 
+                  d'élite ayant assuré dans des conditions particulièrement brillantes 
+                  le commandement provisoire de son escadrille pentnt trois mois. 
+                  Au cours des nombreuses dissions aérienres de guerre accomplies, 
+                  a fait preuve d'un cran et d'une conscience professionnelle 
+                  dignes d'éloges. A trouvé la mort, le 13 mai 1940, dans une 
+                  chute d'avion, alors qu'il quittait son terrain d'opération 
+                  pour effectuer une reconnaissance de nuit de plus haute importance. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">April 
+                    26, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  d'élite ayant assuré dans des conditions particulièrement brillantes 
+                  le commandement provisoire de son escadrille pendant trois mois. 
+                  Au cours des nombreuses missions aériennes de guerre accomplies, 
+                  a fait preuve d'un cran et d'une conscience professionnels dignes 
+                  d'éloges. A trouvé la mort le 13 mai 1940, dans une chute d'avion, 
+                  alors qu'il quittait son terrain d'opérations pour effectuer 
+                  une reconnaissance de nuit de la plus haute importance. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">ROULIN</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Albert</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjutant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/22</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special board of the military medal<br>
+                    This promotion does not include the attribution of the War 
+                    Cross.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    24, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Modèle du pilote 
+                  calme, adroit, l'adjudant Roulin a eu en opérations une magnifique 
+                  conduite qui lui a valu une citation à l'ordre. En vol rasant, 
+                  à toutes altitudes, malgré des tirs précis et violents de la 
+                  D. C. A., voire même en présence de la chasse ennemie, il a 
+                  effectué toutes les missions avec une conscience, une intrépidité 
+                  telles qu'il a toujours permis à son observateur de recueillir 
+                  des renseignements précis et importants. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    5, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Déjà cité à 
+                  l'ordre, a continué à faire preuve des mêmes qualités de courage 
+                  et de ténacité. S'est distingué à maintes reprises et tout particulièrement, 
+                  le 18 mai 1940, en poursuivant sa mission avec calme malgré 
+                  la présence à vue d'une chasse ennemie, prête à intervenir.<br>
+                  (Cette citation annule et remplace celle à l'ordre de la division 
+                  aérienne, accordée par ordre général no 4, du 21 juin 1940, 
+                  du général commandant la zone d'opérations aériennes Nord.) 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROUPAIN</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 19, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Magnifique 
+                  officier observateur faisant preuve, en toutes circonstances, 
+                  d'une énergie farouche, d'une audace réfléchie, d'une bravoure 
+                  éclatante; volontaire pour les missions les plus dangereuses 
+                  et les plus délicates. Le 9 juin 1940, après un véritable assaut 
+                  livré jusqu'à complet épuisement des munitions à des colonnes 
+                  motorisées ennemies et leur avoir causé des pertes sérieuses, 
+                  a dû atterrir, son avion criblé d'obus de petit calibre, sur 
+                  un terrain de fortune à l'arrière des lignes. Blessé à la tête 
+                  et à la jambe, ne s'est rendu à l'hôpital qu'après avoir téléphoné 
+                  au commandant les importants renseignements recueillis au cours 
+                  de sa mission. Ayant refusé de se laisser évacuer, a rejoint; 
+                  son groupe où, les 16 et 21 juin, il a encore exécuté d'une 
+                  façon particulièrement brillante des missions de reconnaissance 
+                  en vol rasant </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROUSSEAU</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">René</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 515</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">November 
+                    16, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Jeune sous-offi 
+                  cier mitrailleur au courage calme, volontaire pour toute mission. 
+                  A effectué quinze missions de guerre, dont plusieurs'sous le 
+                  feu de la D. C. A. ennemie, au cours desquelles son avion a 
+                  reçu plusieurs éclats. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROUSSEL</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 548</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    22, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  animé du plus haut esprit de devoir et de sacrifice. Exemple 
+                  de courage froid et réfléchi. A fourni au commandement de très 
+                  précieux renseignements au cours de trente missions photographiques 
+                  effectuées à faible altitude dans les circonstances les plus 
+                  périlleuses. A toujours accompli jusqu'au bout sa mission, bien 
+                  que son avion ait été fréquemment touché par les balles ennemies.Déjà 
+                  cité pour faits de guerre. A trouvé une mort glorieuse, le 24 
+                  avril 1940, il bord de son avion atteint par la D. C. A. ennemie; 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">ROZES</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Paul</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/52</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    28, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier pilote 
+                  observateur d'une valeur exceptionnelle, ayant accompli depuis 
+                  le début des hostilités de nombreuses missions de reconnaissance 
+                  à grande distance. Toujours volontaire pour les missions les 
+                  plus périlleuses, a donné à tous le plus bel exemple de courage 
+                  et de cran. Le 11 mai 1940, attaqué par deux avions ennemis, 
+                  par son habileté et son sang-froid, a réussi à dégager son équipage 
+                  et a accompli entièrement la mission qui lui était demandée. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">RUIZ</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Alberto</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Radio</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/14</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force not including the war cross 
+                    with palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    30, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Jeune sous-officier 
+                  radio, courageux et fanatique de son métier. Le 17 mai 1940, 
+                  a contribué grandement à sauver son équipage attaqué à fond 
+                  par six Messerschmitt-109 en effectuant des tirs ajustés et 
+                  donnant au pilote, avec le plus grand sang-froid, des indications 
+                  précises sur la position des avions ennemis. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">SACQUEPEE</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Robert 
+                    - Eugène - Alphonse</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjutant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 552</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    27, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage:<br>
+                  COLPIN (Paul-Louis), lieutenant;<br>
+                  LUX (Jean-Joseph-Henri), adjudant-chef;<br>
+                  SACQUEPEE (Robert-Eugène-Alphonse), adjudant,<br>
+                  Equipage modèle qui, désigné pour une mission de commandement 
+                  difficile et dangereuse, a su s'en acquitter malgré un feu violent 
+                  de la D. C. A. ennemie. L'appareil plusieurs fois touché par 
+                  les bailles ennemies est venu s'abattre à quelques kilomètres 
+                  du terrain de travail, mais grâce aux précautions prises par 
+                  l'observateur, il fut possible de recueillir le résultat de 
+                  sa mission et le commandement fut ainsi renseigné utilement. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Military 
+                    Medal : Citation to the Air Force Order posthumously, including 
+                    the attribution of the Croix de Guerre with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    1, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage modèle 
+                  qui, désigné pour une mission de commandement difficile et dangereuse 
+                  a su s'en acquitter malgré un feu violent de la D. C. A. ennemie. 
+                  L'appareil, plusieurs fois touché par fes balles ennemies, est 
+                  venu s'abattre à quelques kilométres du terrain de travail; 
+                  mais, grâce aux précautions, prises par l'observateur, il fut 
+                  possible de recueillir le résultat de sa mission et le commandement 
+                  fut ainsi renseigné utilement. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SAGET</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pierre 
+                    - Paul</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commander</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font face="Arial Narrow" size="2">Division 
+                    Air Force Commander</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Forces 
+                    Aériennes N°31</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">November 
+                    8, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Commandant 
+                  des forces aériennes de la division a fait preuve pendant les 
+                  opérations lu 14 mai au 20 juin 1940 des plus belles qualités 
+                  militaires. S'est particulièrement distingué le 25 mai en remplissant 
+                  une mission ie renseignements périlleuse et en ramenant dans 
+                  nos lignes son appareil graveme'nt endommagé par le feu de l'ennemi. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SAGON</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Henri</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    5, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Ayant pris 
+                  le commandement de son escadrille le 23 mai 1940, s'est tout 
+                  de suite imposé par sa valeur personnelle et ses qualités de 
+                  chef. Payant d'exemple, a effectué. entre le 29 mai et le 14 
+                  juin, quatre missions de guerre dans des circonstances difficiles. 
+                  A eu son avion gravement atteint par le feu de l'artillerie 
+                  anti-aérienne ennemie au cours de la dernière d'entre elles. 
+                  Déjà cité, A été fait prisonnier. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC">
+                <td width="10%" height="85"><font face="Arial Narrow" size="2"><b>SAINT-BONNET 
+                  </b> </font></td>
+                <td height="85"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Aim&eacute;</font></div>
+                </td>
+                <td height="85"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent</font></div>
+                </td>
+                <td height="85"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td height="85"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO 543</font></div>
+                </td>
+                <td height="85"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Air Wing Order. This quote is not published in the 
+                    Official Journal</font></div>
+                </td>
+                <td height="85">&nbsp;</td>
+                <td width="35%" height="85"> 
+                  <p><font face="Arial Narrow" size="2">Brillant sous-officier 
+                    pilote calme et audacieux qui au cours de missions difficiles 
+                    a montr&eacute; beaucoup se sang-froid. C'est particuli&egrave;rement 
+                    signal&eacute; les 8 et 9 juin sur le front de l'Aisne.</font></p>
+                  <p><font face="Arial Narrow" size="2"><i>Source : Mr Dominique 
+                    SAINT-BONNET , Son of Aim&eacute; SAINT-BONNET </i></font></p>
+                </td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SAINTE-MARIE</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Roland</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 518</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Military Medal<br>
+                    This promotion includes the attribution of the War Cross with 
+                    Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">February 
+                    14, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Très grièvement 
+                  blessé, le 15 juin 1940, à Saint-Germain, près de Troyes, dans 
+                  l'accomplissement d'une mission de reconnaissance, au cours 
+                  de laquelle l'avion où il avait pris place volontairement comme 
+                  mitrailleur s'écrasa au sol et prit feu, causant la mort du 
+                  pilote et de l'observateur. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SAUDUBRAY</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Gaston</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Chief-Warrant-Officer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Legion of Honor This promotion 
+                    does not include the attribution of the cross of war</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    24, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Excellent mitrailleur, 
+                  dévoué et courageux. A accompli plusieurs missions de guerre. 
+                  Médaillé militaire de 1929. A été cité. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SAURT</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow"></font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    25, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage remarquable 
+                  par sa valeur professionnelle, sa cohésion et son sang-froid. 
+                  Le 13 mai 1940, au cours d'une mission de reconnaissance au-dessus 
+                  du territoire ennemi, s'est heurté à un avion d'observation 
+                  adverse protégé par neuf chasseurs et l'a abattu. Poursuivi 
+                  pendant trente-cinq minutes en vol rasant, a été l'objet d'assauts 
+                  répétés de. ses adversaires. A abattu probablement l'un d'eux. 
+                  L'avion, ayant été mis en flammes, a pu atterrir dans nos lignes, 
+                  rapportant de précieux renseignements. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SCHONER</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Albert</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/520</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    30, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Pilote de grande 
+                  classe, ardent et brave. S'est maintes fois distingué depuis 
+                  le début de la campagne, de reconnaissances particulièrement 
+                  importantes et délicates. Le 14 juin 1940, au retour d'une mission 
+                  sur les lignes, s'est trouvé aux prises avec deux Dornier-17.Grâce 
+                  à son esprit de décision et à son habileté dans la manœuvre 
+                  a réussi à mettre en fuite le premier de ses adversaires après 
+                  l'avoir gravement touché et à abattre le second tombé en flammes. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">SEGUELA</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Marc</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Chief-Warrant-Officer</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    22, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Adjudant-chef 
+                  pilote appelé au plus bel avenir; animé d'une foi ardente et 
+                  d'un courage exceptionnel. A trouvé une mort glorieuse, le 19 
+                  mai 1940, au cours d'une mission de reconnaissance en vol rasant 
+                  au-dessus d'une zone très fortement defendue par la chasse et 
+                  la D. C. A. ennemies. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 25, 
+                    1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Adjudant-chef 
+                  pilote appelé au plus bel avenir, animé d'une foi ardente et 
+                  d'un courage exceptionnel. A trouvé une mort glorieuse, le 24 
+                  mai 1940, au cours d'une mission de reconnaissance en vol rasant 
+                  au-dessus d'une zone fortement défendue par la chasse et la 
+                  D.C. A ennemies. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SENN</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Henri</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Chief-Warrant-Officer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 507</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">December 
+                    28, 1939</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage d'élite. 
+                  En mission d'observation, le 20 septembre 1939, a été attaqué 
+                  par une patrouille de cinq avions de chasse. A fait face bravement 
+                  à l'adversaire. Bien que le pilote et l'observateur aient été 
+                  blessés, a réussi, malgré une poursuite acharnée- jusqu'à 25 
+                  kilomètres à l'intérieur Ces lignes françaises, à atterrir en 
+                  campagne, rapportant ainsi des documents.photographiques de 
+                  grande importance. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SICARD</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean-Gfrançois</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjutant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mechanic-Machine-Gunner</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Air Force Order posthumously, not including the attribution 
+                    of the War Cross.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    26, 1942</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  mécanicien de grande valeur; Modèle de confiance et de dévouement, 
+                  toujours prêt à voler à bord des avions dont il était chargé. 
+                  A trouvé une mort glorieuse au cours d'un vol de reconnaissance 
+                  et de navigation dans la zone des armées, le 21 mars 1940. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SIEGLER</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pierre</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">September 
+                    3, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Chef d'escadrille 
+                  de grande valeur, d'un allant et d'une conscience professionnelle 
+                  hors de pair. S'impose à son unité par ses magnifiques qualités 
+                  de chef et d'exécutant. S'est signalé, en particulier, le 17 
+                  mai, au cours d'une reconnaissance profonde en territoire allemand, 
+                  entièrement accomplie malgré le tir de la D. C. A. et de deux 
+                  interventions successives de chasseurs ennemis. Est rentré avec 
+                  de nombreuses traces d'éclats d'obus et de balles. Le 8 juin, 
+                  malgré une très forte activité de la chasse et de la D. C. A. 
+                  adverses, a exécuté, par ciel pur, une mission de reconnaissance 
+                  à basse .altitude, rapportant au commandement des renseignements 
+                  particulièrement importants. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">SMET</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Roger</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Captain</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 510</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">September 
+                    3, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier de 
+                  renseignements payant constamment de sa personne. Le 27 mai 
+                  1940, chargé d'une mission d'accompagnement d'infanterie, a' 
+                  poursuivi et achevé sa mission malgré la mise hors de combat 
+                  de son mitrailleur. Attaqué au retour par sept Messerschmitt, 
+                  a eu son avion incendié et descendu dans nos lignes. Est sorti 
+                  indemne des débris de son appareil. Déjà proposé pour une citation 
+                  à l'ordre de l'armée pour fait d'armes. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    30, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow"> Magnifique 
+                  officier observateur. Toujours volontaire pour les missions 
+                  les plus périlleuses. Du 12 au 16 mai 1940, au plus fort de 
+                  la bataille et quoique blessé à la main, au cours d'un bombardement, 
+                  est allé à plusieurs re-prises loin chez l'ennemi, sans protection 
+                  et malgré de puissants barrages de chasse. A réussi à rapporter 
+                  au commandement des renseignements d'une extrême importance. 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SOGNET</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Henri</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observer</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/506</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Inscription 
+                    on the special table of the Legion of Honor This promotion 
+                    includes the attribution of the War Cross with Palme</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    10, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier observateur 
+                  d'élite, d'un courage et d'un sang-froid exemplaires. Après 
+                  un combat de vingt minutes où son équipage avait lutté seul 
+                  contre douze chasseurs ennemis et où son pilote et son mitrailleur 
+                  avaient été mis hors de combat, a réussi à ramener lui-même 
+                  dans nos lignes l'avion désemparé dont il était le chef de bord. 
+                  Gravement blessé à l'atterrissage. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SORDET</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow"></font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">August 
+                    25, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Jeune pilote 
+                  particulièrement doué et plein de cran. Parti, le 12 mai 1940, 
+                  pour effectuer une mission dans les lignes adverses, a été attaqué 
+                  par huit avions de chasse ennemis. Son avion ayant été incendié 
+                  par la première rafale et lui-même blessé, a manœuvré avec sang-froid, 
+                  posant impeccablement son avion en flammes et sauvant ainsi 
+                  la vie de son équipage. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">SOUTIF</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Henri 
+                    - Octave</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 504</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">November 
+                    8, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Mitrailleur 
+                  décidé, modèle de conscience et de dévouement. Le 15 mai 1940 
+                  à l'issue d'une mission où son observateur a été tué et son 
+                  pilote grièvement blessé, a tenu en échec les chasseurs ennemis 
+                  qui poursuivaient son avion rentrant désemparé dans nos lignes. 
+                  A été blessé au cours de ce combat. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    30, 1943</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Mitrailleur 
+                  décidé, modèle de conscience et de dénuement. Le 15 mai 1940, 
+                  à l'issue d'une mission où son observateur a été tué et son 
+                  pilote grièvement blessé, a tenu en échec les chasseurs ennemis 
+                  qui poursuivaient son avion rentrant désempare dans nos lignes. 
+                  A été lui-même grièvement blessé au cours de ce combat.<br>
+                  (Cette nomination annule et remplace, la citation à l'ordre 
+                  de l'armée aérienne, acordée par ordre « C » no 69, en date. 
+                  du 3 juin 1940, du général commandant en chef des forces aériennes.) 
+                  </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SPIELREIN</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Albert</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow"></font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow"></font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">April 
+                    7, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier calme, 
+                  résolu et brave qui a exécuté avec succès des reconnaissances 
+                  lointaines. S'est particulièrement distingué le 14 octobre 1939, 
+                  au cours d'une reconnaissance photographique. Attaqué par 4 
+                  Heinckel, leur a livré, un combat acharné au cours duque de 
+                  nombreuses balles ont atteint son appareil et a réussi à rapporter 
+                  des renseignements très intéressants sur le dispositit .antichar 
+                  ennemi. Continue à se distinguer par son ardeur. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">STEIDLE</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Camille 
+                    </font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Staff-Sergeant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">November 
+                    13, 1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  mitrailleur dont l'habileté et la modestie sont à citer en exemple. 
+                  Animé d'un patriotisme ardent, tou- jours volontaire pour toutes 
+                  les missions, a accompli en territoire ennemi huit reconnaissances 
+                  profondes. A trouvé une mort glorieuse dans le ciel de Sedan, 
+                  le 15 mai 1940. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citation 
+                    to the Order of the Air Force, posthumously, including the 
+                    attribution of the War Cross with Palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">July 
+                    3, 1943</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  mitrailleur dont l'habileté et la modestie sont â citer en exemple. 
+                  Animé d'un patriotisme ardent, toujours volontaire pour toutes 
+                  les missions, a accompli en territoire ennemi huit reconnaissances 
+                  profondes. A trouvé une mort glorieuse, dans le ciel de Sedan, 
+                  le 15 mai 1940. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="10%"><b><font size="2" face="Arial Narrow">SUEUR</font></b></td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Jean</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilot</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO III/551</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Legion 
+                    of Honor : Citation to the Air Force Order posthumously, including 
+                    the attribution of the War Cross with Palm</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">May 15, 
+                    1941</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Officier pilote 
+                  de très haute valeur morale et professionnelle ayant servi l'aviation 
+                  avec tout son cœur et sa vive intelligence. N'a cessé d'être 
+                  un brillant exemple pour le personnel navigant de l'unité. Volontaire 
+                  pour effectuer, le 11 septembre 1939, une mission de reconnaissance 
+                  particulièrement difficile en territoire ennemi, n'a pas hésité, 
+                  pour recueillir les renseignements demandés par le commandement, 
+                  à survoler à basse altitude les organisations adverses. A trouvé 
+                  une mort glorieuse au cours de cette mission. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td rowspan="2"><b><font size="2" face="Arial Narrow">SUSS</font></b></td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Georges</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergeant</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Machine-Gunner</font></div>
+                </td>
+                <td rowspan="2"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/520</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">October 
+                    30, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Sous-officier 
+                  mitrailleur de très grande valeur. Exemple de hardiesse et d'abnégation; 
+                  toujours volontaire pour les missions les plus périlleuses. 
+                  Le 14 juin 1940, au cours d'un combat aérien contre deux bombardiers 
+                  ennemis, a contribué par son tir précis et ajusté à désemparer 
+                  le premier de ses adversaires et à abattre le second tombé en 
+                  flammes. </font></td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">Citations 
+                    to the order of the air force including the war cross with 
+                    palm.</font></div>
+                </td>
+                <td> 
+                  <div align="center"><font size="2" face="Arial Narrow">June 
+                    29, 1940</font></div>
+                </td>
+                <td width="35%"><font size="2" face="Arial Narrow">Equipage de 
+                  valeur, chargé, le 12 mai 1940, de ravitailler en munitions 
+                  un petit poste encerclé par l'ennemi et de lancer à ce détachement 
+                  un pli contenant un ordre de commandement de toute première 
+                  importance. A accompli sa mission, en vol rasant, pendant un 
+                  combat terrestre particulièrement violent. Est rentré à son 
+                  terrain avec un avion criblé de balles., un moteur arrêté et 
+                  l'autre fortement endommagé. A montré, en cette occasion, une 
+                  maîtrise et une bravoure qui ont fait l'admiration des combattants 
+                  de l'air et de terre. </font></td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <div align="center"><a class="site" href="../../../Appareils/Chasse/Dewoitine%20D510/Caracteristiques.htm?iframe"></a></div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in French</font></b></div>
+      </td>
+      <td width="48%"><a href="Citations-Reco-R-S.htm" target="_self"><img src="../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+    </tr>
+    <tr> 
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><b><font color="#FFFFFF" size="4">Site in English</font></b></div>
+      </td>
+      <td width="48%"><a href="EN-Citations-Reco-R-S.htm" target="_self"><img src="../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

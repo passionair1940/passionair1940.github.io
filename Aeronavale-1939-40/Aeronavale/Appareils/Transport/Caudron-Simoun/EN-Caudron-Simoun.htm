@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Naval Aviation in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Caudron-Simoun</title>
+<META name="KEYWORDS" content="French Naval Aviation 1939-1940,transport,campaign of France, funny war,Caudron C635 Simoun,simoun,caudron">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"> 
+          <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="Caudron-Simoun.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Aircraft</font></a></font></b> 
+            </font></div>
+            <hr width="100%">
+			<p align="left"><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+              Bombers</b></font></a></p>
+            <p align="left"><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Fighter 
+              Aircraft </font></b></font></a></p>
+            <p align="left"><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><font color="#C0C0C0">Bombers</font></font></b></font></a></p>
+            <p align="left"><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance 
+              Aircraft </b></font></a></p>
+            <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+              Aircraft </b></font></a></p>
+            <p align="left"><a href="../EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><i><font color="#FFFFFF">Transport 
+              &amp; links</font></i></b></font></a> 
+            <p> 
+            <p> 
+             <div align="left"><font size="2"><a href="../Caudron-Goeland/EN-Caudron-goeland.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+              Caudron GOELAND</b></font></a></font></div>
+            <div align="left"><font size="2"><a href="../Caudron-Phalene/EN-Caudron-Phalene.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+              Caudron PHALENE</font></font></b></font></a></font></div>
+            <div align="left">
+              <p><font size="2"><a href="../Caudron-Simoun/EN-Caudron-Simoun.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><font color="#FFFFFF"><i>- 
+                Caudron SIMOUN</i></font></b></font></a></font></p>
+            </div>
+            <div align="left"></div>
+			  <p align="left"><a href="../../Hydravions/EN-Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Seaplanes</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/EN-Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Embarked Seaplanes</b></font></a></p>
+            
+          </div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">CAUDRON C635 Simoun</font></b></p>
+            <p><img src="Photos/image028.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+            Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" height="270" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2">Monoplane with low wing 
+                    and fixed landing gear </font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1935</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">10,40 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">9.10 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">2,15 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">16 m2&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 952 Kg&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1330 Kg&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 280 km/h.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">310 km/h&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="+0"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">7300m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1125 kms&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">2</font> <font size="2" face="Arial Narrow"> 
+                    Men</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 Engine 
+                    Renault 6Q-09 of 220ch</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="38" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                </td>
+                <td colspan="3" height="31" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> <font size="2" face="Arial Narrow"> 4 Passengers</font> 
+                  </div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font size="3" color="#990000"><font size="3" color="#990000"><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2" color="#000000">489 
+              Caudron C635M </font></b><font size="2" color="#990000" face="Arial Narrow"><font color="#000000"><b>have 
+              been built since the date of the first flight in 1935.</b></font></font></font></font></font></font></p>
+              
+            <p><font size="2"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font size="2"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font face="Arial Narrow" color="#000000" size="2">To 
+              date, of the</font></b></font></b></font></b></font><font face="Arial Narrow" color="#000000" size="2"> 
+              489 </font><font size="2"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font face="Arial Narrow" color="#000000" size="2">aircrafts 
+              manufactured</font></b></font></b></font></b></font><font face="Arial Narrow" color="#000000" size="2"> 
+              , 22 </font></b></font></b></font></b></font><b><font size="2"><b><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font face="Arial Narrow" color="#000000" size="2">are 
+              listed in the list below</font></b></font></b></font></b></font><font face="Arial Narrow" color="#000000" size="2"> 
+              :</font></b></b></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>The SIMOUN 
+              C500 and C620 Caudrons presented at the Aeronautics show in November 
+              1934, were designed by the famous Marcel Riffard, father of the 
+              brand's racing aircraft. The aircraft is immediately presented as 
+              a luxurious plane, combining it with the Renault Viva Grand Sport 
+              car, presented in 1934, and also designed by Marcel Riffard. The 
+              C500 is powered by a Renault Bengali 4 cyl. 170 hp and the C620 
+              by a 6cyl Bengali 170 hp. </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>The construction 
+              of the new aircraft uses the same techniques as those of racing 
+              aircraft. The structure of the wing is based on the rectangular 
+              spar with variable section, and in the central part, spruce souls 
+              arranged vertically, provide stiffness to the right landing gear. 
+              The curvature flaps occupy the entire trailing edge and the wing 
+              is fully boxed birch plywood and interlining. The fuselage is of 
+              mixed construction, steel and wood and can carry 4 passengers in 
+              addition to the two crew members. The drawing of the vertical and 
+              horizontal empennages takes again the characteristic drawing of 
+              the Caudrons. The C500 and C620 were produced in few copies, and 
+              it was not until the C630 that mass production began. It is recognizable 
+              externally from previous versions by its two side windows instead 
+              of three.</b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b> The Simoun 
+              C630 is powered by a 6 Cyl Renault Bengali 6Q-07 180 hp driving 
+              a two-blade propeller variable pitch: the mechanism is pneumatically 
+              actuated in flight after being pressurized on the ground with a 
+              bicycle pump ... This version , produced about twenty copies is 
+              one of the only tourism devices capable of reaching 300km / h. It 
+              will be followed by the main version: C635 and C635M for the military 
+              version. The unit is then motorized by a 6 cyl. Renault Bengali 
+              6Q-09 220 hp and the wing receives a dihedral of 4 ° to improve 
+              stability. These two versions will be produced more than 500 copies. 
+              </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>The young 
+              company "Air Bleu", founded in 1935, and whose main shareholder 
+              is none other than Louis Renault, bought a dozen C630 and C635 to 
+              transport the mail. The first four connections took place on July 
+              10, 1935, with flights from Le Bourget to Lille, Le Havre, Strasbourg 
+              and Bordeaux at a very good average of 250 km / h. These daily connections, 
+              were ensured by all time until August 1936, date when "Air Bleu" 
+              in financial difficulty was forced to stop, for a time, its activity, 
+              with for principal reason, the appearance of a tax put in place 
+              by the Post Office. It was not until July 1937 that "Air Bleu" was 
+              able to take over the operation of the lines. </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>The Caudron 
+              Simoun, by his performances attracted many pilots raids. December 
+              18, 1935, it is on board that the crew Genin-Robert realizes the 
+              trip Le Bourget-Tananarive, or 8 665 km, in 57 h 36 min. At the 
+              end of 1937, Maryse Hilsz made a Paris-Saigon raid in less than 
+              four days, and on December 30, 1936, Maryse Bastié crossed the South 
+              Atlantic aboard a C635. Also mention André Japy, who succeeded on 
+              November 15, 1936, to join Japan, or 14000 kms in 75hres of flight 
+              ... before crashing on the landing and to be seriously wounded. 
+              Antoine de Saint-Exupéry also made numerous flights on board, including 
+              an attempted flight Paris-Saigon, December 29, 1935, to beat the 
+              record of André Japy. </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>The aircraft 
+              interessa the Air Force who commanded the Simoun in the military 
+              version C635M, as liaison and training aircraft for flying schools. 
+              At the time of the German attack, on May 10, 1940, nearly 500 copies 
+              had been delivered out of the 650 ordered. To these, we must add 
+              the Caudrons "civil" requisitioned from September 1939. </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>After the 
+              Armistice, the Germans seize a hundred aircraft that will fly under 
+              German colors until 1945. Other copies, present in North Africa 
+              were used by the Vichy Air Force before passing to the hands FAFL. 
+              They stole until spare parts were exhausted. </b></font></p>
+            <p><font color="#000000" face="Arial Narrow" size="2"><b>Today, only 
+              two Caudron Simouns are visible, including one at the Air and Space 
+              Museum. The second is being restored thanks to the association "Renaissance 
+              du Caudron Simoun". . </b></font></p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <table width="99%" border="1">
+              <tr bgcolor="#CCCCCC" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                <td width="17%"> 
+                  <div align="center"><b><font face="Arial Narrow">Version</font></b></div>
+                </td>
+                <td width="6%"> 
+                  <div align="center"><b><font face="Arial Narrow">Qty</font></b></div>
+                </td>
+                <td width="77%"> 
+                  <div align="center"><b><font face="Arial Narrow">Descriptive</font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.500 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>1</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Prototype 
+                  presented in 1934 at the Salon de l'A&eacute;ronautique. Motorized 
+                  by a 170cc Renault Bengali 4cyl</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.520 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>1</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font size="2" face="Arial Narrow"></font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.620 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>1</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Prototype 
+                  presented in 1934 at the Salon de l'A&eacute;ronautique. Motorized 
+                  by a Renault 170cc Renault Bengali</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.630 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>20</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">First 
+                  version of series powered by a Renault Bengali 6Pri. and has 
+                  two side windows instead of three as on the C-620.</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.631 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>3</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Motorized 
+                  version with a Renault 6Q-01</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.632 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>1</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font size="2" face="Arial Narrow"></font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.633 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>6</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  fuselage modified and powered by a Renault 6Q-07 180 hp.</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.634 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>3</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Modified 
+                  wing and mass version powered by a Renault 6Q-01 or a Renault 
+                  6Q-09</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.635 Simoun</font></b></td>
+                <td width="6%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>46</b></div>
+                </td>
+                <td width="77%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  fuselage modified and motorized by a Renault 6Q-09 220 hp.</font></td>
+              </tr>
+              <tr> 
+                <td width="17%" height="22" background="../../../../Images Base/metal-texture-151340.jpg"><b><font face="Arial Narrow">Caudron 
+                  C.635M Simoun</font></b></td>
+                <td width="6%" height="22" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b>489</b></div>
+                </td>
+                <td width="77%" height="22" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Military 
+                  version powered by a Renault 6Q-19</font></td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td width="42%"> 
+                    <div align="left"> 
+                      <div align="left"> 
+                        <div align="left"></div>
+                        <p><font size="2"><b><i>1 ) _ Collection Histoire de l'Aviation</i></b><i><font color="#990000"><b> 
+                          <br>
+                          - N&deg;12 : &quot;Les Avions Caudron&quot; Tome 2 </b></font></i></font></p>
+                      </div>
+                    </div>
+                    
+                  <p><a class="fancybox-effects-c" href="../Caudron-Goeland/Photos/histoire_aviation_12_caudron_tII_couverture.jpg" data-fancybox-group="gallery-1" title="Collection Histoire de l'Aviation"><img alt="" width="88" height="128" border="0" src="../Caudron-Goeland/thumbnail/tn_histoire_aviation_12_caudron_tII_couverture.jpg" /></a> 
+                  </p>
+                    <p>&nbsp;</p>
+                  </td>
+                  <td width="58%"> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">2) 
+                      _ Editions DOCAVIA</font></i></b><font size="2"><i><font color="#990000"><b> 
+                      <br>
+                      - N&deg; 43 : &quot;Les Avions CAUDRON RENAULT&quot;</b></font></i></font></font></i></font></p>
+                    
+                  <p>&nbsp; <a class="fancybox-effects-c" href="../Caudron-Goeland/Photos/docavia_43_caudron_couverture.jpg" data-fancybox-group="gallery-1" title="Editions DOCAVIA"><img alt="" width="90" height="128" border="0" src="../Caudron-Goeland/thumbnail/tn_docavia_43_caudron_couverture.jpg" /></a> 
+                  </p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="42%"> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">3) 
+                      _ Editions LELA PRESSE ; Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b></font></i></font><font color="#990000" size="2"><i><b><br>
+                      - N&deg; 5 : &quot;Avions CAUDRON C620-C630-C635 SIMOUN&quot;</b></i></font></i></font> 
+                    <p>&nbsp;<a class="fancybox-effects-c" href="Photos/N-05-copier.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="91" height="128" border="0" src="thumbnail/tn_N-05-copier.jpg" /></a> 
+                    </p>
+                  </td>
+                  <td width="58%">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+            Album </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/Caudron%20Simoun.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Caudron%20Simoun.jpg" alt="" width="180" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/FANRO.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_FANRO.jpg" alt="" width="163" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image014.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image014.jpg" alt="" width="115" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/poste-simoun.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_poste-simoun.jpg" alt="" width="102" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+              3 views</font></b></i></font></p>
+              <p><a class="fancybox-effects-c" href="Photos/Simoun-2.jpg" data-fancybox-group="gallery-8" title=""><img src="thumbnail/tn_Simoun-2.jpg" alt="" width="76" height="128" border="0" /></a> 
+              </p>
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> 
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

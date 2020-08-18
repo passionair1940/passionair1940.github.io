@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Loire-46</title>
+<META name="KEYWORDS" content="French Air Force 1939-1940, trainer aircrafts,training, italian,biplan,campaign of France, funny war,Loire 46,loire 43,loire 45">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="Loire-46.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">   
+        <div align="center"> 
+          <div align="center">
+            <div align="center"><font size="4" color="#CCCCCC"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self">Aircrafts</a></font></b></font></div>
+            <div align="center"> 
+              <div align="center"></div>
+              <hr width="100%">
+              <div align="left" class="style1"> 
+                <div align="left"></div>
+                <div align="left"> 
+                  <p align="left"><font size="4"><b class="Aucun"><b><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font face="Arial Narrow"><font color="#C0C0C0">Fighter 
+                    Aircrafts </font></font></a></b></b></font> </p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Bomber 
+                    Aircrafts </font></font></a></b></b></p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font face="Arial Narrow" size="4" color="#C0C0C0">Reconnaissance</font></a></b></b> 
+                  </p>
+                  <p align="left"><b class="Aucun"><b><a href="../EN-Accueil-Entrainement.htm" target="_self"><i><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4">Trainer 
+                    Aircrafts </font></font></i></a></b></b> </p>
+                </div>
+              </div>
+              <div align="left"><a href="../Caproni-164/EN-Caproni-164.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Caproni 164</b></font></a></div>
+              <div align="left"><a href="../Caudron-Luciole/EN-Caudron-Luciole.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Caudron C275 Luciole</b></font></a></div>
+              <div align="left"><a href="../Caudron-C690/EN-Caudron-C690.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Caudron C690</b></font></a></div>
+              <div align="left"><a href="../Hanriot-H182/EN-Hanriot-H182.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Hanriot 182</b></font></a></div>
+              <div align="left"><a href="../Hanriot-H232/EN-Hanriot-H232.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Hanriot 232</font></b></font></a></div>
+              <div align="left"><a href="../Hanriot-H436/EN-Hanriot-H436.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Hanriot 436</b></font></a></div>
+              <div align="left"><a href="EN-Loire-46.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+                Loire 46</font></i></b></font></a></div>
+              <div align="left"><a href="../Morane-Saulnier-MS225/EN-Morane-Saulnier-MS225.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Morane-Saulnier MS225</b></font></a></div>
+              <div align="left"><a href="../Morane-Saulnier-MS315/EN-Morane-Saulnier-MS315.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Morane-Saulnier MS315</b></font></a></div>
+              <div align="left"><a href="../North-American-NAA64/EN-NAA64.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                N.A.A 57 &amp; 64</b></font></a></div>
+              <div align="left"><a href="../Potez-438/EN-Potez-438.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Potez 438</b></font></a></div>
+              <div align="left"><a href="../Potez-568/EN-Potez-568.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Potez 568</font></b></font></a></div>
+              <div align="left"><a href="../Potez-60/EN-Potez-60.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Potez 60</b></font></a></div>
+              <div align="left"><a href="../Romano-R82/EN-Romano-R82.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Romano R82</b></font></a></div>
+              <div align="left"><a href="../Salmson-D6/EN-Salmson-D6.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Salmson D6</b></font></a></div>
+              <div align="left" class="style1"> 
+                <div align="left"> 
+                  <p align="left"><b class="Aucun"><b><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Transport 
+                    and Links</font></font></a></b></b> </p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Proto-Chasseurs/EN-Accueil-Proto-Chasseurs.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Prototypes 
+                    Fighters</font></font></a></b></b> </p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Prototypes 
+                    Bombers</font></font></a></b></b> </p>
+                </div>
+              </div>
+            </div>
+        </div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"><b><font size="20%" color="#660000">LOIRE 46 </font></b> 
+        </div>
+        <div align="center"> 
+            <p><img src="Photos/image028.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+            Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" height="257" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Single 
+                    fighter with parasol wings and fixed landing gear</font></div>
+                </td>
+                <td width="75" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"> September 
+                    1st,1934</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">11,80 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">7,76 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">4,13 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">19,50 m2&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 1450 Kg&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1950 Kg&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">386 km/h at 6000m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">4500m in 6mn 12s&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">11750m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1300kms&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="75" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                    Pilot</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 Radial 
+                    engine Gn&ocirc;me &amp; Rhone 14Kfs of 850Hp</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="72" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                </td>
+                <td colspan="3" height="21" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div><font size="2" face="Arial Narrow">4 machine-guns MAC 34 
+                      of 7.5mm in the wings</font></div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#000000" size="2"><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">63 
+              aircraft of the series Loiré 40 were built since the date by the 
+              first flight on September 1st, 1934. They divide up:</font></b></font></font></font></p>
+            </div>
+          </blockquote>
+          <ul>
+            <blockquote> 
+              <div align="left"> 
+                <div><font face="Arial Narrow" size="2"><b>- 1 Loire 43</b></font></div>
+                <div><b><font face="Arial Narrow" size="2">- 1 Loire 45</font></b></div>
+                <div><b><font face="Arial Narrow" size="2">- 61 Loire 46</font></b></div>
+              </div>
+            </blockquote>
+            <div align="left"></div>
+          </ul>
+          <blockquote> 
+            
+          <div align="left"> 
+            
+            </div>
+            <div align="left"> 
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            
+          <div align="left"><font size="2" face="Arial Narrow"><b>In 1932, the 
+            Ministry of Air launched a new program C1 to acquire a modern fighter 
+            to replace the NiD 62 or Wibault 72 in service. </b></font> 
+            <p><b><font size="2" face="Arial Narrow">The company Loire, based 
+              in Saint-Nazaire, offers the Loire 43, an all-metal construction 
+              machine. Its wing in high position, has a shape &quot;Seagull Wing&quot; 
+              to improve the visibility of the pilot. It is equipped with a fixed 
+              landing gear and is powered by an in-line engine Hispano-Suiza 12Xbrs 
+              690ch water-cooled driving a two-blade metal propeller. It is armed 
+              with two 7.5mm Darnes machine guns. The prototype makes its first 
+              flight October 17, 1932. During a test at high altitude on January 
+              14, 1933, his pilot, Mr Morin, probably a victim of discomfort at 
+              900m altitude, lost consciousness. The plane crashes to the ground 
+              and the pilot is killed.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">A second prototype is built 
+              on own funds, the Loire 45, powered this time by a star engine air-cooled 
+              740ch Gnome-Rhone 14Kds driving a three-blade propeller. A circular 
+              hood surrounds the mechanism and the wheels receive a closed fairing. 
+              It is equipped with two Oerlikon guns of 20mm gondola under the 
+              wings. He made his first flight on February 20, 1933, when the official 
+              tests began in September. The lack of visibility related to the 
+              presence of the wing is considered unacceptable and the aircraft 
+              is rejected. It is returned to the Loire workshops for modifications. 
+              Its wing is modified to improve the field of vision and its drift 
+              is enlarged. It is also equipped with a Gnome-Rh&ocirc;ne engine 
+              14 Kcs 880 hp more powerful. The Loire 45reflected its flights in 
+              January 1934, but the military no longer interested in the aircraft 
+              and he ended his career as LP &quot;Lance Parachute&quot; from May 
+              1935. Under the registration F-AKHP, and equipped with a quadripal 
+              wooden propeller, it will fly until the early 50's.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">In response to various criticisms, 
+              the Loire 46 is presented as the accomplished version of the Loire 
+              43 and 45. Its wing is deeply reworked: its shape in wing of gull 
+              is stressed to release the visibility towards bottoms. The engine 
+              mount is modified in order to be able to lower the engine: this 
+              creates an atypical silhouette with a bonnet off-center with respect 
+              to the axis of the fuselage, but here again, the visibility is thus 
+              improved, especially during the landing phases. 20 mm &#140;rlikon 
+              cannons are preserved. It is powered by a Gnome &amp; Rhone 14Kfs 
+              of 850ch driving a three-blade metal propeller; He made his first 
+              flight on September 1, 1934 but the first tests led to modifications 
+              and it was not until January 1935 that he was delivered to CEMA 
+              to conduct official tests.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">Thus modified, it was judged 
+              effective and in April 1936, the Air Force ordered 60 copies which 
+              had to be delivered before the end of the year. If the first aircraft 
+              of series flew in February 1936, it was not delivered until June 
+              and at the end of the year, only about twenty devices had been delivered 
+              ...</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The first unit to be equipped 
+              with the new aircraft was the 6 fighter squadron based in Chartres. 
+              The series Loire 46 was armed with four 7.5mm Darne machine guns 
+              to replace the 20mm Oerlikon cannons, in order to protect the wing 
+              structure. In the use, the aircraft of healthy piloting, was penalized 
+              by the lack of reliability of the engine Gn&ocirc;me-Rh&ocirc;ne, 
+              what limited the duration of the flights and requireda strengthened 
+              maintenance.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The career of Loire 46 was 
+              short, since at the end of 1938, it was replaced by the new Morane-Saulnier 
+              MS406. The aircrafts are then removed from combat units and assigned 
+              to schools, including the Cazaux Shooting School.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The Loire 46, however, experienced 
+              fighting under the colors of the Spanish Republic. Five aircraft 
+              will be delivered, without weapons ... and will be equipped on site 
+              with Vickers machine guns. There too, the lack of reliability of 
+              the engine was the cause of several accidents following cuts in 
+              full flight. None of the five Loire 46 &quot;Spaniards&quot; will 
+              survive the fighting.</font></b></p>
+          </div>
+            <div align="left"></div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000" height="218">
+              <tr background="../../../../Images Base/9-11925.jpg"> 
+                <td width="9%" height="65" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font color="#000000">Loire 43</font></b></div>
+                </td>
+                <td width="11%" height="65" bgcolor="#CCCCCC" bordercolor="#000000" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><a class="fancybox-effects-c" href="Photos/Loire%2043.jpg" data-fancybox-group="gallery-4" title="Loire 43"><img alt="" border="0" width="100%" src="thumbnail/tn_Loire%2043.jpg" /></a></font></div>
+                </td>
+                <td width="80%" height="65"> 
+                  <p><font face="Arial Narrow" size="2">Prototype with high wing 
+                    and fixed landing gear powered by a Hispano-Suiza 12Xbrs 690 
+                    Hp driving a two-blade propeller. It is armed with two 7.5mm 
+                    Darne machine guns. The wing has a slight seagull shape, but 
+                    visibility is poor. He made his first flight on October 17, 
+                    1932. During a test at high altitude on January 14, 1933 in 
+                    Saint-Nazaire, his pilot, Mr Morin, probably a victim of discomfort 
+                    at 900m above sea level, lost consciousness. The plane crashes 
+                    to the ground and the pilot is killed.</font></p>
+                </td>
+              </tr>
+              <tr background="../../../../Images Base/9-11925.jpg"> 
+                <td width="9%" height="69" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font color="#000000"> Loire 45</font></b></div>
+                </td>
+                <td width="11%" height="69" bgcolor="#CCCCCC" bordercolor="#000000" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><a class="fancybox-effects-c" href="Photos/Loire%2045.jpg" data-fancybox-group="gallery-4" title="Loire 45"><img alt="" border="0" width="100%" src="thumbnail/tn_Loire%2045.jpg" /></a></font></div>
+                </td>
+                <td width="80%" height="69"><font size="2" face="Arial Narrow"> 
+                  Second prototype motorized by a radial engine Gnome-Rhone 14Kds 
+                  air-cooled of 740 Hp driving a three-blade propeller. It is 
+                  armed with two 20mm Oerlikon cannons gondola under the wings. 
+                  it receives closed wheel fairings. He made his first flight 
+                  on February 20, 1933, but his visibility is considered too penalizing 
+                  in combat and the apparatus is rejected</font></td>
+              </tr>
+              <tr background="../../../../Images Base/9-11925.jpg"> 
+                <td width="9%" height="58" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font color="#000000"> Loire 46</font></b></div>
+                </td>
+                <td width="11%" height="58" bgcolor="#CCCCCC" bordercolor="#000000" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><a class="fancybox-effects-c" href="Photos/loire2.jpg" data-fancybox-group="gallery-4" title="Potez 63-11"><img alt="" border="0" width="100%" src="thumbnail/tn_loire2.jpg" /></a> 
+                </td>
+                <td width="80%" height="58"><font face="Arial Narrow" size="2">Version 
+                  widely modified by the loir&eacute; 45: it is now powered by 
+                  a Gnome &amp; Rhone 14Kfs of 850Hp driving a three-blade propeller 
+                  and especially its wing is modified and has a &quot;Seagull 
+                  Wing&quot; effect much more marked to clear the visibility of 
+                  the pilot. He made his first flight on September 1, 1934. Subsequently, 
+                  his two 20mm guns will be replaced by four 7.5mm machine guns 
+                  to less stress the structure of the wing.</font></td>
+              </tr>
+            </table>
+            </div>
+            <blockquote> 
+              <div align="left"><font face="Arial Narrow"><b></b></font></div>
+            </blockquote>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="90%" height="225">
+                <tr> 
+                  <td width="49%" height="271"> 
+                    <div align="left"><b><i><font size="2">1) _ &Eacute;ditions 
+                      Larivi&eacute;re :</font></i></b><font size="2"><br>
+                      <font color="#990000"><b>- <i>Fanatique de L'Aviation n&deg;&deg;27 
+                      et 28 : Les Chasseurs Loire 40/46</i></b></font></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/Fana-27.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img alt="" width="102" height="128" border="0" src="thumbnail/tn_Fana-27.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana-28.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img alt="" width="96" height="128" border="0" src="thumbnail/tn_Fana-28.JPG" /></a> 
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                  </td>
+                  <td width="49%" height="271"><i><font color="#000000"><b><font size="2">2 
+                    ) _ Editions LELA PRESSE :</font></b></font></i><font size="2"><i><font color="#990000"><br>
+                    <b>- </b></font><b><i><font color="#990000">Revue &quot;Avions&quot; 
+                    n&deg;09, 10 et 11 : Le Loire 46</font></i></b></i></font> 
+                    <p><a class="fancybox-effects-c" href="Photos/Avions%2009.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avions%2009.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avions%2010.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avions%2010.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avions%2011.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="92" height="128" border="0" src="thumbnail/tn_Avions%2011.JPG" /></a></p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              </font><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              </font></i></b></font><font color="#660000" face="Arial Narrow"> 
+              </font></i></b></font></p>
+            </div>
+            <div align="left"> </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/loire1.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="119" height="72" border="0" src="thumbnail/tn_loire1.jpg" /></a> 
+              <a class="fancybox-effects-c" href="Photos/loire2.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_loire2.jpg" alt="" width="113" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/836.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_836.jpg" alt="" width="146" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/loire43-11.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="68" height="72" border="0" src="thumbnail/tn_loire43-11.jpg" /></a> 
+			  <a class="fancybox-effects-c" href="Photos/Loire-46-vu-Tourelle-Inf-Amiot-143.jpg" data-fancybox-group="gallery-2" title="Loire 46 seen from the lower turret of an Amiot 143 - School of Bombing and Machine Gun CAZAUX - 1939"><img alt="" width="68" height="72" border="0" src="thumbnail/tn_Loire-46-vu-Tourelle-Inf-Amiot-143.jpg" /></a>
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+            3 views</font></b></i></font></div>
+            <p align="left"><a class="fancybox-effects-c" href="Photos/3.jpg" data-fancybox-group="gallery-3" title=""><img src="thumbnail/tn_3.jpg" alt="" width="94" height="128" border="0" /></a> 
+            </p>
+            <div align="left"> </div>
+          </blockquote>
+         
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="91"> 
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

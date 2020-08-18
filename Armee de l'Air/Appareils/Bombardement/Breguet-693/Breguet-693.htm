@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Breguet-693</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,Bombardement,Bombardier,assaut,Français,campagne de france,drôle de guerre, Breguet 690, Breguet 691, Breguet 693, breguet 695">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Breguet-693.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../../Chasse/Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Chasse</font></b></font></a></p>
+          <p align="left"><a href="../Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><i>Bombardement</i></font></b></font></a></p>
+          <div align="left"><a href="../Amiot-143/Amiot-143.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Amiot 143</font></font></b></font></a></div>
+          <div align="left"><a href="../Amiot-350/Amiot-350.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Amiot 354</font></font></b></font></a></div>
+          <div align="left"><a href="../Bloch-200/Bloch-200-8.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Bloch MB200</font></b></font></a></div>
+          <div align="left"><a href="../Bloch-210/Bloch-210.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB210</font></font></b></font></a></div>
+          <div align="left"><a href="Breguet-693.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3"><i><font color="#FFFFFF">- 
+            Breguet Br693</font></i></font></b></font></a></div>
+          <div align="left"><a href="../Douglas-DB7/Douglas-DB7.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Douglas DB7</font></b></font></a></div>
+          <div align="left"><a href="../Farman-F222/Farman-F222.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman F222</font></b></font></a></div>
+          <div align="left"><a href="../Farman-NC223/Farman-NC223.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman NC223</font></b></font></a></div>
+          <div align="left"><a href="../Gleen-Martin-167F/Gleen-Martin-167F.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Gleen Martin 167F</font></b></font></a></div>
+          <div align="left"><a href="../Loire-Olivier-Leo-451/LeO-451.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loir&eacute; &amp; Olivier L&eacute;o451</font></b></font></a></div>
+          <div align="left"><a href="../Potez-542/Potez-542.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 540</font></b></font></a></div>
+          <div align="left"><a href="../Potez-633/Potez633.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 633</font></b></font></a></div>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Chasseurs</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">BREGUET Br693</font></b></p>
+            <p><img src="Photos/BREGUET693-2.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Bombardier d'Assaut biplace 
+                      &agrave; ailes m&eacute;dianes et train rentrant </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">23 
+                      Mars 1938</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">15.36 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">9.41 </font> <font size="2" face="Arial Narrow"> 
+                      m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3.20 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">29.02 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 3006 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4892 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 400 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">480</font> <font size="2" face="Arial Narrow"> 
+                      km/h &agrave; 5000 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m en 8mn 30s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">9500 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1450 kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2</font> <font size="2" face="Arial Narrow"> 
+                      Personnes</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">2 Moteurs 
+                      Gn&ocirc;me Rh&ocirc;ne 14 M6/7 de 570ch chacun</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18%" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">2</font> <font size="2" face="Arial Narrow"> 
+                        mitrailleuses MAC 34 de 7.5mm fixes &agrave; l'avant</font> 
+                        <font size="2" face="Arial Narrow"><br>
+                        1 Canon Hispano Suiza de 20mm fixe dans le nez</font> 
+                        <font size="2" face="Arial Narrow"><br>
+                        2 MAC 34 de 7.5mm arri&egrave;re :mobile en dorsale et 
+                        fixe ventrale<br>
+                        8 x 50Kgs de bombes</font> </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td colspan="4" height="18%" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><a class="fancybox fancybox.iframe" href="Caracteristiques-2.htm"><img src="../../../../Images%20Base/Bouton%20caracteristiques.png" alt="" border="0" width="40%" /> 
+                      </a> </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                <p><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">216 
+                  Breguet de la s&eacute;rie Br690 ont été construits depuis la 
+                  date du premier vol le 23 Mars 1938. Ils se r&eacute;partissent 
+                  en :</font></b></font></font></p>
+                <ul>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">1 
+                    Breguet 690</font></font></b></font></li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">78 
+                    Breguet 691</font></font></b></font></li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">128 
+                    Breguet 693</font></font></b></font></li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">8 
+                    Breguet 695</font></font></b></font></li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">1 
+                    Breguet 697 / 700</font></font></b></font></li>
+                </ul>
+                
+              <p><font size="2" color="#990000"><b><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 216 appareils fabriqu&eacute;s ,122 sont recens&eacute;s 
+                dans la liste</font></b></b></font><font size="2"><b><font face="Arial Narrow"> 
+                ci-dessous :</font></b></font></p>
+              </div>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+              </p>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">En 1934, les services Techniques 
+                lancent un programme pour un chasseur triplace C3, destin&eacute; 
+                &agrave; l'interception, &agrave; l'escorte, ou la commande &agrave; 
+                la chasse. Breguet y r&eacute;pond avec son Br690, appareil triplace 
+                m&eacute;tallique &agrave; aile cantilever. Il est motoris&eacute; 
+                par deux Hispano-Suiza 14AB de 670cv au d&eacute;collage. Son 
+                armement se compose de deux canons de 20mm dans le nez et d'une 
+                mitrailleuse en d&eacute;fense arri&egrave;re. Les moteurs choisis 
+                &eacute;tant r&eacute;serv&eacute;s en priorit&eacute; au potez 
+                630 finalement retenu par le programme C3, ce n'est que le 23 
+                Mars 1938 qu'il fera son premier vol. Il se r&eacute;v&eacute;la 
+                d'embl&eacute;e plus performant que le Potez 630...</font></b></p>
+              <p><font size="2"><b><font face="Arial Narrow">Breguet pr&eacute;sente 
+                alors son appareil comme un bombardier d'assaut biplace (AB2) 
+                qui devient le Breguet 691 AB2. Il re&ccedil;oit donc une soute 
+                &agrave; bombes pour 400kg de charges en lieu et place du poste 
+                d'observateur. Son armement est modifi&eacute; et un des canons 
+                avant et remplac&eacute; par une mitrailleuse de 7.5mm alors qu'une 
+                mitrailleuse arri&egrave;re ventrale fixe est rajout&eacute;e. 
+                La motorisation reste celle du Br690, et le train d'atterrissage, 
+                point faible de l'appareil, est modifi&eacute;. Le premier avion 
+                de s&eacute;rie vole le 15 Mai 1939, et les livraisons en unit&eacute;s 
+                d&eacute;butent en Octobre au GBA I/54.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Tr&egrave;s vite, 
+                les moteurs Hispano se r&eacute;v&egrave;lent peu fiables et sont 
+                remplac&eacute;s par des Gn&ocirc;me Rh&ocirc;ne 14M 6/7 de 700 
+                cv au d&eacute;collage. Le Br691 N&deg; 19 devient ainsi le premier 
+                Br693 AB2 et fit son premier vol le 25 Octobre 1939. Cette nouvelle 
+                version rempla&ccedil;a le Br691 sur les chaines d'assemblage 
+                &agrave; partir du N&deg;79 qui vola le 22 Mars 1940. Seuls 78 
+                Br 691 ont donc &eacute;t&eacute; construits sur les 200 command&eacute;s. 
+                </font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le Breguet Br693 
+                se diff&eacute;rencie du Br691 par la disparition du car&egrave;nage 
+                de roulette de queue et par ses capots moteurs plus a&eacute;rodynamiques 
+                : les Gn&ocirc;me Rh&ocirc;ne, moins gros ont, en effet, permis 
+                de diminuer la taille des capots. Ceux-ci sont &eacute;quip&eacute;s 
+                de volets de refroidissement et de pare-Flammes. Au cours de la 
+                fabrication, apparait une 2eme Version sur laquelle les capots 
+                &eacute;voluent. Plus courts, ils perdent leurs pare-flammes et 
+                volets. L'&eacute;chappement est r&eacute;alis&eacute; via des 
+                pipes plates &agrave; effet propulsif, ce qui permet de gagner 
+                quelques kilom&egrave;tres heures.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Devant la p&eacute;nurie 
+                de moteurs, le minist&egrave;re de l'Air recherche des motoristes 
+                &eacute;trangers, notamment aux Etats-Unis. C'est ainsi que des 
+                Pratt &amp; Whitney SB4G TWIN WASP furent mont&eacute;s sur le 
+                Breguet 690 n&deg;01 qui devient le Breguet 695. Le montage de 
+                ces moteurs imposa quelques modifications. Les nouveaux moteurs 
+                plus l&eacute;gers, sont cependant plus encombrants. Les capots 
+                deviennent donc plus larges et p&eacute;nalisent un peu les performances 
+                et la vision lat&eacute;rale. Le Breguet 695 fit son premier vol 
+                le 3 Mars 1940.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Les premiers Breguet 
+                sont livr&eacute;s en unit&eacute;s d&egrave;s Octobre 1939, et 
+                au 1er Mars 1940, 119 Breguet 691 et 693 sont pr&eacute;sents 
+                dans les diff&eacute;rents GBA.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Bien que l'appareil 
+                soit bien n&eacute;, il n'en est pas moins perfectible. Le probl&egrave;me 
+                principal est la fragilit&eacute; du train. il est &agrave; l'origine 
+                de nombreux accidents et malgr&eacute; de nombreuses modifications, 
+                le probl&egrave;me ne sera jamais compl&egrave;tement &eacute;radiqu&eacute;. 
+                Sur le Breguet 691, ce sont les moteurs Hispano-Suiza, qui tr&egrave;s 
+                fragiles, n&eacute;cessitent trop de maintenance, ce qui entraina 
+                rapidement l'affectation des Breguet 691 &agrave; des r&ocirc;les 
+                d'entrainements. On peut d&eacute;plorer &eacute;galement, l'absence 
+                de blindage suffisant, probl&egrave;me r&eacute;current sur les 
+                avions Fran&ccedil;ais, mais qui prend l&agrave; une grande importance 
+                pour un avion qui devra affronter la redoutable Flak &agrave; 
+                chaque mission.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Les Breguets sont 
+                engag&eacute;s pour la 1ere fois le 12 Mai 1940 dans la r&eacute;gion 
+                de Maastricht. L'attaque fut meurtri&egrave;re avec 4 tu&eacute;s 
+                et onze prisonniers... Les &eacute;quipages Fran&ccedil;ais ont 
+                d&eacute;couvert la Flak et les limites de l'attaque en vol rasant. 
+                C'est toute une doctrine qui est remise en cause. Les appareils 
+                qui &eacute;chappent &agrave; la Flak sont assaillis par les BF109 
+                et les pertes seront nombreuses tout au long de la Campagne De 
+                France</font></b><font face="Arial Narrow"><b> : sur 211 Breguets 
+                livr&eacute;s, 119 ont &eacute;t&eacute; perdus dont 68 en combat.</b></font></font></p>
+              <p><font face="Arial Narrow" size="2"><b> Apr&egrave;s l'Armisitice, 
+                seuls deux GBA sur 5 sont conserv&eacute;s dans l'arm&eacute;e 
+                de L'Air de Vichy. En 1942, les Breguets saisis par les Allemands 
+                et les italiens seront ferraill&eacute;s et les moteurs seront 
+                r&eacute;cup&eacute;r&eacute;s pour &eacute;quiper les Henshel 
+                129.</b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="81" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font face="Arial Narrow" size="3"><b>Breguet 
+                        690</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/breguet%20690.jpg" data-fancybox-group="gallery-4" title="Breguet Br690"><img src="thumbnail/tn_breguet%20690.jpg" alt="" border="0" width="130" height="64" /></a></div>
+                    </td>
+                    <td width="87%" height="81" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                      <p><b><font size="2" face="Arial Narrow">Premier prototype 
+                        de la s&eacute;rie qui fit son premier vol le 23 Mars 
+                        1938. Il r&eacute;pond &agrave; un programme C3 (Chasseur 
+                        Triplace) C'est un appareil triplace Bimoteur enti&egrave;rement 
+                        m&eacute;tallique &agrave; ailes cantilever et &agrave; 
+                        train escamotable. Il poss&egrave;de un empennage bi-d&eacute;rive 
+                        Il est motoris&eacute; par 2 Hispano-Suiza 14AB de 680cv 
+                        et est arm&eacute; de 2 canons de 20mm dans le nez et 
+                        d'une mitrailleuse de 7.5mm vers l'arri&egrave;re.</font></b></p>
+                    </td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="55" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font face="Arial Narrow" size="3"><b>Breguet 
+                        691</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/profil-breguet691_1.jpg" data-fancybox-group="gallery-4" title="Breguet Br691"><img src="thumbnail/tn_profil-breguet691_1.jpg" alt="" border="0" width="130" height="36" /></a></div>
+                    </td>
+                    <td width="87%" height="55" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Version 
+                      biplace d&eacute;riv&eacute;e du Breguet 690 pr&eacute;sent&eacute; 
+                      comme un bombardier d'assaut biplace (AB2). Le poste du 
+                      troisi&eacute;me membre d'&eacute;quipage est remplac&eacute; 
+                      par une soute pouvant contenir 400kg de bombes. Son armement 
+                      est modif&eacute;. il se compose de 1 Canon de 20mm et 2 
+                      mitrailleuses de 7.5mm dans le nez, 1 mitrailleuse de 7.5mm 
+                      ventrale fixe et 1 mitrailleuse de 7.5mm arri&egrave;re 
+                      sur affut</font></b></td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="74" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font face="Arial Narrow" size="3"><b>Breguet 
+                        693 1ere version</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/breguet%201ere%20version.png" data-fancybox-group="gallery-4" title="Breguet Br693 1ere Version"><img src="thumbnail/tn_breguet%201ere%20version.png" alt="" border="0" width="130" height="75" /></a></div>
+                    </td>
+                    <td width="87%" height="74" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                      <p><b><font size="2" face="Arial Narrow">Les moteurs du 
+                        Br691 s'av&eacute;rant peu fiables, le Breguet 691 n&deg;79 
+                        est transform&eacute; en Breguet 693 avec l'adoption de 
+                        moteurs Gn&ocirc;me Rh&ocirc;ne 14M-6/7. Il fait son 1er 
+                        vol le 2 Mars 1940. Les capots ont une forme plus a&eacute;rodynamique 
+                        avec des volets de refroidissement et &eacute;quip&eacute;s 
+                        de 5 doubles pare-flammes et quatres simples.</font></b></p>
+                    </td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="59" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font face="Arial Narrow" size="3"><b>Breguet 
+                        693 2ieme version</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/profil-Breguet693.jpg" data-fancybox-group="gallery-4" title="Breguet Br693 2eme Version"><img src="thumbnail/tn_profil-Breguet693.jpg" alt="" border="0" width="130" height="52" /></a></div>
+                    </td>
+                    <td width="87%" height="59" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Sur 
+                      cette version, les capots moteurs sont refaits. Plus courts, 
+                      ils ne poss&egrave;dent plus de volets de refroidissement. 
+                      Ils sont &eacute;quip&eacute;s de pipes d'&eacute;chappement 
+                      plates &agrave; effets propulsifs qui doivent permettre 
+                      de gagner quelques km/h</font></b></td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="55" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font face="Arial Narrow" size="3"><b>Breguet 
+                        695</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/profil-breguet690-1.jpg" data-fancybox-group="gallery-4" title="Breguet Br695"><img src="thumbnail/tn_profil-breguet690-1.jpg" alt="" border="0" width="130" height="36" /></a></div>
+                    </td>
+                    <td width="87%" height="55" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Cette 
+                      version est &eacute;quip&eacute;e de moteurs am&eacute;ricains 
+                      Pratt &amp; Whitney SB 4G. Ceux-ci, plus l&eacute;gers, 
+                      sont n&eacute;ammoins plus imposants et les capots moteurs 
+                      sont plus larges. ceci annule un peu les gains escompt&eacute;s 
+                      par la puissance suppl&eacute;mentaire.</font></b></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <div> 
+                      <div><b><i><font size="2" face="Arial Narrow">1 ) _ Editions 
+                        Larivi&egrave;re</font></i></b></div>
+                      <div><font face="Arial Narrow" size="2"><b><i><font color="#990000">Le 
+                        Fana de l'Aviation </font></i></b><font color="#990000"><i><b> 
+                        N&deg; 193 - 194 - 195</b></i></font></font></div>
+                    </div>
+                    <p><a class="fancybox-effects-c" href="Photos/fana%20n193.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_fana%20n193.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/fana%20n194.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_fana%20n194.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/fana%20195.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_fana%20195.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                  <td> 
+                    <div><b><i><font size="2" face="Arial Narrow">2 ) _ Editions 
+                      Lela Presse :<font color="#000000"> </font></font></i></b></div>
+                    <div> 
+                      <div><font size="2" color="#000000" face="Arial Narrow"><i><b><font color="#990000">Magazine 
+                        &quot;Avions&quot;</font></b></i></font><font size="2" color="#990000" face="Arial Narrow"><i><b> 
+                        N&deg; 67</b></i></font></div>
+                      <p>&nbsp; <a class="fancybox-effects-c" href="Photos/Avions%20n67.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions%20n67.jpg" alt="" width="91" height="128" border="0" /></a> 
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000" face="Arial Narrow">3</font><font size="2" color="#000000" face="Arial Narrow">) 
+                      _ Editions LELA PRESSE ; Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b><font size="2" face="Arial Narrow"><i><font color="#990000"><b><br>
+                      - N&deg;1 :BREGUET 690_691_693_695_700</b></font></i></font></font></i></font></i></font></p>
+                    <p>&nbsp; <a class="fancybox-effects-c" href="Photos/ailes%20d%20egloire.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_ailes%20d%20egloire.jpg" alt="" width="92" height="128" border="0" /></a> 
+                    </p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font color="#000000" face="Arial Narrow" size="2">4) 
+                      _ revue &quot;ICARE&quot; </font></i></b><font size="2" face="Arial Narrow"><i><font color="#990000"><b><br>
+                      - N&deg;80 - 87 - 94</b></font></i></font></font></i></font></p>
+                    <p>&nbsp; <a class="fancybox-effects-c" href="Photos/icare%2080.jpg" data-fancybox-group="gallery-1" title="Revue ICARE"><img src="thumbnail/tn_icare%2080.jpg" alt="" width="98" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/icare%2087.jpg" data-fancybox-group="gallery-1" title="Revue ICARE"><img src="thumbnail/tn_icare%2087.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/icare%2094.jpg" data-fancybox-group="gallery-1" title="Revue ICARE"><img src="thumbnail/tn_icare%2094.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/brguet69001se8.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_brguet69001se8.jpg" alt="" width="168" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/BREGUET693-4.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_BREGUET693-4.jpg" alt="" width="96" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/panelarriere.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_panelarriere.jpg" alt="" width="66" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/panelphoto.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_panelphoto.jpg" alt="" width="56" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/br693_3v.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_br693_3v.jpg" alt="" width="113" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

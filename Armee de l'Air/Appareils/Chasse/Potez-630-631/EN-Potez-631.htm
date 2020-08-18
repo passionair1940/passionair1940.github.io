@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Potez-630-631</title>
+<meta name="keywords" content="French Air Force 1939 - 1940, pilots, aircraft, squadrons, Fighter Aviation, bombing, prototypes bombers, prototypes fighters, transport and links, trainer aircrafts, reconnaissance, Casualtys, Victories, RAF, Luftwaffe, Regia Aéronautica, Enigmas, campaign of France, funny war,Potez 631,Poter 630"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="Potez-631.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Fighter 
+            Aircraft </font></a></font></b> </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Fighter 
+            Aircraft </font></b></font></a></p>
+          <div align="left"><a href="../Arsenal-VG33/EN-Arsenal-VG33.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Arsenal VG33</font></b></font></a></div>
+          <div align="left"><a href="../Bleriot-Spad-510/EN-Bleriot-Spad-510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bl&eacute;riot Spad 510</font></font></b></font></a></div>
+          <div align="left"><a href="../Bloch-MB152/EN-Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          <div align="left"><a href="../Caudron-CR714/EN-Caudron-Cr714.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Caudron CR 714</font></font></b></font></a></div>
+          <div align="left"><a href="../Curtiss-H75/EN-Curtiss-H75.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Curtiss H75</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/EN-Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D371</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/EN-Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D510</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/EN-Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="../Koolhoven-FK58/EN-Koolhoven-FK58.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Koolhoven FK58</font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/EN-Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/EN-Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></font></b></font></a></div>
+          <div align="left"><a href="EN-Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i><font color="#FFFFFF">- 
+            Potez 630 / 631</font></i></font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombers 
+            </b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+            aircraft </b></font></a></p>
+          <p align="left"><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; links</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/EN-Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Fighters</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Bombers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">POTEZ 630-631</font></b></p>
+            <p><img src="Photos/image011.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+              Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2">Three-seat Fighter&nbsp; 
+                      with low wings<font face="Arial Narrow"> and retractable 
+                      landing gear</font></font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">April 
+                      25, 1936</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="217" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">16.00 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">11.09 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="217" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3.62 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">32.70 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="217" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 2450 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4500 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="217" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 360 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">443 km/h &agrave; 4500m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="217" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m en 6mn 12s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">9000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="28" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="217" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1220 kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="28" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3</font> <font size="2" face="Arial Narrow"> 
+                      Men</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">2 Radial 
+                      Engine Gn&ocirc;me &amp; Rh&ocirc;ne 14 M4/5 14 cylinder 
+                      air cooling of 670hp each on take-off</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">1 machine-gun MAC 
+                        34 of 7.5mm In the back post (some aircraft were equipped 
+                        with double machine-guns)<br>
+                        2 cannons Hispano Suiza HS 9 or HS 404 of 20mm under the 
+                        fuselage</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">302 
+                three-seat fighter Potez of the serial 630 </font><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2"> 
+                have been built since the date of the first flight on</font></font></font><font face="Arial Narrow"> 
+                </font><font face="Arial Narrow" size="2"> April 25, 1936. </font></b></font></font><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">They 
+                are divided into :</font></font></font></b></p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b><font color="#990000"> 
+                  <font color="#000000">87 Potez 630</font></font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">215 
+                  Potez 631</font></b></font></li>
+              </ul>
+              
+            <p><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">To 
+              date, out of the</font></b></font></b></font><font face="Arial Narrow" color="#000000"> 
+              302 </font><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">aircrafts 
+              manufactured</font></b></font></b></font></b></font><font face="Arial Narrow" color="#000000">,94 
+              </font><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">are 
+              listed in the list below :</font></b></font></b></font></b></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">The Potez 630 is the result 
+                of a program of 1934 to equip the Air Force with a "Multiplan 
+                Light" aircraft capable of fulfilling missions of Hunting Command, 
+                Two-seater of escort and Two-seater fighter of Night. The Potez 
+                630 competes with the Breguet 690, Romano 110, Loire-Nieuport 
+                20, Hanriot 220. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">The Potez 630's study deadlines 
+                are rather short: the first prototype was manufactured in April 
+                1935 and was completed in early 1936 with a first flight on April 
+                25, 1936, to the hands of the Nicolle test pilots. The prototype 
+                is powered by two Hispano-Suiza 14Hbs of 580ch. The aircraft is 
+                well-born, and shows good flying qualities. Beginning August 1936, 
+                it was transferred to Villacoublay to undergo some modifications. 
+                The wooden bi-rudder is replaced by a metallic model, and it receives 
+                a new landing gear. The manufacturer's tests end at the end of 
+                November 1936, and the CEMA (Aircraft Testing Center) will accept 
+                the aircraft at the end of December. The official test campaign 
+                can begin. The original engine is replaced by Hispano-Suiza 14ab 
+                02/03, then by HS14 Ab 10/11. After acceptance of the aircraft 
+                by the Air Force, the first Potez 630 aircraft took the Air in 
+                February 1938 and the first aircraft were delivered in units in 
+                May 1938 (GCN III / 1 and GC II / 4) Where they will be used as 
+                Fighter Controls, replacing advantageously the old Bloch MB200. 
+                </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">However, as a result of 
+                recurring engine problems, the Potez 630s were removed from the 
+                first lines as early as September 1939, and were then used as 
+                training apparatus. They will be replaced gradually by the Potez 
+                631, derived version equipped with engines Gnome Rhone GR 14 Mars 
+                which had made its first flights in February 1937. The only visible 
+                difference between the two models is the air intake located on 
+                the top of the hood on the Potez 630, and below Potez 631. These 
+                are delivered in units as of August 1938.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> To note an interest of 
+                the foreign countries for this aircraft, since Switzerland and 
+                Yugoslavia each purchase two Potez 630s, while Potez 631 will 
+                interest Yugoslavia and China, respectively, with 1 and 4 aircraft 
+                ordered.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> The Potez 631 will essentially 
+                equip the Night Fighter Squadron (ECN) and the ECMJ16 (Day Crew 
+                Squadron), and the Air Force will yield some used Potez 631 to 
+                Naval Aviation to equip its squadrons AC1 and AC2. In order to 
+                reinforce its firepower, it was decided in March 1940 to equip 
+                the Potez 631 with four additional 7.5mm machine guns under the 
+                wings: but it was only in May that the first units were changed 
+                into units. .. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">At the beginning of the 
+                conflict, 117 Potez 631 were in units. Apart from the missions 
+                of fighting, some units equipped with Potez 631 were used to attack 
+                the German armored columns, without great success and at the cost 
+                of big losses. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">During the campaigns of 
+                the Campaign of France, the Potez 631 will be victim of its resemblance 
+                to the Messerschmitt BF110. This led to tragic mistakes by the 
+                DCA or the French Fighter. A Potez 631 will even be forced to 
+                shoot down a D520, which despite the efforts of the pilot of Potez 
+                to show his cockades, will make several attacks on the twin-engine. 
+                </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">The Potez 631 will finish 
+                the campaign of France with a modest palmares of 17 Victories. 
+                </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">At the Armistice, most 
+                of the Night Fighter Squadrons were dissolved (except the ECN 
+                I / 13 and 4/13) and the few Potez 630 and 631 (6 and 64) survivors 
+                during the dissolution of the Vichy Aviation In November 1942 
+                will be sent to Romania, allied to Germany, to become training 
+                aircraft or target tugs. Germany and Italy will also use some 
+                aircraft captured as school aircraft. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">The Potez 631 will have 
+                been penalized throughout its career by its sub-motorization, 
+                which will prevent it from effectively fulfilling the missions 
+                for which it was planned. </font></b></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="16%" height="62" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Potez 630</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Profil%20Potez-630.jpg" data-fancybox-group="gallery-4" title="Potez 630"><img src="thumbnails/tn_Potez-630.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="62" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">First 
+                    version of the Potez 63 responding to the program of 1934. 
+                    It is equipped with engine Hispano-Suiza 14 Ab 10/11 of 640ch. 
+                    These unreliable engines will lead to the removal of the aircraft 
+                    in the first line. Recognizable from Potez 631 by its air 
+                    intake on the top of the Engine hood.</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="16%" height="70" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Potez 631</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Profil_Potez-631.jpg" data-fancybox-group="gallery-4" title="Potez 631"><img src="thumbnails/tn_profil%20potez%20631.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="70" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <p><b><font size="2" face="Arial Narrow">Second version of 
+                      the Potez 63 equipped with engine Gnome Rhône 14 M4 / M5 
+                      25 of 700hp. Recognizable from the Potez 630 by its air 
+                      intake on the underside of the Engine hood.</font></b></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <div align="left"><font size="3"><i><font size="3"><i><b><i><font size="2">1 
+                      ) _ Editions LELA PRESSE ; Collection &quot;Histoire de 
+                      l'aviation&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - &quot;Les avions Potez&quot; par J.L. Coroller &amp; M. 
+                      Lodet</b></font></i></font></i></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/Les%20Ailes%20de%20Gloire.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnails/tn_Les%20Ailes%20de%20Gloire.jpg" alt="" width="92" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">2) 
+                      _ Editions LELA PRESSE ; Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;9 :Potez 63</b></font></i></font></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/LeLa_presse_49.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnails/tn_LeLa_presse_49.jpg" alt="" width="94" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              </font><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              </font></i></b></font><font color="#660000" face="Arial Narrow"> 
+              </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/Gpotez63-2.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Gpotez63-2.jpg" alt="" width="155" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" data-fancybox-group="gallery-2" title="Potez 631"><img src="thumbnails/tn_Potez%20631_110%20SS%20LT%20BOURSAIN.jpg" alt="" width="161" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Potez-630_46%20du%20GC%20III-1%20future%201ere%20esc%20GCN%201-13.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Potez-630_46%20du%20GC%20III-1%20future%201ere%20esc%20GCN%201-13.jpg" alt="" width="163" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Potez%20631%20de%20la%20FIC%20avec%20bande%20armistice.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_Potez%20631%20de%20la%20FIC%20avec%20bande%20armistice.jpg" alt="" width="153" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+                3 views</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/P3V_Potez-631.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnails/tn_P3V_Potez-631.jpg" alt="" width="110" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

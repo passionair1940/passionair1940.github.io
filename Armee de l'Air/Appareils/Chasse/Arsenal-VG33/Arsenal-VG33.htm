@@ -1,0 +1,854 @@
+ 
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Arsenal-VG33</title>
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,chasse,chasseur,français,campagne de france,drôle de guerre,Arsenal VG33"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Arsenal-VG33.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">   
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          <div align="left"><a href="Arsenal-VG33.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- 
+            Arsenal VG33</i></font></b></font></a></div>
+          <div align="left"><a href="../Bleriot-Spad-510/Bleriot-Spad-510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Bl&eacute;riot Spad 510</font></b></font></a></div>
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Bloch MB 152</font></b></font></a></div>
+          <div align="left"><a href="../Caudron-CR714/Caudron-Cr714.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Caudron CR 714</font></b></font></a></div>
+          <div align="left"><a href="../Curtiss-H75/Curtiss-H75.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Curtiss H75</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D371</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D510</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="../Koolhoven-FK58/Koolhoven-FK58.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Koolhoven FK58</font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Chasseurs</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">ARSENAL VG33</font></b></p>
+            <p><img src="Photos/Gvg33.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace 
+                      &agrave; aile basse </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">6 Octobre1938</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="22" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="22" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10.80 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="22" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="22" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8.55 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3.35 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">13.80 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 2050 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2896 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="21" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="21" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="21" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="21" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">558 km/h &agrave; 5200m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">5000 m en 6mn 26s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10900 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1200 kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" bordercolor="#000000" background="../../../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Hispano Suiza 12Y31 &agrave; 12cyl en Vrefroidi par liquide 
+                      de 860ch &agrave; 3850m</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="41" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="41" bordercolor="#000000" background="../../../../Images%20Base/shiny-metal-picture-wallpaper.jpg" valign="middle"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">4 mitrailleuses 
+                        MAC 34 M39 de 7.5mm dans les ailes ave 500 coups chacune<br>
+                        1 canons Hispano Suiza HS-404 de 20mm avec 60 coups dans 
+                        l'axe de l'h&eacute;lice</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">13 
+                Arsenal VG30 ont été construits depuis la date du premier vol 
+                le 6 Otobre 1938. Ils se r&eacute;partissent en :</font></font></font></b></p>
+              <ul>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000"> 
+                  10 Arsenal VG33</font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000"> 
+                  1 Arsenal VG34</font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000"> 
+                  1 Arsenal VG36</font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000"> 
+                  1 Arsenal VG39</font></b> </font></li>
+              </ul>
+              <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 10 Arsenal VG-33 fabriqu&eacute;s, 10 sont recens&eacute;s 
+                dans la liste ci-dessous : </font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p align="left"><font face="Arial Narrow" size="3"><b><font size="2">L'Arsenal 
+                VG-33 est issu d'un programme de 1937 destin&eacute; &agrave; 
+                remplacer le Morane MS406, pourtant r&eacute;cemment mis en service. 
+                Ces concurrents sont le Morane 450, le Dewoitine D520 et le CAO 
+                200 L'Arsenal VG-33 &eacute;tudi&eacute; par deux ing&eacute;nieurs 
+                Michel Vernisse et Jean Galtier (d'o&ugrave; les initiales &quot;VG&quot;), 
+                est fabriqu&eacute; &agrave; partir de mat&eacute;riaux non strat&eacute;giques, 
+                du contreplaqu&eacute; entoil&eacute;, verni et peint. Il re&ccedil;ut 
+                dans un premier temps un moteur Hispano-Suiza 12 Xcrs de 690 Cv, 
+                sous la d&eacute;signation VG-30. Le premier vol eu lieu le 6 
+                Octobre 1938. La crise de Munich d&eacute;clencha une commande 
+                200 exemplaires, pour une s&eacute;rie en configuration plus puissante, 
+                le VG-30 ayant &eacute;t&eacute; jug&eacute; peu performant, bien 
+                qu'aussi rapide que le Morane MS406 déja en service...</font></b></font></p>
+              <p align="left"><font size="2"><b><font face="Arial Narrow">Le VG-31 
+                et le VG-32, premi&egrave;res &eacute;volutions de l'Arsenal VG-30 
+                ne furent jamais achev&eacute;s (voir chapitre Versions). Le VG-33 
+                connut en revanche, une fabrication en s&eacute;rie avec une commande 
+                de 820 appareils. Il fit son premier vol au printemps 1939 et 
+                entame ses essais &agrave; partir du mois d'Ao&ucirc;t. Ceux-ci 
+                se r&eacute;v&eacute;l&egrave;rent prometteurs puisque l'appareil 
+                se montra plus rapide que son concurrent Dewoitine D520 pourtant 
+                plus puissant.</font></b></font></p>
+              <p align="left"><font size="2"><b><font face="Arial Narrow">Il est 
+                difficile de d&eacute;terminer la production exacte des Arsenal 
+                VG-33, mais 7 avions de s&eacute;rie d&eacute;clar&eacute;s &quot;bons 
+                de Guerre&quot; ont &eacute;t&eacute; per&ccedil;us par l'EAA 
+                301 (Entrep&ocirc;t de l'Arm&eacute;e de l'Air) entre Juin et 
+                Juillet 1940. Ces machines, stock&eacute;es &agrave; Villacoublay, 
+                &eacute;taient pr&eacute;vues pour &eacute;quiper le GC I/2 mais 
+                les &eacute;v&ecirc;nements en ont d&eacute;cid&eacute; autrement.. 
+                C'est finalement la Patrouille d'Etampes qui sera charg&eacute;e 
+                d'&eacute;vacuer les avions sur Bordeaux. Deux machines (n&deg; 
+                1 et 7) furent utilis&eacute;es par le GC I/55.</font></b></font></p>
+              <p align="left"><font size="2"><b><font face="Arial Narrow">Environ 
+                160 cellules d'Arsenal VG-33 ont &eacute;t&eacute; surprises par 
+                l'Armisitice sur les chaines d'assemblage, dont 40 quasiment achev&eacute;es.</font></b></font></p>
+              <p align="left"><font size="2"><b><font face="Arial Narrow">Les 
+                allemands ont r&eacute;cup&eacute;r&eacute;s 5 VG-33 de s&eacute;rie, 
+                plus le VG-33 n&deg;01 apr&egrave;s l'Armistice.</font></b></font></p>
+              <p align="left"><font size="2"><b><font face="Arial Narrow">Il est 
+                difficile de dire comment se serait comport&eacute; cet appareil 
+                au combat. Grace &agrave; son a&eacute;rodynamique soign&eacute;e, 
+                il &eacute;tait certes plus rapide que le Dewoitine D520, et ce 
+                avec un moteur moins puissant, mais sa cellule en bois le rendait 
+                sans doute plus fragile. Il aurait p&ucirc;, malgr&eacute; tout, 
+                &ecirc;tre un adversaire s&eacute;rieux pour le Messerschmitt 
+                109, et son &eacute;l&eacute;gante silouette est maintenant entour&eacute;e 
+                d'une l&eacute;gende qui laisse bien des regrets.</font></b></font></p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF">
+                <tr bordercolor="#000000"> 
+                  <td height="62" background="../../../../Images Base/metal-texture-151340.jpg" width="14%"> 
+                    <div align="center"><font size="3" face="Arial Narrow"><b>VG 
+                      31 </b></font></div>
+                  </td>
+                  <td width="86%" height="62" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">Premi&egrave;re 
+                    &eacute;volution de l'Arsenal VG-30, il devait recevoir un 
+                    moteur Hispano-Suiza 12y-31 et &eacute;tait &eacute;quip&eacute; 
+                    d'une aile &agrave; la surface alaire r&eacute;duite, afin 
+                    de r&eacute;soudre un probl&egrave;me de centrage. Des essais 
+                    en soufflerie mettent en &eacute;vidence une instabilit&eacute;, 
+                    et il ne fut jamais achev&eacute;. Son fuselage est finalement 
+                    associ&eacute; aux ailes du prototype VG-33 n&deg;02 pour 
+                    donner le VG-33 n&deg;3 de s&eacute;rie.</font></b></td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td height="106" background="../../../../Images Base/metal-texture-151340.jpg" width="14%"> 
+                    <div align="center"><font size="3" face="Arial Narrow"><b>VG 
+                      32</b></font></div>
+                    <a class="fancybox-effects-c" href="Photos/image092.jpg" data-fancybox-group="gallery-4" title="Arsenal VG32"><img src="thumbnails/tn_image092.jpg" alt="" border="0" width="100%" /></a></td>
+                  <td width="86%" height="106" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">Il 
+                    &eacute;tait pr&eacute;vu que le VG32 soit motoris&eacute; 
+                    par un moteur Allison V-1710-C15 de 1400 chevaux, et une h&eacute;lice 
+                    Curtiss &agrave; pas variable. Ce moteur n&eacute;c&eacute;ssitait 
+                    un allongement du nez de 42 cm Il &eacute;tait arm&eacute; 
+                    de 2 canons de 20mm et de 2 mitrailleuses de 7.5mm. Le prototype 
+                    n'a pas &eacute;t&eacute; achev&eacute;, en raison notamment 
+                    des retards de livraison de son moteur am&eacute;ricain. Une 
+                    s&eacute;rie de 400 appareils &eacute;tait pr&eacute;vue.</font></b></td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td height="92" background="../../../../Images Base/metal-texture-151340.jpg" width="14%"> 
+                    <div align="center"><font size="3" face="Arial Narrow"><b>VG 
+                      34</b></font></div>
+                    <a class="fancybox-effects-c" href="Photos/image093.jpg" data-fancybox-group="gallery-4" title="Arsenal VG34"><img src="thumbnails/tn_image093.jpg" alt="" border="0" width="100%" /></a></td>
+                  <td width="86%" height="92" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"> 
+                    <p><b><font face="Arial Narrow" size="2">L'Arsenal VG-34 devait 
+                      recevoir un moteur Hispano-Suiza 12Y45 de 910 chevaux.Il 
+                      est assembl&eacute; &agrave; partir du fuselage du VG-33 
+                      n&deg; 02 jamais termin&eacute;. Il atteint 576 km/h lors 
+                      des essais au printemps 1940. Un seul prototype a &eacute;t&eacute; 
+                      construit</font></b></p>
+                  </td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td height="80" background="../../../../Images Base/metal-texture-151340.jpg" width="14%"> 
+                    <div align="center"><font size="3" face="Arial Narrow"><b>VG 
+                      36</b></font></div>
+                    <a class="fancybox-effects-c" href="Photos/vg36-01.jpg" data-fancybox-group="gallery-4" title="Arsenal VG36"><img src="thumbnails/tn_vg36-01.jpg" alt="" border="0" width="100%" /></a></td>
+                  <td width="86%" height="80" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">L'Arsenal 
+                    VG-36 est facilement reconnaissable de profil : sa prise d'air 
+                    sous le fuselage est plus int&eacute;gr&eacute;e, et donc 
+                    plus a&eacute;rodynamique. Equip&eacute; du moteur Hispano-suiza 
+                    12Y51 de 1100 chevaux, il devait remplacer les Arsenal VG-33 
+                    sur les lignes de fabrication. Un seul exemplaire a &eacute;t&eacute; 
+                    construit.</font></b></td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td height="56" background="../../../../Images Base/metal-texture-151340.jpg" width="14%"> 
+                    <div align="center"><font size="3" face="Arial Narrow"><b>VG 
+                      39</b></font></div>
+                    <a class="fancybox-effects-c" href="Photos/VG39.jpg" data-fancybox-group="gallery-4" title="Arsenal VG39"><img src="thumbnails/tn_VG39.jpg" alt="" border="0" width="100%" /></a></td>
+                  <td width="86%" height="56" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">L'Arsenal 
+                    VG-39 est motoris&eacute; par un moteur Hispano-Suiza 89ter 
+                    de 1280 chevaux. Il &eacute;tait arm&eacute; de 6 mitrailleuses 
+                    de 7.5mm. Lors des essais, le seul prototype construit atteint 
+                    624 km/h . Il devait &ecirc;tre suivi par une fabrication 
+                    en s&eacute;rie, mais &eacute;quip&eacute; cette fois d'un 
+                    Hispano-suiza 12Z de 1200 chevaux.</font></b></td>
+                </tr>
+              </table>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="92%">
+                <tr> 
+                  <td width="61%"> 
+                    <p align="left"><b><i><font size="2">1 ) _ Editions LELA PRESSE 
+                      ; Hors S&eacute;rie Avions n&deg;7</font></i></b><font size="2"><i><font color="#990000"><b> 
+                      <br>
+                      - La Chasse Fran&ccedil;aise inconnue Mai-Juin 1940</b></font></i></font> 
+                    </p>
+                    <a class="fancybox-effects-c" href="Photos/Hors-serie-7.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse_Hors-Série AVIONS n°7 : "La Chasse inconnue""><img src="thumbnails/tn_Hors-serie-7.jpg" alt="" width="91" height="128" border="0" /></a> 
+                    <p align="left">&nbsp; </p>
+                  </td>
+                  <td width="39%"> 
+                    <p align="left"><font size="3"><b><i><font color="#000000" size="2">2) 
+                      _A&eacute;ro Editions -</font></i></b></font><font size="2"><br>
+                      <font color="#660000"><i><b><font color="#990000">- AERO 
+                      JOURNAL N&deg;15&quot;ARSENAL VG.33&quot;</font></b></i></font></font></p>
+                    <a class="fancybox-effects-c" href="Photos/aj15-grande.jpg" data-fancybox-group="gallery-1" title="Aéro Editions_AERO JOURNAL N°15 "ARSENAL VG33""><img src="thumbnails/tn_aj15-grande.jpg" alt="" width="90" height="128" border="0" /></a> 
+                    <p align="left">&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="61%"> 
+                    <p><font size="3"><i><font color="#000000"><b><font size="2">3) 
+                      Editions &quot;Larivi&egrave;re&quot;: Fanatique de l'Aviation</font></b><font size="2"> 
+                      : </font></font><font color="#990000" size="2"><br>
+                      <b>- Les N&deg;197; 198; 199 et 200</b></font><font color="#990000"><b> 
+                      </b></font></i></font></p>
+                    <a class="fancybox-effects-c" href="Photos/Fana-197.jpg" data-fancybox-group="gallery-1" title="Editions Larivière : Fanatique de l'Aviation N°197"><img src="thumbnails/tn_Fana-197.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Fanan-198.jpg" data-fancybox-group="gallery-1" title="Editions Larivière : Fanatique de l'Aviation N°198"><img src="thumbnails/tn_Fanan-198.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Fana-199.jpg" data-fancybox-group="gallery-1" title="Editions Larivière : Fanatique de l'Aviation N°199"><img src="thumbnails/tn_Fana-199.jpg" alt="" width="90" height="128" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Fana-200.jpg" data-fancybox-group="gallery-1" title="Editions Larivière : Fanatique de l'Aviation N°200"><img src="thumbnails/tn_Fana-200.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    <p>&nbsp; </p>
+                  </td>
+                  <td width="39%"> 
+                    <p><font size="3"><i><font color="#000000"><b>4) Editions 
+                      &quot;Larivi&egrave;re&quot;: Docavia n&deg;2:</b></font><font color="#990000"><br>
+                      <b>- L'Aviation de Chasse 1918-1940</b></font></i></font></p>
+                    <a class="fancybox-effects-c" href="Photos/Docavia-01.jpg" data-fancybox-group="gallery-1" title="Editions Larivière_Docavia n°2 : "L'Aviaition de Chasse 1918-1940""><img src="thumbnails/tn_Docavia-01.jpg" alt="" width="90" height="128" border="0" /></a> 
+                    <p align="left">&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="61%"> 
+                    <p align="left"><b><i><font size="2" color="#000000">5) _ 
+                      &Eacute;ditions D.T.U</font></i></b><font size="2"><br>
+                      <font color="#990000"><i><b>- REPLIC N&deg;84 de Aout 1998</b></i></font></font></p>
+                    <a class="fancybox-effects-c" href="Photos/replic-84.jpg" data-fancybox-group="gallery-1" title="Editions D.T.U : REPLIC N°84 aout 1998"><img src="thumbnails/tn_replic-84.jpg" alt="" width="92" height="128" border="0" /></a> 
+                  </td>
+                  <td width="39%"> 
+                    <p align="left">&nbsp;</p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/vg33juin.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_vg33juin.jpg" alt="" width="117" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/arsenal-vg33.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_arsenal-vg33.jpg" alt="" width="122" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/vg36-01.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_vg36-01.jpg" alt="" width="162" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image090.JPG" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_image090.JPG" alt="" width="105" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/vg-33_3d_120.jpg" data-fancybox-group="gallery-3" title=""><img src="thumbnails/tn_vg-33_3d_120.jpg" alt="" width="88" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

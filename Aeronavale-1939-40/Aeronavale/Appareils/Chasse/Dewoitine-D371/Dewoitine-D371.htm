@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Dewoitine-D371</title>
+<meta name="keywords" content="Aéronautique Navale Française 1939-1940,chasse,chasseur,français,campagne de france,drôle de guerre,Dewoitine D371"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Dewoitine-D371.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          
+          <div align="left"><a href="Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- 
+            Dewoitine D371</i></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D510</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">DEWOITINE D371</font></b></p>
+            <p><img src="Photos/d371-6.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace</font> 
+                      <font size="2">&agrave; aile haute </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Mars 
+                      1934</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">11.70m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">7.225 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="26" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="26" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">3,20m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="26" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="26" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">18.30m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="28" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="28" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 1300 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="28" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="28" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1860 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="26" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="26" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="26" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="26" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">402 km/h &agrave; 5000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">5000m en 5mn 40s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">900kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Gn&ocirc;me Rh&ocirc;ne 14 cyl en &eacute;toile GR14Kfs 
+                      de 880ch &agrave; 3825m</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="35" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="35" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">4 mitrailleuses 
+                        MAC 34 de 7.5mm dans les ailes avec 300 cps</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">89 
+                Dewoitine de la s&eacute;rie D37 ont &eacute;t&eacute; fabriqu&eacute;s 
+                depuis le vol du prototype du D37, le 1er Octobre 1931. Ils se 
+                r&eacute;partissent en :</font></font></font></b></p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><font color="#990000"><font color="#000000"><b>1 
+                  Dewoitine D37</b></font></font></font> </li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000"> 
+                  29 Dewoitine D371</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000"> 
+                  14 Dewoitine D372</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000"> 
+                  20 Dewoitine D373</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000"> 
+                  25 Dewoitine D376</font></b></font></li>
+              </ul>
+              
+            <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+              ce jour , sur les 89 D371 et d&eacute;riv&eacute;s fabriqu&eacute;s 
+              , 49 sont recens&eacute;s dans la liste ci-dessous :</font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="2" face="Arial Narrow">Le Dewoitine D371 est le 
+                dernier des chasseurs monoplans parasols d&eacute;velopp&eacute;s 
+                par la soci&eacute;t&eacute; Dewoitine, et les &eacute;tudes aboutissent 
+                a un appareil au dessin plut&ocirc;t &eacute;quilibr&eacute; et 
+                &eacute;l&eacute;gant. Le premier prototype de la s&eacute;rie, 
+                le Dewoitine D37, effectue son premier vol 1er ao&ucirc;t 1931, 
+                moins d'un an avant le premier vol du <font color="#000000"> Dewoitine 
+                D500</font> &agrave; ailes basses (8 juin 1932) Le D37 est &eacute;quip&eacute; 
+                d&#146;un moteur Gnome-Rh&ocirc;ne de 700 chevaux. Les essais 
+                sont concluants, et une version am&eacute;lior&eacute;e, le Dewoitine 
+                D371 est lanc&eacute;e. Il re&ccedil;oit un moteur plus puissant, 
+                le Gn&ocirc;me Rh&ocirc;ne 14 cyl en &eacute;toile GR14Kfs de 
+                880ch et fait son premier vol vers Mars1934. Il atteint 400km/h 
+                et est arm&eacute; de 4 mitrailleuses de 7.5mm dans les ailes. 
+                </font></b> </p>
+              <p><font size="2" face="Arial Narrow"><b>Une commande de 28 appareils 
+                est pass&eacute;e par le minist&egrave;re de l'air en Avril 1935. 
+                Le dernier Dewoitine D371 de cette commande est termin&eacute; 
+                en d&eacute;cembre 1935, mais le prototype est accident&eacute; 
+                suite &agrave; une faiblesse structurelle d&eacute;tect&eacute;e 
+                dans la conception de l'aile : toute la s&eacute;rie est renvoy&eacute;e 
+                en usine pour y &ecirc;tre modifi&eacute;e et renforc&eacute;e. 
+                Ils sont mis &agrave; disposition au d&eacute;but de l'ann&eacute;e 
+                1937 seulement. L'arm&eacute;e de l'Air, ne sachant que faire 
+                de ces avions dor&eacute;navant d&eacute;pass&eacute;s, en c&egrave;de 
+                12 aux r&eacute;publicains Espagnols, 21 autres appareils rejoindront 
+                Tunis pour former les Escadrilles R&eacute;gionales de Chasse 
+                en cr&eacute;ation, dont la ERC 574 qui en sera dot&eacute;e en 
+                Juin 1938. Ils seront peu utilis&eacute;s en raison d'une faible 
+                fiabilit&eacute; du moteur, dont le r&eacute;ducteur cassait fr&eacute;quemment, 
+                parfois en vol. Les appareils restants seront retir&eacute;s du 
+                service avec l'arriv&eacute;e, en 1939, des <font color="#000000">Moranes 
+                406</font> livr&eacute;s &agrave; l'ERC574.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>L'A&eacute;ronautique Navale 
+                est elle aussi, int&eacute;ress&eacute;e par le Dewoitine D371. 
+                Elle passe commande de 40 exemplaires pour une version navale, 
+                sous la d&eacute;signation de Dewoitine 373. Celui-ci re&ccedil;oit 
+                une crosse d'appontage et &agrave; partir du 21ieme exemplaire, 
+                un systeme d'ailes repliables, l'avion prenant alors la d&eacute;signation 
+                D376. Ces avions, destin&eacute;s &agrave; &eacute;quiper le porte-avions 
+                B&eacute;arn se sont vite r&eacute;v&eacute;l&eacute;s inadapt&eacute;s 
+                aux conditions d'utilisation : si le rabattement des ailes &eacute;tait 
+                rapide, quelques minutes, il fallait environ une heure pour les 
+                remettre en position de vol. Le moteur se montra, comme pour les 
+                D371 utilis&eacute;s par l'Arm&eacute;e de l'Air, peu fiable. 
+                Les premiers appontages ont lieu sur le B&eacute;arn fin 1938, 
+                mais &agrave; la d&eacute;claration des hostilit&eacute;s, le 
+                porte-avions B&eacute;arn est retir&eacute; du service, et ses 
+                escadrilles embarqu&eacute;es AC1 et AC2 sont bas&eacute;es &agrave; 
+                terre.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>L'A&eacute;ronavale poss&egrave;de 
+                &agrave; l'entr&eacute;e en guerre, 14 Dewoitine 373 et 25 Dewoitine 
+                376. Ces chasseurs sont maintenant totalement d&eacute;pass&eacute;s. 
+                L'AC2 est bas&eacute;e &agrave; Toulon, pour la d&eacute;fense 
+                du port et des vaisseaux de la Marine, et l&#146;AC 1, rejoindra 
+                Calais, dans une zone bien plus expos&eacute;e donc. Heureusement, 
+                les D373 ou D376 n'auront jamais &agrave; affronter la Luftwaffe, 
+                et les seules pertes seront li&eacute;es &agrave; des accidents, 
+                dont une collision en vol, et un &quot;repliage&quot; intempestif 
+                des ailes d'un D376 &agrave; l'occasion d'un exercice d'attaque 
+                au sol...Ce dernier accident cloue les Dewoitine au sol, avant 
+                d'avoir un accord d'utilisation limit&eacute; a des vols d'entrainements. 
+                L'interdiction d&eacute;finitive de vol sera prononc&eacute;e 
+                en Avril 1940, quand ils seront remplac&eacute;s par des Potez 
+                631.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>C'est finalement sur le 
+                th&eacute;atre de combat Espagnol, que le Dewoitine D371 connut 
+                son bapt&egrave;me du feu. Face aux probl&egrave;mes de fiabilit&eacute; 
+                rencontr&eacute;s, la Lithuanie renonce &agrave; sa commande, 
+                et les 14 exemplaires de D372 (Version Export) sont livr&eacute;s 
+                aux forces R&eacute;publicaines Espagnoles en ao&ucirc;t 1936. 
+                Ces appareils sont arm&eacute;s de 4 mitrailleuses Vickers de 
+                7.5mm : 2 dans les ailes et 2 dans le fuselage et sont affect&eacute;s 
+                &agrave; l&#146;escadrille Espa&ntilde;a d&#146;Andr&eacute; Malraux 
+                et l&#146;escadrille internationale de l&#146;espagnol Martin 
+                Luna. Les premi&egrave;res victoires, en Aout 1936, se font aux 
+                d&eacute;pends de Fiat CR32, et 21 victoires sont revendiqu&eacute;es 
+                par l'Escadrille Espa&ntilde;a d&#146;Andr&eacute; Malraux. Ces 
+                engagements d&eacute;montrent les qualit&eacute;s de l'appareil, 
+                qui est jug&eacute; meilleur que le Heinkel 51, et &eacute;quivalent 
+                au Fiat CR32 italien.<br>
+                10 D.371 livr&eacute;s par l'Arm&eacute;e de l'Air Fran&ccedil;aise 
+                viennent compenser la perte de 4 Dewoitine D371. Ces appareils 
+                avaient &eacute;t&eacute; pr&eacute;c&eacute;d&eacute;s de deux 
+                autres exemplaires livr&eacute;s non arm&eacute;s en octobre 1936. 
+                Les Dewoitine furent remplac&eacute;s progressivement par des 
+                appareils sovi&eacute;tiques et les rescap&eacute;s sont regroup&eacute;s 
+                dans des unit&eacute;s affect&eacute;es &agrave; la d&eacute;fense 
+                c&ocirc;ti&egrave;re et l&#146;entrainement avanc&eacute;. 6 Dewoitine 
+                &eacute;taient encore en &eacute;tat de vol en d&eacute;cembre 
+                1938, les derniers exemplaires &eacute;tant tous d&eacute;truits 
+                au sol par un bombardement italien sur l&#146;a&eacute;rodrome 
+                de Ba&ntilde;ola (G&eacute;rone) le 5 f&eacute;vrier 1939.</b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="13%" height="94" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Dewoitine D37</b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/dewoit37.jpg" data-fancybox-group="gallery-4" title="Dewoitine D37"><img src="thumbnail/TN-dewoit37.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="87%" height="94" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Le 
+                    prototype effectua son premier vol le 1er octobre 1931 &eacute;quip&eacute; 
+                    d&#146;un moteur 14 cylindres en double &eacute;toile Gnome 
+                    et Rh&ocirc;ne 14Kbrs Mistral Major de 700 ch. Avec un fuselage 
+                    monocoque, des ailes &agrave; la structure m&eacute;tallique 
+                    entoil&eacute;e et un train d'atterrissage fixe &agrave; large 
+                    voie, cet appareil avait une allure classique des ann&eacute;es 
+                    1930. L&#146;appareil fut modifi&eacute; plusieurs fois, recevant 
+                    un Gnome et Rh&ocirc;ne 14Kbs, puis un 14Kds de 800 ch (740 
+                    ch &agrave; 4 500 m), diff&eacute;rents capots-moteur furent 
+                    essay&eacute;s, l&#146;atterrisseur fut modifi&eacute;, puis 
+                    la voilure re&ccedil;ut un di&egrave;dre et sa corde fut r&eacute;duite.</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="13%" height="85" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Dewoitine D371</b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/D371%20profil.jpg" data-fancybox-group="gallery-4" title="Dewoitine D371"><img src="thumbnail/TN-D371%20profil.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="87%" height="85" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <b><font face="Arial Narrow" size="2">un second prototype, 
+                    avec moteur Gnome et Rh&ocirc;ne 14Kes de 800 ch et diverses 
+                    modifications, prit l&#146;air en septembre 1934. Diff&eacute;rents 
+                    armements furent test&eacute;s, dont le montage dans l&#146;aile 
+                    de 2 canons de 20 mm. 28 exemplaires furent command&eacute;s 
+                    en avril 1935 pour l&#146;Arm&eacute;e de l&#146;air fran&ccedil;aise 
+                    dans le cadre du Plan I avec un moteur 14Kfs d&eacute;veloppant 
+                    930 ch au d&eacute;collage et 880 ch &agrave; 3 250 m, et 
+                    4 mitrailleuses MAC 34 de 7,5 mm plaqu&eacute;es sous la voilure. 
+                    Le moteur Gnome et Rh&ocirc;ne 14Kfs faisait gagner 20 km/h 
+                    et autorisait un plafond th&eacute;orique de 10 000 m, mais 
+                    devait &ecirc;tre le gros d&eacute;faut de ce chasseur : peu 
+                    fiable, son r&eacute;ducteur se brisait facilement en vol.</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="13%" height="77" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Dewoitine D372</b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/D372_.jpg" data-fancybox-group="gallery-4" title="Dewoitine D372"><img src="thumbnail/TN-D372_.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="87%" height="77" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    
+                  <p><b><font face="Arial Narrow" size="2">14 exemplaires command&eacute;s 
+                    par la Lituanie avec 2 mitrailleuses Darne de voilure et 2 
+                    Browning de 7,7 mm synchronis&eacute;es de fuselage. Compte-tenu 
+                    des probl&egrave;mes rencontr&eacute;s avec le moteur, le 
+                    gouvernement lituanien annula finalement la commande au profit 
+                    de Dewoitine D.501. Devenus disponibles, ces appareils furent 
+                    livr&eacute;s aux R&eacute;publicains espagnols.</font></b></p>
+                  </td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="13%" height="71" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Dewoitine D373</b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/d373_1.jpg" data-fancybox-group="gallery-4" title="Dewoitine D373"><img src="thumbnail/TN-d373_1.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="87%" height="71" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">20 
+                    exemplaires command&eacute;s par l&#146;A&eacute;ronautique 
+                    Navale fran&ccedil;aise. L&#146;armement &eacute;tait identique 
+                    &agrave; celui des appareils de l&#146;Arm&eacute;e de l&#146;Air, 
+                    mais la voilure &eacute;tait r&eacute;duite de 30 cm pour 
+                    passer dans le monte-charge du porte-avions B&eacute;arn et 
+                    une crosse d'appontage et un syst&egrave;me de flottaison 
+                    &eacute;taient ajout&eacute;s dans le fuselage.</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="13%" height="95" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Dewoitine D376</b></font></div>
+                    <div align="center"><a class="fancybox-effects-c" href="Photos/D376.jpg" data-fancybox-group="gallery-4" title="Dewoitine D376"><img src="thumbnail/TN-D376.jpg" alt="" border="0" width="100%" /></a></div>
+                  </td>
+                  <td width="87%" height="95" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <b><font face="Arial Narrow" size="2">25 nouveaux appareils 
+                    pour l&#146;A&eacute;ronautique Navale fran&ccedil;aise, avec 
+                    voilure repliable. Le syst&egrave;me de pliage des ailes fut 
+                    jamais au point : si le pliage proprement dit pouvait s&#146;effectuer 
+                    en quelques minutes, il fallait bien une heure pour remettre 
+                    les ailes en position.</font></b></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><b><i><font size="2">1 ) _ Editions LELA 
+                      PRESSE ; Revue &quot;Avions&quot; n&deg;103 et 104</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Les Dewoitine D371 dans l'arm&eacute;e de l'air</b></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/avions%20103%20gd.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnail/avions%20103.jpg" alt="" width="103" height="144" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/104.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnail/avions%20104.jpg" alt="" width="99" height="144" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/d371-2.jpg" data-fancybox-group="gallery-2" title="Dewoitine D371"><img src="thumbnail/tn_d371-2.jpg" alt="" width="126" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Potez%20376.jpg" data-fancybox-group="gallery-2" title="Dewoitine D376"><img src="thumbnail/tn_Potez%20376.jpg" alt="" width="164" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/intro-11.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_intro-11.jpg" alt="" width="151" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/d371-1.jpg" data-fancybox-group="gallery-2" title="Dewoitine D371"><img src="thumbnail/tn_d371-1.jpg" alt="" width="109" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/d371-3v.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_d371-3v.jpg" alt="" width="195" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

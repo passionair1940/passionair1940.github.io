@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Bloch-MB131</title>
+<META name="KEYWORDS" content="French Air Force 1939-1940,Reconnaissance, Observation, campaign of France, funny war, Bloch MB131">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="Bloch-131.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Aircraft</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Fighter 
+            Aircraft</font></b></font></a></p>
+          <p align="left"><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><i><font color="#C0C0C0">Bombers</font></i></font></b></font></a></p>
+          <p align="left"><a href="../EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><i><font color="#FFFFFF">Reconnaissance 
+            Aircraft </font></i></b></font></a></p>
+          <div align="left"><font size="2"><a href="EN-Bloch-131.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b><font color="#FFFFFF"><i>- 
+            Bloch MB131</i></font></b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Bloch-MB174/EN-Bloch-MB174.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Bloch MB174</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Breguet-270/EN-Breguet-270.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Breguet Br270</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Leo-C30/EN-LeO-C30.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Lior&eacute; &amp; Olivier L&eacute;o C30</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Mureaux-115-117/EN-Mureaux-115.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Mureaux ANF 117</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Potez-25/EN-Potez-25.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Potez 25</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Potez-390-391/EN-Potez-390.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Potez 390 / 391</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Potez-63-11/EN-Potez-63-11.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Potez 63-11</b></font></a></font></div>
+          <div align="left"><font size="2"><a href="../Potez-637/EN-Potez-637.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Potez 637</b></font></a></font></div>
+          <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; links</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/EN-Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Fighters</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Bombers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> 
+            <p><b><font size="20%" color="#660000">BLOCH MB131</font></b></p>
+            <p><img src="Photos/mb131.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+              Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" height="289" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Twin-Engine of reconnaissance 
+                      four-seater with low-wings and retractable landing gear</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"> August 
+                      12, 1936</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">20.30 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">17.85 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4.1 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">52.1 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 6050 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8550 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 270km/h at 3700m.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">348 km/h at 3750m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m in 11mn </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">7200m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1290 kms&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4</font> <font size="2" face="Arial Narrow"> 
+                      Men</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2">2 Moteurs Gn&ocirc;me Rh&ocirc;ne 
+                      GR14N 10/11 de 950ch chacun</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">1 mobile machine-gun 
+                        MAC 34 of 7.5mm in front<br>
+                        1 machine-gun MAC 34 of 7.5mm in ventral position</font> 
+                        <font size="2" face="Arial Narrow"><br>
+                        1 machine-gunMAC 34 of 7.5mm in dorsal position </font> 
+                        <font size="2" face="Arial Narrow"><br>
+                        800 Kgs of bombs</font> </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">142 
+                Bloch of the MB 131 serie </font><font face="Arial Narrow" size="2" color="#000000">were 
+                built after the prototype that made its first flight on</font><font face="Arial Narrow" size="2"> 
+                June 1934 . They are divided in :</font></b></font></font></p>
+              <ul>
+                <li><font face="Arial Narrow" color="#000000" size="2"><b>3 prototypes 
+                  motorized by Gn&ocirc;me Rh&ocirc;ne GR 14 K Mistral Major</b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">12 
+                  Bloch MB 131 R4</font></font></b></font><font color="#000000" size="2"><b><font face="Arial Narrow"> 
+                  four-seater for the reconnaissance</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">5 
+                  Bloch MB 131 ins for training with dual control</font></b></font></li>
+                <li><font face="Arial Narrow" size="2"><b><font color="#000000">122 
+                  Bloch MB 131 RB4 four-seater for Reconnaissance and bombardment</font></b></font></li>
+              </ul>
+              <p><font size="3" color="#990000"><font face="Arial Narrow" size="3" color="#990000"><b></b></font></font></p>
+              <p><font size="2"><b><font color="#990000"><font color="#990000"><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2"><b><font color="#990000"><font color="#990000"><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">To 
+                date, out of the</font></b></font></font></font></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font><font face="Arial Narrow" color="#000000"> 
+                142 </font><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2"><b><font color="#990000"><font color="#990000"><font face="Arial Narrow" color="#000000">aircraft 
+                manufactured</font></font></font></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font></b></b></font><font face="Arial Narrow" color="#000000"> 
+                , 33</font></font></font><font size="2"><b><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000"> 
+                are listed in the list below :</font></b></font></b></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">In August 1933, under the 
+                BCR program, the Ministry of Air issued an official request for 
+                a device capable of transporting a ton of bombs over 1300km at 
+                a speed of 350 km / h at 4000m altitude. The Bloch company, in 
+                competition with 7 manufacturers, proposed its project Bloch MB130, 
+                entirely metallic. The prototype made its first flight in June 
+                1934, equipped first of all with a fixed train. A first order 
+                of 40 aircraft was passed in October 1935 on the initial model, 
+                but Bloch company changed its Bloch 130 to Bloch MB131RB4 (Intelligence-Reconnaissance-Bombardment-4 
+                Men), a new command is emitted instead of the first one in April, 
+                1936, for 40 Bloch MB131RB4. The first flight of the prototype 
+                took place on 12 August 1936.</font></b></p>
+              <p><font face="Arial Narrow" size="2"><b>In November 1936, a second 
+                prototype was introduced, with numerous modifications: Advanced 
+                dorsal turret, addition of a ventral turret, increase of the wing 
+                rope, horizontal tail rods removed and addition of a fifth man 
+                d 'crew. This second prototype made its first flight on May 5, 
+                1937. Problems of vibrations led to modifications that will be 
+                made on the N &deg; 03. The model is powered by two Gnome-Rhone 
+                14 N10 / 11.</b></font></p>
+              <p><b><font face="Arial Narrow" size="2">The first 14 units delivered 
+                are MB131 R4 (reconnaissance), the next 5 are MB131 INS (Instruction) 
+                and the 19th was the first MB131 RB4, followed by 100, the last 
+                of which was delivered in October 1939 To GR I / 36.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2">At the beginning of the 
+                war, the first missions quickly revealed that the MB131 is outdated, 
+                and is only used at night until it is replaced by more modern 
+                Potez 63-11. In May 1940, there was no MB131 in the front line 
+                except for the GR 61 based in AFN. After the Armistice, some specimens 
+                were transformed into a target tug.</font></b></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font face="Arial Narrow"><b><font size="2">The Bloch MB131 was 
+                produced in only two versions: </font></b></font></p>
+            </div>
+            <blockquote>
+              <div align="left">
+                <div><font face="Arial Narrow"><b><font size="2"> - Bloch MB131 
+                  R4 </font></b></font></div>
+                <div>
+                  <p><font face="Arial Narrow"><b><font size="2"> - Bloch MB131 
+                    RB4. Externally, the two apparatuses are identical; Only the 
+                    MB131 RB4 wheels, the larger the different.</font></b></font></p>
+                </div>
+              </div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                      _ Editions LELA PRESSE: </font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                      - Magazine AVIONS n&deg; 2 et 3</b></font></i></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/avions%202.bmp" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_avions%202.jpg" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/avions%203.bmp" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_avions%203.jpg" alt="" width="91" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                      _ Editions LELA PRESSE: </font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                      - AIRMAGAZINE n&deg; 30</b></font></i></font></i></font></i></font></p>
+                    <p>&nbsp; <a class="fancybox-effects-c" href="Photos/868679540_L.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="97" height="128" border="0" src="thumbnail/tn_868679540_L.jpg" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              Album </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/4232.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_4232.jpg" alt="" width="184" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image040.png" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image040.png" alt="" width="170" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Bloch1311.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Bloch1311.jpg" alt="" width="123" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image036.png" data-fancybox-group="gallery-2" title=""><img alt="" width="267" height="72" border="0" src="thumbnail/tn_image036.png" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+                3 views</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/image091.png" data-fancybox-group="gallery-5" title=""><img alt="" width="166" height="128" border="0" src="thumbnail/tn_image091.png" /></a> 
+            </div>
+          </blockquote>
+          
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

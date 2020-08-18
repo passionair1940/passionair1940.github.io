@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Curtiss-H75</title>
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,chasse,chasseur,français,américains,campagne de france,drôle de guerre,Curtiss H75,Curtiss H75 A1,Curtiss H75 A2,Curtiss H75 A3,Curtiss H75 A4"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Curtiss-H75.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">   
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          <div align="left"><a href="../Arsenal-VG33/Arsenal-VG33.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Arsenal VG33</font></b></font></a></div>
+          <div align="left"><a href="../Bleriot-Spad-510/Bleriot-Spad-510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bl&eacute;riot Spad 510</font></font></b></font></a></div>
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          <div align="left"><a href="../Caudron-CR714/Caudron-Cr714.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Caudron CR 714</font></font></b></font></a></div>
+          <div align="left"><a href="Curtiss-H75.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- 
+            Curtiss H75</i></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D371</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D510</font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="../Koolhoven-FK58/Koolhoven-FK58.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Koolhoven FK58</font></b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS406/Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Morane-Saulnier MS406</font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Chasseurs</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">CURTISS H75</font></b></p>
+            <p><img src="Photos/Curtiss-H75.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace</font> 
+                      <font size="2">&agrave; aile basse </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Novembre 
+                      1938</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">11.36m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8.79m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2.70m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">21.92m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 2138Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2680 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 410 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="24" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="24" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">487 km/h</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">m en mn s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1470kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="30" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="30" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Pratt &amp; Withney R1820 Twin Wasp SCG de 1050ch au d&eacute;collage</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="30" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="30" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">4 mitrailleuses 
+                        FN de 7.5mm dans les ailes</font></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td colspan="4" height="55" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><a class="fancybox fancybox.iframe" href="Caracteristiques-2.htm"><img src="../../../../Images%20Base/Bouton%20caracteristiques.png" alt="" border="0" width="40%" /></a> 
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">335 
+                Curtiss H75 ont &eacute;t&eacute; livr&eacute;s par les Etats-Unis 
+                depuis la date du premier vol d'un Curtiss H75 Fran&ccedil;ais 
+                en Novembre 1938.</font></font></font></b></p>
+              <p><font size="2"><b><font color="#990000"><font color="#000000"><font face="Arial Narrow">Ils 
+                se r&eacute;parrtissent en :</font></font></font></b></font></p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b><font color="#990000"> 
+                  <font color="#000000">100 Curtiss H75 A-1</font></font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">100 
+                  Curtiss H75 A-2</font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">135 
+                  Curtiss H75 A-3</font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">81 
+                  Curtiss H75 A-4, dont seulement 22 &agrave; 24 appareils ont 
+                  &eacute;t&eacute; livr&eacute;s en m&eacute;tropole avant l'Armistice</font></b></font></li>
+              </ul>
+              <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 416 appareils livr&eacute;s , 341 sont recens&eacute;s 
+                dans la liste ci-dessous : </font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">Fin 1937, il devint &eacute;vident 
+                que l'industrie a&eacute;ronautique Fran&ccedil;aise n'&eacute;tait 
+                pas &agrave; m&ecirc;me de fournir &agrave; l'Arm&eacute;e de 
+                l'Air, les chasseurs modernes dont elle avait tant besoin. Le 
+                cahier des charges du plan &quot;V&quot; semblait utopique, et 
+                c'est donc logiquement vers les pays &eacute;trangers que le minist&egrave;re 
+                de l'air se tourna pour tenter de combler son retard. Des d&eacute;marches 
+                en Europe ont abouti &agrave; l'achat d'appareils peu satisfaisants 
+                tels que le Koolhoven FK58 Hollandais, mais seuls les Etats-Unis 
+                semblaient pouvoir r&eacute;pondre &agrave; notre besoin. Des 
+                tractations non-officielles ont d&eacute;marr&eacute; d&egrave;s 
+                la fin 1937, pour l'acquisition de plusieurs centaines de chasseurs 
+                modernes. </font></b></p>
+              <p><font size="2"><b><font face="Arial Narrow">A cette &eacute;poque 
+                le Curtiss P36 venait d'&ecirc;tre &eacute;vinc&eacute; par le 
+                Seversky P-35 dans le concours pour l'&eacute;quipement de l'USAAC. 
+                C'est donc le Curtiss P36 qui devient Curtiss H75 &agrave;l'exportation, 
+                qui va &ecirc;tre choisi par les services Fran&ccedil;ais. Les 
+                n&eacute;gociations furent assez longues : le prix du Curtiss 
+                H75 &eacute;tait en effet tr&egrave;s &eacute;lev&eacute; en comparaison 
+                des productions nationales comme les <font color="#000000">Morane 
+                MS406</font> ou <font color="#000000">Bloch MB152</font>, mais 
+                les tensions en Europe laiss&egrave;rent peu de choix aux &eacute;missaires 
+                Fran&ccedil;ais... Un premier contr&acirc;t pour l'achat de 100 
+                Curtiss H75 A1 (voir &quot;Version&quot;) fut donc sign&eacute; 
+                en Mai 1938. Apr&egrave;s essais par des pilotes Fran&ccedil;ais 
+                &agrave; Buffalo, les premiers Curtiss H75 A1, remis aux standards 
+                Fran&ccedil;ais, arrivent d&eacute;mont&eacute;s en France en 
+                D&eacute;cembre 1938. Ils sont directement achemin&eacute;s vers 
+                l'Usine de Bourges charg&eacute;e de l'assemblage. La situation 
+                en Europe se d&eacute;grade apr&egrave;s la crise de Munich, et 
+                de nouvelles n&eacute;gociations sont lanc&eacute;es avec les 
+                Etats-Unis en vue d'acqu&eacute;rir de nouveaux appareils. Le 
+                choix se porta sur le Curtiss H81, qui deviendra le curtiss P40, 
+                mais les retards de livraison des moteurs Allison de cette version, 
+                amen&eacute;rent &agrave; choisir finalement le Curtiss H75 A2, 
+                version am&eacute;liro&eacute;e du H75 &eacute;quip&eacute;e d'un 
+                moteur et d'un armement plus puissant. Une nouvelle commande de 
+                100 machines est pass&eacute;e.. </font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">En septembre 1939, 
+                l'int&eacute;gralit&eacute; de la commande a &eacute;t&eacute; 
+                honor&eacute;e, et les premiers Groupe de Chasse sont &eacute;quip&eacute;s 
+                d&egrave;s Mars 1939 : <font color="#000000">GC I/5</font>, <font color="#000000">GC 
+                II/5</font>, <font color="#000000">GC I/4</font>, . Apr&egrave;s 
+                la d&eacute;claration de Guerre, en Septembre 39, la France se 
+                tourne &agrave; nouveau vers les Etats-Unis pour une troisi&eacute;me 
+                commande. Le contexte est cependant plus difficile avec une France 
+                dor&eacute;navant en guerre, les Etats-Unis maintenant neutres, 
+                et un prix unitaire du Curtiss H75 encore plus &eacute;lev&eacute;... 
+                Une commande est finalement pass&eacute;e pour la fourniture de 
+                530 Curtiss H75 A3, et 100 nouveaux Curtiss H81 (P40) maintenant 
+                disponibles. Les premiers Curtiss H75 A3 arrivent en France en 
+                Mars 1940. Seule une partie de la commande peut arriver &agrave; 
+                temps sur le territoire national : une partie coule en mer, le 
+                reste est d&eacute;tourn&eacute; aux Antilles pour y &ecirc;tre 
+                stock&eacute;, ou &agrave; Casablanca au Maroc. Quant &agrave; 
+                la version H75 A4, moins d'une dizaine d'appareils arrivent en 
+                France, trop tard pour prendre part aux combats.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">A la signature de 
+                l'Armistice, tous les Groupes de Chasse &eacute;quip&eacute;s 
+                de Curtiss H75 se r&eacute;fugient en Afrique du nord. On y recense 
+                186 appareils environ, alors que 45 autres sont rest&eacute;s 
+                en m&eacute;tropole.. Les <font color="#000000">GC I/4</font>, 
+                <font color="#000000">GC I/5</font> et <font color="#000000">GC 
+                II/5</font> furent conserv&eacute;s dans l'Arm&eacute;e de l'Air 
+                de Vichy, et sont bas&eacute;s respectivement &agrave; Rabat, 
+                Casablanca et au Maroc. Ces groupes eurent &agrave; affronter 
+                les avions alli&eacute;s lors de la regrettable affaire &quot;Mers 
+                El K&eacute;bir&quot;, et des raids de repr&eacute;sailles qui 
+                suivirent. Apr&egrave;s le ralliement aux Forces Fran&ccedil;aises 
+                Libres, Les Curtiss H75 vieillissant finissent leur carri&egrave;re 
+                dans les &eacute;coles de chasse, ou dans des missions secondaires.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le bilan final de 
+                l'utilisation du Curtiss H75 pendant la campagne de Frances'&egrave;l&egrave;ve 
+                &agrave; 275 victoires s&ucirc;res et 96 problables pour la perte 
+                de 35 pilotes environ. Certains pilotes s'illustreront &agrave; 
+                son bord tel <font color="#000000">Edmond Marin la Mesl&eacute;e</font>, 
+                l'As des As fran&ccedil;ais avec ses 16 victoires.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Cet appareil &eacute;tait 
+                appr&eacute;ci&eacute; de ses pilotes pour sa facilit&eacute; 
+                de pilotage, son large cokpit, et sa stabilit&eacute; g&eacute;n&eacute;rale 
+                qui en faisait une bonne plate-forme de tir. Par contre, son armement 
+                &eacute;tait bien trop faible : 4 mitrailleuses de 7.5mm , 6 pour 
+                les derni&egrave;res versions, et son moteur, quoique fiable et 
+                robuste, n'&eacute;tait pas assez puissant. Sa protection &eacute;tait 
+                perfectible, avec notamment les r&eacute;servoirs non prot&eacute;g&eacute;s.</font></b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td height="81" background="../../../../Images Base/metal-texture-151340.jpg" width="16%"> 
+                    <div align="center"><font size="3"><b>Curtiss H75 A1</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/curtiss%20H75%20a1%20n49%20accart%20gc1-5.jpg" data-fancybox-group="gallery-4" title="Curtiss H75-A1"><img src="thumbnail/tn_curtiss%20H75%20a1%20n49%20accart%20gc1-5.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="81" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">Le 
+                    Curtiss H75 A-1 est similaire au P36 A utilis&eacute; par 
+                    les Etats-Unis. Ils sont motoris&eacute;s par un moteur Pratt 
+                    &amp; Whitney Twin Wasp R-1830 SCG de 1050cv au d&eacute;collage. 
+                    Ils sont r&eacute;align&eacute;s avec des &eacute;quipements 
+                    fran&ccedil;ais : collimateur, radio. La manette des gazs 
+                    est mise au standard Fran&ccedil;ais, &agrave; gauche du pilote, 
+                    et bien s&ucirc;r tous les instruments sont gradu&eacute;s 
+                    en unit&eacute; m&eacute;trique. L'armement se compose de 
+                    4 mitrailleuses Browning de 7.5mm : 2 dans les ailes et 2 
+                    sur le capot moteur </font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td height="68" background="../../../../Images Base/metal-texture-151340.jpg" width="16%"> 
+                    <div align="center"><font size="3"><b>Curtiss H75 A2</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Curtisse-H75-A2.jpg" data-fancybox-group="gallery-4" title="Curtiss H75-A2"><img src="thumbnail/tn_Curtisse-H75-A2.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="68" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">Sur 
+                    le Curtiss H75 A-2, la partie arri&egrave;re du Fuselage a 
+                    &eacute;t&eacute; renforc&eacute;e. Il re&ccedil;oit un moteur 
+                    TWIN WASP (SC3G), plus performant que son pr&eacute;decesseur. 
+                    L'armement est compl&eacute;t&eacute; par deux mitrailleuses 
+                    suppl&eacute;mentaires dans les ailes. Cette modification 
+                    a &eacute;t&eacute; mise en place &agrave; partir du N&deg;141, 
+                    et install&eacute;e par la suite sur des avions sortis pr&eacute;c&eacute;demment. 
+                    100 Curtiss H75 A-2 sont command&eacute;s et num&eacute;rot&eacute;s 
+                    &agrave; partir du N&deg;101</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td height="90" background="../../../../Images Base/metal-texture-151340.jpg" width="16%"> 
+                    <div align="center"><font size="3"><b>Curtiss H75 A3</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Curtiss%20h75a3%20n193%20GCII-4.jpg" data-fancybox-group="gallery-4" title="Curtiss H75-A3"><img src="thumbnail/tn_Curtiss%20h75a3%20n193%20GCII-4.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="90" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"> 
+                    <p><b><font face="Arial Narrow" size="2">Les Curtiss H75 A-3 
+                      est command&eacute; aux Etats-Unis lors d'une mission Fran&ccedil;aise 
+                      en Aout 1939. Ce mod&egrave;le est &eacute;quip&eacute; 
+                      d'un moteur Pratt&amp;Whitney R-1830 Twin Wasp SICG3G de 
+                      1200 cv. La num&eacute;rotation de la s&eacute;rie commence 
+                      au n&deg;201. Les premiers exemplaires sont pris en compte 
+                      par l'Arm&eacute;e de l'Air en Juin 1940. Lorsque l'Armistice 
+                      est demand&eacute;e, certains Curtiss H75 ont coul&eacute; 
+                      &agrave; bord du bateaux qui les acheminait vers la France. 
+                      D'autres sont d&eacute;tourn&eacute;s vers les Antilles, 
+                      alors qu'une trentaine d'appareils sont d&eacute;barqu&eacute;s 
+                      &agrave; Casablanca, au Maroc.</font></b></p>
+                  </td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td height="64" background="../../../../Images Base/metal-texture-151340.jpg" width="16%"> 
+                    <div align="center"><font size="3"><b>Curtiss H75 A4</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Curtiss_H-75A-4_profil.jpg" data-fancybox-group="gallery-4" title="Curtiss H75-A4"><img src="thumbnail/tn_Curtiss_H-75A-4_profil.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="84%" height="64" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" bgcolor="#E4E4E4"><b><font face="Arial Narrow" size="2">Le 
+                    Curtiss H75 A-4 est arriv&eacute; trop tard pour &ecirc;tre 
+                    utilis&eacute; en combat. Seuls quelques exemplaires sont 
+                    livr&eacute;s avant l'armistice.Il est &eacute;quip&eacute; 
+                    d'un moteur Wright Cyclone R-1820-G205A de 1200 cv au d&eacute;collage. 
+                    Ce moteur a n&eacute;cessit&eacute; une modification de la 
+                    forme du capot</font></b></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                      _ Editions LELA PRESSE</font></i></b></font></i></font><font size="2"><i><font color="#990000"><b><i><font color="#000000">Collection 
+                      &quot;Histoire de l'Aviation&quot;</font></i></b><i><font color="#990000"><b> 
+                      <br>
+                      - N&deg;22 : Les Curtiss H75</b></font></i><b><i><font color="#990000"><b> 
+                      de l'Arm&eacute;e de l'Air</b></font></i></b></font></i></font><font color="#990000"><b><font size="3"><i><font color="#990000"><b></b></font></i></font></b></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/k976z8.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnail/TN-lera_presse_46_l.jpg" alt="" width="92" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">2) 
+                      _ Editions DOCAVIA:</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;22 :Curtiss Hawk 75</b></font></i></font></font></i></font><font color="#990000" size="2"></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/efmiw0.jpg" data-fancybox-group="gallery-1" title="Editions DOCAVIA"><img src="thumbnail/tn_efmiw0.jpg" alt="" width="92" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="left"><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">3) 
+                      _ Editions LELA PRESSE Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;4 :Le Curtiss Hawk H75</b></font></i></font></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/get-picture.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnail/TN-get-picture.jpg" alt="" width="91" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">4) 
+                      _ Le Fana de l'Aviation :</font></i></b><font size="2"><i><font color="#990000"><b> 
+                      <font color="#000000">&quot;Hors s&eacute;rie n&deg; 34&quot;</font><br>
+                      - Curtiss H-75 au Combat</b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/arton2813.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_arton2813.jpg" alt="" width="91" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">5) 
+                      _ Profil Publication :</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;80 :The Curtiss Hawk H75</b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/prof080.jpg" data-fancybox-group="gallery-1" title="Profil Publications"><img src="thumbnail/TN-prof080.jpg" alt="" width="92" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">6) 
+                      _ Mushroom Model Publications :</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Curtiss Hawk H-75 in French Service</b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/hawk75.jpg" data-fancybox-group="gallery-1" title="Mushroom Publications"><img src="thumbnail/tn_curtiss-hawk-h-75-in-french-service-mushroom-model-publications-5112.jpg" alt="" width="93" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/HPH75vichy.jpg" data-fancybox-group="gallery-2" title="Curtiss H75 sous les couleurs de Vichy"><img src="thumbnail/tn_HPH75vichy.jpg" alt="" width="117" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Gh75-2.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Gh75-2.jpg" alt="" width="115" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/HPH75pilote.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_HPH75pilote.jpg" alt="" width="104" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/h75int1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_h75int1.jpg" alt="" width="84" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/h75_3v.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_h75_3v.jpg" alt="" width="142" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

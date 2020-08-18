@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Morane-MS406</title>
+<meta name="keywords" content="Aéronautique Navale Française 1939-1940,chasse,chasseur,français,campagne de france,drôle de guerre,Morane,MS406,Morane-Saulnier MS406,Morane-Saulnier MS405,Morane-Saulnier MS410"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Morane-406.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF">Chasse</font></b></font></a></p>
+          <div align="left"><a href="../Bloch-MB152/Bloch-MB152.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Bloch MB 152</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D371/Dewoitine-D371.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D371</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D510/Dewoitine-D510.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><font color="#FFFF00">- 
+            Dewoitine D510</font></font></b></font></a></div>
+          <div align="left"><a href="../Dewoitine-D520/Dewoitine-D520.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Dewoitine D520</font></b></font></a></div>
+          <div align="left"><a href="Morane-406.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFFFF"><i>- 
+            Morane-Saulnier MS406</i></font></b></font></a></div>
+          <div align="left"><a href="../Nieuport-Delage-Nid622/Nid-622.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Nieuport-Delage NiD622</font></b></font></a></div>
+          <div align="left"><a href="../Potez-630-631/Potez-631.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez 630 / 631</font></b></font></a></div>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Bombardement</b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">MORANE-SAULNIER MS406</font></b></p>
+            <p><img src="Photos/MS406-43f.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="30%" height="38" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Chasseur&nbsp; monoplace</font> 
+                      <font face="Arial Narrow" size="2">&agrave; aile basse et 
+                      train rentrant</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="38" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">8 Aout1935</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">10,61 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">8.13 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2.71 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">17.1 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 1895 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2540 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 320 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">486 km/h &agrave; 5000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">5000m en 6mn 30s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">9850 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1100 kms</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                      Personne</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">1 Moteur 
+                      Hispano Suiza 12Y31 12 cyl en V d&eacute;veloppant 860 CV 
+                      au d&eacute;collage</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="50" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">2 mitrailleuses 
+                        MAC 34 de 7.5mm dans les ailes<br>
+                        1 canon Hispano Suiza HS-9 de 20mm dans l'axe de l'h&eacute;lice 
+                        avec 60 obus</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="3" color="#990000"><font color="#000000" size="2">1094 
+                Morane Saulnier MS406 ont été construits depuis la date du premier 
+                vol le 8 Aout 1935 . </font></font><font face="Arial Narrow" color="#000000" size="2"> 
+                Ils se </font><font face="Arial Narrow" size="2">r&eacute;partissent 
+                en :</font></font></font></b> </p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">16 
+                  </font><b><font color="#000000">Morane-Saulnier</font></b> <font color="#000000">MS 
+                  405</font></font></b></font></li>
+                <li><font color="#000000" size="2"><b><font face="Arial Narrow">1076 
+                  Morane-Saulnier MS 406 </font></b></font></li>
+                <li><font size="2"><b><font face="Arial Narrow" color="#000000">2 
+                  Morane-Saulnier MS 410</font></b></font></li>
+              </ul>
+              <p><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">A 
+                ce jour , sur les 1094 appareils fabriqu&eacute;s , 804 sont recens&eacute;s 
+                dans les listes ci-dessous : </font></b></font></p>
+              <p> <a class="fancybox fancybox.iframe" href="Historiques-2_1-500.htm"><img src="Photos/liste%20Morane%201%20a%20500.png" alt="" border="0" width="20%" /></a> 
+                <a class="fancybox fancybox.iframe" href="Historiques-2_501-1094.htm?iframe"><img src="Photos/liste%20Morane%20500%20a%201094.png" alt="" border="0" width="20%" /></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><font size="2">L<b><font face="Arial Narrow">e Morane MS406 est 
+                issu du programme C1 de Juillet 1934 destin&eacute; &agrave; remplacer 
+                les <font color="#000000">Dewoitine D500</font> et <font color="#000000">Loire 
+                46.</font> Une des principales demandes est une vitesse maximale 
+                de 400 km/h. Ce programme proposait deux cat&eacute;gories : chasseur 
+                l&eacute;ger et chasseur moyen d'un poids maxi de 2.5 tonnes. 
+                Le programme C1 subit deux &eacute;volutions, dont l'une portait 
+                la vitesse maximale demand&eacute;e &agrave; 450 km/h. Parmi les 
+                diff&eacute;rents candidats, seuls deux furent retenus : le <font color="#000000">Bloch 
+                MB152</font> et le Morane MS405. Le prototype de ce dernier d&eacute;colla 
+                pour son premier vol le 8 Aout 1935 avec Michel Detroyat aux commandes. 
+                L'avion subit des essais pendant un an environ et s'av&eacute;ra 
+                d'embl&eacute;e sain et atteint 491 km/h.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le minist&egrave;re 
+                de l'Air passe une commande officielle en Novembre 1936. Le prototype, 
+                pr&eacute;sent&eacute; au salon A&eacute;ronautique de Bruxelles 
+                de Juin 1937, fit forte impression aupr&egrave;s des commissions 
+                &eacute;trang&egrave;res, dont la Chine, la Turquie et la Suisse. 
+                Une premi&egrave;re pr&eacute;-s&eacute;rie de 15 appareils est 
+                command&eacute;e et r&eacute;alis&eacute;e entre F&eacute;vrier 
+                et Juin 1938. Le n&deg;4 fut &eacute;quip&eacute; d'un moteur 
+                Hispano-Suiza 12Y31 de 860CV entrainant une h&eacute;lice Chauviere 
+                : il devint ainsi le prototype du Morane MS406. En Avril 1937, 
+                une premi&egrave;re commande de 50 Morane MS406 est pass&eacute;e 
+                par l'&eacute;tat. La production, r&eacute;partie sur, plusieurs 
+                soci&eacute;t&eacute;s nationalis&eacute;es, mis du temps &agrave; 
+                se mettre en place, mais acc&eacute;l&eacute;ra ensuite rapidement.en 
+                1939 : ainsi, dix huits mois apr&egrave;s le premier vol du prototype, 
+                600 machines sont sorties des chaines d'assemblage. Au moment 
+                de l'armistice de Juin 1940, le CRAS (Centre R&eacute;ception 
+                des Avions de S&eacute;rie) a r&eacute;ceptionn&eacute; plus de 
+                1000 machines.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Une premi&egrave;re 
+                escadrille d'essais a &eacute;t&eacute; constitu&eacute;e avec 
+                du personnel du GC II/7. Cette premi&egrave;re utilisation pratique 
+                a donn&eacute; lieu a des modifications diverses : optimisation 
+                du train d'atterrissage, mise en place d'un pylone anti-crash,... 
+                Lors de la d&eacute;claration de guerre, sept des treize groupes 
+                de chasse sont &eacute;quip&eacute;s de Morane MS406.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Pendant la dr&ocirc;le 
+                de guerre, ces groupes obtiennent 32 victoires pour la perte de 
+                13 avions. Ces premiers engagements laissent apparaitre les d&eacute;fauts 
+                de ce chasseur : Armement peu fiable : les armes g&egrave;lent 
+                en altitude. Pilote pas assez prot&eacute;g&eacute;, moteur trop 
+                fragile, dont les performances chutent rapidement, radio de bord 
+                d&eacute;ficiente, b&eacute;quille fragile...Face au BF109 D rencontr&eacute;s 
+                lors des premiers combats, le Morane MS406 fait arme &eacute;gale, 
+                mais le nouveau <font color="#000000">Messerschmitt BF109E</font> 
+                le surclassera tr&egrave;s nettement, et il aura bien du mal &agrave; 
+                rattraper les rapides bombardiers allemands.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Le 10 Mai 1940, le 
+                Morane MS406 &eacute;quipe encore 10 des 22 groupes de chasses. 
+                Les pertes dans les unit&eacute;s &eacute;quip&eacute;es de MS406 
+                sont importantes, et certaines missions qui leurs sont confi&eacute;es 
+                sans grands r&eacute;sultats, comme le mitraillage au sol, sont 
+                particulierement meurtri&egrave;res. Ainsi, sur les 1098 avions 
+                construits, 387 sont perdus dont 150 en combat a&eacute;rien, 
+                ou abbattu par la Flak (D&eacute;fense Anti-a&eacute;rienne Allemande), 
+                pour 190 victoires s&ucirc;res et 90 confirm&eacute;es, bilan 
+                non n&eacute;gligeable eu &eacute;gard &agrave; la v&eacute;tust&eacute; 
+                de la machine. En raison de son autonomie trop r&eacute;duite, 
+                les Morane ne seront pas &eacute;vacu&eacute;s vers l'Afrique 
+                du Nord. Les groupes de Chasse rest&eacute;s en m&eacute;tropole 
+                seront rapidement dissous ou r&eacute;&eacute;quip&eacute;s en 
+                <font color="#000000">Dewoitine D520</font>. Certains Morane MS406 
+                d&eacute;mobilis&eacute;s seront r&eacute;cup&eacute;r&eacute;s 
+                par les allemands et revers&eacute;s &agrave; leurs alli&eacute;s 
+                comme la Croatie. Les Morane connurent encore des combats en Extr&egrave;me 
+                Orient dans les combats en Thailande ou en Syrie o&ugrave; ils 
+                affront&egrave;rent notamment des Curtiss P40 et Hurricane.</font></b></font></p>
+              <p><font size="2"><b><font face="Arial Narrow">Au d&eacute;but de 
+                1940, face &agrave; la supr&eacute;matie du <font color="#000000">Messerschmitt 
+                BF109E</font>, une version am&eacute;lior&eacute;e du Morane MS406 
+                a vu le jour : le MS410. Cette version corrigeait la majorit&eacute; 
+                des d&eacute;fauts du MS406 de s&eacute;rie (voir chapitre version). 
+                Il &eacute;tait pr&eacute;vu de modifier les MS406 d&eacute;ja 
+                en service pour les transformer en MS410. Malheureusement, cette 
+                transformation exigeait une immobilisation de 3 semaines, ce qui 
+                aurait affaibli le potentiel des Groupes de chasse engag&eacute;s 
+                sur le front. Au final, peu de cellules furent modifi&eacute;es, 
+                et pour la majorit&eacute; partiellement. Certains exemplaires 
+                r&eacute;cup&eacute;r&eacute;s par les allemands apr&egrave;s 
+                l'armisitice ont &eacute;t&eacute; c&eacute;d&eacute;s &agrave; 
+                la Finlande.</font></b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="12%" height="86" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Morane MS405</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/morane%20MS405.jpg" data-fancybox-group="gallery-4" title="Morane MS405"><img src="thumbnails/tn_morane%20MS405.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="88%" height="86" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Le 
+                    prototype du MS405-01 effectue son premier vol le 8 Aout 1935.aux 
+                    mains de Michel Detroyat. Il est d&eacute;clar&eacute; sain, 
+                    et maniable. 15 Exemplaires seront construits en plus du prototype 
+                    n&deg;0.1</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="12%" height="73" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Morane MS406</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/MS406-43f.jpg" data-fancybox-group="gallery-4" title="Morane MS406"><img src="thumbnails/tn_MS406-43f.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="88%" height="73" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    de s&eacute;rie produite &agrave; plus de 1080 exemplaires. 
+                    Elle constituera l'essentiel de l'&eacute;quipement de la 
+                    Chasse Fran&ccedil;aise &agrave; la d&eacute;claration de 
+                    guerre..</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="12%" height="92" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Morane MS410</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/morane410.jpg" data-fancybox-group="gallery-4" title="Morane MS410"><img src="thumbnails/tn_morane410.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="88%" height="71" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <p><b><font face="Arial Narrow" size="2">Le MS410 re&ccedil;oit 
+                      2 Mitrailleuses MAC34 de 7.5mm suppl&eacute;mentaires dans 
+                      les ailes : ces armes sont aliment&eacute;es par bandes 
+                      de 500 cartouches avec r&eacute;chauffement par les gazs 
+                      issus du collecteur d'&eacute;chappement gauche. Le collimateur 
+                      OPL 1931 est remplac&eacute; par un Baille-le-maire GH-38, 
+                      ce qui a pour cons&eacute;quence d'incliner le pare-btise. 
+                      Le radiateur ventral est fixe et plus efficace pour am&eacute;liorer 
+                      la fiabilit&eacute; du moteur et permettre d'utiliser la 
+                      pleine puissance. Des pipes d'&eacute;chappements propulsives 
+                      sont install&eacute;es. Ces modifications am&eacute;liorent 
+                      consid&eacute;rablement les performances de l'avion avec 
+                      une vitesse maximale qui passe &agrave; 509 km/h. Il &eacute;tait 
+                      pr&eacute;vu de r&eacute;aligner 500 MS406, mais seul deux 
+                      exemplaires seront termin&eacute;es int&eacute;gralement.</font></b></p>
+                  </td>
+                </tr>
+              </table>
+              <p><b></b></p>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td height="226"> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">1 
+                      ) _ Editions LELA PRESSE ; Collection &quot;Histoire de 
+                      l'aviation&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Le Morane Saulnier MS 406 </b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/collection_histoire_de_l_aviation_5_l.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnails/tn_collection_histoire_de_l_aviation_5_l.jpg" alt="" width="91" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                  <td height="226"> 
+                    <p><font size="3"><i><font color="#990000"><b><i><font size="2" color="#000000">2 
+                      ) _ Editions &quot;JAKAB&quot;: auteur MROSLAV Bnajdr&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - Morane Saulnier MS 406 C1 vol 1 &amp; 2</b></font></i></font></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/jakab_aircraft_006_MS406C1.jpg" data-fancybox-group="gallery-1" title="Editions JAKAB"><img src="thumbnails/tn_jakab_aircraft_006_MS406C1.jpg" alt="" width="90" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/morane-saulnier-ms406-c1-2dil.jpg" data-fancybox-group="gallery-1" title="Editions JAKAB"><img src="thumbnails/tn_morane-saulnier-ms406-c1-2dil.jpg" alt="" width="91" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="left"><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">3)_ 
+                      Editions LELA PRESSE ; Collection &quot;Les Ailes de la 
+                      Gloire&quot;</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - N&deg;7 et 7R : Morane Saulnier MS406</b></font></i></font></font></i></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/adg7.jpg" data-fancybox-group="gallery-1" title="Editions LELA Presse"><img src="thumbnails/tn_adg7.jpg" alt="" width="90" height="128" border="0" /></a></p>
+                  </td>
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">4)_ 
+                      Monographie LOTNICZE</font></i></b><font size="2"><i><font color="#990000"><b><font color="#000000"> 
+                      N&deg;28 : auteur Gaston BOTQUIN</font><br>
+                      - M S 406</b></font></i></font></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/5823852653.jpg" data-fancybox-group="gallery-1" title="Editions LOTNICZE"><img src="thumbnails/tn_5823852653.jpg" alt="" width="91" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              
+            <p><a class="fancybox-effects-c" href="Photos/ms-406-N-56.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_ms-406.jpg" alt="" width="114" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/morane-saulnier-ms-406-fighter-01.png" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_morane-saulnier-ms-406-fighter-01.png" alt="" width="126" height="70" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/MS-406-02.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_morane-saulnier-ms-406-fighter-02.png" alt="" width="124" height="70" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/morane-406-1939.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnails/tn_morane-406-1939.jpg" alt="" width="137" height="72" border="0" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/ms406_P3v.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnails/tn_ms406_P3v.jpg" alt="" width="131" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

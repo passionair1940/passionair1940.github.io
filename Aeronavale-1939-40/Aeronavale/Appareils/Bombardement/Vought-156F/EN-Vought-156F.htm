@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Naval Aviation in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Vought-156F</title>
+<META name="KEYWORDS" content="French Naval Aviation 1939-1940,Bombers,campaign of France, funny war,Vought 156F">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+ <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+       <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="Vought-156F.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Aircraft</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Bombers</b></font></a></p>
+          <p align="left"><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Fighter 
+            aircraft </font></b></font></a></p>
+          <p align="left"><a href="../EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><i>Bombers</i></font></b></font></a></p>
+          <div align="left"><a href="../Farman-F222/EN-Farman-F222.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman F222</font></b></font></a></div>
+          <div align="left"><a href="../Farman-NC223/EN-Farman-NC223.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman NC223</font></b></font></a></div>
+          <div align="left"><a href="../Gleen-Martin-167F/EN-Gleen-Martin-167F.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Gleen Martin 167F</font></b></font></a></div>
+			<div align="left"><a href="../Loire-Nieuport_LN401/EN-LN-401.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loiré-Nieuport LN401</font></b></font></a></div>
+          <div align="left"><a href="../Loire-Olivier-Leo-451/EN-LeO-451.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loir&eacute; &amp; Olivier L&eacute;o451</font></b></font></a></div>
+          <div align="left"><a href="EN-Vought-156F.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">-<i><font color="#FFFFFF"> 
+            Vought-156F</font></i></font></b></font></a></div>
+          <p align="left"><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; links</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/EN-Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Seaplanes</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/EN-Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Embarked Seaplanes</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            
+          <p><b><font size="20%" color="#660000">VOUGHT 156F</font></b></p>
+            
+          <p><img src="Photos/Vought-156F.JPG" width="70%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+              Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">Ttwo-seater Dive Bomber 
+                    with low-wings and retractable landing gear</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg">
+                    
+                  <div align="center"><font face="Arial Narrow" size="2">January 
+                    4, 1936</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">12,80 m&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">10,33 m&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">4,32m&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">28</font> <font size="2" face="Arial Narrow">m2&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow"> 2120 Kg&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">3300 Kg&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">400 km/h at 3500m&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">408m/mn&nbsp;</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">8400 m&nbsp;</font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                    <font size="2" face="Arial Narrow">1000kms</font> 
+                  </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"> 2 Men</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="2">1 Radial 
+                    Engine Pratt &amp; Whitney R1535-02 Twin Wasp of 825ch</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      
+                    <div><font face="Arial Narrow" size="2">1 machine-gun of 7.62mm 
+                      on the right wing<br>
+                      1 mobile machine-gun of 7.62mm in dorsal position<br>
+                      2 bombs G2 of 75kg under the wings</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2" color="#000000">90 Vought 
+                156F were ordered by the Navy. Only 40 will be taken into account 
+                before the Armisitice.</font></b></p>
+                
+              <ul>
+                <li><font size="2" color="#990000"><font color="#000000"><b><font color="#000000" face="Arial Narrow"> 
+                  20 ordered late 1938 : Delivered and mounted </font></b></font></font></li>
+                <li><font size="2" color="#990000"><font color="#000000"><b><font color="#000000" face="Arial Narrow">20 
+                  ordered in May 1939: Delivered and mounted</font></b></font></font></li>
+                <li><font size="2" color="#990000"><font color="#000000"><b><font color="#000000" face="Arial Narrow">50 
+                  ordered in March 1940: the Armistice will prevent delivery. 
+                  They will be diverted to England which takes them under the 
+                  name of &quot;Chesapeake&quot;</font></b></font></font></li>
+              </ul>
+                
+              <p><b><font size="2" color="#990000" face="Arial Narrow"><font color="#000000">To 
+                date, out of the 35 aircrafts delivered, 39 </font></font><font size="2" face="Arial Narrow"><font color="#990000"><font color="#000000">are 
+                listed in the list below </font></font></font></b></p>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+              </p>
+            </div>
+              </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font size="2" face="Arial Narrow"><b>In 1934, the US Navy issued 
+              a program for a Maritime reconnaissance and dive bombing aircraft. 
+              10 Builders respond, including 6 with Biplans: we are in the process 
+              of technological transition and modern designs cotate old still 
+              very tenacious ... The Vought Company offers the XSB2U-1. This modern-looking 
+              aircraft is a low-profile, low-flying monoplane. It remains despite 
+              everything, clothed except for the bonnet.. It is powered by a Pratt 
+              &amp; Withney R-1535-78 in 700cv star. The aircraft made its first 
+              flight on January 4, 1936. But during the tests, the prototype went 
+              into a spin and crashed killing the two crewmen.</b></font></p>
+            <p><b><font size="2" face="Arial Narrow">The US Navy, however, places 
+              an order for 44 SB2U-1s, and the first copies come into service 
+              in December 1937. This order is followed by another for 48 copies 
+              in the slightly modified version SB2U-2.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The company Vought, on own 
+              funds, realizes another SB2U-2 to serve as demonstrator internationally. 
+              The aircraft is thus presented, in October 1938, at the Salon A&eacute;ronautique 
+              of Paris, at the Grand Palais. The French Navy is interested in 
+              this resolutely modern aircraft, and a market has been awarded for 
+              a shipment of 20 export aircraft under the Vought 156F designation. 
+              A second order of 20 aircraft will be placed in May 1939. And last 
+              one order in March 1940 for 50 copies that will never be delivered 
+              in France, but taken into account by the British under the designation 
+              &quot;Chesapeake&quot;</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">Aircraft returned to French 
+              standards are delivered without weapons: it is set up by the French 
+              technical services. This version also adopts aerodynamic brakes 
+              on the extrados of the wings, equipment refused by the US-Navy. 
+              The aircrafts are delivered in box and reassembled in Orly. Note 
+              that the US-Navy refused, for reasons of confidentiality, that Vought 
+              delivers the aircrafts with the spacing forks of the ventral bombs. 
+              French aircraft can only carry one 75kg bomb under each wing ...</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The AB1 Escadrille, the B&eacute;arn 
+              aircraft carrier, is the first unit to receive the new aircraft 
+              to replace its old Levasseur PL-7. The Vought 156Fs are delivered 
+              without Radio or Bomb Launcher, but will be equipped over time, 
+              and the unit, operating from ground bases has 12 operational aircraft 
+              in December 1939.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The AB3 Squadron, newly created 
+              on December 1, 1939, also receives Vought 156F. Surprisingly, even 
+              though the B&eacute;arn Aircraft Carrier is retired from active 
+              service, the Vought 156F will be qualified for landing ... which 
+              will be done without any particular difficulty.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">On May 10, 1940, the AB3 
+              suffered the full German attack: the shed that housed all its Vought 
+              156F was destroyed by a raid early in the morning, and no Vought 
+              156F will be saved. The events will not allow to re-equip in time 
+              the squadron: the Campaign of France is finished for the unit ...</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">The AB3 Squadron, meanwhile, 
+              will participate in the campaign of France. It will be engaged in 
+              Holland, without losses at first, but on May 20, during an attack 
+              without protection of hunting, to destroy the bridge of Origny Sainte-Benoite, 
+              5 aircrafts will be slaughtered by the German hunting, resulting 
+              in the loss of 8 men: 5 dead and 3 prisoners. The unit continues 
+              its missions in the north before being folded on Hy&egrave;res from 
+              June 10, to counter a possible attack from Italy that is about to 
+              enter the conflict. On June 15, 6 Vought 156F are destroyed on the 
+              ground by the Italian hunt and on June 18, will take place the last 
+              mission before the Armisitice.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">Three aircraft will manage 
+              to be evacuated on B&ocirc;ne, in Algeria. The two squadrons AB1 
+              and AB3, become 1AB and 3AB, will be dissolved from August 1940, 
+              and the aircraft will be stored and dismantled. Of the initial 40 
+              Vought 156F, there are 7 surviving aircraft, 3 of which will be 
+              destroyed by the Germans during the invasion of the free zone, and 
+              the others disappear in North Africa, without leaving a trace.</font></b></p>
+            <p><b><font size="2" face="Arial Narrow">For the 50 Vought 156F of 
+              the last command, taken into account by the British under the name 
+              of &quot;Chesapeake&quot;, they will know a career very short: the 
+              English will judge the aircraft too inefficient, and it will never 
+              serve in combat under the British colors.</font></b></p>
+          </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions</font></b></i></font></p>
+              
+            <p><font face="Arial Narrow"><b><font size="2">The Vought 156F will 
+              only be manufactured in one version. The main differences from the 
+              US SB2U-2 Vindicator are :<br>
+              - Instruments made to French standards, with metric measurements<br>
+              - Inverted throttle<br>
+              - No ventral bombshell provided: the French aircraft will have to 
+              be satisfied with a bomb thrower under each wing (75 kg / bombs)<br>
+              - Presence of aerodynamic brakes on the upper surface of the wing</font></b></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> </div>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+              
+            <table width="96%">
+              <tr> 
+                <td width="48%"> 
+                  <div> 
+                    <div> 
+                      <div align="left"> 
+                        <div><b><i><font size="2" face="Arial Narrow">1 ) _ LELA-PRESSE 
+                          Editions - From July to September 1997</font></i></b></div>
+                        <div> 
+                          <div><font face="Arial Narrow" size="2"><b><i><font color="#990000">AVION 
+                            </font></i></b><font color="#990000"><i><b> N&deg; 
+                            52 - 53 - 54 - 55</b></i></font></font></div>
+                          <div><i><font face="Arial Narrow" size="2" color="#000000">From 
+                            Michel LEDET</font></i></div>
+                        </div>
+                      </div>
+                      <div align="left"></div>
+                      <b></b></div>
+                  </div>
+                  <p><a class="fancybox-effects-c" href="Photos/Avions-52.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions-52.jpg" alt="" width="72" height="100" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Avions-53.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions-53.jpg" alt="" width="70" height="100" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Avions-54.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions-54.jpg" alt="" width="69" height="100" border="0" /></a> 
+                    <a class="fancybox-effects-c" href="Photos/Avions-55.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img src="thumbnail/tn_Avions-55.jpg" alt="" width="70" height="100" border="0" /></a> 
+                  </p>
+                  <p>&nbsp; </p>
+                </td>
+                <td width="52%"> 
+                  <div><b><i><font size="2" face="Arial Narrow">2<i><font color="#990000"><b><i><font color="#000000">) 
+                    _ Larivi&egrave;re Editions - March 1997</font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                    <font face="Arial Narrow">Le Fana de L'Aviation n&deg;328 
+                    : &quot;De la Torpille &agrave; la Bombe&quot;</font></b></font></i></font></i></font></i></b></div>
+                  <div><i><font size="2" color="#000000" face="Arial Narrow">from 
+                    Lucien MORAREAU</font></i></div>
+                  <p>&nbsp; <a class="fancybox-effects-c" href="Photos/Fana-Aviation-328.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana-Aviation-328.jpg" alt="" width="71" height="100" border="0" /></a></p>
+                  <p>&nbsp; </p>
+                </td>
+              </tr>
+              <tr> 
+                <td width="48%"> 
+                  <div><b><i><font size="2" face="Arial Narrow">2<i><font color="#990000"><b><i><font color="#000000">) 
+                    _ Carakt&egrave;re Edition - August 2010</font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                    <font face="Arial Narrow">Aero-Journal (3eme S&eacute;rie) 
+                    n&deg;17 : &quot;Les Avions de Combat Fran&ccedil;ais : Le 
+                    vought 156F&quot;</font></b></font></i></font></i></font></i></b></div>
+                  <div><font face="Arial Narrow"><i><font size="2" color="#000000">from 
+                    Christian-Jacques EHRENGARDT </font></i></font></div>
+                  <p>&nbsp; <a class="fancybox-effects-c" href="Photos/Aero-Journal-17.JPG" data-fancybox-group="gallery-1" title="Editions Caraktère"><img src="thumbnail/tn_Aero-Journal-17.JPG" alt="" width="71" height="100" border="0" /></a></p>
+                </td>
+                <td width="52%">&nbsp;</td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+          </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              Album </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/Vought-156F-Appontage.jpg" data-fancybox-group="gallery-2" title="Vought 156F Lieutenant Navy MESNY - Squadron AB1 - April 1940 on Bearn"><img src="thumbnail/tn_Vought-156F-Appontage.jpg" alt="" width="141" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/VoughtF156-3.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_VoughtF156-3.jpg" alt="" width="152" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Vought156F-2.jpg" data-fancybox-group="gallery-2" title="Bomb of 75kg under the left wing"><img src="thumbnail/tn_Vought156F-2.jpg" alt="" width="116" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Vought-156F-1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Vought-156F-1.jpg" alt="" width="115" height="72" border="0" /></a>  
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+                3 views</font></b></i></font></p>
+            </div>
+            
+          <div align="left"><a class="fancybox-effects-c" href="Photos/P3V-V156F.JPG" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_P3V-V156F.JPG" alt="" width="169" height="100" border="0" /></a> 
+          </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

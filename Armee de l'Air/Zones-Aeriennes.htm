@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Zones-Aeriennes</title>
+<meta name="keywords" content="Armée de l'Air Française 1939-1940,pilotes,appareils,escadrilles,chasse,bombardement,zone aérienne,Zone aérienne Est,Zone aérienne Sud,Zone aérienne Alpes,Zone aérienne Nord,ZOAE,ZOAN,ZOAS,ZOAA, Afrique du Nord,Forces Aériennes réservées, Forces aériennes de copération,Français,1940,reconnaissance,campagne de france,drôle de guerre">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../Images%20Base/2.png" width="20%" border="0"></a><a href="../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../Images%20Base/3.png" width="20%" border="0"></a><a href="../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../Images%20Base/4.png" width="20%" border="0"></a><a href="../index.htm" target="_self"><img src="../Images%20Base/5.png" width="20%"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767">
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Zones-Aeriennes.htm"><img src="../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">   
+        <div align="center"><font size="4" color="#FFFFFF"><b>Zones A&eacute;riennes</b></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#CCCCCC" size="4"><a href="Organisation.htm" target="_self"><font color="#C4C4C4">Organisation</font></a></font></font></b></b> 
+            <div align="left"> </div>
+            <div align="left"> 
+              <div><font size="4"><a href="Zones-Aeriennes.htm" target="_self"><b><font face="Arial Narrow" color="#FFFF00"><font color="#FFFFFF"><i>Zones 
+                A&eacute;riennes</i></font><i><font color="#FFFFFF"> :</font></i></font></b></a></font></div>
+              <div><b><font face="Arial Narrow" size="3" color="#FFFF00"> <a href="ZOAN.htm" target="_self"><font color="#FFFF09">- 
+                ZOA Nord</font></a></font></b></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAE.htm" target="_self"><font color="#FFFF0F">- 
+                ZOA Est</font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAS.htm" target="_self"><font color="#FFFF11">- 
+                ZOA Sud</font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOAA.htm" target="_self"><font color="#FFFF11">- 
+                ZOA Alpes</font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Orient-Mediterraneen.htm" target="_self"><font color="#FFFF00">- 
+                ZOA du Levant</font></a> </font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Afrique-du-Nord.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Afrique Du Nord</font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" color="#FFFF00"><a href="ZOA-Afrique.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Afrique </font></a></font></b></font></div>
+              <div><font size="3"><b><font face="Arial Narrow" "><a href="ZOA-Indochine.htm" target="_self"><font color="#FFFF00">- 
+                ZOA Indochine</font></a></font></b></font></div>
+				<div><font size="3"><b><font face="Arial Narrow" "><a href="Forces-Aeriennes.htm" target="_self"><font color="#FFFF00">- 
+              FA (Forces Aériennes Organiques)</font></a></font></b></font></div>
+            </div>
+            <p align="left"><b class="Aucun"><b><a href="Appareils/Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Appareils</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Escadrilles/Accueil-Escadrilles.htm"  target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Escadrilles</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Pilotes/Accueil-Pilotes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Pilotes</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Marquage.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Marquage</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="Equipement-pilotes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Equipement 
+              Pilotes</font></font></a></b></b> </p>
+			  <p align="left"><b class="Aucun"><b><a href="Citations/Accueil-Citations.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Citations </font></font></a></b></b> </p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" width="82%" height="25" bgcolor="#000024"> 
+        <div align="center"> 
+          <div align="center"></div>
+          <blockquote> 
+            <p><img src="../Images%20Base/Titre%20force%20aeriennes.png" width="40%"></p>
+            <p>&nbsp;</p>
+            <table width="100%" border="0">
+              <tr> 
+                <td colspan="5"><font color="#660000"><b><i><font face="Arial Narrow" size="6" color="#FFFFFF">Carte 
+                  des Zones A&eacute;riennes : </font></i></b></font></td>
+              </tr>
+              <tr> 
+                <td width="20%"> 
+                  <div align="center"><b><font color="#FFFFFF">ZOA France</font></b></div>
+                </td>
+                <td width="20%"> 
+                  <div align="center"><b><font color="#FFFFFF">ZOA du Levant</font></b></div>
+                </td>
+                <td width="20%"> 
+                  <div align="center"><b><font color="#FFFFFF">ZOA Afrique du 
+                    Nord</font></b></div>
+                </td>
+                <td width="20%"> 
+                  <div align="center"><b><font color="#FFFFFF">ZOA Afrique</font></b></div>
+                </td>
+                <td width="20%"> 
+                  <div align="center"><b><font color="#FFFFFF">ZOA Indochine </font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20%" height="64">
+                  <div align="center"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/Cartes Zones copier.jpg" data-fancybox-group="gallery-2" title=""><img src="../Images%20Base/Organisation/tn_Cartes%20Zones%20copier.jpg" alt="" border="0" width="60" height="60" /></a></div>
+                </td>
+                <td width="20%" height="64"><div align="center"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/levant.png"><img src="../Images%20Base/Organisation/tn_levant.png" width="76" height="60" border="0"></a></div></td>
+                <td width="20%" height="64">
+                  <div align="center"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/AFN.png"><img src="../Images%20Base/Organisation/tn_AFN.png" width="166" height="60" border="0"></a></div>
+                </td>
+                <td width="20%" height="64">
+                  <div align="center"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/Afrique.png"><img src="../Images%20Base/Organisation/tn_Afrique.png" width="61" height="60" border="0"></a></div>
+                </td>
+                <td width="20%" height="64"><div align="center"><a class="fancybox-effects-c" href="../Images%20Base/Organisation/Indochine%20France.png"><img src="../Images%20Base/Organisation/tn_Indochine%20France.png" width="37" height="60" border="0"></a></div></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" bgcolor="#000024">
+              <tr> 
+                <td height="32" colspan="5"> 
+                  <hr width="80%">
+                </td>
+              </tr>
+              <tr> 
+                <td height="38" colspan="5"> 
+                  <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6" color="#FFFFFF">Historique 
+                    : </font></i></b></font></p>
+                  <p align="left"><b><font face="Arial Narrow" size="2" color="#FFFFFF">Le 
+                    commandant en chef des Arm&eacute;es A&eacute;riennes, le 
+                    G&eacute;n&eacute;ral Vuillemin, s'opposa d&egrave;s le d&eacute;but 
+                    du conflit, aux G&eacute;n&eacute;raux de l'Arm&eacute;e de 
+                    terre. Ceux-ci souhaitaient, &agrave; l'image de l'organisation 
+                    en place lors de la 1ere Guerre mondiale, que les forces a&eacute;riennes 
+                    soient &agrave; la disposition des troupes au sol. Cette organisation 
+                    &eacute;tait celle en place &agrave; l'ouverture des hostilit&eacute;s 
+                    (Voir sch&eacute;ma n&deg;1)</font></b></p>
+                  <div align="left"> 
+                    <p><font size="2"><b><font face="Arial Narrow" color="#FFFFFF">Ainsi 
+                      , d&egrave;s Septembre, le G&eacute;n&eacute;ral Vuillemin 
+                      supprima dans un premier temps, le &quot;Commandement des 
+                      Forces A&eacute;riennes mises &agrave; la disposition des 
+                      forces terrestres&quot; et cr&eacute;a deux ZOA Nord et 
+                      Est</font><font size="2"><b><font face="Arial Narrow" color="#FFFFFF"> 
+                      (Zone d'Op&eacute;ration A&eacute;rienne) d&eacute;pendantes 
+                      de la 1ere Arrm&eacute;e A&eacute;rienne</font></b></font><font face="Arial Narrow" color="#FFFFFF">. 
+                      A ces ZOA sont rattach&eacute;es </font><font size="2"><b><font face="Arial Narrow" color="#FFFFFF"> 
+                      des &quot;FAC&quot; (Forces A&eacute;riennes de Coop&eacute;ration) 
+                      et des </font><font size="2"><b><font face="Arial Narrow" color="#FFFFFF">FAR 
+                      (Forces A&eacute;riennes R&eacute;serv&eacute;es) voir Sch&eacute;ma 
+                      n&deg;2 </font></b></font></b></font></b></font></p>
+                    <div><b><font face="Arial Narrow" size="2" color="#FFFFFF">Mais 
+                      le G&eacute;n&eacute;ral Vuillemin, dans un souci d'optimisation, 
+                      d&eacute;cida de supprimer la 1ere Arm&eacute;e A&eacute;rienne, 
+                      niveau de commandement inutile &agrave; ses yeux. Les 3emes 
+                      et 5eme Arm&eacute;es A&eacute;riennes furent supprim&eacute;es 
+                      &eacute;galement et des ZOA Alpes et Afrique du Nord voient 
+                      le jour. </font></b></div>
+                  </div>
+                  <div align="left"> 
+                    <p><font size="2"><b><font face="Arial Narrow" color="#FFFFFF">Cependant, 
+                      les g&eacute;n&eacute;raux terrestres, men&eacute;s par 
+                      le G&eacute;n&eacute;ral Gamelin, r&eacute;ussirent &agrave; 
+                      convaincre le Pr&eacute;sident du Conseil, Edouard Daladier, 
+                      et le Ministre de l'air, Guy la Chambre, du bien fond&eacute; 
+                      de leur vision de l'Aviation, et le G&eacute;n&eacute;ral 
+                      Vuillemin n'eut d'autre choix que de modifer &agrave; nouveau 
+                      son organisation : Un commandement des Forces A&eacute;riennes 
+                      de Coop&eacute;ration est donc mis en place auquel sont 
+                      rattach&eacute;s les </font><font size="2"><b><font face="Arial Narrow" color="#FFFFFF"> 
+                      &quot;FAC&quot; (Forces A&eacute;riennes de Coop&eacute;ration)</font></b></font><font face="Arial Narrow" color="#FFFFFF"> 
+                      qui regroupent les unit&eacute;s rattach&eacute;es aux forces 
+                      terrestres, ... ce qui reprend finalement le concept des 
+                      Arm&eacute;es A&eacute;riennes que le G&eacute;n&eacute;ral 
+                      Vuillemin avait tent&eacute; de supprimer d&egrave;s le 
+                      d&eacute;but du conflit !</font></b></font></p>
+                    <p><b><font face="Arial Narrow" size="2" color="#FFFFFF">Toutes 
+                      ces r&eacute;organisations ont cr&eacute;&eacute;s des tensions 
+                      entre les diff&eacute;rents G&eacute;n&eacute;raux, et les 
+                      modifications se sont faites sur un fond de querelles personnelles, 
+                      peu propices a une objectivit&eacute; et &agrave; une efficacit&eacute; 
+                      vertueuse...</font></b></p>
+                  </div>
+                  <div align="left"><font size="2"><b><font face="Arial Narrow" color="#FFFFFF">Les 
+                    ZOA &eacute;taient donc compos&eacute;es de FAR (Forces A&eacute;riennes 
+                    R&eacute;serv&eacute;es) qui regroupent la chasse et le Bombardement 
+                    sous le commandement exclusif de l'Arm&eacute;e de l'Air et 
+                    les FAC qui &eacute;taient rattach&eacute;es aux forces terrestres. 
+                    </font></b></font></div>
+                  <div align="left"> 
+                    <p><font size="2"><b><font face="Arial Narrow" color="#FFFFFF">Les 
+                      faibles moyens A&eacute;riens de l'Arm&eacute;e de l'Air 
+                      sont donc divis&eacute;s en deux entit&eacute;s, rattach&eacute;es 
+                      &agrave; deux commandements distincts, Terrestres et A&eacute;riens, 
+                      ce qui rendit plus difficile le fonctionnement et finalement 
+                      nuit &agrave; l'&eacute;fficacit&eacute; de l'Arm&eacute;e 
+                      de l'Air.</font></b></font></p>
+                    <hr width="80%">
+                  </div>
+                  <div align="left"> 
+                    <p><font color="#660000"><b><i><font face="Arial Narrow" size="6" color="#FFFFFF">Organisation 
+                      en image:</font></i></b></font></p>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="121" width="51%"><img src="../Images%20Base/Schema%201.png" width="80%"></td>
+                <td height="121" colspan="4"> 
+                  <p><b><font color="#FFFFFF" size="4">Organisation avant Septembre 
+                    1939 : </font></b></p>
+                  <p><b><font color="#FFFFFF"><br>
+                    <font size="2">- Les Forces A&eacute;riennes de Coop&eacute;ration 
+                    sont rattach&eacute;es &agrave; l'Arm&eacute;e de terre via 
+                    le &quot;Commandement des Forces A&eacute;riennes mises &agrave; 
+                    la disposition de l&#146;arm&eacute;e de Terre&quot;.</font></font></b></p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="5" height="40"> 
+                  <hr width="80%">
+                </td>
+              </tr>
+              <tr> 
+                <td height="121" width="51%"> <img src="../Images%20Base/Schema%202.png" width="80%"> 
+                </td>
+                <td height="121" colspan="4"> 
+                  <p><b><font color="#FFFFFF" size="4">R&eacute;organisation de 
+                    Septembre 1939 :</font></b></p>
+                  <p><b><font color="#FFFFFF">Soucieux de soustraire les Forces 
+                    A&eacute;riennes de Coop&eacute;ration au commandement direct 
+                    de l'Arm&eacute;e de Terre, le G&eacute;n&eacute;ral Vuillemin 
+                    modife l'organisation primaire: <br>
+                    <font size="2">- Suppression du &quot;Commandement des Forces 
+                    A&eacute;riennes mises &agrave; la disposition de l&#146;arm&eacute;e 
+                    de Terre&quot;<br>
+                    - Cr&eacute;ation d&#146;une ZOA (Zone d&#146;op&eacute;ration 
+                    a&eacute;rienne)<br>
+                    - Rattachement des FAC (Forces A&eacute;riennes de Coop&eacute;ration) 
+                    &agrave; la ZOA</font><br>
+                    </font></b> </p>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="5" height="40"> 
+                  <hr width="80%">
+                </td>
+              </tr>
+              <tr> 
+                <td height="310" width="51%"><img src="../Images%20Base/Schema%203.png" width="100%"></td>
+                <td height="310" colspan="4"> 
+                  <p><b><font color="#FFFFFF" size="4">R&eacute;organisation de 
+                    F&eacute;vrier 1940 :</font></b></p>
+                  <p><b><font color="#FFFFFF">Le G&eacute;n&eacute;ral Vuillemin 
+                    supprime &quot;l'Arm&eacute;e A&eacute;rienne&quot; pour simplifier 
+                    l'organisation primaire<br>
+                    <font size="2">Mais les G&eacute;n&eacute;raux terrestres, 
+                    appuy&eacute;s par le ministre de l'Air, Guy Lachambre, arrivent 
+                    &agrave; imposer au g&eacute;n&eacute;ral Vuillmin, la mise 
+                    en place un &quot;Commandement des forces a&eacute;riennes 
+                    de Coop&eacute;ration&quot;sous autorit&eacute; &quot;Terrestre&quot; 
+                    auquel sont rattach&eacute;s les FAC (Forces a&eacute;riennes 
+                    de coop&eacute;ration) : on revient &agrave; un concept proche 
+                    du sch&eacute;ma 1, ce que voulait &eacute;viter le G&eacute;n&eacute;ral 
+                    Vuillemin...</font></font></b></p>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+        </div>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

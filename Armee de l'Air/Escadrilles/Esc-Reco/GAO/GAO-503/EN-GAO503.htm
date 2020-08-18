@@ -1,0 +1,976 @@
+ 
+
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Reconnaissance Group GAO-503</title>
+<META name="KEYWORDS" content="French Army 1939 - 1940, pilots, aircraft, squadrons, Reconnaissance, Casualtys,campaign of France, funny war, GAO 503">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne"><a name="HAUTDEPAGE"></a></p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="GAO503.htm"><img src="../../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><div align="left" class="style1"><div align="left" class="style1">
+              <div align="center"><a href="../../../EN-Accueil-Escadrilles.htm"><font size="4" color="#FFFFFF"><b>Units</b></font></a> 
+                <div align="center"></div>
+                <hr width="100%">
+                <div align="left" class="style1"> 
+                  <div align="left" class="style1"> 
+                    <div align="left" class="style1"> 
+                      <div align="left" class="style1"> 
+                        <div align="left" class="style1"> 
+                          <p><b class="Aucun"><b><a href="../../../Esc-Chasse/EN-Accueuil-Chasse.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Fighter 
+                            Squadrons</font></font></a></b></b></p>
+                          <p><b class="Aucun"><b><a href="../../../Patrouille-defense/EN-Accueil-Patrouilles.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Defense 
+                            Patrols</font></font></a></b></b></p>
+                        </div>
+                        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Bomb/EN-Accueil-Esc-Bombardement.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Bomber 
+                          squadrons</font></font></a></b></b></p>
+                        <p align="left"><b class="Aucun"><b><a href="../../../Esc-Bomb-Assaut/EN-Accueil-Esc-Bomb-Assaut.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Ground 
+                          Attack Bombers</font></font></a></b></b></p>
+                       
+                      </div>
+                    </div>
+                    <div align="left" class="style1"> 
+                      
+                    </div>
+                    <div align="left" class="style1"> 
+                      <div align="left" class="liennonsouligne"> 
+                        <p><b class="Aucun"><b><font face="Arial Narrow" size="5"><font color="#FFFFFF"><i><font size="4">Observation</font></i></font></font></b></b></p>
+                      </div>
+                    </div>
+                    <div align="left"><a href="../GAO-501/EN-GAO501.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 501</b></font></a></div>
+                    <div align="left"><a href="../GAO-502/EN-GAO502.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 502</b></font></a></div>
+                    <div align="left"><a href="EN-GAO503.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+                      GAO 503</font></i></b></font></a></div>
+                    <div align="left"><a href="../GAO-504/EN-GAO504.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 504</b></font></a></div>
+                    <div align="left"><a href="../GAO-505/EN-GAO505.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 505</b></font></a></div>
+                    <div align="left"><a href="../GAO-507/EN-GAO507.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 507</b></font></a></div>
+                    <div align="left"><a href="../GAO-509/EN-GAO509.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 509</b></font></a></div>
+                    <div align="left"><a href="../GAO-510/EN-GAO510.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 510</b></font></a></div>
+                    <div align="left"><a href="../GAO-511/EN-GAO511.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 511</b></font></a></div>
+                    <div align="left"><a href="../GAO-512/EN-GAO512.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 512</b></font></a></div>
+                    <div align="left"><a href="../GAO-513/EN-GAO513.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 513</b></font></a></div>
+                    <div align="left"><a href="../GAO-515/EN-GAO515.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 515</b></font></a></div>
+                    <div align="left"><a href="../GAO-516/EN-GAO516.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 516</b></font></a></div>
+                    <div align="left"><a href="../GAO-517/EN-GAO517.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 517</b></font></a></div>
+                    <div align="left"><a href="../GAO-518/EN-GAO518.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 518</b></font></a></div>
+                    <div align="left"><a href="../GAO-543/EN-GAO543.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 543</b></font></a></div>
+                    <div align="left"><a href="../GAO-544/EN-GAO544.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 544</b></font></a></div>
+                    <div align="left"><a href="../GAO-545/EN-GAO545.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 545</b></font></a></div>
+                    <div align="left"><a href="../GAO-546/EN-GAO546.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 546</b></font></a></div>
+                    <div align="left"><a href="../GAO-547/EN-GAO547.htm" target="_top"  ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 547</b></font></a></div>
+                    <div align="left"><a href="../GAO-548/EN-GAO548.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 548</b></font></a></div>
+                    <div align="left"><a href="../GAO-552/EN-GAO552.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 552</b></font></a></div>
+                    <div align="left"><a href="../GAO-553/EN-GAO553.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 553</b></font></a></div>
+                    <div align="left"><a href="../GAO-581/EN-GAO581.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 581</b></font></a></div>
+                    <div align="left"><a href="../GAO-582/EN-GAO582.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO 582</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-506/EN-GAO1506.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/506</b></font></a></div>
+                    <div align="left"><a href="../GAO-2-506/EN-GAO2506.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO II/506</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-508/EN-GAO1508.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/508</b></font></a></div>
+                    <div align="left"><a href="../GAO-2-508/EN-GAO2508.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO II/508</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-514/EN-GAO1514.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/514</b></font></a></div>
+                    <div align="left"><a href="../GAO-2-514/EN-GAO2514.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO II/514</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-520/EN-GAO1520.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/520</b></font></a></div>
+                    <div align="left"><a href="../GAO-2-520/EN-GAO2520.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO II/520</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-551/EN-GAO1551.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/551</b></font></a></div>
+                    <div align="left"><a href="../GAO-2-551/EN-GAO2551.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO II/551</b></font></a></div>
+                    <div align="left"><a href="../GAO-3-551/EN-GAO3551.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO III/551</b></font></a></div>
+                    <div align="left"><a href="../GAO-4-551/EN-GAO4551.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO IV/551</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-584/EN-GAO1584.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/584</b></font></a></div>
+                    <div align="left"><a href="../GAO-1-589/EN-GAO1589.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                      GAO I/589</b></font></a></div>
+					  <p align="left"><b class="Aucun"><b><a href="../../../Esc-Reco/Groupe-Reco/EN-Accueil-Groupe-Reco2.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Reconnaissance 
+             </font></font></a></b></b></p>
+                    <p><b class="Aucun"><b><a href="../../../../EN-Insignes-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Emblems 
+                      of Squadrons</font></font></a></b></b></p>
+                  </div>
+                </div>
+          </div>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <p align="left">&nbsp; 
+          </div>
+          <div align="left" class="style1"></div>
+          <p align="left">&nbsp;</p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <table width="85%" height="367">
+              <tr> 
+                
+              <td colspan="2" height="124"> 
+                <div align="center"></div>
+                  <div align="center"> 
+                    
+                  <div><b><font size="20%" color="#660000">Air Observation Group 
+                    GAO 503</font></b></div>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                
+              <td height="127" colspan="2"> 
+                <div align="center"></div>
+                  
+                <div align="center"><img src="Photos/GAO-503.gif" width="35%"></div>
+                </td>
+              </tr>
+            </table>
+            <p><a href="#Histoire"><img src="../../../../../Images%20Base/EN-B-Historique.png" width="10%" border="0"></a>
+		  <a href="#Etatmajor"><img src="../../../../../Images%20Base/EN-B-Etat%20major.png" width="10%" border="0"></a> 
+            <a href="#Pilotes"><img src="../../../../../Images%20Base/EN-B-Pilotes.png" width="10%" border="0"></a> 
+            <a href="#Equipages"><img src="../../../../../Images%20Base/EN-B-Equipages.png" width="10%" border="0"></a> 
+            <a href="#Terrains"><img src="../../../../../Images%20Base/EN-B-Terrains.png" width="10%" border="0"></a> 
+            <a href="#Appareils"><img src="../../../../../Images%20Base/EN-B-Appareils.png" width="10%" border="0"></a> 
+            <a href="#Pertes"><img src="../../../../../Images%20Base/EN-Pertes.png" width="10%" border="0"></a>  
+            </p>
+          </div>
+          <blockquote> 
+            <div align="center"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Histoire"></a></font></i></b></font> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Historical</font></i></b></font></p>
+              
+            <p><font face="Arial Narrow" size="2"><b>On May 10, 1940, the GA0 
+              503 is attached to the 1st Army of the 1st Air Division of the ZOAN 
+              (North Air Operations Area).</b></font></p>
+            </div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <p align="center"> <font face="Arial Narrow" size="2"><a name="Etatmajor"></a> 
+                </font> 
+            </div>
+          </div>
+          <div align="left"> </div>
+          <div align="left"></div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Staff</font></i></b></font></p>
+              <table BORDER bordercolor="#000000" width="72%" bgcolor="#FFFFFF" >
+                <tr> 
+                  <td colspan="4" height="40" bgcolor="#000000" bordercolor="#000000"> 
+                    <center>
+                    <font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font face="Arial Narrow"><i><b><font color="#FFFFFF">Commanders 
+                    of the group</font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font></b></i></font><font color="#FFFFFF"> 
+                    GAO 503</font></b></i></font> 
+                  </center>
+                  </td>
+                </tr>
+                <tr> 
+                  
+                <td width="48%" height="27" bgcolor="#CCCCCC"><b><font size="2" face="Arial Narrow">Commander 
+                  PEILLARD </font></b></td>
+                  <td width="22%" height="35" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font></font></div>
+                  </td>
+                  <td width="22%" height="35" bgcolor="#E4E4E4" bordercolor="#000000"> 
+                    <div align="center"></div>
+                  </td>
+                  <td width="6%" height="35" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td width="48%" height="27" bgcolor="#CCCCCC"> 
+                    
+                  <div align="left"><font face="Arial Narrow" size="2"><b>Captain 
+                    DE-LA-GENARDIERE</b></font></div>
+                  </td>
+                  <td width="22%" height="35" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+                  <td width="22%" height="35" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                  <td width="6%" height="35" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                </tr>
+                <tr> 
+                  
+                <td width="48%" height="27" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Commander 
+                  THABAULT </font></b></td>
+                  <td width="22%" height="35" bordercolor="#000000" bgcolor="#E4E4E4">&nbsp;</td>
+                  <td width="22%" height="35" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                  <td width="6%" height="35" bgcolor="#E4E4E4" bordercolor="#000000">&nbsp;</td>
+                </tr>
+              </table>
+              <p align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Pilotes"></a></p>
+              <p align="center">&nbsp;</p>
+              <hr noshade size="4" width="98%" align="left">
+              
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Pilots</font></i></b></font></p>
+              
+            <table border="1" bordercolor="#000000" bgcolor="#FFFFFF" width="100%">
+              <tr bordercolor="#FFFFFF"> 
+                <td colspan="6" height="40" bgcolor="#000000"> 
+                  <div align="center"><i><b><font face="Arial, Helvetica, sans-serif" color="#FFFFFF">Pilots 
+                    and crew of the Group</font></b></i> </div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="21%" bgcolor="#999999"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">Names 
+                    of crew members</font></b></div>
+                </td>
+                <td bgcolor="#999999" width="12%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">Rank</font></b></div>
+                </td>
+                <td bgcolor="#999999" width="10%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">Function</font></b></div>
+                </td>
+                <td bgcolor="#999999" width="39%"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><b>Informations</b></font></b></div>
+                </td>
+                <td bgcolor="#999999" width="4%"><font face="Arial Narrow" size="3"><b>Photos</b></font></td>
+                <td bgcolor="#999999" width="4%"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Indiv. 
+                    Card</font></b><font face="Arial Narrow"></font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">DE-LA 
+                  GENARDIERE</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander 
+                    of Group</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="45%"><font face="Arial Narrow" size="2"></font></td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">DENOMAISON 
+                  Andr&eacute;</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Captain</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilot</font></div>
+                </td>
+                <td bgcolor="#E4E4E4">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">GOURDON 
+                  Ren&eacute; </font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Chief 
+                    Warrant Officer</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilot</font></div>
+                </td>
+                <td bgcolor="#E4E4E4"><font size="2" face="Arial Narrow">On May 
+                  16, 1940 his aircraft, Potez 63-11 No. 375 was shot down by 
+                  the Flak. Unwilling, he manages to parachute himself.</font></td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">MANN 
+                  André</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sous-Lieutenant</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observer</font></div>
+                </td>
+                <td bgcolor="#E4E4E4"><font size="2" face="Arial Narrow">Killed 
+                  on May 16, 1940 aboard Potez 63-11 No. 375 shot down by the 
+                  Flak.</font></td>
+                <td height="29" width="4%" bgcolor="#E4E4E4"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="../../../../Pilotes/Reconnaissance/Photos-Pilotes/MANN Andre GAO 503.jpg" data-fancybox-group="gallery-1" title="Sub-Lieutenant André MANN"><img src="../../../../Pilotes/Reconnaissance/Photos-Pilotes/Small/tn_MANN Andre GAO 503.jpg" alt="" border="0" width="40%" /></a></font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">MAUREL 
+                  Ren&eacute;</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observer</font></div>
+                </td>
+                <td bgcolor="#E4E4E4">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">NOURRY</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Adjutant</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Machine-Gunner</font></div>
+                </td>
+                <td bgcolor="#E4E4E4"><font size="2" face="Arial Narrow">Wounded 
+                  on May 16, 1940 aboard the Potez 63-11 No. 375 shot by the Flak, 
+                  he managed to parachute.</font></td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">PEILLARD</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander 
+                    of Group</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="45%"><font face="Arial Narrow" size="2"></font></td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td bgcolor="#CCCCCC" width="21%"><b><font face="Arial Narrow" size="2">THIBAULT</font></b></td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commander 
+                    of Group</font></div>
+                </td>
+                <td bgcolor="#E4E4E4" width="45%"><font face="Arial Narrow" size="2"></font></td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+                <td bgcolor="#E4E4E4" width="4%">&nbsp;</td>
+              </tr>
+            </table>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"> 
+                    <p><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Equipages"></a></p>
+                    <div>&nbsp;</div>
+                  </div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="left"> 
+              <div align="center"> 
+                <hr size="4" noshade width="98%" align="left">
+              </div>
+              
+            <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Stories 
+              of crews</font></i></b></font></p>
+              
+            <table BORDER bordercolor="#000000" width="100%" bgcolor="#FFFFFF" >
+              <tr> 
+                <td colspan="5" height="40" bordercolor="#000000" bgcolor="#000000"> 
+                  <center>
+                    <i><b><font face="Arial, Helvetica, sans-serif" color="#FFFFFF">Crews 
+                    of Group</font></b></i> 
+                  </center>
+                </td>
+              </tr>
+              <tr> 
+                <td height="26" colspan="2" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Names 
+                    of crew members</b></font></div>
+                </td>
+                <td height="26" width="120" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Rank</b></font></div>
+                </td>
+                <td height="26" width="92" bgcolor="#999999"> 
+                  <div align="center"><font size="3" face="Arial Narrow"><b>Function</b></font></div>
+                </td>
+                <td height="26" bordercolor="#000000" width="48%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Informations</b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td rowspan="3" height="85" bgcolor="#CCCCCC" bordercolor="#000000" width="90"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Crew</font></div>
+                </td>
+                <td width="112" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">GOURDON</font></b></td>
+                <td width="118" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Chief Warrant Officer</font></td>
+                <td width="85" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilot</font></div>
+                </td>
+                <td height="85" bgcolor="#E4E4E4" bordercolor="#000000" rowspan="3" width="467"><font face="Arial Narrow" size="2"><i><b>Potez 
+                  63-11 n&deg; 375 :</b></i> Shot down by the Flak on May 16, 
+                  1940. Sub-Lieutenant MANN is killed, Adjutant NOURRY parachuted 
+                  is wounded, and Chief Warrant Officer GOURDON is unharmed.</font></td>
+              </tr>
+              <tr> 
+                <td width="112" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">MANN 
+                  Andr&eacute; </font></b></td>
+                <td width="118" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Sub-Lieutenant</font></td>
+                <td width="85" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observer</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="112" height="27" bgcolor="#CCCCCC" bordercolor="#000000"><b><font face="Arial Narrow" size="2">NOURRY</font></b></td>
+                <td width="118" height="27" bordercolor="#000000" bgcolor="#E4E4E4"><font face="Arial Narrow" size="2">Adjutant</font></td>
+                <td width="85" height="27" bordercolor="#000000" bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Machine-Gunner</font></div>
+                </td>
+              </tr>
+            </table>
+              <p align="center"><a name="Terrains"></a></p>
+              <p align="center">&nbsp;</p>
+            </div>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Airfield</font></i></b></font></font></i></b></font></p>
+            </div>
+            <div align="left"> 
+              
+            <table width="48%" border="1" height="202" bgcolor="#FFFFFF">
+              <tr bordercolor="#000000"> 
+                <td width="67%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Names 
+                    of airfields</b></font></div>
+                </td>
+                <td width="33%" bgcolor="#999999"> 
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Period 
+                    of use of airfields</b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">M&eacute;aulte</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">September 
+                    2, 1939</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Lille 
+                  S&eacute;clin</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">September 
+                    10, 1939</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Valenciennes 
+                  La Briquette</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">October 
+                    10, 1939</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Denain 
+                  Prouvy</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">November 
+                    10, 1939</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Valenciennes 
+                  La Briquette</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">December 
+                    15, 1939</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Haynecourt</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 17, 
+                    1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Bacqueville-en-Caux</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 18, 
+                    1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Chappes</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">May 25, 
+                    1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Albi</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    18, 1940</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="53%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Carlus</font></b></td>
+                <td bgcolor="#E4E4E4"> 
+                  <div align="center"><font face="Arial Narrow" size="2">June 
+                    21, 1940</font></div>
+                </td>
+              </tr>
+            </table>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Appareils"></a></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Aircrafts</font></i></b></font></p>
+                          
+            
+            <p><font size="2" face="Arial Narrow"><b>The GAO 503 was equipped 
+              since its creation, following aircrafts : </b></font></p>
+            </div>
+            <blockquote> 
+              <div align="left"><a class="fancybox-effects-c" href="../../../../Appareils/Reconnaissance/Mureaux-115-117/Photos/image028.jpg" data-fancybox-group="gallery-2" title="Aircrafts of the GAO 503 : Mureaux 113"><font face="Arial Narrow" size="3"><b><font color="#0000FF">- 
+                Mureaux 115</font></b></font></a> </div>
+              <div align="left"><a class="fancybox-effects-c" href="../../../../Appareils/Reconnaissance/Potez-63-11/Photos/image041.jpg" data-fancybox-group="gallery-2" title="Aircrafts of the GAO 503 : Potez 63-11"><font face="Arial Narrow" size="3"><b><font color="#0000FF">- 
+                Potez 63-11</font></b></font></a> </div>
+            </blockquote>
+            <div align="left"><font face="Arial Narrow" size="2"><b>The used aircrafts 
+            are described in the accessible file by the link below. You will find 
+            N ° of series, Registration, date of affectation to the group, and 
+            fate of the plane there.</b></font>  
+              <p><a class="fancybox fancybox.iframe" href="EN-Appareils-GAO503.htm"><img src="../../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="20%"></a></p>
+              <p align="left"><font size="2"><b><font color="#000000" face="Arial Narrow">In 
+              this list are identified : </font></b></font></p>
+              <ul>
+                <li><font face="Arial Narrow" size="2"><b><i> 1 Potez 63-11</i></b></font></li>
+              </ul>
+            </div>
+            <div align="center"><a href="#HAUTDEPAGE"><img src="../../../../../Images%20Base/EN-B-Retour%20haut%20page.png" width="20%" border="0"></a><a name="Pertes"></a> 
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i></i></b></font></p>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"><font face="Lucida Handwriting"><i><b></b></i></font></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Casualties</font></i></b></font></p>
+			<font color="#660000"><b><i><font face="Arial Narrow" size="6"><a name="Pertes"></a></font></i></b></font>
+              <table width="55%" border="1" bgcolor="#FFFFFF">
+                <tr bordercolor="#000000"> 
+                  <td width="60%" bgcolor="#999999" height="27"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Crewmen 
+                    killed</b></font><font face="Arial Narrow"></font></div>
+                  </td>
+                  <td width="40%" bgcolor="#999999" height="27"> 
+                    <div align="center"><font face="Arial Narrow"><b>1</b></font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  
+                <td width="71%" bgcolor="#CCCCCC"><b><font face="Arial Narrow" size="2">Sub-lieutenant 
+                  MANN (combat)</font></b></td>
+                  <td width="29%" bgcolor="#E4E4E4"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="2">May 16, 
+                    1940</font></div>
+                  </td>
+                </tr>
+                <tr bordercolor="#000000"> 
+                  <td width="60%" bgcolor="#999999" height="27"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="3"><b>Crewmen</b></font><font face="Arial Narrow"><b><font size="3"> 
+                    injured</font></b></font></div>
+                  </td>
+                  <td width="40%" bgcolor="#999999" height="27"> 
+                    <div align="center"><font face="Arial Narrow" size="3"><b>1</b></font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="71%" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2"><b>Adjutant 
+                    NOURRY (combat)</b></font></td>
+                  <td width="29%" bgcolor="#E4E4E4"> 
+                    
+                  <div align="center"><font face="Arial Narrow" size="2">May 16, 
+                    1940</font></div>
+                  </td>
+                </tr>
+              </table>
+              <p align="center">&nbsp; 
+            </div>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

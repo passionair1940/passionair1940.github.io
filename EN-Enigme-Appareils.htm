@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Enigmes-appareils</title>
+<meta name="keywords" content="French Air force 1939-1940,Fighter aviation,bombardment,Aircrafts,pilots,squadrons,French,1940,reconnaissance,casualties, victories,RAF,Luftwaffe,Régia Aéronautica,enigmas,campaign of france,funny war"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="Armee%20de%20l%27Air/EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="Images%20Base/EN-1.png" width="20%" border="0"></a><a href="Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="Images%20Base/EN-2.png" width="20%" border="0"></a><a href="Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="Images%20Base/EN-3.png" width="20%" border="0"></a><a href="Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="Images%20Base/EN-4.png" width="20%" border="0"></a><a href="EN-index.htm" target="_self"><img src="Images%20Base/EN-5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="FR-Enigme-Appareils.htm"><img src="Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+        <div align="center"><font size="4"><b><font color="#FFFFFF">Aircrafts 
+          Enigmas </font></b></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><a href="EN-Contenu.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Content</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historical</font></font></a></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0"><i><font color="#FFFFFF" size="4">Enigmas</font></i></font></font></a></b></b> 
+            </p>
+            <div align="left" class="style1"> 
+              <div align="left"><b class="Aucun"><b><i><font face="Arial Narrow" size="4"><font color="#FFFFFF" size="3">- 
+                Aircrafts Enigmas </font></font></i></b></b></div>
+              <div align="left"><font size="2"><a href="EN-Enigme-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Squadrons Enigmas </b></font></a></font></div>
+              <div align="left"><font size="2"><a href="EN-Enigme-Personnel.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Personal Enigmas </b></font></a></font></div>
+            </div>
+            <div align="left" class="style1"> 
+              <p align="left"><b class="Aucun"><b><a href="EN-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Links 
+                to discover</font></font></a></b></b></p>
+            </div>
+            <p>&nbsp;</p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <blockquote> 
+            <p>&nbsp; </p>
+            <div align="center"> 
+              <table border="1" width="100%">
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#666666"> 
+                    <div align="center"><font color="#FFFFFF"><b><font size="3">Nb 
+                      Enigma</font></b></font></div>
+                  </td>
+                  <td colspan="3" bgcolor="#666666"> 
+                    <div align="center"><font color="#FFFFFF"><b><font size="3">Aircrafts 
+                      concerned </font></b></font></div>
+                  </td>
+                  <td colspan="2" rowspan="2" bgcolor="#666666"> 
+                    <div align="center"><font color="#FFFFFF"><b><font size="3">Various 
+                      hypotheses</font></b></font></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#666666"> 
+                  <td width="11%" height="24"> 
+                    <div align="center"><font color="#FFFFFF" size="3"><b>Model</b></font></div>
+                  </td>
+                  <td width="5%" height="24"> 
+                    <div align="center"><font color="#FFFFFF" size="3"><b>Nb</b></font></div>
+                  </td>
+                  <td width="8%" height="24"> 
+                    <div align="center"><font color="#FFFFFF" size="3"><b>Registration</b></font></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td rowspan="2" width="8%"> 
+                    <div align="center"><b>A01</b></div>
+                  </td>
+                  <td rowspan="2" width="11%"> 
+                    <div align="center"><font size="2"><b>Bloch MB210</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%"> 
+                    <div align="center"><font size="2"><b>143</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%"> 
+                    <div align="center"><font size="2"><b></b></font></div>
+                    <div align="center"><font size="2"><b></b></font></div>
+                  </td>
+                  <td width="8%" height="52"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" height="52"> 
+                    <p><font face="Arial Narrow" size="2">Assigned to GB I / 23. 
+                      Damaged on 14 June 1940 on return from a mission: the crew 
+                      is unharmed</font></p>
+                    </td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">Assigned 
+                    to GB II / 11. The aircraft was reported missing during a 
+                    mission over Italy on the night of 13-14 June 1940.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><b>A02</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>Farman F222-1</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>7</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>L-149</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GB I / 15. On 17 May, taken by the Frost, the captain ordered 
+                    the evacuation, but the pilot managed to regain control. 3 
+                    crewmen have already jumped ...</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GT I / 15 1st Squadron. Nicknamed "ALBIREO". He was captured 
+                    by the Germans on November 11, 1942, on the grounds of Istres.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><b>A03</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Potez 637</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>41</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>C-625</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#CCCCCC" height="131"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC" height="131"> 
+                    <p><font face="Arial Narrow" size="2">Assigned to GR II / 
+                      33. Shot by mistake on December 21, 1939 by two English 
+                      Hurricanes. Lt CASTELLANA (Observer) and Adjt PERNOT (Gunner) 
+                      are killed. Only Lieutenant SAGON (Pilot), wounded, jumps 
+                      in parachute.</font></p>
+                    <div><font face="Arial Narrow" size="2"><b><font size="3">Explanation 
+                      of Mr JC FONTAN : </font></b></font></div>
+                    <div><font face="Arial Narrow" size="2">This Potez 637 is 
+                      No. 14, mat. C-598, mistakenly shot west of Verdun by F 
+                      / L Lovett on Hurricane RAF on December 21, 39 also, as 
+                      No. 41, hence the misunderstanding may be</font></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#00FF00" height="205"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#00FF00" height="205"> 
+                    <p><font face="Arial Narrow" size="2">Aircraft assigned to 
+                      GR I / 52: Shot by Fighter Aircrafts on 21 December 1939.The 
+                      crew is killed: Adjt LE-SAOULT (Pilot), Adjt-Chef VERON 
+                      (Observateur) and Sgt MELOT (machine gunner).</font></p>
+                    <div><font face="Arial Narrow" size="2"><b>Enigma Resolved 
+                      byMr JC FONTAN (September 2018) :</b> </font></div>
+                    <div><font face="Arial Narrow" size="2">The second hypothesis 
+                      is the good one, but this Potez 637 n &deg; 41 was shot 
+                      down in Alsace, in Barembach (Bas-Rhin), not in Istres.<br>
+                      This information is confirmed twice:<br>
+                      1 - By a stele installed at Square Forton in Barembach. 
+                      It bears the names of Saoult, Veron and Melot. It is dedicated 
+                      to 19 French airmen (Potez 637 of I / 52, 3 men, 21/12/1939), 
+                      Americans (B-24H &quot;Rough Buddy&quot; of USAAC 707th 
+                      BS, 9 men on 10/09/44) and English (Lancaster, RAF 207 Sqn, 
+                      7 men, 04/12/44) fell in this agglomeration for freedom.<br>
+                      2 - By the website &quot;https://www.aerosteles.net/plan&quot; 
+                      giving a photo of the stele of barembach, itself referenced 
+                      by &quot;francecrashes39-45.net&quot; Mr. Daniel Carville.</font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><b>A04</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>Potez 637</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>52</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>C-636</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GR II / 52. On September 7th, 1939, destroyed following 
+                    an attack by 3 BF 109E. The crew is unscathed : Asp MALLE 
+                    (pilot) / Ss-Lt VAUTHIER (Observer) / C-Chief BIOLETTI (Gunner)</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Aircraft 
+                    assigned to the GR I / 52: Destroyed following an air combat 
+                    on September 7, 1939: pursued by BF109E, it crashes on the 
+                    ground: crew unharmed.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><b>A05</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>D501 C1</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>140</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>R-200</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" height="40" bgcolor="#CCCCCC"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" height="40" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2">Assigned 
+                    to the 2nd EC (Fighter Wing), 4th Squadron. Destroyed by accident 
+                    on May 10, 1938 during a collision in Flight with the D501 
+                    n ° 39. His pilot, Sergeant PREVOST Fernand is killed.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">Assigned 
+                    to GC II / 4. Despite the transformation on CURTISS H75, will 
+                    remain until July 1938 at the GC I / 4 for the training</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><b>A06</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>MS406</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>355</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>N-773</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GC II / 2 - 3rd Sqn. Abandoned on the site of Plessis-Belleville 
+                    during the withdrawal of the Group towards Dijon on May 21, 
+                    1940.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Aircraft 
+                    used by the GC III / 3 then GC II / 3 before being stored 
+                    in Chateauroux after the Armistice. He was finally assigned 
+                    to the Center of Instruction of the Hunting (CIC) of Clermond 
+                    Ferrand during the winter 42/43</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><b>A07</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>MS406</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>455</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>N-873</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2">Assigned 
+                    to GC II / 9. He transferred to the Temporary Training Instruction 
+                    (GPIC) before being transferred to the GC I / 10 in June 1940. 
+                    It will be stored at the Sidi-Ahmed depot. </font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">Assigned 
+                    to GC II / 2. Damaged on landing in May 1940.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><b>A08</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Mureaux 115</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>41</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>X-525</b></font></div>
+                    <div align="center"><font size="2"><b></b></font></div>
+                  </td>
+                  <td width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#00FF00">
+                    <p><font face="Arial Narrow" size="2">Assigned to GAO 502. 
+                      Accidentally crashes on September 23, 1939. His crew is 
+                      unscathed.</font></p>
+                    <div><font face="Arial Narrow" size="2"><b>Solved enigma by 
+                      Mr JC FONTAN (September 2018)</b></font></div>
+                    <div><font face="Arial Narrow" size="2">The plane crashes into 
+                      the Ardennes, near Charleville M&eacute;zi&egrave;res</font></div>
+                  </td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GB I / 15. Abandoned on the grounds of Saint-Yan (71) on 
+                    June 15, 1940.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><b>A09</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>Dewoitine D520</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>65</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>Without</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2">Attached 
+                    to the GC I / 3 in April 1940. This aircraft is part of the 
+                    3 Air Force D520s in England.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">Attached 
+                    to the GC I / 2 in August 1941. Apparatus severely damaged 
+                    in June 1942, the pilot was injured, and the D520, irreparable, 
+                    was reformed at Aulnat.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><b>A10</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Dewoitine D520</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>246</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>Without</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GC III / 3 5th Squadron. Destroyed by accident on take-off 
+                    on June 2, 1940. His pilot, Sergeant NOVAK is killed.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#00FF00" height="100"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#00FF00" height="100"> 
+                    <p><font face="Arial Narrow" size="2">Attached to GC I / 2 
+                      in August 1941. The aircraft was destroyed on September 
+                      16, 1941 following a collision in flight: the pilot was 
+                      killed.</font></p>
+                    <div><font face="Arial Narrow" size="2"><b>Solved Enigma by 
+                      &quot;Tomcat68&quot;:</b> </font> 
+                      <div><font face="Arial Narrow" size="2">Entered at EAA 301 
+                        on May 26, 1940. Transfered to GC III / 3 on May 28, 1940. 
+                        Transfered to GC I / 2 at unknown date (but group recreated 
+                        July 1, 1941) Destroyed following a crash in flight with 
+                        Sgt P&eacute;riot above Chateauroux September 16, 1941. 
+                        the aircraft is broken in two, the rear part falls on 
+                        one of the hangar of the land &quot;Chateauroux - La Martinerie&quot;. 
+                        The pilot Ltt De Ch&eacute;zelle is killed, Sgt P&eacute;riot 
+                        managed to land.</font></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><b>A11</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>Dewoitine D520</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>79</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>Without</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC"><font face="Arial Narrow" size="2">Assigned 
+                    to GC I / 3, 1 ° Esc. In June 1940</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">On June 7, 
+                    he will be assigned to the GC II / 3</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><b>A12</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Dewoitine D520</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>64</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Without</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GC I / 3. Destroyed in air combat on May 15, 1940. His 
+                    pilot, Sub-Lieutenant THIERRY is unharmed.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#00FF00">
+                    <p><font face="Arial Narrow" size="2">Assigned to GC II / 
+                      3 on 12 May 1940.</font></p>
+                    <div><font face="Arial Narrow" size="2"><b>Solved Enigma by 
+                      Mr JC FONTAN (Septembre 2018)</b></font></div>
+                    <div><font size="2" face="Arial Narrow">Lieutenant THIERRY 
+                      quoted in Hypothesis 1 piloted D520 No. 122 and not No. 
+                      64 when shot on May 15, 1940</font></div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" width="8%" bgcolor="#00FF00"> 
+                    <div align="center"><b>A13</b></div>
+                  </td>
+                  <td rowspan="2" width="11%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>Dewoitine D520</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="5%" bgcolor="#00FF00"> 
+                    <div align="center"><font size="2"><b>99</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" width="8%" bgcolor="#CCCCCC"> 
+                    <div align="center"><font size="2"><b>Without</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#00FF00" height="206"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#00FF00" height="206"> 
+                    <p><font face="Arial Narrow" size="2">Assigned to the Toulouse 
+                      Patrol. Lieutenant SALKIEWICZ, Commander of the Patrol, 
+                      will be killed on board during training on May 30, 1940.</font></p>
+                    <div><font size="2" face="Arial Narrow"><b>Solved Enigma by 
+                      &quot;Tomcat68&quot;:</b> </font> 
+                      <div><font size="2" face="Arial Narrow">Released from EAA 
+                        301 on May 14, 1940, it is delivered on the same day to 
+                        GC II / 3. Then it is transfered in DA in Toulouse is 
+                        used by a Polish patrol. It is accidented on May 30, 1940.</font></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%"><font face="Arial Narrow" size="2">Assigned 
+                    to the GC II / 3 on May 14, 1940. Coded "2" White on the fuselage. 
+                    Aircraft attributed to Captain BISSOUDRE. Damaged by an air 
+                    combat on 7 June 1940, he lands in the field and is destroyed: 
+                    his pilot is unscathed. Apparatus donated to the EAA 301 de 
+                    Toulouse. </font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" bgcolor="#999999"> 
+                    <div align="center"><b>A14</b></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>MS406</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>338</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#999999"> 
+                    <div align="center"><font size="2"><b>N-773</b></font></div>
+                    <div align="center"></div>
+                  </td>
+                  <td width="8%" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999"><font face="Arial Narrow" size="2">Assigned 
+                    to GC III / 2, 5 ° Esc.the 20 June 1939.Coded "3". Accidented 
+                    in Francazal the the 01/03/40 (Adjt ROMEY), damaged in air 
+                    combat. Destroyed following an air combat on 10 May 1940. 
+                    his pilot, Commander BERTROU is unharmed</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#999999" height="24"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999" height="24"><font face="Arial Narrow" size="2">Assigned 
+                    to GC II / 2. Coded "3". Destroyed following an air combat 
+                    on May 10, 1940. its pilot, Commander BERTROU is unscathed.</font></td>
+                </tr>
+                <tr> 
+                  <td rowspan="2" bgcolor="#CCCCCC"> 
+                    <div align="center"><b>A15</b></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#CCCCCC"> 
+                    <div align="center"><b><font size="2">Potez 631</font></b></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#CCCCCC"> 
+                    <div align="center"><b><font size="2">205</font></b></div>
+                  </td>
+                  <td rowspan="2" bgcolor="#CCCCCC"> 
+                    <div align="center"><b><font size="2">X-974</font></b></div>
+                  </td>
+                  <td width="8%" bgcolor="#CCCCCC" height="17"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC" height="17"><font face="Arial Narrow" size="2">Assigned 
+                    to ECN V / 13 - Coded "5" red on the Tail. Present at Loyettes 
+                    in June 1940.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" bgcolor="#CCCCCC" height="18"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#CCCCCC" height="18"><font face="Arial Narrow" size="2">Assigned 
+                    to the ECN IV / 13. Present at Nimes at the end of June 1940.</font></td>
+                </tr>
+                <tr bgcolor="#999999"> 
+                  <td rowspan="2"> 
+                    <div align="center"><b>A17</b></div>
+                  </td>
+                  <td rowspan="2"> 
+                    <div align="center"><font size="2"><b>Caudron Cr714</b></font></div>
+                  </td>
+                  <td rowspan="2"> 
+                    <div align="center"><b>15</b></div>
+                  </td>
+                  <td rowspan="2"> 
+                    <div align="center"><font face="Arial Narrow" size="3" color="#000000"><b>I-205</b></font></div>
+                  </td>
+                  <td width="8%" height="16"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      1 </font></div>
+                  </td>
+                  <td width="60%" height="16"><font size="2" face="Arial Narrow" color="#000000">Assigned 
+                    to the Lyon DIAP, Abandoned to Mions after accident the 13/03/40</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td width="8%" height="13" bgcolor="#999999"> 
+                    <div align="center"><font face="Arial Narrow" size="2">Hyp 
+                      2</font></div>
+                  </td>
+                  <td width="60%" bgcolor="#999999" height="13"><font face="Arial Narrow" size="2">Assigned 
+                    to the 1st Squadron of GC I / 145 on 17 May 1940 from the 
+                    Lyon-Bron DIAP. Coded "3" White on the rudder.</font></td>
+                </tr>
+                <tr bgcolor="#CCCCCC"> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td bgcolor="#CCCCCC">&nbsp;</td>
+                  <td width="8%" bgcolor="#CCCCCC" height="53">&nbsp;</td>
+                  <td width="60%" bgcolor="#CCCCCC" height="36">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="Aeronavale-1939-40/EN-index.htm" target="_self"><img src="Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p>
+  <img src="Images%20Base/BlochMB174.gif" width="100%"> 
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

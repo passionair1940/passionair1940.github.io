@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Amiot-354</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,Bombardement,Bombardier,campagne de france,drôle de guerre, Amiot 350, Amiot 351, Amiot 354">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767">
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Amiot-350.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">    
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Appareils</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../../Chasse/Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Chasse</font></b></font></a></p>
+          <p align="left"><a href="../Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><i>Bombardement</i></font></b></font></a></p>
+          <div align="left"><a href="../Amiot-143/Amiot-143.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Amiot 143</font></font></b></font></a></div>
+          <div align="left"><a href="Amiot-350.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><i>- 
+            Amiot 354</i></font></b></font></a></div>
+          <div align="left"><a href="../Bloch-200/Bloch-200-8.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Bloch MB200</font></b></font></a></div>
+          <div align="left"><a href="../Bloch-210/Bloch-210.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Bloch MB210</font></b></font></a></div>
+          <div align="left"><a href="../Breguet-693/Breguet-693.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Breguet Br693</font></b></font></a></div>
+          <div align="left"><a href="../Douglas-DB7/Douglas-DB7.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Douglas DB7</font></b></font></a></div>
+          <div align="left"><a href="../Farman-F222/Farman-F222.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman F222</font></b></font></a></div>
+          <div align="left"><a href="../Farman-NC223/Farman-NC223.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman NC223</font></b></font></a></div>
+          <div align="left"><a href="../Gleen-Martin-167F/Gleen-Martin-167F.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Gleen Martin 167F</font></b></font></a></div>
+          <div align="left"><a href="../Loire-Olivier-Leo-451/LeO-451.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loir&eacute; &amp; Olivier L&eacute;o451</font></b></font></a></div>
+          <div align="left"><a href="../Potez-542/Potez-542.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 540</font></b></font></a></div>
+          <div align="left"><a href="../Potez-633/Potez633.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 633</font></b></font></a></div>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance</b></font></a></p>
+          <p align="left"><a href="../../Entrainement/Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Entrainement</b></font></a></p>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Chasseurs</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">AMIOT 354</font></b></p>
+            <p><img src="Photos/a350.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">Bombardier Moyen quadriplace 
+                      &agrave; ailes m&eacute;dianes et train rentrant </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">6 D&eacute;cembre 
+                      1937</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">22.83 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">14.50 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4.18 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">67.50 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids &agrave; 
+                      Vide</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 6500 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">11300 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 420 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">485 km/h &agrave; 5000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m en 6mn 12s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>plafond</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">9000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2470 kms avec 800 kg 
+                      de bombes</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4</font> <font size="2" face="Arial Narrow"> 
+                      Personnes</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2" face="Arial Narrow">2 Moteurs 
+                      Gn&ocirc;me &amp; Rh&ocirc;ne 14 cyl en &eacute;toile 14N-48/49 
+                      de 1100ch &agrave; 4450m</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="20%" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2" face="Arial Narrow">1</font> <font size="2" face="Arial Narrow"> 
+                        mitrailleuse MAC 34 de 7.5mm mobile &agrave; l'avant avec 
+                        500 coups<br>
+                        1 mitrailleuse MAC 34 de 7.5mm ventrale avec 800 coups 
+                        <br>
+                        1 canon Hipano Suiza de 20mm en dorsale avec 120 coups 
+                        <br>
+                        800 Kgs de bombes (1250 kg maxi) en soute</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                <p><b><font face="Arial Narrow" size="2" color="#000000">I</font><font size="2" color="#990000" face="Arial Narrow"><font color="#000000">ls 
+                  se r&eacute;partissent en :</font></font></b></p>
+              </div>
+              <ul>
+                <li> 
+                  <div align="left"><font size="2"><b><font face="Arial Narrow"><font color="#000000">86 
+                    Amiot 351 </font>/ 354 (Chiffre non certifi&eacute;) </font> 
+                    </b> </font> 
+                    <div align="left"></div>
+                  </div>
+                </li>
+                <li> 
+                  <div align="left"><font size="2"><b><font face="Arial Narrow">1 
+                    Amiot 356</font></b></font></div>
+                </li>
+                <li> 
+                  <div align="left"><font size="2"><b><font face="Arial Narrow">1 
+                    Amiot 370F</font> </b> </font></div>
+                </li>
+              </ul>
+              
+            <p><font size="2" color="#990000"><b><b><font face="Arial Narrow" color="#000000">A 
+              ce jour , sur les 86 appareils fabriqu&eacute;s , 32 sont recens&eacute;s 
+              dans la liste</font></b><font face="Arial Narrow" color="#000000"> 
+              ci-dessous :</font></b></font></p>
+              <p>&nbsp;</p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">La Soci&eacute;t&eacute; 
+                Amiot pr&eacute;sente en 1936 au salon de l'A&eacute;ronautique 
+                un nouvel appareil : l'Amiot 341, bimoteur long courrier rapide. 
+                Il est en fait issu des projets 340BR et 341BR, Bombardiers bimoteur 
+                De Repr&eacute;saille Triplace. Sa descendance militaire est flagrante, 
+                puisqu'il est &eacute;quip&eacute; de portes ventrales ouvrants 
+                sur une soute...</font></b></p>
+              <p><font face="Arial Narrow" size="2"><b>Le prototype Amiot 340 
+                n&deg;01, &eacute;quip&eacute; de Gn&ocirc;me-Rh&ocirc;ne 14 N-0/1 
+                de 920CV, fit son premier vol le 6 D&eacute;cembre 1937. Il est 
+                ensuite pris en compte par le CEMA pour essais en Mars 1939. Essais 
+                qui devaient entrainer une s&eacute;rie de modifications, qui 
+                furent toutefois temporis&eacute;es : l'appareil est en effet 
+                utilis&eacute; dans une op&eacute;ration de propagande en convoyant 
+                le G&eacute;n&eacute;ral Vuillemin &agrave; Berlin en Aout : le 
+                but &eacute;tait de montrer aux missions &eacute;trang&egrave;res, 
+                la &quot;modernit&eacute;&quot; de l'aviation Fran&ccedil;aise...</b></font></p>
+              <p><font face="Arial Narrow" size="2"><b>De retour en usine, il 
+                re&ccedil;ut enfin ses modifications : motorisation par des Gn&ocirc;me-Rh&ocirc;ne 
+                14 N-20/21 de 1020CV, ajout d'un poste ventral de d&eacute;fense 
+                suppl&eacute;mentaire, mise en place d'une double d&eacute;rive. 
+                Ainsi &eacute;quip&eacute;, l'appareil devient l'Amiot 351 n&deg;01, 
+                et il reprit ses essais en Janvier de 1939.</b></font></p>
+              <p><font face="Arial Narrow" size="2"><b>De cette version, sont 
+                &eacute;tudi&eacute;es plusieurs variantes : Amiot 354 / 356 / 
+                370 /... (voir Ch. Versions ci-dessous).</b></font></p>
+              <p><font face="Arial Narrow" size="2"><b>Une premi&egrave;re commande 
+                de 130 Appareils (Amiot 351-353-354) est &eacute;mise par le Minist&egrave;re 
+                de l'Air en 1938, chiffre qui atteint 880 Appareils apr&egrave;s 
+                la d&eacute;claration de guerre. La pr&eacute;vision de production, 
+                tr&egrave;s optimiste, pr&eacute;voyait 130 avions par mois.</b></font></p>
+              <p><font face="Arial Narrow" size="2"><b>Le premier Amiot 351 de 
+                s&eacute;rie ne fit son premier vol qu'en novembre 1939, retard&eacute; 
+                par les nombreuses modifications et les gr&egrave;ves fr&eacute;quentes.Il 
+                fut suivi rapidement par le premier Amiot 354 de s&eacute;rie, 
+                version qui ne diff&eacute;rait de l'Amiot 351 que par sa mono-d&eacute;rive. 
+                Les premiers essais ont entrain&eacute; &agrave; nouveau une s&eacute;rie 
+                de modifications, et ce n'est qu'en Janvier 1940 que les essais 
+                reprennent. La production d&eacute;marra tr&egrave;s lentement 
+                : l'appareil &eacute;tait complexe &agrave; produire et n&eacute;cessitait 
+                une logistique importante : le fuselage est fabriqu&eacute; &agrave; 
+                colombes, les Ailes &agrave; Cherbourg, la d&eacute;rive &agrave; 
+                Boulogne-Billancourt, le tout assembl&eacute; au Bourget...Ainsi, 
+                en Avril 1940, seuls 21 appareils ont &eacute;t&eacute; pris en 
+                compte au lieu des 285 pr&eacute;vus. En mai, l'Arm&eacute;e de 
+                l'Air n'aura re&ccedil;ut au total, que 17 Amiot 351 et 40 Amiot 
+                354. Bien peu d'unit&eacute;s per&ccedil;urent les nouveaux appareils, 
+                et on peut estimer &agrave; 86 le nombre de machines en service. 
+                Au cours de cette br&egrave;ve p&eacute;riode d'engagement, 13 
+                Amiot furent perdus, dont 3 au combat.. Les groupes &eacute;quip&eacute;s 
+                d'Amiot 351-354 passent en AFN &agrave; partir du 20 Juin. 37 
+                appareils franchirent donc la M&eacute;dit&eacute;rran&eacute;e, 
+                mais 5 d'entre eux furent perdus pour des raisons diverses. Finalement, 
+                ces unit&eacute;s &eacute;quip&eacute;es d'appareils sans pi&egrave;ces 
+                de rechange, au site de production situ&eacute; en m&eacute;tropole 
+                n'avait que peu de valeur combattante, et les survivants sont 
+                rapatri&eacute;s en m&eacute;tropole pour &ecirc;tre d&eacute;sarm&eacute;s.</b></font></p>
+              <p><font face="Arial Narrow" size="2"><b>Seuls 5 d'entre eux, 3 
+                Amiot 354, l'Amiot 356 et l'Amiot 370 seront encore utilis&eacute;s 
+                comme appareils de liaisons rapides. En Novembre 1942, lors de 
+                l'invasion de la Zone libre, les Allemands r&eacute;cup&egrave;rent 
+                4 appareils.</b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="55" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Amiot 351</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/image.jpg" data-fancybox-group="gallery-4" title="Amiot 351"><img src="thumbnail/tn_image.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="86%" height="55" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    d'origine de la s&eacute;rie des Amiot 350. L'appareil est 
+                    &eacute;quip&eacute; par des Gn&ocirc;me Rh&ocirc;ne 14 N-20/21 
+                    de 1020 CV. Il est &eacute;quip&eacute; d'une double d&eacute;rive. 
+                    Le cockpit du prototype est d&eacute;centr&eacute; sur la 
+                    gauche de l'appareil; L'Amiot 351 n&deg; 01 fait ses premiers 
+                    vols en Janvier 1939. Le premier appareil de s&eacute;rie 
+                    ne volera qu'en Novembre 1939 apr&egrave;s avoir subit de 
+                    nombreuses modifications : Cockpit recentr&eacute;, surface 
+                    alaire r&eacute;duite, fuselage et d&eacute;rives agrandis</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Amiot 354</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/amiot354b4.jpg" data-fancybox-group="gallery-4" title="Amiot 354"><img src="thumbnail/tn_amiot354b4.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="86%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Version 
+                    &eacute;quip&eacute;e d'une mono-d&eacute;rive et de moteurs 
+                    Gn&ocirc;me-Rh&ocirc;ne 14 N-48/49 de 1060Cv</font></b></td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="58" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Amiot 356</b></font></div>
+                    
+                  <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/Amiot-356.jpg" data-fancybox-group="gallery-4" title="Amiot 356"><img src="thumbnail/tn_Amiot-356.jpg" alt="" border="0" width="200" height="51" /></a></font></div>
+                  </td>
+                  <td width="86%" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <p><b><font face="Arial Narrow" size="2">Version motoris&eacute;e 
+                      par deux Rolls Royce Merlin X et &eacute;quip&eacute; d'une 
+                      monod&eacute;rive. Un seul exemplaire construit. Celui-ci 
+                      sera &eacute;vacu&eacute; sur Toulouse &agrave; la fin de 
+                      la Bataille de France </font></b></p>
+                  </td>
+                </tr>
+                <tr background="../../../../Images Base/9-11925.jpg"> 
+                  <td width="14%" height="52" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font size="3"><b>Amiot 370F</b></font></div>
+                    <div align="center"><font size="3"><a class="fancybox-effects-c" href="Photos/amiot370f.jpg" data-fancybox-group="gallery-4" title="Amiot 370F"><img src="thumbnail/tn_amiot370f.jpg" alt="" border="0" width="100%" /></a></font></div>
+                  </td>
+                  <td width="86%" height="52" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font face="Arial Narrow" size="2">Prototype 
+                    de record unique construit entre autre pour la course Paris 
+                    / New-York qui sera finalement annul&eacute;e. L'appareil 
+                    est motoris&eacute; par 2 Hispano-Suiza 12Yjrs de 860 ch</font></b></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font color="#990000"><b><i><font color="#000000" size="2">1) 
+                      _ Editions Larivi&egrave;re : </font></i></b></font></i></font><font size="2"><i><font color="#990000"><i><font color="#990000"><b><br>
+                      - Le Fanatique de l'Aviation n&deg;37_38_39_40_41_42</b></font></i></font></i></font></i></font></p>
+                    <p><a class="fancybox-effects-c" href="Photos/Fana%2037.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2037.JPG" alt="" width="101" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana%2038.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2038.JPG" alt="" width="101" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana%2039.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2039.JPG" alt="" width="103" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana%2040.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2040.JPG" alt="" width="101" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana%2041.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2041.JPG" alt="" width="102" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Fana%2042.JPG" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="thumbnail/tn_Fana%2042.JPG" alt="" width="99" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="left"> 
+                      <div align="left"><b><i><font size="2">2 ) _ Collection 
+                        DOCAVIA de Jean CUNY et Raymond DANEL </font></i></b></div>
+                      <div align="left"><font size="2"><b><i><font color="#660000">&quot;LEO 
+                        45 et AMIOT 350&quot; COLLECTION DOCAVIA</font></i></b></font></div>
+                      <font size="3"><i><font color="#990000"></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/Biblio.jpg" data-fancybox-group="gallery-1" title="Collection DOCAVIA"><img src="thumbnail/tn_Biblio.jpg" alt="" width="109" height="128" border="0" /></a></p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              
+            <p><a class="fancybox-effects-c" href="Photos/a351-2.jpg" data-fancybox-group="gallery-2" title="Amiot 351"><img src="thumbnail/tn_a351-2.jpg" alt="" width="158" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/a351-7.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_a351-7.jpg" alt="" width="124" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/a354-1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_a354-1.jpg" alt="" width="133" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/af46.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_af46.jpg" alt="" width="221" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/Amiot-351_Kaala-Djerda_07-40-Sgt-chef- Petit_Lt-Fiquet_Cap-Debrabant_GB-II-34.jpg" data-fancybox-group="gallery-2" title="Amiot-351 du GB II/34 à Kaala-Djerda en Juillet 1940 : Sergent-chef Petit / Lieutenant Fiquet / Capitaine Debrabant"><img src="thumbnail/tn_Amiot-351_Kaala-Djerda_07-40-Sgt-chef- Petit_Lt-Fiquet_Cap-Debrabant_GB-II-34.jpg" alt="" height="72" border="0" /></a> 
+              <a class="fancybox-effects-c" href="Photos/tn_Vue-Avant-Amiot-351.jpg" data-fancybox-group="gallery-2" title="Trappe d'accès à l'avant d'un Amiot 351 du GB II/34 "><img src="thumbnail/tn_Vue-Avant-Amiot-351.jpg" alt="" height="72" border="0" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/a351-1.gif" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_a351-1.gif" alt="" width="206" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+         
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

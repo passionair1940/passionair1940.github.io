@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Revue-Air-Magazine</title>
+<meta name="keywords" content="Livres Armée de l'air 1939-1940,Livres avions français-1940, Récits de pilotes 1940, Aéro-journal, Air-Magazine, Revue Avions, Fanatique de l'Aviation, Icare, Bandes dessinées 1940,Publicités aéronautiques1940,campagne de france,drôle de guerre"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="file:///C|/Users/Famille%20POLY/Desktop/Dossier%20Papa/Armee%20de%20l%27Air%201939-40%20V2/liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../Armee de l'Air/Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../Images%20Base/1.png" width="20%" border="0"></a><a href="../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../index.htm" target="_self"><img src="../../Images%20Base/5-Big.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Revue-Air-Magazine.htm"><img src="../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">   
+        <div align="center">
+          <div align="center"><font size="4" color="#FFFFFF"><b>Biblioth&egrave;que</b></font></div>
+          <div align="center"> 
+            <div align="center"></div>
+            <hr width="100%">
+            <div align="left" class="style1"> 
+              <p align="left"><b class="Aucun"><b><a href="../../FR-Contenu.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Contenu</font></font></a></b></b> 
+              </p>
+              <p align="left"><b class="Aucun"><b><a href="../../FR-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+              </p>
+              <p align="left"><b class="Aucun"><b><a href="../../FR-Historique.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Historique</font></font></a></b></b> 
+              </p>
+              <p align="left"><b class="Aucun"><b><a href="../../FR-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Enigmes</font></font></a></b></b> 
+              </p>
+              <p align="left"><b class="Aucun"><b><a href="../../FR-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Liens 
+                &agrave; d&eacute;couvrir</font></font></a></b></b></p>
+              <p align="left"><b class="Aucun"><b><a href="../Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4"><i>Biblioth&egrave;que 
+                : </i></font></font></a></b></b></p>
+			  <div align="left"><a href="../Divers-Generalites/Livres-Generalites.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Livres G&eacute;n&eacute;ralit&eacute;s</font></b></font></a></div>
+              <div align="left"><a href="../Histoire-Avions/Livres-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i>- 
+                </i>Histoires d'Avions</font></b></font></a></div>
+              <div align="left"><a href="../Histoires-Escadrilles/Livres-Escadrilles.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Histoires d'Escadrilles</font></b></font></a></div>
+              <div align="left"><a href="../Recits-Pilotes/Recits-Pilotes.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Histoires d'Equipages</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V1/Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue &quot;A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><font color="#FFFFFF"><a href="../Revue-Aero-Journal-V1/Revue-Aero-Journal-V1.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">1ere 
+                Série</font></b></font></a></font></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V2/Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Revue "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><a href="../Revue-Aero-Journal-V2/Revue-Aero-Journal-V2.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">2eme 
+                Série</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Aero-Journal-V3/Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                    Revue "A&eacute;ro-Journal"</font></b></font></a></div>
+                  
+              <div align="center"><a href="../Revue-Aero-Journal-V3/Revue-Aero-Journal-V3.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">3</font><font color="#FFFF00">eme 
+                Série</font></b></font></a></div>
+              <div align="left"><a href="Revue-Air-Magazine.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00"><i><font color="#FFFFFF">- 
+                Revue "Air-Magazine"</font></i></font></b></font></a></div>
+              <div align="left"><a href="../Revue-Avions/Revue-Avions.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Avions"</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Fana-Aviation/Revue-Fana-Aviation.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Fana-Aviation"</font></b></font></a></div>
+              <div align="left"><a href="../Revue-Icare/Revue-Icare.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Revue "Icare"</font></b></font></a></div>
+				
+              <div align="left"><a href="../Bandes-Dessinees/Bandes-Dessinees.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Bandes Dessinées 1939-40</font></b></font></a></div>
+				<div align="left"><a href="../Publicite-Avions/Publicites.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+              Publicités Aéronautiques</font></b></font></a></div>
+            </div>
+          </div>
+        </div>
+        <div align="center"><div align="left" class="style1"></div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+     <td colspan="5" valign="top" align="right" bgcolor="#000024" width="82%" height="25"> 
+        <div align="center"><img src="../../Images%20Base/titre-Air-Magazine.png" width="45%"> 
+        </div>
+        <div align="center"> 
+          <div align="center"></div>
+        </div>
+        <div align="center">
+<blockquote> 
+            <div align="left">
+              <div><font color="#FFFFFF"><b>Cette page est commune à l'Armée de 
+                l'Air et à l'Aéronautique Navale. Les articles spécifiques à cette 
+                dernière sont de couleur bleue.</b></font></div>
+              <div><b><font color="#FFFFFF">Pour retourner &agrave; la partie 
+                du site d&eacute;di&eacute;e &agrave; l'A&eacute;ronautique Navale, 
+                cliquez sur la Cocarde en haut, &agrave; droite de la page.</font></b></div>
+              <p><font color="#FFFFFF"><b>Dans la liste ci-dessous, les num&eacute;ros 
+                contenant des articles sur la p&eacute;riode 1939 - 1940 :</b></font></p>
+            </div>
+            <div align="left"><font color="#FFFFFF"><b>-</b></font></div>
+            <table width="100%%" border="1">
+              <tr background="../../Images Base/metal-texture-151340.jpg"> 
+                <td width="11%"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">Num&eacute;ro</font></b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font face="Arial Narrow" size="3" color="#000000"><b>Date</b></font></div>
+                </td>
+                <td width="64%"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">Titre 
+                    Article</font></b></font></div>
+                </td>
+                <td colspan="2"> 
+                  <div align="center"><font size="3" color="#000000"><b><font face="Arial Narrow">Couvertures</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>Hors 
+                    S&eacute;rie N&deg;6</b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font color="#FFFFFF"><b></b></font></div>
+                </td>
+                <td width="64%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">GC 
+                  1/145 Un groupe de chasse polonais dans la Campagne de France</font></b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-HORS-SERIE-6.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-HORS-SERIE-6.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    3</b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">Juillet 
+                    2001</font></b></font></div>
+                </td>
+                <td width="64%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Autogires La Cervia C30</font></b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-3.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-3.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    5 </b></font></div>
+                </td>
+                <td width="11%" bgcolor="#0099FF"> 
+                  <div align="center"><font color="#000000"><b><font face="Arial Narrow" size="2">Novembre 
+                    2001</font></b></font></div>
+                </td>
+                <td width="64%" bgcolor="#0099FF"><font face="Arial Narrow" size="2" color="#000000"><b>El&eacute;ments 
+                  historiques sur le CAMS 37</b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#000000"> De 
+                    BOUSQUET G&eacute;rard </font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-5.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-5.jpg" alt="" border="0" width="73" height="100" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    7 </b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">Mars 
+                    2002 &agrave; Juillet 2002</font></b></font></div>
+                </td>
+                <td width="64%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">N&deg; 
+                  7 &agrave; 9 - Le Breguet 27 - 1ere &agrave; 3eme Partie</font></b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                  <div align="left"></div>
+                  <hr width="70%">
+                  <div><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">N&deg; 
+                    7 : Dans l'Oeil du Cyclone - Histoire des Caudrons C714 Polonais</font></b></font></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-7.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-7.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    9 </b></font></div>
+                </td>
+                <td width="11%" bgcolor="#0099FF"> 
+                  <div align="center"><font color="#000000"><b><font face="Arial Narrow" size="2">Juillet 
+                    2002</font></b></font></div>
+                </td>
+                <td width="64%" bgcolor="#0099FF"><font face="Arial Narrow" size="2" color="#000000"><b>Les 
+                  LEVASSEUR PL-10 et PL-101</b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#000000"> De 
+                    PRUDHOMME Arnaud </font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-9.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-9.jpg" alt="" border="0" width="73" height="100" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td rowspan="2" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg" width="11%"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    10 &agrave; 13</b></font></div>
+                </td>
+                <td rowspan="2" width="11%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">Octobre 
+                    2002 &agrave; Avril 2003</font></b></font></div>
+                </td>
+                <td width="64%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Avions de Chasse Nieuport-Delage - 1ere &agrave; 4eme Partie</font></b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDE</font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-10.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-10.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-11.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-11.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td bgcolor="#0099FF" width="64%"> 
+                  <div><b><font color="#000033" face="Arial Narrow" size="2">N&deg; 
+                    11 &agrave; 13 : Le Lat&eacute;co&egrave;re 298 1ere / 2eme 
+                    et 3eme Partie</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#000033">De BOUSQUET 
+                    G&eacute;rard </font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-12.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-12.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-13.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-13.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    16 </b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">Octobre 
+                    2003 </font></b></font></div>
+                </td>
+                <td width="64%"><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Potez 63 - </font><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">1ere 
+                  Partie</font></b></font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-16.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-16.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="11%" height="64" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    17</b></font></div>
+                </td>
+                <td width="11%" height="64"> 
+                  <div align="center"><font color="#FFFFFF"><b><font face="Arial Narrow" size="2">D&eacute;cembre 
+                    2003</font></b></font><font size="2" face="Arial Narrow"><b></b></font></div>
+                </td>
+                <td width="64%" height="64"> <font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Potez 63 - </font><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">2</font><font color="#FFFFFF">eme 
+                  Partie</font></b></font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                  <hr width="60%">
+                  <font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Le 
+                  terrain de Dreux en juin 1940 - Le GC I/145 Varsovie</font><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">1ere 
+                  &agrave; 3eme Partie</font></b></font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-17.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-17.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="11%" height="65" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    18</b></font></div>
+                </td>
+                <td width="11%" height="65"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">F&eacute;vrier 
+                    2004 </font></b></font></div>
+                </td>
+                <td width="64%" height="65"> <font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Potez 63 Etrangers - </font><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">3eme 
+                  Partie</font></b></font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                  <hr width="60%">
+                  <font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Les 
+                  Ni-D 72 et D-27 en Roumanie</font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Gilbert DURANTHIE</font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-18.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-18.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="65" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="65" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    19</b></font></div>
+                </td>
+                <td width="11%" height="65"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Avril 
+                    2004</font></b></font></div>
+                </td>
+                <td width="64%" height="65"> <font face="Arial Narrow" size="2"><b><font color="#FFFFFF">Souvenirs 
+                  de Jean GAILLARD, pilote de Potez 63-11</font><font face="Arial Narrow" size="2"><b><font color="#FFFFFF">3eme 
+                  Partie</font></b></font> </b></font> 
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jean GAILLARD</font></div>
+                </td>
+                <td width="7%" height="65"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-19.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-19.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="65" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="62" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    21</b></font></div>
+                </td>
+                <td width="11%" height="62"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Aout 
+                    2004 </font></b></font></div>
+                </td>
+                <td width="64%" height="62"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Le 
+                    Farman 223- 1ere Partie</font></b></div>
+                  <div><b></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Patrick LAUREAU</font></div>
+                </td>
+                <td width="7%" height="62"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-21.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-21.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="62" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="60" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    22</b></font></div>
+                </td>
+                <td width="11%" height="60"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Octobre 
+                    2004 </font></b></font></div>
+                </td>
+                <td width="64%" height="60"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Le 
+                    Farman 223- 2eme Partie</font></b></div>
+                  <div><b></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Patrick LAUREAU</font></div>
+                  <hr width="60%">
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Pilotes 
+                    Polonais sur Bloch 151 et 152 - Mythes et r&eacute;alit&eacute;s</font></b></div>
+                  <div><b></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%" height="60"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-22.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-22.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="60" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="64" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    23</b></font></div>
+                </td>
+                <td width="11%" height="64"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">D&eacute;cembre 
+                    2004</font></b></font></div>
+                </td>
+                <td width="64%" height="64"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Les 
+                    Sections de Chasse Polonaises improvis&eacute;es en France 
+                    en 1940</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%" height="64"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-23.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-23.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="64" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    30</b></font></div>
+                </td>
+                <td width="11%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">F&eacute;vrier 
+                    2006 </font></b></font></div>
+                </td>
+                <td width="64%" height="61"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Le 
+                    Bloch MB131</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                </td>
+                <td width="7%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-30.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-30.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="63" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    31</b></font></div>
+                </td>
+                <td width="11%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Avril 
+                    2006</font></b></font></div>
+                </td>
+                <td width="64%" height="63"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">La 
+                    production du Bloch MB131 &agrave; l'usine SNCASO de Chateauroux-D&eacute;ols</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Didier DUBANT / Jean-Pierre PIERRY</font></div>
+                </td>
+                <td width="7%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-31.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-31.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="63" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg" height="94"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    34</b></font></div>
+                </td>
+                <td width="11%" height="94"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Octobre 
+                    2006 </font></b></font></div>
+                </td>
+                <td width="64%" height="94"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Le 
+                    Bombardier CAO-700</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Jos&eacute; FERNANDEZ</font></div>
+                </td>
+                <td width="7%" height="94"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-34.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-34.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="94"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="63" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    37</b></font></div>
+                </td>
+                <td width="11%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Avril 
+                    2007 </font></b></font></div>
+                </td>
+                <td width="64%" height="63"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Les 
+                    Polonais &agrave; Tours en 1940</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-37.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-37.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="63" width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    43</b></font></div>
+                </td>
+                <td width="11%" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>Aout 
+                    2008 </b></font></div>
+                </td>
+                <td width="64%" bgcolor="#0099FF"> 
+                  <div><font color="#000000"><b><font size="2" face="Arial Narrow">Farman 
+                    223.4 Jules Verne</font></b></font></div>
+                  <div><font face="Arial Narrow" size="2" color="#000000"> De 
+                    Patrick BRANLY</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-43.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-43.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    44</b></font></div>
+                </td>
+                <td width="11%" bgcolor="#0099FF"> 
+                  <div align="center"><font size="2" face="Arial Narrow" color="#000000"><b>Septembre 
+                    2008 </b></font></div>
+                </td>
+                <td width="64%" bgcolor="#0099FF"> 
+                  <div><font color="#000000"><b><font size="2" face="Arial Narrow">Le 
+                    Loire-Nieuport LN401 / 411 2eme Partie</font></b></font></div>
+                  <div><font face="Arial Narrow" size="2" color="#000000"> De 
+                    PRUDHOMME Arnaud</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-43.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-43.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    50</b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Octobre 
+                    2010 </font></b></font></div>
+                </td>
+                <td width="64%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Les 
+                    Polonais à Bourges</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Michel PELLIOT</font></div>
+                  <hr width="60%">
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">La 
+                    production des Bloch MB175 &agrave; l'usine SNCASO puis SNCAC 
+                    de Chateauroux-D&eacute;ols - 1ere Partie</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Didier DUBANT / Jean-Pierre PIERRY</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-50.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-50.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    51 - 52</b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Octobre 
+                    1982</font></b></font></div>
+                </td>
+                <td width="64%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">La 
+                    production des Bloch MB175 &agrave; l'usine SNCASO puis SNCAC 
+                    de Chateauroux-D&eacute;ols - 2em et 3eme Partie</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> <font face="Arial Narrow" size="2" color="#FFFFFF">De 
+                    Jean CUNY / Daniel RAYMOND</font></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-51.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-51.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td height="61" width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-52.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-52.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    56 - 57</b></font></div>
+                </td>
+                <td width="11%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">De 
+                    Mars à Mai 1985 </font></b></font></div>
+                </td>
+                <td width="64%" height="61"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Les 
+                      Potez 39 et 390 </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      - 1ere et 2eme Partie</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font face="Arial Narrow" size="2" color="#FFFFFF">De 
+                          Jos&eacute; FERNANDEZ</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="7%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-56.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-56.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-57.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-57.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="61" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    59 - 60</b></font></div>
+                </td>
+                <td width="11%" height="61"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Octobre 
+                    2013 </font></b></font></div>
+                </td>
+                <td width="64%" height="61"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Les 
+                      monomoteurs de reconnaissance et d’observation ANF Mureaux 
+                      </font></b></div>
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"> 
+                      - 1ere et 2eme Partie</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font face="Arial Narrow" size="2" color="#FFFFFF">De 
+                          Jos&eacute; FERNANDEZ</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="7%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-59.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-59.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="61"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-60.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-60.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" height="73" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    63</b></font></div>
+                </td>
+                <td width="11%" height="73"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Janvier 
+                    2015 </font></b></font></div>
+                </td>
+                <td width="64%" height="73"> 
+                  <div> 
+                    <div><b><font size="2" face="Arial Narrow" color="#FFFFFF">Sur 
+                      les traces du sous-lieutenant Czaplinski</font></b></div>
+                  </div>
+                  <div> 
+                    <div></div>
+                    <div> 
+                      <div> 
+                        <div><b><font size="2" face="Arial Narrow" color="#FFFFFF"></font></b></div>
+                        <div><font face="Arial Narrow" size="2" color="#FFFFFF">De 
+                          Bartlomiej BELCARZ / G. ZALESKI</font></div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="7%" height="73"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-63.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-63.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%" height="73"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../Images%20Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2" color="#333333"><b>N&deg; 
+                    64</b></font></div>
+                </td>
+                <td width="11%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><b><font color="#FFFFFF">Juin 
+                    </font><font color="#FFFFFF">2015</font></b></font></div>
+                </td>
+                <td width="64%"> 
+                  <div><b><font color="#FFFFFF" size="2" face="Arial Narrow">Des 
+                    Polonais &agrave; Clermont-Ferrand</font></b></div>
+                  <div><font face="Arial Narrow" size="2" color="#FFFFFF"> De 
+                    Bartlomiej BELCARZ</font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos/AM-64.jpg" data-fancybox-group="gallery-1" ><img src="Tn-Photos/tn_AM-64.jpg" alt="" border="0" width="100%" /></a></font></div>
+                </td>
+                <td width="7%"> 
+                  <div align="center"><font size="2"></font></div>
+                </td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp; </p>
+          </blockquote>
+        </div>
+        <blockquote> 
+          <div align="left"></div>
+        </blockquote>
+        <blockquote> 
+          <div align="left"></div>
+        </blockquote>
+        <div align="center"> 
+          <blockquote> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

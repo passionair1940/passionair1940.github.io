@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Historique-Site</title>
+<meta name="keywords" content="French Air Force 1939 - 1940, pilots, aircraft, squadrons, fighter aviation, bombing, reconnaissance, casualtys, historic site, victories, RAF, Luftwaffe, Regia Aéronautica, Enigmas, campaign of France, funny war"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="Images%20Base/EN-Titre-Site.png" width="100%"><a href="Armee%20de%20l%27Air/EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="Images%20Base/EN-Armee%20de%20l-air.png" width="20%" border="0"></a><a href="Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="Images%20Base/EN-Forces-en-presence.png" width="20%" border="0"></a><a href="Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="Images%20Base/EN-campagne%20de%20france.png" width="20%" border="0"></a><a href="Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="Images%20Base/EN-Avionneurs.png" width="20%" border="0"></a><a href="EN-index.htm" target="_self"><img src="Images%20Base/EN-MAJ-HOME.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="14%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="FR-Historique.htm"><img src="Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><font size="4" color="#FFFFFF"><b><a href="EN-Historique.htm" target="_self">History 
+          of the Site</a></b></font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"> 
+            <p align="left"><b class="Aucun"><b><a href="EN-Contenu.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Content</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Sources.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Sources</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><font face="Arial Narrow" size="5"><i><font color="#FFFFFF" size="4"><a href="EN-Historique.htm" target="_self">Historical</a></font></i></font></b></b></p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Enigmes.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Enigmas</font></font></a></b></b> 
+            </p>
+            <p align="left"><b class="Aucun"><b><a href="EN-Liens.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Links 
+              to discover</font></font></a></b></b></p>
+			   
+            <p align="left"><b class="Aucun"><b><a href="Librairie/EN-Accueil-Librairie.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Library</font></font></a></b></b></p>
+          </div>
+          <p>&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" bgcolor="#000024" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <div align="center"></div>
+          <p align="left">&nbsp;</p>
+          <p align="left"><font size="5" face="Arial Narrow"><i><b><font color="#CCCCCC" size="4">- 
+            WHO AM I IN 2 WORDS:</font></b></i></font></p>
+        </div>
+        <blockquote> 
+          <div align="left">
+            <p><b><font color="#CCCCCC">My name is Pascal POLY. I was born in 
+              the last century, in 1965 and I am fascinated by aviation since 
+              my early childhood. I remember in the first year of primary school, 
+              to have distributed in all the class my drawings of planes which 
+              I found very successful, necessarily, until my school friends makes 
+              me understand with the frankness of this age, which they had it 
+              enough..</font></b></p>
+            <p><font color="#CCCCCC"><b>This passion for the aviation confirmed 
+              over the years, with the realization of the classic models Heller 
+              or Matchbox. My choices already concerned to the French planes, 
+              with models of Breguet 693, Amiot 143, Morane 406, while my friends 
+              realized rather Spitfire or Messerschmitt Me109. The time of the 
+              wooden models came then, of whom a magnificent Dewoitine 520 with 
+              engine with rubber band and landing gear which went out at the end 
+              of tension of rubber band : I still remember smells, in my room, 
+              filler Nitro-cellulosique used to stretch out the paper Japan !</b></font></p>
+          </div>
+		   </blockquote>
+        <div align="center"> 
+          <p align="left"><font size="5" face="Arial Narrow"><i><b><font color="#CCCCCC" size="4">- 
+            THE ORIGINS OF THE SITE : </font></b></i></font></p>
+        </div>
+        <blockquote> 
+          <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><font size="3">To 
+            find the origin of the site, we must go back to 35 years, at a time 
+            when the Internet obviously did not exist ... Teenager, I initialized 
+            the first sheets of my favorite aircrafts on school notebooks, ranging 
+            to cut out pictures of planes in magazines "Fanatics of Aviation", 
+            with the unconsciousness of youth! Being mainly interested in World 
+            War II, I was very quickly fascinated by the French Air Force, so 
+            different and endearing, where the modern and the old were mixed like 
+            nowhere else. This period allowed me to build a diversified database, 
+            completed over the years.</font></b></font></div>
+        </blockquote>
+        <div align="center"> 
+          <p align="left"><font color="#CCCCCC"><b><font size="4"><font face="Arial Narrow"><i>- 
+            MODERN TIMES :</i></font></font></b></font></p>
+        </div>
+        <blockquote> 
+          <div align="left"><font size="4" color="#CCCCCC" face="Arial Narrow"><b><font size="3">The 
+            first computers allowed me to put everything together in Excel files 
+            whose tabs, linked by macros, have generated a set for the less heavy 
+            and impractical ... It is the arrival of Internet and HTML language 
+            that allowed me to build a site and that made me want to share it.</font></b></font></div>
+          <div align="left"> 
+            <p><font size="3"><b><font color="#FFFFFF" face="Arial Narrow">Compared 
+              to my initial objectives, I estimate my site advanced to about 60%, 
+              and despite the desire to complete it as much as possible before 
+              publishing it, we must accept the idea that it will never be Completely 
+              finished ... The subject is so vast! I would like to be able to 
+              put a face on each of the 3160 crew members identifed so far, to 
+              be able to deliver a bit of their history, their lives, for a modest 
+              tribute to those men who fought an unequal battle.</font></b></font></p>
+          </div>
+          <div align="left"><font size="3"><b><font face="Arial Narrow" color="#FFFFFF">I 
+            invite you to discover this site which will enrich itself regularly, 
+            and if you wish, to make supplements, patches, by writing me via the 
+            link &quot;contact me&quot;</font></b></font></div>
+        </blockquote>
+        <div align="center"> 
+          <blockquote> 
+            <p>&nbsp; </p>
+            <div align="center"> </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%">
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="Aeronavale-1939-40/EN-index.htm" target="_self"><img src="Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p>
+  <img src="Images%20Base/BlochMB174.gif" width="100%"> 
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

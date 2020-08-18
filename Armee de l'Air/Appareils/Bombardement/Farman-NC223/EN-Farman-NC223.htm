@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Air Force in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Farman-NC223.1</title>
+<META name="KEYWORDS" content="French Air Force 1939-1940,Bombers,campaign of France, funny war,Farman NC223.1, Farman NC233.3, Framan NC233.4">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+ <div align="center"><img src="../../../../Images%20Base/EN-Titre%20Metal-V2.png" width="100%"><a href="../../../EN-Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	   <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="Farman-NC223.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in French</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+        <div align="center"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow">Aircraft</font></a></font></b> 
+            </font></div>
+          <hr width="100%">
+          <p align="left"><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Fighter 
+            aircraft </font></b></font></a></p>
+          <p align="left"><a href="../EN-Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><i>Bombers</i></font></b></font></a></p>
+          <div align="left"><a href="../Amiot-143/EN-Amiot-143.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Amiot 143</font></font></b></font></a></div>
+          <div align="left"><a href="../Amiot-350/EN-Amiot-350.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" color="#FFFFFF"><font color="#FFFF00">- 
+            Amiot 354</font></font></b></font></a></div>
+          <div align="left"><a href="../Bloch-200/EN-Bloch-200-8.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Bloch MB200</font></b></font></a></div>
+          <div align="left"><a href="../Bloch-210/EN-Bloch-210.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3" ">- 
+            Bloch MB210</font></b></font></a></div>
+          <div align="left"><a href="../Breguet-693/EN-Breguet-693.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Breguet Br693</font></b></font></a></div>
+          <div align="left"><a href="../Douglas-DB7/EN-Douglas-DB7.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Douglas DB7</font></b></font></a></div>
+          <div align="left"><a href="../Farman-F222/EN-Farman-F222.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Farman F222</font></b></font></a></div>
+          <div align="left"><a href="EN-Farman-NC223.htm" target="_self"><i><font face="Arial Narrow" color="#FFFFFF"><b><font size="3">- 
+            Farman NC223</font></b></font></i></a></div>
+          <div align="left"><a href="../Gleen-Martin-167F/EN-Gleen-Martin-167F.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Gleen Martin 167F</font></b></font></a></div>
+          <div align="left"><a href="../Loire-Olivier-Leo-451/EN-LeO-451.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Loir&eacute; &amp; Olivier L&eacute;o451</font></b></font></a></div>
+          <div align="left"><a href="../Potez-542/EN-Potez-542.htm" target="_self"><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 540</font></b></font></a></div>
+          <div align="left"><a href="../Potez-633/EN-Potez633.htm" target="_self""><font face="Arial Narrow" color="#FFFF00"><b><font size="3">- 
+            Potez 633</font></b></font></a></div>
+          <p align="left"><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Reconnaissance 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Entrainement/EN-Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Training 
+            Aircraft </b></font></a></p>
+          <p align="left"><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; links</b></font></a></p>
+          <p align="left"><a href="../../Proto-Chasseurs/EN-Accueil-Proto-Chasseurs.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Fighters</b></font></a></p>
+          <p align="left"><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Prototypes 
+            Bombers</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"> 
+            <p><b><font size="20%" color="#660000">FARMAN NC223</font></b></p>
+            <p><img src="Photos/Farman-223.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+              Specifications</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              <table BORDER bordercolor="#000000" width="80%" bgcolor="#FFFFFF" align="center" >
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"><font size="2" face="Arial Narrow">Night Bomber five-seater with 
+                      top-wings and retractable landing gear</font> 
+                     </font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2">June 
+                      12, 1937</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">33.40 m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="20" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">21.90 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">5.05</font> <font size="2" face="Arial Narrow"> 
+                      m&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">131.10 m2&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 10535 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                      </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">19175 Kg&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow"> 280 km/h.&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="21" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">350 km/h at 4000m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">4000m in 13mn 30s&nbsp;</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">7950 m&nbsp;</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">2400 kms&nbsp;with 2500 
+                      kg of bombs</font> 
+                    </center>
+                  </td>
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <center>
+                      <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                    </center>
+                  </td>
+                  <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <center>
+                      <font size="2" face="Arial Narrow">5</font> <font size="2" face="Arial Narrow"> 
+                      Men</font> 
+                    </center>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="18" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"><font size="2">4 Engine Hispano Suiza 
+                      12Y29 &agrave; 12 Cylinders inline, water-cooled of 910 
+                      Hp in the take-off</font></div>
+                  </td>
+                </tr>
+                <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                  <td width="20%" height="38" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                    <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                  </td>
+                  <td colspan="3" height="58" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                    <div align="center"> 
+                      <div><font size="2">1</font> <font size="2" face="Arial Narrow">machine-gun</font><font size="2"> 
+                        MAC 34 of 7.5mm in carriage on the nose</font> <font size="2"><br>
+                        1 cannon HS 404 of 20mm in dorsal turret </font> <font size="2"><br>
+                        1 cannon HS 404 of 20mm in ventral turret<br>
+                        4185 Kgs of bombs in bomb bay</font></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                <p><font size="3" color="#990000"><font color="#000000"><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">19 
+                  Farman F223 </font><font size="3" color="#990000"><font color="#000000"><b><font size="3" color="#990000"><font size="3" color="#990000"><font color="#000000"><b><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2"><b><font size="2" color="#990000" face="Arial Narrow"><font color="#000000"><font size="3" color="#990000"><font face="Arial Narrow" size="3" color="#990000"><b><font size="3" color="#990000"><font color="#000000"><font face="Arial Narrow" size="2">have 
+                  been built since the date of the first flight on</font></font></font></b></font></font></font></font></b></font></b></font></font></b></font></font></font></b></font></font><font face="Arial Narrow" size="2"> 
+                  June 12, 1937. </font><font size="3" color="#990000"><font color="#000000"><b><font size="2" color="#990000" face="Arial Narrow"><font size="2"><b><font color="#990000"><font color="#000000"><font face="Arial Narrow">They 
+                  are divided into:</font></font></font></b></font></font></b></font></font></font></font></b></font></font></p>
+                <ul>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">1 
+                    Farman F223.1</font></font></b></font> </li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">15 
+                    Farman F223.3 Bn5</font></font></b></font></li>
+                  <li><font face="Arial Narrow" size="2"><b><font color="#990000"><font color="#000000">3 
+                    Farman F223.4</font></font></b></font></li>
+                </ul>
+                <p><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2"><b><font color="#990000"><font color="#990000"><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">To 
+                  date, out of the</font></b></font></font></font></b></font></b></b></font></b></b></font></b></b></font></b></b></font><font face="Arial Narrow" color="#000000"> 
+                  19 </font><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2" color="#990000"><b><b><font size="2"><b><font color="#990000"><font color="#990000"><font face="Arial Narrow" color="#000000">aircraft 
+                  manufactured</font></font></font></b></font></b></b></font></b></b></font></b></b></font><font face="Arial Narrow" color="#000000"></font></b></b></font><font face="Arial Narrow" color="#000000"> 
+                  ,12 </font></b></b></font><font size="2"><b><font size="2" color="#990000"><b><font face="Arial Narrow" color="#000000">are 
+                  listed in the list below :</font></b></font></b></font></p>
+              </div>
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+              </p>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font face="Arial Narrow" size="2">The Farman F223 Bn5 was 
+                studied in 1936 as a replacement for the Farman F222. However, 
+                at the request of the Ministry of Air, the heavy bomber was transformed 
+                into a long-haul Transatlantic aircraft, in order to show the 
+                French power against foreign competitors on the North or South 
+                Atlantic lines. The Farman F223 had a remarkable autonomy by replacing 
+                the bombs with additional tanks.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> The device, become F223.1, 
+                of still former appearance, presented numerous improvements with 
+                regard compared with F222. Its fuselage, still rectangular, was 
+                much finer and longer than its predecessor. The wings are shorter 
+                and tapered and are connected to the fuselage by mats henceforth 
+                profiled. It has particularly effective curvature flaps: it can 
+                land at 60km / h. It is powered by four Hispano-Suiza 12Xirs / 
+                Xjrs of 720hp in tandem in suspended nacelles. The aircraft made 
+                its first flight on June 12, 1937. He took part in the race Istres-Damas-Paris 
+                on August 20, 1937. Despite his great autonomy which allowed him 
+                not to refuel, he was beaten largely by Savoia-Marchetti SM79 
+                : The Farman finished last of the test ... After some attempts 
+                of record, it is delivered to Air-France on November 13 with name 
+                of baptism: Chief Pilot Laurent GUERRERO. With Paul CODOS as a 
+                driver, he will beat many records and will link Paris to Bueno-Aires 
+                in less than 53 hours, pulverizing the previous record of 16 hours. 
+                It will be equipped, for testing, of a pseudo cabin pressurisée, 
+                but without great success.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> At the declaration of 
+                the War, the F223.1 is remilitarized by the addition of modern 
+                radio equipment and a camouflage. On November 9, 1939, it was 
+                destroyed on take-off when it was to be used by Naval Aeronautics 
+                to track German boats privateers .</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> A second aircraft was 
+                completed at the end of 1937: F223-01. It made its first flight 
+                on January 18, 1938. Similar to the F223.1, it is however powered 
+                by two Hispano-Suiza 14 Aa 08/09 in star of 1100hp. It receives 
+                a defensive armament. During its tests with the CEMA, its star 
+                engines are replaced by Hispano 12Y-29 with liquid cooling. The 
+                device is numbered NC2233-01. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">A market was launched for 
+                the delivery of 8 NC2233s and the first series aircraft made its 
+                first flight at the end of 1939, but the NC2233 did not arrive 
+                in the GBI / 15 until May 1940, due to late delivery Of the HS404 
+                cannons.</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> The NC2233 was virtually 
+                not used in operations and was transferred to North Africa in 
+                June 1940. In July, after the Armistice, certain specimens (Nos. 
+                2-8-9-10) were sold to Air France. The other aircraft in AFN will 
+                be recovered by the FAFL (French Air Forces Free).</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> Another version, the Farman 
+                2230 was born of an order from Air France for 3 aircraft for testing 
+                at altitude on the North Atlantic. They differ from the F223.1 
+                in particular by the removal of the wing tanks, a more tapered 
+                front, enlarged drifts. It was equipped with a pressurized rest 
+                cabin, an automatic steering. It is powered by 4 Hispano-Suiza 
+                12 Xirs / Xjrs of 720hp. The No. 1 made its first flight on April 
+                28, 1938. The aircraft were renamed NC2234 when they adopted the 
+                new Hispano 12Y 38/39 of 970hp. Thus motorized, he made his first 
+                flight on 15 March 1939. The NC2234-01 is christened "Camille 
+                Flammarion", the NC2234 No. 2 "Le Verrier" and the NC2234-02 "The 
+                Jules Verne" </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">At the declaration of the 
+                war, the NC2234-01 is assigned to Aeronautics, but will not participate 
+                in the fight and will finish his career on the ground of Beyrouth 
+                in 1941 after a bad landing. </font></b></p>
+              <p><b><font face="Arial Narrow" size="2">The NC2234 n ° 02 is also 
+                dedicated to Naval Aeronautics. The aircraft became "Jules Verne" 
+                and was transformed into a bomber from 28 April to 6 May 1940. 
+                He took part in bombing missions on Maastricht and the Aachen 
+                railway station. For these nocturnal missions, the "jules Verne" 
+                is painted in matt black and it will become famous by the bombing 
+                of Berlin on 7 June 1940</font></b></p>
+              <p><b><font face="Arial Narrow" size="2"> In August 1940, after 
+                the Armistice, the three Farmans were transferred to Marignane 
+                to be ceded to air France. Blocked by the commission of Armistice, 
+                the "Jules Verne" will be abandoned on the ground and burned in 
+                November 1942. The "Verrier" will be shot down by an unknown fighter 
+                over the Mediterranean on 27 November 1940: it crashes at sea 
+                with all his crew.</font></b></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <div align="left"> 
+                <table width="100%" border="1" bgcolor="#FFFFFF" bordercolor="#000000">
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="33%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font size="3"><b>F223.1</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/nc223-1%2001.jpg" data-fancybox-group="gallery-4" title="Farman F223.1"><img src="thumbnail/tn_nc223-1%2001.jpg" alt="" border="0" width="100%" /></a></div>
+                    </td>
+                    <td width="87%" height="33%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Born 
+                      a bomber, it is transformed into Recorder with great autonomy. 
+                      It is powered by four Hispano-Suiza 12Xirs / Xjrs of 720ch</font></b></td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="33%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font size="3"><b>NC233.3</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/Farman%20nc223-3.jpg" data-fancybox-group="gallery-4" title="Farman NC233.3"><img src="thumbnail/tn_Farman%20nc223-3.jpg" alt="" border="0" width="100%" /></a></div>
+                    </td>
+                    <td width="87%" height="33%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Similar 
+                      to the F223.1, it is powered by 4 Radial Engine Hispano-Suiza 
+                      14 Aa 08/09 of 1100ch. It receives defensive armament, a 
+                      7.5mm machine gun and 2 HS404 20mm guns. After the first 
+                      tests, it will be re-powered by liquid-cooled Hispano 12Y-29: 
+                      10 units will be built.</font></b></td>
+                  </tr>
+                  <tr background="../../../../Images Base/9-11925.jpg"> 
+                    <td width="13%" height="33%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                      <div align="center"><font size="3"><b>NC2334</b></font></div>
+                      <div align="center"><a class="fancybox-effects-c" href="Photos/nc223-camille%20flamarion.jpg" data-fancybox-group="gallery-4" title="Farman NC2334"><img src="thumbnail/tn_nc223-camille%20flamarion.jpg" alt="" border="0" width="100%" /></a></div>
+                    </td>
+                    <td width="87%" height="33%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><b><font size="2" face="Arial Narrow">Coming 
+                      from an order of 3 aircraft by Air France. Recognizable 
+                      by its tapered front, it is motorized by 4 Hispano-Suiza 
+                      12Xrs / Xjrs of 720ch. The wing tanks are removed and equipped 
+                      with a pressurized cabin. He will eventually receive 4 Hispano 
+                      12Y 38/39 of 970ch. The three aircraft will be named: "Camille 
+                      Flammarion", "Jules Verne" and "Le Verrier".</font></b></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+              <table width="90%">
+                <tr> 
+                  <td> 
+                    <div> 
+                      <div><b><i><font size="2">1 ) _ Editions Larivi&egrave;re 
+                        - Collection &quot;Docavia&quot;</font></i></b><font size="2"><i><font color="#990000"><b> 
+                        <font color="#000000">N&deg;21</font> <br>
+                        - &quot;Les Avions Farman&quot; of J. Liron</b></font></i></font></div>
+                    </div>
+                    <p><a class="fancybox-effects-c" href="../Farman-F222/Photos/doc21.jpg" data-fancybox-group="gallery-1" title="Editions Larivière"><img src="../Farman-F222/thumbnail/tn_doc21.jpg" alt="" width="91" height="128" border="0" /></a> 
+                    </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><font size="3"><i><font size="3"><i><font size="3"><i><b><i><font size="3"><font color="#000000" size="2">2) 
+                      AIRMAGAZINE n&deg; 21 &amp; 22</font></font></i></b><font size="2"><i><font color="#990000"><b><br>
+                      - &quot;Le Farman NC223</b></font></i></font></i></font><font color="#990000" size="2">&quot;</font></i></font></i></font></p>
+                    <p>&nbsp; <a class="fancybox-effects-c" href="Photos/AirMagazine-21.jpg" data-fancybox-group="gallery-1" title="AIR-MAGAZINE n°21"><img src="thumbnail/tn_AirMagazine-21.jpg" alt="" width="93" height="128" border="0" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/AirMagazine-22.jpg" data-fancybox-group="gallery-1" title="AIR-MAGAZINE n°22"><img src="thumbnail/tn_AirMagazine-22.jpg" alt="" width="93" height="128" border="0" /></a> 
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp; </p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              Album </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/Farman%20F223-3.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Farman%20F223-3.jpg" alt="" width="118" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Farman-223-1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Farman-223-1.jpg" alt="" width="142" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/SNCAC%20Farman%20NC%20223.4%20Jules%20%20Verne%20AB5%20BORDEAUX%20MERIGNAC%207%20j.jpg" data-fancybox-group="gallery-2" title="Farman NC223-4 Jules Verne"><img src="thumbnail/tn_SNCAC%20Farman%20NC%20223.4%20Jules%20%20Verne%20AB5%20BORDEAUX%20MERIGNAC%207%20j.jpg" alt="" width="189" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/nc223-jules%20verne.jpg" data-fancybox-group="gallery-2" title="Farman NC223-4 Jules Verne"><img src="thumbnail/tn_nc223-jules%20verne.jpg" alt="" width="154" height="72" border="0" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+                3 views</font></b></i></font></p>
+            </div>
+            <div align="left"><a class="fancybox-effects-c" href="Photos/nc223_3v.jpg" data-fancybox-group="gallery-5" title=""><img src="thumbnail/tn_nc223_3v.jpg" alt="" width="117" height="128" border="0" /></a> 
+            </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../Aeronavale-1939-40/EN-index.htm" target="_self"><img src="../../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Links to WebSite </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Naval Aviation"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p>
+  <img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> 
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

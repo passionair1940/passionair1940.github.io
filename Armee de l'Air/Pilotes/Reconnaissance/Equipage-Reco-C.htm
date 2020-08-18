@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Armée de l'Air Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Equipage-Observation-C</title>
+<META name="KEYWORDS" content="Armée de l'Air Française 1939-1940,pilotes,équipages,reconnaissance,observation,campagne de france,drôle de guerre">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '80%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../liens.css" type="text/css">
+</head>
+<body width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <img width="100%" src="../../../Images%20Base/Br270.gif"> 
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/amiot%20143.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/D510.gif"></p>
+  <p>&nbsp;</p>
+  <p><img width="100%" src="../../../Images%20Base/mureau117.gif"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../Page%20Accueuil%20Armee%20Air.htm" target="_self"><img src="../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../index.htm" target="_self"><img src="../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+	  <table width="100%" border="0">
+            <tr> 
+              
+            <td width="14%"><a href="EN-Equipage-Reco-C.htm"><img src="../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              
+            <td width="86%"> 
+              <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+        <div align="center"><font size="4" color="#FFFFFF">Equipage Observation</font></div>
+        <div align="center"> 
+          <div align="center"></div>
+          <hr width="100%">
+          <div align="left" class="style1"></div>
+          <div align="left" class="style1"> 
+            <p><font size="4"><b class="Aucun"><b><a href="../Chasse/Pilotes-Chasse.htm" target="_self" class="unnamed3"><font face="Arial Narrow"><font color="#C0C0C0">Pilotes 
+              de Chasse</font></font></a></b></b></font></p>
+            <p align="left"><b class="Aucun"><b><a href="../Bombardement/Equipage-Bombardement.htm" target="_self" class="unnamed3"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Equipages 
+              de Bombardement</font></font></a></b></b></p>
+            <p><b class="Aucun"><b><font face="Arial Narrow" size="5"><i><font color="#FFFFFF" size="4"><a href="Equipage-Reco.htm">Equipages 
+              de l'Observation</a></font></i></font></b></b></p>
+			  
+            <p align="left"><b class="Aucun"><b><a href="../Non-Navigant/Personnel-non-Navigant.htm" target="_self" class="unnamed3"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Personnel 
+              non navigant</font></font></a></b></b></p>
+          </div>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left"><i><b><font size="4" color="#FFFFFF" face="Arial, Helvetica, sans-serif"><br/>
+            <noscript> </noscript></font></b></i></p>
+          <div align="left"></div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../Images%20Base/7-317396.JPG" width="82%" height="25"> 
+        <div align="center"> 
+          <div align="center"> </div>
+          <blockquote> 
+            <p><img src="../../../Images%20Base/Texte%20Equipage%20Reco.png" width="52%"> 
+            </p>
+            <div align="left"><font size="3"><b><font color="#CCCCCC" size="4">915 
+              Membres d'&eacute;quipages de l'Observation sont recens&eacute;s 
+              dans la liste ci-dessous, class&eacute;s par ordre alphab&eacute;tique. 
+              </font></b></font></div>
+            <p><b><font color="#FFFFFF" size="6"><a href="Equipage-Reco.htm"><font size="5" color="#FFFF00">A-B</font></a></font><font color="#FFFF00" size="6"><font size="5"> 
+              <font color="#FFFF0F"><font color="#FFFFFF" size="6">C</font></font> 
+              <a href="Equipage-Reco-D.htm" target="_self"><font color="#FFFF00">D</font></a> 
+              <a href="Equipage-Reco-E-F-G.htm" target="_self"><font color="#FFFF00">E-F-G</font></a> 
+              <a href="Equipage-Reco-H-K.htm" target="_self"><font color="#FFFF00">H-I-J-K</font></a> 
+              <a href="Equipage-Reco-L.htm" target="_self"><font color="#FFFF00">L</font></a> 
+              <a href="Equipage-Reco-M.htm" target="_self"><font color="#FFFF00">M</font></a> 
+              <a href="Equipage-Reco-N-Q.htm" target="_self"><font color="#FFFF00">N-O-P-Q</font></a> 
+              <a href="Equipage-Reco-R-S.htm" target="_self"><font color="#FFFF00">R-S</font></a> 
+              <a href="Equipage-Reco-T-Z.htm" target="_self"><font color="#FFFF00">T-U-V-W-X-Y-Z</font></a></font></font></b></p>
+            <table width="100%%" border="1" bgcolor="#999999">
+              <tr bgcolor="#666666"> 
+                <td width="17%" rowspan="2"> 
+                  <div align="center"><font size="3"><b>Nom</b></font></div>
+                </td>
+                <td rowspan="2" width="10%"> 
+                  <div align="center"><font size="3"><b>Grade</b></font></div>
+                </td>
+                <td rowspan="2" width="12%"> 
+                  <div align="center"><font size="3"><b>Unité</b></font></div>
+                </td>
+                <td rowspan="2" width="10%"> 
+                  <div align="center"><b><font size="3">Poste</font></b></div>
+                </td>
+                <td rowspan="2" width="23%"> 
+                  <div align="center"><font size="3"><b>Observations</b></font></div>
+                </td>
+                <td rowspan="2" width="16%"> 
+                  <div align="center"><b><font size="3">Etat-Civil</font></b></div>
+                </td>
+                <td rowspan="2" width="4%"> 
+                  <div align="center"><font size="3"><b>Photo</b></font></div>
+                </td>
+                <td rowspan="2" width="4%"> 
+                  <div align="center"><font size="3"><b>Fiches Indiv.</b></font></div>
+                </td>
+                <td rowspan="2" width="4%">
+                  <div align="center"><b><font size="2" face="Arial Narrow">Citations</font></b></div>
+                </td>
+              </tr>
+              <tr> </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CADOUX</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Caporal</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 7 Novembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%" height="63"><b><font size="2" face="Arial Narrow">CAMBEFORT 
+                  Jacques</font></b></td>
+                <td width="10%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/36<br>
+                    GAO 517</font></div>
+                </td>
+                <td width="10%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%" height="63"><font face="Arial Narrow" size="2">Cit&eacute; 
+                  au journal officiel du 28 Octobre 1940 pour deux missions r&eacute;alis&eacute;es 
+                  au sein du GR II/36 le 1er Avril et le 26 Mai 1940.</font></td>
+                <td width="16%" height="63"> 
+                  <div align="center"><font size="2" face="Arial Narrow">N&eacute; 
+                    le 4 Septembre 1911 &agrave; Salvagnac<br>
+                    D&eacute;c&eacute;d&eacute; le 6 Avril 1983</font></div>
+                </td>
+                <td width="4%" height="63"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos-Pilotes/CAMBEFORT-Jacques 1940.jpg" data-fancybox-group="gallery-1" title="Sous-Lieutenant Jacques CAMBEFORT"><img src="Photos-Pilotes/Small/tn_CAMBEFORT-Jacques 1940.jpg" alt="" border="0" width="27" height="36" /></a></font></div>
+                </td>
+                <td width="4%" height="63"> 
+                  <div align="center"> <a class="fancybox fancybox.iframe" href="Pilotes/CAMBEFORT-Jacques/pilote3.htm?iframe"><img src="../../../Images%20Base/tn_Image%20Fiche%20Personnel.png" alt="" border="0" width="80%" /></a> 
+                  </div>
+                </td>
+                <td width="4%" height="63">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CAMPMAS</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Caporal-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CANONNE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CANONNE 
+                  Jean </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 501</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 19 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CANTENER 
+                  Henri</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAPDEVIELLE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/551</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAPDEVILLE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 17 Septembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAPPOEN</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant 
+                    </font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/520</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 10 Septembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CARASSOU-MAILLAN 
+                  Jean </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 18 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CARCAUT 
+                  Andr&eacute;<a name="CARTERON"></a></font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CARDON Roger</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO II/520</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 20 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CARLIER</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAROL</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><font face="Arial Narrow" size="2"><b>CARTERON 
+                  Georges</b></font></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Soldat 
+                    1ere Classe</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO 586</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Aide-M&eacute;canicien 
+                    / Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2">Tu&eacute; 
+                  par accident le 8 Mai 1940 &agrave; bord du Potez 630 n&deg;43 
+                  sur la base d'El Aouina (Tunisie)</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos-Pilotes/CARTERON-Georges.JPG" data-fancybox-group="gallery-1" title="Soldat 1ere Classe Georges CARTERON"><img src="Photos-Pilotes/Small/tn_CARTERON-Georges.JPG" alt="" border="0" width="34" height="36" /></a></font></div>
+                </td>
+                <td width="4%"> 
+                  <div align="center"> <a class="fancybox fancybox.iframe" href="Pilotes/CARTERON-Georges/CARTERON-Georges.htm?iframe"><img src="../../../Images%20Base/tn_Image%20Fiche%20Personnel.png" alt="" border="0" width="80%" /></a> 
+                  </div>
+                </td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CASES</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/584</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CASTELLANA 
+                  Gratien</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par méprise 
+                  le 21 Décembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CASTERAN 
+                  Roger</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Adjudant-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO I/520</font></div>
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CASTRES 
+                  Daniel</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/14</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 15 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CATHALA 
+                  Adrien </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 22 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CATON Max 
+                  </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 16 Octobre 1939</font></td>
+                <td height="40" width="16%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td height="40" width="4%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos-Pilotes/CATON%20Max%20GR%20I-33.jpg" data-fancybox-group="gallery-1" title="Lieutenant Max CATON"><img src="Photos-Pilotes/Small/tn_CATON%20Max%20GR%20I-33.jpg" alt="" border="0" width="27" height="36" /></a></font></div>
+                </td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CATOT</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 502</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CATTOEN 
+                  Arthur </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en combat 
+                  Aérien le 10 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAUJOLLES 
+                  Joseph</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 517</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 4 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAUQUILL</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAZENAVE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO II/551</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CAZENAVE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Fait prisonnier 
+                  le 19 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CECCALDI 
+                  André </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 24 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHABERT</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Radio-Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHAILA</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observateur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHALARD 
+                  Michel</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHAMPAGNE 
+                  Eug&egrave;ne</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td height="40" width="16%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td height="40" width="4%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHAMPEAUX 
+                  Eug&egrave;ne</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td height="40" width="16%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td height="40" width="4%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHANCRIN 
+                  Marcel </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 10 Janvier 1940</font></td>
+                <td height="40" width="16%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td height="40" width="4%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos-Pilotes/CHANGRIN%20Sergent%20Chef%20GR%20II-55.jpg" data-fancybox-group="gallery-1" title="Sergent-Chef CHANCRIN"><img src="Photos-Pilotes/Small/tn_CHANGRIN%20Sergent%20Chef%20GR%20II-55.jpg" alt="" border="0" width="35" height="36" /></a></font></div>
+                </td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHANTELOU 
+                  Edouard </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 19 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHAPAT Jean 
+                  </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Radio-Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 23 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHAPUIS 
+                  Emile</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Electricien</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé par 
+                  Accident le 31 Octobre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHAREYRE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHARLIER</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 19 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHARRIER</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHASTENET 
+                  Marcel </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 6 Juin, 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHATILLON 
+                  Lucien</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%" height="37"><b><font size="2" face="Arial Narrow">CHAUDEL 
+                  Bernard </font></b></td>
+                <td width="10%" height="37"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%" height="37"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%" height="37"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%" height="37"><font size="2" face="Arial Narrow">Tué 
+                  en Combat Aérien le 19 Juin 1940</font></td>
+                <td width="16%" height="37">&nbsp;</td>
+                <td width="4%" height="37"><font size="2"></font></td>
+                <td width="4%" height="37"><font size="2"></font></td>
+                <td width="4%" height="37">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHAUMONT 
+                  Albert </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en combat 
+                  Aérien le 10 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHAUTARD 
+                  Gustave</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/62</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Chef 
+                    de Bord</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHAUVET</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 552</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CHERY Henry</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observateur</font></div>
+                </td>
+                <td width="23%"><font color="#000000" size="2" face="Arial Narrow">Officier 
+                  de Char d&eacute;tach&eacute; dans l'Aviation. Il sera le premier 
+                  &agrave; signaler les colonnes Blind&eacute;es ennemies dans 
+                  les ardennes le 12 Mai 1940 : l'Etat-Major de la 9eme Arm&eacute;e 
+                  ne le croira pas...</font><font face="Arial Narrow" size="2" color="#000000"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHEVALLIER 
+                  Andr&eacute;</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 504</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé et fait 
+                  prisonnier le 15 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHEVASSUS 
+                  Raoul</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé par 
+                  Accident le 31 Octobre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHEYSSON 
+                  Jean </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/589</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 2 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHIERS</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/508</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHOULET</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CHRETIEN</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commandant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/514</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CLAUSSE</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Commandant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 552</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CLEMENCEAU 
+                  Pierre </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par méprise 
+                  le 22 Novembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CLEMENT 
+                  Henri </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 513</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par Accident 
+                  le 28 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CLEMENT 
+                  Ren&eacute;</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO 507</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observateur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COCHARD</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 552</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COCHETEL</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/14</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COCU Pierre</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 501</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 19 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COIGNIER 
+                  Marcel </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/506</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 27 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COLIN Marcel</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 11 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COLIN Paul 
+                  </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 509</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 5 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COLLOMB 
+                  Jean</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 517</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 4 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COLLOT</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sous-Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé et fait 
+                  prisonnier le 9 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COLPIN Paul 
+                  </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant 
+                    </font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 552</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 13 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">COMBEAU 
+                  Ren&eacute;</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO 502</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observateur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COMPIN Henri</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 546</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CONFURON 
+                  Marcel</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/584</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CONSTANTIN</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COQUETON 
+                  Henri</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 501</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 13 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CORNET Jean</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO 515</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Observateur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CORNU</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 504</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CORNU Jean 
+                  </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 582</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par Accident 
+                  le 3 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CORNU</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/35</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CORSANINI</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant-Colonel</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 553</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%" height="32"><b><font size="2" face="Arial Narrow">COSTES</font></b></td>
+                <td width="10%" height="32"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%" height="32"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%" height="32"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%" height="32"><font face="Arial Narrow" size="2"></font></td>
+                <td height="32" width="16%" bgcolor="#CCCCCC">&nbsp;</td>
+                <td height="32" width="4%" bgcolor="#CCCCCC"> 
+                  <div align="center"><font size="2"><a class="fancybox-effects-c" href="Photos-Pilotes/COSTES%20Sergent-Chef%20GR%20II-55%20copier.jpg" data-fancybox-group="gallery-1" title="Sergent-Chef COSTES"><img src="Photos-Pilotes/Small/tn_COSTES%20Sergent-Chef%20GR%20II-55%20copier.jpg" alt="" border="0" width="15" height="36" /></a></font></div>
+                </td>
+                <td width="4%" height="32">&nbsp;</td>
+                <td width="4%" height="32">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COTTE Damiens</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/551</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 8 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">COUDERC 
+                  Jean</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COUDERCQ 
+                  Jean</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COUDOUX 
+                  Pierre</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COULLET 
+                  Louis </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO II/514</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par Accident 
+                  le 18 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COULOMNIER 
+                  Pierre </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/14</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur </font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué par Accident 
+                  le 19 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">COURMES</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GAO III/51</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">COURTIEU 
+                  Emile</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Commandant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Adjoint 
+                    au Commandant du Groupe</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">COUTURE 
+                  Maurice </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Lieutenant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO I/508</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Observateur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 26 Mai 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%" height="41"><b><font size="2" face="Arial Narrow">CREPUT</font></b></td>
+                <td width="10%" height="41"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%" height="41"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/33</font></div>
+                </td>
+                <td width="10%" height="41"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%" height="41">&nbsp;</td>
+                <td width="16%" height="41">&nbsp;</td>
+                <td width="4%" height="41"><font size="2"></font></td>
+                <td width="4%" height="41"><font size="2"></font></td>
+                <td width="4%" height="41">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CROS F&eacute;lix</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Capitaine</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow"><font face="Arial Narrow"></font></font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2" color="#000000">Quitte 
+                  le Groupe le 1er Mai 1940 pour rejoindre le corps Exp&eacute;ditionnaire 
+                  de Nov&egrave;ge. Remplac&eacute; p&acirc;r son camarade de 
+                  promotion, le Commandant Jouhaud</font><font size="2" face="Arial Narrow" color="#000000"></font><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CROZON</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/55</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Blessé en Combat 
+                  Aérien le 26 Septembre 1939</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CRUTEL Robert</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Adjudant</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GR II/22</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CUGNOT Georges</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/52</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Pilote</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font face="Arial Narrow" size="2">CUILLE Gaston</font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Sergent</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">GR I/36</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Mitrailleur</font></div>
+                </td>
+                <td width="23%"><font face="Arial Narrow" size="2"></font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CCCCCC"> 
+                <td width="17%"><b><font size="2" face="Arial Narrow">CUVILLIER 
+                  Henri </font></b></td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Sergent-Chef</font></div>
+                </td>
+                <td width="12%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">GAO 501</font></div>
+                </td>
+                <td width="10%"> 
+                  <div align="center"><font size="2" face="Arial Narrow">Pilote</font></div>
+                </td>
+                <td width="23%"><font size="2" face="Arial Narrow">Tué en Combat 
+                  Aérien le 5 Juin 1940</font></td>
+                <td width="16%">&nbsp;</td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%"><font size="2"></font></td>
+                <td width="4%">&nbsp;</td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+          <div align="center"></div>
+          <blockquote>&nbsp;</blockquote>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        <blockquote>&nbsp;</blockquote>
+        
+        </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../Aeronavale-1939-40/index.htm" target="_self"><img src="../../../Aeronavale-1939-40/Images%20Base/200px-French-roundel.svg.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Aéronautique Navale"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table><p>&nbsp;</p><p><img src="../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

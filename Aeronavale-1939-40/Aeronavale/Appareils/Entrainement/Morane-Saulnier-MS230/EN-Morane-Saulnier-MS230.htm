@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dedicated to the French Naval Aviation in 1939-1940. In these pages, you will discover the Airplanes, the Squadrons, the forces in presence, but also the Pilots and Crews who fought in extreme conditions: the record of the casualtys and victories is there to attest." >
+<title>Morane-MS230</title>
+<META name="KEYWORDS" content="French Naval Aviation 1939-1940, trainer aircrafts,training, italian,biplan,campaign of France, funny war,morane-Saulnier MS230">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/EN-Titre-Site.png" width="100%"><a href="../../../EN-Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/EN-1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/EN-Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/EN-2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/EN-Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/EN-3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/EN-Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/EN-4.png" width="20%" border="0"></a><a href="../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/EN-5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center"> 
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="Morane-Saulnier-MS230.htm"><img src="../../../../Images%20Base/drapeau-francais.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site en Fran&ccedil;ais</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%">  
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../EN-Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Aircraft</font></a></font></b> 
+            </font></div> 
+          <div align="center">
+            
+            <div align="center"> 
+              <div align="center"></div>
+              <hr width="100%">
+              <div align="left" class="style1"> 
+                <div align="left"></div>
+                <div align="left">
+				<p align="left"><b class="Aucun"><b><a href="../../Protos-Bombardiers/EN-Accueil-Proto-Bombardiers.htm"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Prototypes 
+                    Bombers</font></font></a></b></b> </p> 
+                  <p align="left"><font size="4"><b class="Aucun"><b><a href="../../Chasse/EN-Accueuil-Chasse.htm" target="_self"><font face="Arial Narrow"><font color="#C0C0C0">Fighter 
+                    Aircrafts </font></font></a></b></b></font> </p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Bombardement/EN-Accueuil-Bombardement.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Bomber 
+                    Aircrafts </font></font></a></b></b></p>
+                  <p align="left"><b class="Aucun"><b><a href="../../Reconnaissance/EN-Accueil-Reconnaissance.htm" target="_self"><font face="Arial Narrow" size="4" color="#C0C0C0">Reconnaissance</font></a></b></b> 
+                  </p>
+                  <p align="left"><b class="Aucun"><b><a href="../EN-Accueil-Entrainement.htm" target="_self"><i><font face="Arial Narrow" size="5"><font color="#FFFFFF" size="4">Trainer 
+                    Aircrafts </font></font></i></a></b></b> </p>
+                </div>
+              </div>
+              <div align="left"><a href="../Hanriot-H185/EN-Hanriot-H185.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFFFF"><b><font color="#FFFF00">- 
+            Hanriot H185</font></b></font></a></div>
+              <div align="left"><a href="../Liore-Olivier_LeO20/EN-LeO-20.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Liore-Olivier LeO20</b></font></a></div>
+              <div align="left"><a href="EN-Morane-Saulnier-MS230.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b><i><font color="#FFFFFF">- 
+                Morane-Saulnier MS230</font></i></b></font></a></div>
+              <div align="left"><a href="../North-American-NAA64/EN-NAA64.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                NAA 57 et 64</b></font></a></div>
+              <div align="left"><a href="../Potez-567/EN-Potez-567.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+                Potez-567</font></b></font></a></div>
+              <div align="left"><a href="../Romano-R82/EN-Romano-R82.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+                Romano-R82</b></font></a></div>
+              <div align="left" class="style1"> 
+                <div align="left"> 
+                  <p align="left"><b class="Aucun"><b><a href="../../Transport/EN-Accueil-Transport.htm" target="_self"><font face="Arial Narrow" size="5"><font color="#C0C0C0" size="4">Transport 
+                    and Links</font></font></a></b></b> </p>
+                  <p align="left"><a href="../../Hydravions/EN-Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Seaplanes</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/EN-Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Embarked Seaplanes</b></font></a></p>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"><b><font size="20%" color="#660000">MORANE-SAULNIER 
+          MS230</font></b> </div>
+        <div align="center"> 
+            <p><img src="Photos/Morane_MS.230_.jpg" width="60%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left">
+            <div align="center"></div>
+            <div align="left"> 
+              <div align="center"></div>
+              <div align="left"> 
+                <p><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technical 
+                  Specifications</font></i></b></font></p>
+              </div>
+            </div>
+            <font color="#660000"><b><i></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="90%" bgcolor="#FFFFFF" align="center" height="257" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">Two-seater 
+                    Training Umbrella </font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date first flight</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">February 
+                    1929</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wingspan</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" color="#000000" size="2">10.70 
+                    m </font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Lenght</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">6.98 
+                    m </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Height</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" color="#000000" size="2">2.80 
+                    m </font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Wing Area</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">19.70 
+                    m&sup2; </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Empty Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" color="#000000" size="2">820 
+                    kg </font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Max. Takeoff Weight</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1150 
+                    kg </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Cruising Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><font color="#FFFFFF"><font color="#000000">190 
+                    km/h</font></font></font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Maximum Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">205 km/h 
+                    </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Climbing Speed</b></i></font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2000m 
+                    at 6mn 58s</font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Service ceilling</b></i></font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">5000m 
+                    </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Range</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" color="#000000" size="2">482 
+                    kms </font></div>
+                </td>
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Crew</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">2 Men</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorization</b></i></font></div>
+                </td>
+                <td colspan="3" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 Salmson 
+                    9ABb 9cyl. star engine air-cooled 230 HP </font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="25" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armament</b></i></font></div>
+                </td>
+                <td colspan="3" height="25" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">No Armament</font></div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            
+          <div align="left"> 
+            <p><font size="3" color="#990000"><font size="3" color="#990000"><font size="3" color="#990000"><font color="#000000"><b><font color="#000000" size="2"><font size="3" color="#990000"><font size="3" color="#990000"><font color="#000000"><b><font face="Arial Narrow" size="2">More 
+              than 1100 Morane-Saulnier MS-230 and derivatives have been built 
+              since the first flight in February 1929 .</font></b></font></font></font></font></b></font></font></font></font></p>
+            <p><font size="2" color="#990000" face="Arial Narrow"><font color="#000000"><b><font color="#000000"><font color="#000000"><b>To 
+              date,32 aircraft are listed below </b></font><font size="2"><b><font color="#990000"><font face="Arial Narrow" color="#000000" size="2">(28 
+              MS230 - 2 MS231 - 1 MS234 - 1 MS237) :</font></font></b></font><font color="#000000"><b>:</b></font></font></b></font></font></p>
+            </div>
+          </blockquote>
+          <blockquote><div align="left"></div>
+            <div align="left"> 
+              <p><a class="fancybox fancybox.iframe" href="EN-Historiques-2.htm"><img src="../../../../Images%20Base/EN-Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <div align="center"></div>
+            <div align="left"> 
+              <div align="center"></div>
+              <div align="left"> 
+                <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Historical</font></b></i></font></p>
+              </div>
+            </div>
+          </div>
+          <div align="left"> 
+            <p> <b><font face="Arial Narrow" size="2"> The Morane-Saulnier MS-230 
+              is the result of a program launched in 1928 by the French Ministry 
+              of Air to provide the French Air Force and the French Navy with 
+              an E2 twin-seater training aircraft. Three of the manufacturers 
+              competing in this competition, Gourdou-Lesseure, Bloch and Loire-Nieuport 
+              proposed somewhat outdated projects. Only the Morane-Saulnier Company 
+              stood out with a modern and relevant aircraft, based on a remotorized 
+              MS-133 and equipped with MS-181 landing gear.</font></b><b><font face="Arial Narrow" size="2"><br>
+			  <blockquote></blockquote>
+              </font></b>
+            <p><b><font face="Arial Narrow" size="2">Logically, it was this new 
+              aircraft, the Morane-Saulnier MS230, that won the competition. The 
+              aircraft was in the form of an arrow-shaped umbrella monoplane, 
+              capable of carrying a student and his instructor in tandem. To facilitate 
+              landings, the MS-230 was equipped with a wide track landing gear. 
+              The fuselage, consisting of a mixed wood and metal lattice frame, 
+              was covered with canvas. The aircraft is powered by a Salmson 9ABb 
+              9-cylinder star engine developing 230 horsepower. The prototype 
+              made its first flight in February 1929.</font></b>
+            <b><font face="Arial Narrow" size="2"><br>
+            <blockquote></blockquote>
+            During the tests, the Morane MS-230 proved to have good flying qualities, 
+            with an ease of piloting which augurs well for a training aircraft, 
+            and the French Air Force, having been conquered, placed a first order 
+            for 500 units, and the first production aircraft was delivered on 
+            March 15, 1929... These aircraft are intended to equip the Flying 
+            Schools, and some of them will be used in operational units as liaison 
+            or service aircraft. The A&eacute;ronautique Navale will receive a 
+            few copies as early as 1931 : 23 copies will still be counted in the 
+            Navy's registers in 1940. The MS-230 will be used until the Armistice 
+            and the occupant will seize some of them used in their turn in the 
+            Luftwaffe Flying Training Schools. The Morane-Saulnier MS230 will 
+            have a certain success abroad: it will be used by the Military Aviations 
+            of Belgium, Brazil, Greece, Portugal, Romania, Switzerland, Turkey,... 
+            It will also be built under licence in Belgium by SABCA under the 
+            name MS-236 and in Portugal by OGMA (MS-233) ... In the hands of prestigious 
+            pilots, it enthused the crowds during the airshows of the 30s: thus, 
+            Michel Detroyat who raced the Michelin Cups aboard a modified Ms-230, 
+            which became the MS-234. H&eacute;l&egrave;ne Boucher also owned a 
+            copy: the n&deg;54 registered F-AJML.</font></b><b><font face="Arial Narrow" size="2"><br>
+			<blockquote></blockquote>
+            The MS-230 also equipped the famous Patrouille Militaire Acrobatique 
+            d'Etampes. This formation, the Patrouille de France of the time used 
+            the MS-230 from its creation in 1931 until 1938.<br>
+            About 1200 units were built until 1945. The last production was made 
+            by the Levasseur Company which manufactured 48 MS-230 between 1946 
+            and 1948.</font></b></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+              </font></b></i></font></p>
+            <table width="97%" border="1">
+              <tr background="../../../../Images Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Versions</font></b></font></div>
+                </td>
+                <td width="15%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Number</font></b></font></div>
+                </td>
+                <td width="65%" height="30"> 
+                  <div align="center"><font size="3"><b><font face="Arial Narrow">Description</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20%" height="74" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 230</b></font></div>
+                </td>
+                <td width="10%" height="74" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3" face="Arial Narrow"><b>About 
+                    1100 </b></font></div>
+                </td>
+                <td width="70%" height="74" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Main 
+                  version mass-produced in more than 1100 copies. The unit is 
+                  powered by a Salmson 9Ab with 9 star cylinders of 230 hp.</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="39" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 231</b></font></div>
+                </td>
+                <td width="10%" height="39" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3" face="Arial Narrow"><b><font color="#000000">6</font></b></font></div>
+                </td>
+                <td width="70%" height="39" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  powered by a 240hp Lorraine 7Mb &quot;Mizar&quot;</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" background="../../../../Images Base/metal-texture-151340.jpg" height="52"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 232</b></font></div>
+                </td>
+                <td width="10%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" height="52"> 
+                  <div align="center"> 
+                    <p><font size="3" face="Arial Narrow"><b><font color="#000000">1</font></b></font></p>
+                  </div>
+                </td>
+                <td width="70%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg" height="52"><font face="Arial Narrow" size="2">Version 
+                  powered by a Clerget 9Ca 9 Cylinder star engine of 200hp</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="48" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 233</b></font></b></font></div>
+                </td>
+                <td width="10%" height="48" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div><font size="3" face="Arial Narrow"><b><font color="#000000">6 
+                      (France)</font></b></font></div>
+                    <div><b><font face="Arial Narrow" size="3" color="#000000">16 
+                      (Portugal)</font></b><font size="3" face="Arial Narrow"><b></b></font></div>
+                  </div>
+                </td>
+                <td width="70%" height="48" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Equipped 
+                  with a 230hp Gnome and Rh&ocirc;ne 5Ba engine, 6 copies of this 
+                  version will be produced in France, and 16 copies will be built 
+                  under licence in Portugal.</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 234</b></font></b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font size="3" face="Arial Narrow"><b><font color="#000000">1</font></b></font></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  powered by a Wright J-6-9 with 9 330hp star cylinders</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 234/2</b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font size="3" face="Arial Narrow"><font color="#000000">1</font></font></b></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div><font face="Arial Narrow" size="2">Version developed for 
+                    the race from a copy of MS 230 which took part in the 1929 
+                    Michelin Cup. Streamlined and powered by a 230hp Hispano-Suiza 
+                    9Qb, it was used by Michel Detroyat in the Michelin Cups of 
+                    1930, 1931 and 1932. </font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 234 n&deg;&deg;2</b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font size="3" face="Arial Narrow"><font color="#000000">1</font></font></b></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div><font face="Arial Narrow" size="2">Racing and aerobatic 
+                    machine obtained after the modification of the MS230 234/2 
+                    which received a 250hp Hispano-suiza 9Qa engine . Michel Detroyat 
+                    used it during the 1933 Michelin Cup. </font></div>
+                  <div><font face="Arial Narrow" size="2">Thereafter, the aircraft 
+                    powered by a Hispano 9Qc of 300 hp streamlined then a 9Qd 
+                    of 350 hp, became until 1938, his aerobatic aircraft. This 
+                    MS234 is very well known for its White / Red and Black colors.</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 235</b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">1</font></b></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  powered by a Gn&ocirc;me-Rhone 7Kb of 7 Star Cylinders of 300hp</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 236</b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">19 
+                    (Belgium) </font></b></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  produced under license in Belgium. It is powered by an Armstrong-Siddeley 
+                  &quot;Lynx&quot; IVC 215hp engine.</font></td>
+              </tr>
+              <tr> 
+                <td width="20%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="left"><font face="Arial Narrow" size="3"><b>Morane-Saulnier 
+                    MS 237</b></font></div>
+                </td>
+                <td width="10%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3">5</font></b></div>
+                </td>
+                <td width="70%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font face="Arial Narrow" size="2">Version 
+                  powered by a Salmson 9Aba of 280hp</font></td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+            <div align="left"> </div>
+            <blockquote> 
+              <div align="left"><font face="Arial Narrow"><b></b></font></div>
+            </blockquote>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              
+            <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliography</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <table width="90%" height="225">
+                <tr> 
+                  <td width="59%" height="246"> 
+                    <div align="left"><b><i><font size="2">1 ) _ Editions LELA 
+                      PRESSE ; Avions n&deg;75 - 76 - 77 - 78 - 79</font></i></b><font size="2"><i><font color="#990000"><b><br>
+                    - Le Morane Saiulnier MS 225 C1 (et d&eacute;riv&eacute;s)</b></font></i></font></div>
+                    <p><a class="fancybox-effects-c" href="Photos/Avion%2075.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avion%2075.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avion%2076.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avion%2076.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avion%2077.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avion%2077.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avion%2078.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avion%2078.JPG" /></a> 
+                      <a class="fancybox-effects-c" href="Photos/Avion%2079.JPG" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="90" height="128" border="0" src="thumbnail/tn_Avion%2079.JPG" /></a> 
+                    </p>
+                    <p>&nbsp;</p>
+                  </td>
+                  <td width="41%" height="246"><b><i><font size="2">2 ) _ Editions 
+                    LELA PRESSE ; <font color="#990000"> <font color="#000000">Collection 
+                    Histoire de l'Aviation </font></font></font></i></b><font size="2"><i><font color="#990000"><b><br>
+                    - N&deg;30 : Morane Saulnier Ses Avions, ses projets</b></font></i></font> 
+                    <p><a class="fancybox-effects-c" href="Photos/Morane-Ses%20avions-ses%20projets.jpg" data-fancybox-group="gallery-1" title="Editions LELA PRESSE"><img alt="" width="87" height="128" border="0" src="thumbnail/tn_Morane-Ses%20avions-ses%20projets.jpg" /></a> 
+                    </p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            
+          <div align="left"> 
+            <p><font size="6"><b><i><font color="#660000" face="Arial Narrow">Photos 
+              Album</font></i></b></font></p>
+            </div>
+            <div align="left"> </div>
+            
+          <div align="left"><a class="fancybox-effects-c" href="Photos/Gms230-2.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="144" height="72" border="0" src="thumbnail/tn_Gms230-2.jpg" /></a> 
+            <a class="fancybox-effects-c" href="Photos/Morane%20Saulnier%20MS-230%20002.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Morane%20Saulnier%20MS-230%20002.jpg" alt="" width="110" height="72" border="0" /></a> 
+            <a class="fancybox-effects-c" href="Photos/Ms-430no41.JPG" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_Ms-430no41.JPG" alt="" width="134" height="72" border="0" /></a> 
+            <a class="fancybox-effects-c" href="Photos/Poste-pilotage.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="48" height="72" border="0" src="thumbnail/tn_Poste-pilotage.jpg" /></a> 
+          </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            <div align="left"><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Drawing 
+              3 views</font></b></i></font></div>
+          </div>
+            <p align="left"><a class="fancybox-effects-c" href="Photos/P3V.jpg" data-fancybox-group="gallery-3" title=""><img src="thumbnail/tn_P3V.jpg" alt="" width="115" height="72" border="0" /></a> 
+          </p>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../EN-index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a> 
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="center"> 
+          <div><b><font color="#FFFFFF" size="4">Links to Website </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"French Air Force"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>

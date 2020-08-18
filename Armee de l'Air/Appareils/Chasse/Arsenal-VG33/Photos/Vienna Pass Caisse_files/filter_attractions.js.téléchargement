@@ -1,0 +1,22 @@
+$(document).ready(function() {
+	$('#frm_filter input[type=radio]').click(function() {
+		var type=$(this).prop('id');
+		
+		var txt_cat = $(this).val();
+		$("#head_att_cat span").text(txt_cat);
+		
+		if (type == 'viewall') {
+			$('#filtereditems li').fadeIn('fast'); 
+		} else if (type == 'atoz') {
+			$(location).attr('href','/vienna-attractions/?order=atoz');
+		} else {
+			$('#filtereditems li').hide();
+			$('.'+type).fadeIn('fast');
+		}
+	});
+});
+
+
+
+				
+				

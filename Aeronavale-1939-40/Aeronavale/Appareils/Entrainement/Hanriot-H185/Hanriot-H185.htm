@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106576697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106576697-1');
+</script>
+<META name="description" content="Site dédié à L'Aéronautique Navale Française en 1939-1940. Dans ces pages, vous découvrirez les Appareils,les Escadrilles,les forces en présence, mais aussi les Pilotes et Equipages qui ont combattu dans des conditions extrèmes: le bilan des Pertes et victoires est là pour en attester." >
+<title>Hanriot-185</title>
+<META name="KEYWORDS" content="Aéronautique Navale Française 1939-1940,entrainement,français,campagne de france,drôle de guerre,hanriot H182">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Add jQuery library -->
+<script type="text/javascript" src="../../../../lib/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="../../../../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="../../../../source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="../../../../source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="../../../../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="../../../../source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+			width		: '90%',
+				height		: '70%',
+			});
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				showNavArrows : true,
+				openEffect : 'none',
+				padding : 5,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+				
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+<link rel="stylesheet" href="../../../../style1.css" type="text/css">
+<style type="text/css">
+a{text-decoration:none;}
+ 
+
+.liennonsouligne {  color: #FFFF00; text-decoration: none}
+.unnamed2 {  font-family: "Arial Narrow"; font-size: 62%; color: #FFFFFF; text-decoration: none}
+</style>
+<link rel="stylesheet" href="../../../../liens.css" type="text/css">
+</HEAD>
+<BODY width=100% font size=100% bgcolor="#FFFFFF" text="#000000" background="../../../../Images%20Base/7-317396.JPG" link="#FFFFFF" vlink="#FFFFFF">
+<p class="liennonsouligne">&nbsp;</p>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 1%; top: 2%"> 
+  <p><img src="../../../../Images%20Base/200px-French-roundel.svg.png" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Potez25.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/amiot%20143.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D510.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/mureau117.gif" width="100%"></p>
+</div>
+<p class="unnamed1" align="left">&nbsp;</p>
+<div id="Layer7" style="position:absolute; width:72%; height:145%; z-index:89; left: 14%; top: 0%"> 
+  <div align="center"><img src="../../../../Images%20Base/Titre%20Metal-V2.png" width="100%"><a href="../../../Page-Accueil-Aeronavale.htm" target="_self"><img src="../../../../Images%20Base/1-Big.png" width="20%" border="0"></a><a href="../../../../Forces%20en%20presences/Page%20Forces%20Presence.htm" target="_self"><img src="../../../../Images%20Base/2.png" width="20%" border="0"></a><a href="../../../../Campagne%20de%20France/Page%20Accueil%20Campagne%20de%20Fr.htm" target="_self"><img src="../../../../Images%20Base/3.png" width="20%" border="0"></a><a href="../../../../Constructeurs/Page%20Accueil%20Constructeurs.htm" target="_self"><img src="../../../../Images%20Base/4.png" width="20%" border="0"></a><a href="../../../../index.htm" target="_self"><img src="../../../../Images%20Base/5.png" width="20%" border="0"></a></div>
+  <div align="center"></div>
+  <table width="100%" border="1" bgcolor="#999999">
+    <tr> 
+      <td height="280%" width="16%" valign="top" bgcolor="#214767"> 
+        <div align="center">
+          <table width="100%" border="0">
+            <tr> 
+              <td width="15%"><a href="EN-Hanriot-H185.htm"><img src="../../../../Images%20Base/drapeau-anglais-rond.png" width="100%" border="0"></a></td>
+              <td width="85%"> 
+                <div align="left"><b><font size="4" color="#CCCCCC">Site in English</font></b></div>
+              </td>
+            </tr>
+          </table>
+		  <hr width="100%"> 
+          <div align="center"><font size="4"><b><font color="#FFFFFF"><a href="../../Accueil-Appareils.htm" target="_self"><font face="Arial Narrow" size="5">Appareils</font></a></font></b> 
+            </font></div>
+			 <hr width="100%">
+		  <p align="left"><a href="../../Protos-Bombardiers/Accueil-Proto-Bombardiers.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Protos 
+            Bombardiers</b></font></a></p>
+          <p align="left"><a href="../../Chasse/Accueuil-Chasse.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#CCCCCC">Chasse</font></b></font></a></p>
+          <p align="left"><a href="../../Bombardement/Accueuil-Bombardement.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b><font color="#FFFFFF"><font color="#C0C0C0">Bombardement</font></font></b></font></a></p>
+          <p align="left"><a href="../../Reconnaissance/Accueil-Reconnaissance.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Observation</b></font></a></p>
+          <div align="left"></div>
+          <p align="left"><font color="#000000"><i><a href="../Accueil-Entrainement.htm" target="_self"><font size="4" face="Arial Narrow"><b>Entrainement</b></font></a></i></font></p>
+          <div align="left"><i><a href="Hanriot-H185.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFFFF"><b>- 
+            Hanriot H185</b></font></a></i></div>
+          <div align="left"><a href="../Liore-Olivier_LeO20/LeO-20.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Liore-Olivier LeO20</b></font></a></div>
+          <div align="left"><a href="../Morane-Saulnier-MS230/Morane-Saulnier-MS230.htm" target="_self" ><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Morane-Saulnier MS230</b></font></a></div>
+          <div align="left"><a href="../North-American-NAA64/NAA64.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            NAA 57 et 64</b></font></a></div>
+          <div align="left"><a href="../Potez-567/Potez-567.htm" target="_self"><font face="Arial Narrow" size="3"><b><font color="#FFFF00">- 
+            Potez-567</font></b></font></a></div>
+          <div align="left"><a href="../Romano-R82/Romano-R82.htm" target="_self"><font face="Arial Narrow" size="3" color="#FFFF00"><b>- 
+            Romano-R82</b></font></a></div>
+          <p align="left"><a href="../../Transport/Accueil-Transport.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Transport 
+            &amp; liaisons</b></font></a></p>
+          
+			<p align="left"><a href="../../Hydravions/Accueil-Hydravions.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions</b></font></a></p>
+			<p align="left"><a href="../../Hydravions-Embarques/Accueil-Hydravions-Embarques.htm" target="_self"><font size="4" face="Arial Narrow" color="#C0C0C0"><b>Hydravions-Embarqués</b></font></a></p>
+          </div>
+        <div align="left"></div>
+      </td>
+      <td colspan="5" valign="top" align="right" background="../../../../Images%20Base/9-11925.jpg" width="82%" height="25"> 
+        <div align="center"><b><font size="20%" color="#660000">HANRIOT H185</font></b> 
+        </div>
+        <div align="center"> 
+            <p><img src="Photos/799.jpg" width="50%"></p>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font color="#660000"><b><i><font face="Arial Narrow" size="6">Technique</font></i></b></font></div>
+          </blockquote>
+          <div align="center"> 
+            <div align="left"> 
+              
+            <table BORDER bordercolor="#000000" width="90%" bgcolor="#FFFFFF" align="center" height="257" >
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Type</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">Biplace d'Entrainement</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Date 1er Vol</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1935</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Envergure</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">12,00 m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Longueur</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="29" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">7,22 m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Hauteur</b></i> </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">3,150m&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Surface Alaire</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">18,97m2&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids &agrave; Vide</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> 604 Kg&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Poids Total</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">887 Kg&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse de Croisi&egrave;re</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow"> km/h.&nbsp;</font> 
+                  </center>
+                </td>
+                <td width="20%" height="29" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Maximale</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">190 km/h&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Vitesse Mont&eacute;e</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="+0"><font face="Arial Narrow"><font face="Arial Narrow"><font face="Arial Narrow"><font size="2"></font></font></font></font> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>plafond</b></i> </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">5500m&nbsp;</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Autonomie</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="216" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">600kms</font> 
+                  </center>
+                </td>
+                <td width="20%" height="18" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <center>
+                    <font face="Arial Narrow" size="2"><i><b>Equipage</b></i> 
+                    </font> 
+                  </center>
+                </td>
+                <td width="209" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <center>
+                    <font size="2" face="Arial Narrow">2</font> <font size="2" face="Arial Narrow"> 
+                    Personnes</font> 
+                  </center>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="33" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Motorisation</b></i></font></div>
+                </td>
+                <td colspan="3" height="18" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2">1 Moteur 
+                    Renault 4PEI de 140ch</font></div>
+                </td>
+              </tr>
+              <tr background="../../../../Images%20Base/metal-texture-151340.jpg"> 
+                <td width="20%" height="26" bordercolor="#000000" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><font face="Arial Narrow" size="2"><i><b>Armement</b></i></font></div>
+                </td>
+                <td colspan="3" height="26" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"> 
+                    <div><font size="2" face="Arial Narrow">Pas d'Armement</font></div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+          <blockquote> 
+            <div align="center"></div>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Production</font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <p><font size="3" color="#990000"><font size="3" color="#990000"><b><font face="Arial Narrow" size="2" color="#000000">346 
+              </font></b><font size="2" color="#990000"><font color="#000000"><b><font face="Arial Narrow"> 
+              Hanriot H182 et 5 Hanriot H185 ont été construits depuis la date 
+              du premier vol en 1935.</font></b></font></font></font></font></p>
+            <p><font size="2"><b><font color="#990000"><font size="3" color="#990000"><b><font size="3" color="#990000"><b><font face="Arial Narrow" color="#000000" size="2">A 
+              ce jour , sur les 346 appareils fabriqu&eacute;s, 28 H182 sont recens&eacute;s 
+              dans la liste</font></b></font></b></font><font face="Arial Narrow" color="#000000" size="2"> 
+              ci-dessous :</font></font></b></font></p>
+              <p><a class="fancybox fancybox.iframe" href="Historiques-2.htm"><img src="../../../../Images%20Base/Bouton%20Liste%20Appareils.png" alt="" border="0" width="15%"></a> 
+            </div>
+            <div align="left"> 
+              <p>&nbsp;</p>
+            </div>
+            <blockquote> 
+              <div align="center"></div>
+            </blockquote>
+            <div align="center"> 
+              <hr noshade size="4" width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" face="Lucida Handwriting" size="6"><i><b><font face="Arial Narrow">Histoire 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              <p><b><font size="2" face="Arial Narrow">A la fin de 1933, la St&eacute; 
+                Hanriot propose un nouvel appareil de tourisme, le Hanriot H-180. 
+                Celui-ci, monoplan parasol &agrave; train fixe, est de conception 
+                classique, mais pr&eacute;sente n&eacute;ammoins certaines particularit&eacute;s. 
+                Ainsi, si le pilote et le premier passager sont dispos&eacute;s 
+                classiquement en tandem dans un habitacle ferm&eacute;, le deuxi&egrave;me 
+                passager est dispos&eacute; &agrave; l'air libre, dans un cockpit 
+                s&eacute;par&eacute; par une porte vitr&eacute;e... La motorisation 
+                est confi&eacute;e &agrave; un Renault 4Pei de 140ch entrainant 
+                une h&eacute;lice bipale. Immatricul&eacute; F-AOJO, le prototype 
+                fait son premier vol en Juillet 1934. </font></b></p>
+              <p><font size="2" face="Arial Narrow"><b>L'appareil ne rencontra 
+                pas de succ&eacute;s aupr&egrave;s des pilotes civils et des a&eacute;roclubs, 
+                mais attira l'attention du Minist&egrave;re de l'Air qui voyait 
+                en lui, un potentiel appareil d'observation et de reconnaissance. 
+                L'Arm&eacute;e de l'Air commanda donc un second appareil, le H-180M, 
+                similaire au premier prototype, dans le but d'installer un observateur 
+                dans le poste extr&egrave;me arri&egrave;re. Il fit son premier 
+                vol en Octobre 1934, mais se r&eacute;v&eacute;la finalement d&eacute;cevant 
+                et ne fut pas retenu. Une version &quot;Sanitaire&quot; fut &eacute;tudi&eacute;e, 
+                le H-181, mais ne connut pas plus de succ&egrave;s. </b></font></p>
+              
+            <p><font size="2" face="Arial Narrow"><b>Le Hanriot H-182 trouva son 
+              salut dans une nouvelle configuration qui le transformait en appareil 
+              d'entrainement. D&eacute;sign&eacute; H-182, il &eacute;tait &eacute;quip&eacute; 
+              de double-commandes, et le si&egrave;ge arri&egrave;re &eacute;tait 
+              remplac&eacute; par un strapontin d'appoint. Cette version fit son 
+              premier vol en f&eacute;vrier 1935 et fut suivie d'une commande 
+              pour 346 exemplaires. L'A&eacute;ronavale commandera &eacute;galement 
+              5 exemplaires, d&eacute;sign&eacute;s H-185, pour &eacute;quiper 
+              ses propres &eacute;coles de formation. La version marine pr&eacute;sentait 
+              peu de diff&eacute;rences par rapport au H-182M de l'Arm&eacute;e 
+              de l'air, citons cependant pour anecdote, la pr&eacute;sence d'un 
+              si&egrave;ge chauffant sur le poste extr&egrave;me arri&egrave;re 
+              &agrave; l'air libre : un petit radiateur &agrave; huile &eacute;tait 
+              install&eacute; sous l'assise du si&egrave;ge.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>Les appareils seront r&eacute;partis 
+                dans les &eacute;coles de pilotage de l'Arm&eacute;e de l'Air 
+                et de l'A&eacute;ronavale ou comme appareils de liaison au sein 
+                des unit&eacute;s combattantes. Lors du d&eacute;clenchement du 
+                conflit, en septembre 1939, le Hanriot H-182 composait une part 
+                importante des avions d'entrainement et certains re&ccedil;urent 
+                un camouflage. A l'Armistice de Juin 1940, de nombreux pilotes 
+                s'&eacute;chappent vers l'Angleterre pour continuer le combat, 
+                certains le feront &agrave; bord d'appareils comme le H-182. Ainsi, 
+                une trentaine d'entre eux se retrouveront sur le sol britannique 
+                et seront utilis&eacute;s jusqu'&agrave; &eacute;puisement des 
+                pi&egrave;ces de rechanges. Il est probable que les allemands 
+                aient saisi &eacute;galement quelques exemplaires abandonn&eacute;s 
+                intacts sur les terrains par les Fran&ccedil;ais.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>Le Hanriot H-182 fut &eacute;galement 
+                utilis&eacute; &agrave; l'&eacute;tranger, ainsi 10 appareils 
+                pr&eacute;lev&eacute;s sur les appareils de l'Arm&eacute;e de 
+                l'Air participeront &agrave; la Guerre d'Espagne au sein des troupes 
+                Gouvernementales. Ils furent tous d&eacute;truits par l'Aviation 
+                Franquiste. 50 autres avions seront achet&eacute;s et livr&eacute;s 
+                &agrave; la Turquie comme appareils d'observation.</b></font></p>
+              <p><font size="2" face="Arial Narrow"><b>D'autres versions, rest&eacute;es 
+                sans suite ont &eacute;t&eacute; r&eacute;alis&eacute;es : Le 
+                H-183, mod&egrave;le unique destin&eacute; &agrave; la voltige 
+                qui re&ccedil;ut un moteur plus puissant (180ch) ou encore le 
+                H-184, version d'entrainement plus puissante (180ch &eacute;galement)</b></font></p>
+              <p align="left">&nbsp;</p>
+            </div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font size="6" face="Lucida Handwriting"><i><b><font color="#660000" face="Arial Narrow">Versions 
+                </font></b></i></font></p>
+            </div>
+            <div align="left"> 
+              
+            <table width="97%" border="1">
+              <tr bgcolor="#CCCCCC" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                <td width="11%" height="25"> 
+                  <div align="center"><font face="Arial Narrow"><b><font size="3">Version 
+                    </font></b></font></div>
+                </td>
+                <td width="9%" height="25"> 
+                  <div align="center"><font face="Arial Narrow"><b><font size="3">Nbre</font></b></font></div>
+                </td>
+                <td width="80%" height="25"> 
+                  <div align="center"><font face="Arial Narrow"><b><font size="3">Descriptif</font></b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000"><br>
+                    H.180T</font></font></b></div>
+                </td>
+                <td width="9%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">1</font></b></div>
+                </td>
+                <td width="80%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Prototype 
+                  de la s&eacute;rie avec deux places en Tandem dans le cockpit 
+                  ferm&eacute; et une troisi&egrave;me place... &agrave; l'air 
+                  libre s&eacute;par&eacute;e des deux autres par une porte vitr&eacute;e. 
+                  L'appareil fait son prmier vol en Juillet 1934 et est expos&eacute; 
+                  au Salon du Bourget</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000">H.180M</font></font></b></div>
+                </td>
+                <td width="9%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">1</font></b></div>
+                </td>
+                <td width="80%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Version 
+                  militaire du H.180, cet appareil d'observation ne connut pas 
+                  de d&eacute;veloppement. De conception identique au H.180 de 
+                  tourisme, il fit son premier vol en Octobre 1934.</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" height="50" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000"> 
+                    H.181</font></font></b></div>
+                </td>
+                <td width="9%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">1</font></b></div>
+                </td>
+                <td width="80%" height="50" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Version 
+                  adapt&eacute;e comme appareil sanitaire pour le transport de 
+                  bless&eacute;s : la partie sup&eacute;rieure arri&egrave;re 
+                  du fuselage est amovible pour recevoir un brancard. Le Minist&egrave;re 
+                  de l'Air ayant retenu le Bloch MB.81, cette version du Hanriot 
+                  ne fut, l&agrave; encore, pas retenue. Il a &eacute;t&eacute; 
+                  construit en 1935.</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" height="59" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000"> 
+                    H.182</font></font></b></div>
+                </td>
+                <td width="9%" height="59" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">346</font></b></div>
+                </td>
+                <td width="80%" height="59" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Version 
+                  command&eacute;e par le Minist&egrave;re de l'Air pour l'entrainement 
+                  des pilotes de l'Arm&eacute;e de l'Air. L'appareil est &eacute;quip&eacute; 
+                  de double-commande et le troisi&egrave;me si&egrave;ge est remplac&eacute; 
+                  par un strapontin. Cette version fit son premier vol en f&eacute;vrier 
+                  1935. 10 Exemplaires seront transf&eacute;r&eacute;es en Espagne 
+                  pour aller combattre dans les rangs des Troupes Gouvernementales. 
+                  Ils seront tous d&eacute;truits par l'Aviation Franquiste. 50 
+                  autres seront livr&eacute;s &agrave; la Turquie comme appareil 
+                  d'observation.</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000">H.183</font></font></b></div>
+                </td>
+                <td width="9%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">1</font></b></div>
+                </td>
+                <td width="80%" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Avion 
+                  d'entrainement &agrave; la voltige motoris&eacute; par un Renault 
+                  438 de 180ch.</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" height="36" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000">H.184</font></font></b></div>
+                </td>
+                <td width="9%" height="36" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">1</font></b></div>
+                </td>
+                <td width="80%" height="36" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Appareil 
+                  d'entrainement avec double-commande avec motorisation pouss&eacute;e 
+                  &agrave; 180ch. Cette version est rest&eacute;e sans suite.</font></td>
+              </tr>
+              <tr> 
+                <td width="11%" height="57" background="../../../../Images Base/metal-texture-151340.jpg"> 
+                  <div align="center"><b><font face="Arial Narrow" size="3"><font color="#000000">H.185</font></font></b></div>
+                </td>
+                <td width="9%" height="57" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"> 
+                  <div align="center"><b><font color="#000000" size="3" face="Arial Narrow">5</font></b></div>
+                </td>
+                <td width="80%" height="57" background="../../../../Images Base/shiny-metal-picture-wallpaper.jpg"><font color="#000000" size="2" face="Arial Narrow">Version 
+                  command&eacute;e par l'A&eacute;ronavale comme appareil de liaison 
+                  et de transport. Le strapontin qui fait office de si&egrave;ge 
+                  pour le 2eme Passager &agrave; l'extr&egrave;me arri&egrave;re 
+                  est ici remplac&eacute; par un si&egrave;ge chauffant pour permettre 
+                  de transporter ces messieurs de l'Etat-Major dans les meilleurs 
+                  conditions... Les cinqs exemplaires ont &eacute;t&eacute; construits 
+                  en 1937.</font></td>
+              </tr>
+            </table>
+              <p><font face="Arial Narrow"><b></b></font></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font color="#660000" size="6" face="Lucida Handwriting"><i><b><font face="Arial Narrow">Bibliographie</font></b></i></font></p>
+              <p><img src="../../../../Images%20Base/tn_Assistant%20d%27exportation-1.gif" width="10%"></p>
+            </div>
+            <div align="left"></div>
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"><font size="6"><b><i><font color="#660000" face="Arial Narrow">Album 
+              Photos </font></i></b></font></div>
+            <div align="left"> 
+              <p>&nbsp; </p>
+              <p><a class="fancybox-effects-c" href="Photos/h180-110.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="200" height="63" border="0" src="thumbnail/tn_h180-110.jpg" /></a> 
+                <a class="fancybox-effects-c" href="Photos/h182_1.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_h182_1.jpg" alt="" width="64" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/image.jpg" data-fancybox-group="gallery-2" title=""><img src="thumbnail/tn_image.jpg" alt="" width="151" height="72" border="0" /></a> 
+                <a class="fancybox-effects-c" href="Photos/Porte%20Lat.jpg" data-fancybox-group="gallery-2" title=""><img alt="" width="150" height="72" border="0" src="thumbnail/tn_Porte%20Lat.jpg" /></a> 
+            </div>
+            <blockquote> 
+              <div align="left"></div>
+              <div align="left"></div>
+              <blockquote> 
+                <blockquote> 
+                  <div align="center"></div>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+            <div align="center"> 
+              <hr size="4" noshade width="98%" align="left">
+            </div>
+            <div align="left"> 
+              <p><font face="Lucida Handwriting"><i><b><font color="#660000" size="6" face="Arial Narrow">Plan 
+                3 vues</font></b></i></font></p>
+            </div>
+            <p align="left"><img src="../../../../Images%20Base/tn_Assistant%20d%27exportation-1.gif" width="10%"></p>
+            <div align="left"> </div>
+          </blockquote>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; width:11%; z-index:90; left: 88%; top: 2%"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td width="52%"> 
+        <div align="center"><a href="../../../../../index.htm" target="_self"><img src="../../../../Images%20Base/French-roundel.png" width="40%" border="0"></a>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="center">
+          <div><b><font color="#FFFFFF" size="4">Lien vers Site </font></b></div>
+          <div><b><font color="#FFFFFF" size="4">"Arm&eacute;e de l'Air Fran&ccedil;aise"</font></b></div>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="52%" height="45"> 
+        <div align="center">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <p><img src="../../../../Images%20Base/BlochMB174.gif" width="100%"> </p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Amiot350.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/D520.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p><img src="../../../../Images%20Base/Br693.gif" width="100%"></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</BODY>
+</HTML>
